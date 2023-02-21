@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerBillWebKedge.jws" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerBillWebKedge.jws" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerBillWebKedge.jws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types />
+  <wsdl:message name="doStartURLResponse">
+    <wsdl:part name="doStartURLReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="doStartURLRequest">
+    <wsdl:part name="memId" type="xsd:string" />
+    <wsdl:part name="accUid" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="doStopRequest">
+    <wsdl:part name="memId" type="xsd:string" />
+    <wsdl:part name="accUid" type="xsd:string" />
+    <wsdl:part name="cancelMsg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="doStartResponse">
+    <wsdl:part name="doStartReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="doStopResponse">
+    <wsdl:part name="doStopReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="doStartRequest">
+    <wsdl:part name="memId" type="xsd:string" />
+    <wsdl:part name="accUid" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="EngineerBillWebKedge">
+    <wsdl:operation name="doStart" parameterOrder="memId accUid">
+      <wsdl:input name="doStartRequest" message="impl:doStartRequest" />
+      <wsdl:output name="doStartResponse" message="impl:doStartResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="doStop" parameterOrder="memId accUid cancelMsg">
+      <wsdl:input name="doStopRequest" message="impl:doStopRequest" />
+      <wsdl:output name="doStopResponse" message="impl:doStopResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="doStartURL" parameterOrder="memId accUid">
+      <wsdl:input name="doStartURLRequest" message="impl:doStartURLRequest" />
+      <wsdl:output name="doStartURLResponse" message="impl:doStartURLResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EngineerBillWebKedgeSoapBinding" type="impl:EngineerBillWebKedge">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="doStart">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="doStartRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="doStartResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerBillWebKedge.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doStop">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="doStopRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="doStopResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerBillWebKedge.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doStartURL">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="doStartURLRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="doStartURLResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerBillWebKedge.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EngineerBillWebKedgeService">
+    <wsdl:port name="EngineerBillWebKedge" binding="impl:EngineerBillWebKedgeSoapBinding">
+      <wsdlsoap:address location="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerBillWebKedge.jws" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

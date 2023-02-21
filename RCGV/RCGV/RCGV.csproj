@@ -1,0 +1,151 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BC6D61A-5D4B-4D57-BC6B-5E3F9D04377E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RCGV</RootNamespace>
+    <AssemblyName>RCGV</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <WarningLevel>3</WarningLevel>
+    <FileVersion>20.114.0020</FileVersion>
+    <InformationalVersion>20.114.0020</InformationalVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PX.Common">
+      <HintPath>..\..\..\..\Bin\PX.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.CS.Contracts">
+      <HintPath>..\..\..\..\Bin\PX.CS.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Data">
+      <HintPath>..\..\..\..\Bin\PX.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.DbServices">
+      <HintPath>..\..\..\..\Bin\PX.DbServices.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Objects">
+      <HintPath>..\..\..\..\Bin\PX.Objects.DLL</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APRegisterExtensions.cs" />
+    <Compile Include="ARRegisterExtensions.cs" />
+    <Compile Include="DAC\GVApGuiCmInvoice.cs" />
+    <Compile Include="DAC\GVApGuiCmInvoiceDetail.cs" />
+    <Compile Include="DAC\GVApGuiCmInvoiceLine.cs" />
+    <Compile Include="DAC\GVApGuiInvoice.cs" />
+    <Compile Include="DAC\GVApGuiInvoiceDetail.cs" />
+    <Compile Include="DAC\GVApGuiInvoiceLine.cs" />
+    <Compile Include="DAC\GVAPInvCriteriaFilter.cs" />
+    <Compile Include="DAC\GVArApCmInvoice.cs" />
+    <Compile Include="DAC\GVArGuiCmInvoice.cs" />
+    <Compile Include="DAC\GVArGuiCmInvoiceDetail.cs" />
+    <Compile Include="DAC\GVArGuiCmInvoiceLine.cs" />
+    <Compile Include="DAC\GVArGuiInvoice.cs" />
+    <Compile Include="DAC\GVArGuiInvoiceDetail.cs" />
+    <Compile Include="DAC\GVArGuiInvoiceLine.cs" />
+    <Compile Include="DAC\GVArGuiZeroDoc.cs" />
+    <Compile Include="DAC\GVArGuiZeroDocLine.cs" />
+    <Compile Include="DAC\GVGuiBook.cs" />
+    <Compile Include="DAC\GVGuiBook_GVPeriod.cs" />
+    <Compile Include="DAC\GVGuiNumber.cs" />
+    <Compile Include="DAC\GVGuiNumberDetail.cs" />
+    <Compile Include="DAC\GVGuiType.cs" />
+    <Compile Include="DAC\GVGuiWord.cs" />
+    <Compile Include="DAC\GVLookupCodeType.cs" />
+    <Compile Include="DAC\GVLookupCodeValue.cs" />
+    <Compile Include="DAC\GVOrderTypeMapping.cs" />
+    <Compile Include="DAC\GVPeriod.cs" />
+    <Compile Include="DAC\GVRegistration.cs" />
+    <Compile Include="DAC\GVRegistrationBranch.cs" />
+    <Compile Include="DAC\GVSetup.cs" />
+    <Compile Include="DAC\GVTax.cs" />
+    <Compile Include="DAC\GVTaxMapping.cs" />
+    <Compile Include="DAC\GVTaxRev.cs" />
+    <Compile Include="Descriptor\Attribute.cs" />
+    <Compile Include="GVApCmInvoiceEntry.cs" />
+    <Compile Include="GVApCmInvoiceInq.cs" />
+    <Compile Include="GVApInvoiceEntry.cs" />
+    <Compile Include="GVAPInvoiceInq.cs" />
+    <Compile Include="GVApInvoiceMaint.cs" />
+    <Compile Include="GVArGuiCmInvoiceInq.cs" />
+    <Compile Include="GVArGuiCmInvoiceMaint.cs" />
+    <Compile Include="GVArGuiZeroDocEntry.cs" />
+    <Compile Include="GVArGuiZeroDocInq.cs" />
+    <Compile Include="GVArInvoiceEntry.cs" />
+    <Compile Include="GVArInvoiceInq.cs" />
+    <Compile Include="GVBaseGraph.cs" />
+    <Compile Include="GVBaseViewGraph.cs" />
+    <Compile Include="GVGuiBookMaint.cs" />
+    <Compile Include="GVGuiNumberMaint.cs" />
+    <Compile Include="GVGuiTypeMaint.cs" />
+    <Compile Include="GVGuiWordMaint.cs" />
+    <Compile Include="GVGuiZeroDocDataFileReport.cs" />
+    <Compile Include="GVLookupCodeMaint.cs" />
+    <Compile Include="GVMediaDeclaration.cs" />
+    <Compile Include="GVOrderTypeMappingMaint.cs" />
+    <Compile Include="GVPeriodMaint.cs" />
+    <Compile Include="GVRegistrationMaint.cs" />
+    <Compile Include="GVSetupMaint.cs" />
+    <Compile Include="GVTaxMappingMaint.cs" />
+    <Compile Include="GVTaxSetting.cs" />
+    <Compile Include="DAC\GVApArGuiTaxFreeSales.cs" />
+    <Compile Include="DAC\APARGui401DataV.cs" />
+    <Compile Include="GVApArTaxFreeSalesEntry.cs" />
+    <Compile Include="DAC\GVMediaDeclarationTemp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RC\Util\HyperLinkUtil.cs" />
+    <Compile Include="RC\Util\RCEleTxtFileUtil.cs" />
+    <Compile Include="Util\GVList.cs" />
+    <Compile Include="Util\GuiAttribute.cs" />
+    <Compile Include="Util\GVGuiBookUtil.cs" />
+    <Compile Include="Util\GVLookUpCodeUtil.cs" />
+    <Compile Include="Util\QREncrypter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CustomFields.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

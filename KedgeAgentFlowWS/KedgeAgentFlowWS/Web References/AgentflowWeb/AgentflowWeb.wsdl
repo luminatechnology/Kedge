@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_xsd_anyType">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:anyType[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_xsd_string">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:string[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getTaskOfMemberRequest">
+    <wsdl:part name="memID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addErrLogRequest">
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="notifyTaskResponse" />
+  <wsdl:message name="getMemberResponse">
+    <wsdl:part name="getMemberReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="getTaskOfMemberStrResponse">
+    <wsdl:part name="getTaskOfMemberStrReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="createProcessResponse">
+    <wsdl:part name="createProcessReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getProcessListRequest" />
+  <wsdl:message name="deleteGlobalsResponse">
+    <wsdl:part name="deleteGlobalsReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="clearCacheResponse" />
+  <wsdl:message name="getSubTaskListRequest">
+    <wsdl:part name="parentID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteGlobalsRequest">
+    <wsdl:part name="rootTaskID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createProcessRequest">
+    <wsdl:part name="memID" type="xsd:string" />
+    <wsdl:part name="proID" type="xsd:string" />
+    <wsdl:part name="args" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="getAllMemberResponse">
+    <wsdl:part name="getAllMemberReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="suspendWebServiceTaskRequest">
+    <wsdl:part name="taskID" type="xsd:string" />
+    <wsdl:part name="args" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="changePasswordRequest1">
+    <wsdl:part name="login" type="xsd:string" />
+    <wsdl:part name="oldPass" type="xsd:string" />
+    <wsdl:part name="newPass" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllMemberStrRequest" />
+  <wsdl:message name="logoutRequest">
+    <wsdl:part name="user" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addWarningLogResponse" />
+  <wsdl:message name="getServerTimeResponse">
+    <wsdl:part name="getServerTimeReturn" type="xsd:long" />
+  </wsdl:message>
+  <wsdl:message name="setGlobalsResponse" />
+  <wsdl:message name="getTaskInfoResponse">
+    <wsdl:part name="getTaskInfoReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+    <wsdl:part name="loginReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="chkDiskIsConnectedResponse">
+    <wsdl:part name="chkDiskIsConnectedReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="completeWebServiceTaskResponse">
+    <wsdl:part name="completeWebServiceTaskReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="changePasswordRequest">
+    <wsdl:part name="login" type="xsd:string" />
+    <wsdl:part name="pass" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createChangeManagementProcessResponse">
+    <wsdl:part name="createChangeManagementProcessReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createContractProcessRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addWarningLogRequest">
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addErrLogResponse" />
+  <wsdl:message name="getMemberRequest">
+    <wsdl:part name="memid" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getCompanyRequest" />
+  <wsdl:message name="forceReassignTaskResponse">
+    <wsdl:part name="forceReassignTaskReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setGlobalsRequest">
+    <wsdl:part name="rootTaskID" type="xsd:string" />
+    <wsdl:part name="args" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="SQLloadValueResponse">
+    <wsdl:part name="SQLloadValueReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="createContractProcessResponse">
+    <wsdl:part name="createContractProcessReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getRootTaskOfJoinMemberRequest">
+    <wsdl:part name="mID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getServerTimeRequest" />
+  <wsdl:message name="addInfoLogRequest">
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="pickQueueTaskResponse" />
+  <wsdl:message name="addInfoLogResponse" />
+  <wsdl:message name="getCompanyResponse">
+    <wsdl:part name="getCompanyReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="suspendWebServiceTaskResponse">
+    <wsdl:part name="suspendWebServiceTaskReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="chkDiskIsConnectedRequest">
+    <wsdl:part name="path" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="SecurityURLEncodeRequest">
+    <wsdl:part name="url" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="forceReassignTaskRequest">
+    <wsdl:part name="p_TaskID" type="xsd:string" />
+    <wsdl:part name="p_MemID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getPASEProcessOfMemberResponse">
+    <wsdl:part name="getPASEProcessOfMemberReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="getTaskOfRootTaskResponse">
+    <wsdl:part name="getTaskOfRootTaskReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="completeWebServiceTaskRequest">
+    <wsdl:part name="taskID" type="xsd:string" />
+    <wsdl:part name="args" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="bypassTaskRequest">
+    <wsdl:part name="taskid" type="xsd:string" />
+    <wsdl:part name="astid" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="resetDeputyAndDeputyStateRequest">
+    <wsdl:part name="myMemid" type="xsd:string" />
+    <wsdl:part name="deputyMemid" type="xsd:string" />
+    <wsdl:part name="deputyState" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="changePasswordResponse">
+    <wsdl:part name="changePasswordReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SQLloadValueRequest">
+    <wsdl:part name="sql" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cancelROProcessRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addExeLogRequest">
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="helloResponse">
+    <wsdl:part name="helloReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getTaskOfMemberStrRequest">
+    <wsdl:part name="memID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getTaskOfRootTaskRequest">
+    <wsdl:part name="rootID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="resetDeputyAndDeputyStateResponse">
+    <wsdl:part name="resetDeputyAndDeputyStateReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="bypassTaskResponse">
+    <wsdl:part name="bypassTaskReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="changePassword2Request">
+    <wsdl:part name="login" type="xsd:string" />
+    <wsdl:part name="oldPass" type="xsd:string" />
+    <wsdl:part name="newPass" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getGlobalsResponse">
+    <wsdl:part name="getGlobalsReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="createProcessCustomResponse">
+    <wsdl:part name="createProcessCustomReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="changePasswordResponse1">
+    <wsdl:part name="changePasswordReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="createPOProcessRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="changePassword2Response">
+    <wsdl:part name="changePassword2Return" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getRootTaskOfJoinMemberResponse">
+    <wsdl:part name="getRootTaskOfJoinMemberReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="getTaskFormDataResponse">
+    <wsdl:part name="getTaskFormDataReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="resetMemberDelegationResponse">
+    <wsdl:part name="resetMemberDelegationReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getAllMemberStrResponse">
+    <wsdl:part name="getAllMemberStrReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="getApprovalHistoryRootTaskOfJoinMemberRequest">
+    <wsdl:part name="mbrID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addDebugLogResponse" />
+  <wsdl:message name="getAllMemberRequest" />
+  <wsdl:message name="SecurityURLEncodeResponse">
+    <wsdl:part name="SecurityURLEncodeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="logoutResponse" />
+  <wsdl:message name="clearCacheRequest" />
+  <wsdl:message name="getProcessListResponse">
+    <wsdl:part name="getProcessListReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="notifyTaskRequest">
+    <wsdl:part name="tskID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createROProcessResponse">
+    <wsdl:part name="createROProcessReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="loginRequest">
+    <wsdl:part name="user" type="xsd:string" />
+    <wsdl:part name="pass" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addDebugLogRequest">
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getGlobalsRequest">
+    <wsdl:part name="rootTaskID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getApprovalHistoryRootTaskOfJoinMemberResponse">
+    <wsdl:part name="getApprovalHistoryRootTaskOfJoinMemberReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="helloRequest" />
+  <wsdl:message name="createChangeManagementProcessRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getPASEProcessOfMemberRequest">
+    <wsdl:part name="memid" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cancelROProcessResponse">
+    <wsdl:part name="cancelROProcessReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createROProcessRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createProcessCustomRequest">
+    <wsdl:part name="ProID" type="xsd:string" />
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getSubTaskListResponse">
+    <wsdl:part name="getSubTaskListReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="getTaskInfoRequest">
+    <wsdl:part name="tskID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getTaskFormDataRequest">
+    <wsdl:part name="tskID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addExeLogResponse" />
+  <wsdl:message name="createPOProcessResponse">
+    <wsdl:part name="createPOProcessReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getTaskOfMemberResponse">
+    <wsdl:part name="getTaskOfMemberReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="pickQueueTaskRequest">
+    <wsdl:part name="taskID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="resetMemberDelegationRequest">
+    <wsdl:part name="memid" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="AgentflowWeb">
+    <wsdl:operation name="clearCache">
+      <wsdl:input name="clearCacheRequest" message="impl:clearCacheRequest" />
+      <wsdl:output name="clearCacheResponse" message="impl:clearCacheResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="login" parameterOrder="user pass">
+      <wsdl:input name="loginRequest" message="impl:loginRequest" />
+      <wsdl:output name="loginResponse" message="impl:loginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SQLloadValue" parameterOrder="sql">
+      <wsdl:input name="SQLloadValueRequest" message="impl:SQLloadValueRequest" />
+      <wsdl:output name="SQLloadValueResponse" message="impl:SQLloadValueResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPASEProcessOfMember" parameterOrder="memid">
+      <wsdl:input name="getPASEProcessOfMemberRequest" message="impl:getPASEProcessOfMemberRequest" />
+      <wsdl:output name="getPASEProcessOfMemberResponse" message="impl:getPASEProcessOfMemberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createProcess" parameterOrder="memID proID args">
+      <wsdl:input name="createProcessRequest" message="impl:createProcessRequest" />
+      <wsdl:output name="createProcessResponse" message="impl:createProcessResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addInfoLog" parameterOrder="msg">
+      <wsdl:input name="addInfoLogRequest" message="impl:addInfoLogRequest" />
+      <wsdl:output name="addInfoLogResponse" message="impl:addInfoLogResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getSubTaskList" parameterOrder="parentID">
+      <wsdl:input name="getSubTaskListRequest" message="impl:getSubTaskListRequest" />
+      <wsdl:output name="getSubTaskListResponse" message="impl:getSubTaskListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addErrLog" parameterOrder="msg">
+      <wsdl:input name="addErrLogRequest" message="impl:addErrLogRequest" />
+      <wsdl:output name="addErrLogResponse" message="impl:addErrLogResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setGlobals" parameterOrder="rootTaskID args">
+      <wsdl:input name="setGlobalsRequest" message="impl:setGlobalsRequest" />
+      <wsdl:output name="setGlobalsResponse" message="impl:setGlobalsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getServerTime">
+      <wsdl:input name="getServerTimeRequest" message="impl:getServerTimeRequest" />
+      <wsdl:output name="getServerTimeResponse" message="impl:getServerTimeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="logout" parameterOrder="user">
+      <wsdl:input name="logoutRequest" message="impl:logoutRequest" />
+      <wsdl:output name="logoutResponse" message="impl:logoutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changePassword" parameterOrder="login pass">
+      <wsdl:input name="changePasswordRequest" message="impl:changePasswordRequest" />
+      <wsdl:output name="changePasswordResponse" message="impl:changePasswordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changePassword" parameterOrder="login oldPass newPass">
+      <wsdl:input name="changePasswordRequest1" message="impl:changePasswordRequest1" />
+      <wsdl:output name="changePasswordResponse1" message="impl:changePasswordResponse1" />
+    </wsdl:operation>
+    <wsdl:operation name="pickQueueTask" parameterOrder="taskID">
+      <wsdl:input name="pickQueueTaskRequest" message="impl:pickQueueTaskRequest" />
+      <wsdl:output name="pickQueueTaskResponse" message="impl:pickQueueTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="bypassTask" parameterOrder="taskid astid">
+      <wsdl:input name="bypassTaskRequest" message="impl:bypassTaskRequest" />
+      <wsdl:output name="bypassTaskResponse" message="impl:bypassTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="forceReassignTask" parameterOrder="p_TaskID p_MemID">
+      <wsdl:input name="forceReassignTaskRequest" message="impl:forceReassignTaskRequest" />
+      <wsdl:output name="forceReassignTaskResponse" message="impl:forceReassignTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="notifyTask" parameterOrder="tskID">
+      <wsdl:input name="notifyTaskRequest" message="impl:notifyTaskRequest" />
+      <wsdl:output name="notifyTaskResponse" message="impl:notifyTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCompany">
+      <wsdl:input name="getCompanyRequest" message="impl:getCompanyRequest" />
+      <wsdl:output name="getCompanyResponse" message="impl:getCompanyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllMember">
+      <wsdl:input name="getAllMemberRequest" message="impl:getAllMemberRequest" />
+      <wsdl:output name="getAllMemberResponse" message="impl:getAllMemberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMember" parameterOrder="memid">
+      <wsdl:input name="getMemberRequest" message="impl:getMemberRequest" />
+      <wsdl:output name="getMemberResponse" message="impl:getMemberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRootTaskOfJoinMember" parameterOrder="mID">
+      <wsdl:input name="getRootTaskOfJoinMemberRequest" message="impl:getRootTaskOfJoinMemberRequest" />
+      <wsdl:output name="getRootTaskOfJoinMemberResponse" message="impl:getRootTaskOfJoinMemberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTaskOfMember" parameterOrder="memID">
+      <wsdl:input name="getTaskOfMemberRequest" message="impl:getTaskOfMemberRequest" />
+      <wsdl:output name="getTaskOfMemberResponse" message="impl:getTaskOfMemberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTaskOfRootTask" parameterOrder="rootID">
+      <wsdl:input name="getTaskOfRootTaskRequest" message="impl:getTaskOfRootTaskRequest" />
+      <wsdl:output name="getTaskOfRootTaskResponse" message="impl:getTaskOfRootTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="resetDeputyAndDeputyState" parameterOrder="myMemid deputyMemid deputyState">
+      <wsdl:input name="resetDeputyAndDeputyStateRequest" message="impl:resetDeputyAndDeputyStateRequest" />
+      <wsdl:output name="resetDeputyAndDeputyStateResponse" message="impl:resetDeputyAndDeputyStateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="resetMemberDelegation" parameterOrder="memid">
+      <wsdl:input name="resetMemberDelegationRequest" message="impl:resetMemberDelegationRequest" />
+      <wsdl:output name="resetMemberDelegationResponse" message="impl:resetMemberDelegationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getGlobals" parameterOrder="rootTaskID">
+      <wsdl:input name="getGlobalsRequest" message="impl:getGlobalsRequest" />
+      <wsdl:output name="getGlobalsResponse" message="impl:getGlobalsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteGlobals" parameterOrder="rootTaskID">
+      <wsdl:input name="deleteGlobalsRequest" message="impl:deleteGlobalsRequest" />
+      <wsdl:output name="deleteGlobalsResponse" message="impl:deleteGlobalsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getApprovalHistoryRootTaskOfJoinMember" parameterOrder="mbrID">
+      <wsdl:input name="getApprovalHistoryRootTaskOfJoinMemberRequest" message="impl:getApprovalHistoryRootTaskOfJoinMemberRequest" />
+      <wsdl:output name="getApprovalHistoryRootTaskOfJoinMemberResponse" message="impl:getApprovalHistoryRootTaskOfJoinMemberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addDebugLog" parameterOrder="msg">
+      <wsdl:input name="addDebugLogRequest" message="impl:addDebugLogRequest" />
+      <wsdl:output name="addDebugLogResponse" message="impl:addDebugLogResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addExeLog" parameterOrder="msg">
+      <wsdl:input name="addExeLogRequest" message="impl:addExeLogRequest" />
+      <wsdl:output name="addExeLogResponse" message="impl:addExeLogResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addWarningLog" parameterOrder="msg">
+      <wsdl:input name="addWarningLogRequest" message="impl:addWarningLogRequest" />
+      <wsdl:output name="addWarningLogResponse" message="impl:addWarningLogResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcessList">
+      <wsdl:input name="getProcessListRequest" message="impl:getProcessListRequest" />
+      <wsdl:output name="getProcessListResponse" message="impl:getProcessListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="chkDiskIsConnected" parameterOrder="path">
+      <wsdl:input name="chkDiskIsConnectedRequest" message="impl:chkDiskIsConnectedRequest" />
+      <wsdl:output name="chkDiskIsConnectedResponse" message="impl:chkDiskIsConnectedResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changePassword2" parameterOrder="login oldPass newPass">
+      <wsdl:input name="changePassword2Request" message="impl:changePassword2Request" />
+      <wsdl:output name="changePassword2Response" message="impl:changePassword2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="createROProcess" parameterOrder="loginID caseNO">
+      <wsdl:input name="createROProcessRequest" message="impl:createROProcessRequest" />
+      <wsdl:output name="createROProcessResponse" message="impl:createROProcessResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelROProcess" parameterOrder="loginID caseNO msg">
+      <wsdl:input name="cancelROProcessRequest" message="impl:cancelROProcessRequest" />
+      <wsdl:output name="cancelROProcessResponse" message="impl:cancelROProcessResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createPOProcess" parameterOrder="loginID caseNO">
+      <wsdl:input name="createPOProcessRequest" message="impl:createPOProcessRequest" />
+      <wsdl:output name="createPOProcessResponse" message="impl:createPOProcessResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createContractProcess" parameterOrder="loginID caseNO">
+      <wsdl:input name="createContractProcessRequest" message="impl:createContractProcessRequest" />
+      <wsdl:output name="createContractProcessResponse" message="impl:createContractProcessResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createChangeManagementProcess" parameterOrder="loginID caseNO">
+      <wsdl:input name="createChangeManagementProcessRequest" message="impl:createChangeManagementProcessRequest" />
+      <wsdl:output name="createChangeManagementProcessResponse" message="impl:createChangeManagementProcessResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createProcessCustom" parameterOrder="ProID loginID caseNO">
+      <wsdl:input name="createProcessCustomRequest" message="impl:createProcessCustomRequest" />
+      <wsdl:output name="createProcessCustomResponse" message="impl:createProcessCustomResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTaskInfo" parameterOrder="tskID">
+      <wsdl:input name="getTaskInfoRequest" message="impl:getTaskInfoRequest" />
+      <wsdl:output name="getTaskInfoResponse" message="impl:getTaskInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTaskFormData" parameterOrder="tskID">
+      <wsdl:input name="getTaskFormDataRequest" message="impl:getTaskFormDataRequest" />
+      <wsdl:output name="getTaskFormDataResponse" message="impl:getTaskFormDataResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="completeWebServiceTask" parameterOrder="taskID args">
+      <wsdl:input name="completeWebServiceTaskRequest" message="impl:completeWebServiceTaskRequest" />
+      <wsdl:output name="completeWebServiceTaskResponse" message="impl:completeWebServiceTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="suspendWebServiceTask" parameterOrder="taskID args">
+      <wsdl:input name="suspendWebServiceTaskRequest" message="impl:suspendWebServiceTaskRequest" />
+      <wsdl:output name="suspendWebServiceTaskResponse" message="impl:suspendWebServiceTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllMemberStr">
+      <wsdl:input name="getAllMemberStrRequest" message="impl:getAllMemberStrRequest" />
+      <wsdl:output name="getAllMemberStrResponse" message="impl:getAllMemberStrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTaskOfMemberStr" parameterOrder="memID">
+      <wsdl:input name="getTaskOfMemberStrRequest" message="impl:getTaskOfMemberStrRequest" />
+      <wsdl:output name="getTaskOfMemberStrResponse" message="impl:getTaskOfMemberStrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SecurityURLEncode" parameterOrder="url">
+      <wsdl:input name="SecurityURLEncodeRequest" message="impl:SecurityURLEncodeRequest" />
+      <wsdl:output name="SecurityURLEncodeResponse" message="impl:SecurityURLEncodeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="hello">
+      <wsdl:input name="helloRequest" message="impl:helloRequest" />
+      <wsdl:output name="helloResponse" message="impl:helloResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AgentflowWebSoapBinding" type="impl:AgentflowWeb">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="clearCache">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="clearCacheRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="clearCacheResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="loginRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="loginResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SQLloadValue">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="SQLloadValueRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="SQLloadValueResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPASEProcessOfMember">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getPASEProcessOfMemberRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getPASEProcessOfMemberResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProcess">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createProcessRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createProcessResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addInfoLog">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addInfoLogRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addInfoLogResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSubTaskList">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getSubTaskListRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getSubTaskListResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addErrLog">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addErrLogRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addErrLogResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setGlobals">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="setGlobalsRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="setGlobalsResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServerTime">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getServerTimeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getServerTimeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logout">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="logoutRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="logoutResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePassword">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="changePasswordRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="changePasswordResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePassword">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="changePasswordRequest1">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="changePasswordResponse1">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pickQueueTask">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="pickQueueTaskRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="pickQueueTaskResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bypassTask">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="bypassTaskRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="bypassTaskResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="forceReassignTask">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="forceReassignTaskRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="forceReassignTaskResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="notifyTask">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="notifyTaskRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="notifyTaskResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompany">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getCompanyRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getCompanyResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMember">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllMemberRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getAllMemberResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMember">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getMemberRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getMemberResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRootTaskOfJoinMember">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getRootTaskOfJoinMemberRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getRootTaskOfJoinMemberResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTaskOfMember">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getTaskOfMemberRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getTaskOfMemberResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTaskOfRootTask">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getTaskOfRootTaskRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getTaskOfRootTaskResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetDeputyAndDeputyState">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="resetDeputyAndDeputyStateRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="resetDeputyAndDeputyStateResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetMemberDelegation">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="resetMemberDelegationRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="resetMemberDelegationResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGlobals">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getGlobalsRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getGlobalsResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGlobals">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="deleteGlobalsRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="deleteGlobalsResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApprovalHistoryRootTaskOfJoinMember">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getApprovalHistoryRootTaskOfJoinMemberRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getApprovalHistoryRootTaskOfJoinMemberResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addDebugLog">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addDebugLogRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addDebugLogResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addExeLog">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addExeLogRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addExeLogResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addWarningLog">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addWarningLogRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addWarningLogResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcessList">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getProcessListRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getProcessListResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chkDiskIsConnected">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="chkDiskIsConnectedRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="chkDiskIsConnectedResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePassword2">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="changePassword2Request">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="changePassword2Response">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createROProcess">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createROProcessRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createROProcessResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelROProcess">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="cancelROProcessRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="cancelROProcessResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPOProcess">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createPOProcessRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createPOProcessResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createContractProcess">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createContractProcessRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createContractProcessResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createChangeManagementProcess">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createChangeManagementProcessRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createChangeManagementProcessResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProcessCustom">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createProcessCustomRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createProcessCustomResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTaskInfo">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getTaskInfoRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getTaskInfoResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTaskFormData">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getTaskFormDataRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getTaskFormDataResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="completeWebServiceTask">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="completeWebServiceTaskRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="completeWebServiceTaskResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suspendWebServiceTask">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="suspendWebServiceTaskRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="suspendWebServiceTaskResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMemberStr">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllMemberStrRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getAllMemberStrResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTaskOfMemberStr">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getTaskOfMemberStrRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getTaskOfMemberStrResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SecurityURLEncode">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="SecurityURLEncodeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="SecurityURLEncodeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hello">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="helloRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="helloResponse">
+        <wsdlsoap:body use="encoded" namespace="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgentflowWebService">
+    <wsdl:port name="AgentflowWeb" binding="impl:AgentflowWebSoapBinding">
+      <wsdlsoap:address location="http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

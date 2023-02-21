@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types />
+  <wsdl:message name="createPOProcessKedgeURLRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createROProcessKedgeURLRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createChangeManagementProcessKedgeRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createProcessCustomKedgeResponse">
+    <wsdl:part name="createProcessCustomKedgeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createPOProcessKedgeRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getTaskOfRootTaskRequest">
+    <wsdl:part name="rootID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createROProcessKedgeResponse">
+    <wsdl:part name="createROProcessKedgeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getTaskOfRootTaskResponse">
+    <wsdl:part name="getTaskOfRootTaskReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="chkDiskIsConnectedResponse">
+    <wsdl:part name="chkDiskIsConnectedReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="createChangeManagementProcessKedgeURLRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createPOProcessKedgeResponse">
+    <wsdl:part name="createPOProcessKedgeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createChangeManagementProcessKedgeURLResponse">
+    <wsdl:part name="createChangeManagementProcessKedgeURLReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createROProcessKedgeRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createROProcessKedgeURLResponse">
+    <wsdl:part name="createROProcessKedgeURLReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createContractProcessKedgeResponse">
+    <wsdl:part name="createContractProcessKedgeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createContractProcessKedgeURLResponse">
+    <wsdl:part name="createContractProcessKedgeURLReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cancelROProcessKedgeRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createProcessCustomKedgeURLResponse">
+    <wsdl:part name="createProcessCustomKedgeURLReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cancelROProcessKedgeResponse">
+    <wsdl:part name="cancelROProcessKedgeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createContractProcessKedgeURLRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createChangeManagementProcessKedgeResponse">
+    <wsdl:part name="createChangeManagementProcessKedgeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createProcessCustomKedgeRequest">
+    <wsdl:part name="ProID" type="xsd:string" />
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createContractProcessKedgeRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createPOProcessKedgeURLResponse">
+    <wsdl:part name="createPOProcessKedgeURLReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="chkDiskIsConnectedRequest">
+    <wsdl:part name="path" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createProcessCustomKedgeURLRequest">
+    <wsdl:part name="ProID" type="xsd:string" />
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="caseNO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="EngineerPR">
+    <wsdl:operation name="getTaskOfRootTask" parameterOrder="rootID">
+      <wsdl:input name="getTaskOfRootTaskRequest" message="impl:getTaskOfRootTaskRequest" />
+      <wsdl:output name="getTaskOfRootTaskResponse" message="impl:getTaskOfRootTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createROProcessKedge" parameterOrder="loginID caseNO">
+      <wsdl:input name="createROProcessKedgeRequest" message="impl:createROProcessKedgeRequest" />
+      <wsdl:output name="createROProcessKedgeResponse" message="impl:createROProcessKedgeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createROProcessKedgeURL" parameterOrder="loginID caseNO">
+      <wsdl:input name="createROProcessKedgeURLRequest" message="impl:createROProcessKedgeURLRequest" />
+      <wsdl:output name="createROProcessKedgeURLResponse" message="impl:createROProcessKedgeURLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelROProcessKedge" parameterOrder="loginID caseNO msg">
+      <wsdl:input name="cancelROProcessKedgeRequest" message="impl:cancelROProcessKedgeRequest" />
+      <wsdl:output name="cancelROProcessKedgeResponse" message="impl:cancelROProcessKedgeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createPOProcessKedge" parameterOrder="loginID caseNO">
+      <wsdl:input name="createPOProcessKedgeRequest" message="impl:createPOProcessKedgeRequest" />
+      <wsdl:output name="createPOProcessKedgeResponse" message="impl:createPOProcessKedgeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createPOProcessKedgeURL" parameterOrder="loginID caseNO">
+      <wsdl:input name="createPOProcessKedgeURLRequest" message="impl:createPOProcessKedgeURLRequest" />
+      <wsdl:output name="createPOProcessKedgeURLResponse" message="impl:createPOProcessKedgeURLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createContractProcessKedge" parameterOrder="loginID caseNO">
+      <wsdl:input name="createContractProcessKedgeRequest" message="impl:createContractProcessKedgeRequest" />
+      <wsdl:output name="createContractProcessKedgeResponse" message="impl:createContractProcessKedgeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createContractProcessKedgeURL" parameterOrder="loginID caseNO">
+      <wsdl:input name="createContractProcessKedgeURLRequest" message="impl:createContractProcessKedgeURLRequest" />
+      <wsdl:output name="createContractProcessKedgeURLResponse" message="impl:createContractProcessKedgeURLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createChangeManagementProcessKedge" parameterOrder="loginID caseNO">
+      <wsdl:input name="createChangeManagementProcessKedgeRequest" message="impl:createChangeManagementProcessKedgeRequest" />
+      <wsdl:output name="createChangeManagementProcessKedgeResponse" message="impl:createChangeManagementProcessKedgeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createChangeManagementProcessKedgeURL" parameterOrder="loginID caseNO">
+      <wsdl:input name="createChangeManagementProcessKedgeURLRequest" message="impl:createChangeManagementProcessKedgeURLRequest" />
+      <wsdl:output name="createChangeManagementProcessKedgeURLResponse" message="impl:createChangeManagementProcessKedgeURLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="chkDiskIsConnected" parameterOrder="path">
+      <wsdl:input name="chkDiskIsConnectedRequest" message="impl:chkDiskIsConnectedRequest" />
+      <wsdl:output name="chkDiskIsConnectedResponse" message="impl:chkDiskIsConnectedResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createProcessCustomKedge" parameterOrder="ProID loginID caseNO">
+      <wsdl:input name="createProcessCustomKedgeRequest" message="impl:createProcessCustomKedgeRequest" />
+      <wsdl:output name="createProcessCustomKedgeResponse" message="impl:createProcessCustomKedgeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createProcessCustomKedgeURL" parameterOrder="ProID loginID caseNO">
+      <wsdl:input name="createProcessCustomKedgeURLRequest" message="impl:createProcessCustomKedgeURLRequest" />
+      <wsdl:output name="createProcessCustomKedgeURLResponse" message="impl:createProcessCustomKedgeURLResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EngineerPRSoapBinding" type="impl:EngineerPR">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="getTaskOfRootTask">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getTaskOfRootTaskRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getTaskOfRootTaskResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createROProcessKedge">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createROProcessKedgeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createROProcessKedgeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createROProcessKedgeURL">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createROProcessKedgeURLRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createROProcessKedgeURLResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelROProcessKedge">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="cancelROProcessKedgeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="cancelROProcessKedgeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPOProcessKedge">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createPOProcessKedgeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createPOProcessKedgeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPOProcessKedgeURL">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createPOProcessKedgeURLRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createPOProcessKedgeURLResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createContractProcessKedge">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createContractProcessKedgeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createContractProcessKedgeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createContractProcessKedgeURL">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createContractProcessKedgeURLRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createContractProcessKedgeURLResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createChangeManagementProcessKedge">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createChangeManagementProcessKedgeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createChangeManagementProcessKedgeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createChangeManagementProcessKedgeURL">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createChangeManagementProcessKedgeURLRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createChangeManagementProcessKedgeURLResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chkDiskIsConnected">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="chkDiskIsConnectedRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="chkDiskIsConnectedResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProcessCustomKedge">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createProcessCustomKedgeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createProcessCustomKedgeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProcessCustomKedgeURL">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createProcessCustomKedgeURLRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createProcessCustomKedgeURLResponse">
+        <wsdlsoap:body use="encoded" namespace="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EngineerPRService">
+    <wsdl:port name="EngineerPR" binding="impl:EngineerPRSoapBinding">
+      <wsdlsoap:address location="http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

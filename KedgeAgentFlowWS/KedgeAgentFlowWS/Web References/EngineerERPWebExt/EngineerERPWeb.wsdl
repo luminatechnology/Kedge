@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://172.16.1.34:8080/WebAgenda/webservice/EngineerERPWeb.jws" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://172.16.1.34:8080/WebAgenda/webservice/EngineerERPWeb.jws" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://172.16.1.34:8080/WebAgenda/webservice/EngineerERPWeb.jws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types />
+  <wsdl:message name="doStartResponse">
+    <wsdl:part name="doStartReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="doStopRequest">
+    <wsdl:part name="empID" type="xsd:string" />
+    <wsdl:part name="AFM_NO" type="xsd:string" />
+    <wsdl:part name="CompanyID" type="xsd:string" />
+    <wsdl:part name="CancelMsg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getTravleAmountRequest">
+    <wsdl:part name="empID" type="xsd:string" />
+    <wsdl:part name="AFM_NO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getEngTravleAmountRequest">
+    <wsdl:part name="AFM_NO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getEngTravleAmountResponse">
+    <wsdl:part name="getEngTravleAmountReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="doStopResponse">
+    <wsdl:part name="doStopReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="doCancelResponse">
+    <wsdl:part name="doCancelReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="openAPEFormResponse">
+    <wsdl:part name="openAPEFormReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="openEngTravleAPEFormResponse">
+    <wsdl:part name="openEngTravleAPEFormReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getTravleAmountResponse">
+    <wsdl:part name="getTravleAmountReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="openEngTravleAPEFormRequest">
+    <wsdl:part name="loginID" type="xsd:string" />
+    <wsdl:part name="AFM_NO" type="xsd:string" />
+    <wsdl:part name="comsStatus" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="doStartRequest">
+    <wsdl:part name="empID" type="xsd:string" />
+    <wsdl:part name="AFM_NO" type="xsd:string" />
+    <wsdl:part name="CompanyID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="doCancelRequest">
+    <wsdl:part name="empID" type="xsd:string" />
+    <wsdl:part name="AFM_NO" type="xsd:string" />
+    <wsdl:part name="CompanyID" type="xsd:string" />
+    <wsdl:part name="CancelMsg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="openAPEFormRequest">
+    <wsdl:part name="empID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createTravleFormResponse">
+    <wsdl:part name="createTravleFormReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createTravleFormRequest">
+    <wsdl:part name="empID" type="xsd:string" />
+    <wsdl:part name="AFM_NO" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="EngineerERPWeb">
+    <wsdl:operation name="doStart" parameterOrder="empID AFM_NO CompanyID">
+      <wsdl:input name="doStartRequest" message="impl:doStartRequest" />
+      <wsdl:output name="doStartResponse" message="impl:doStartResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="doStop" parameterOrder="empID AFM_NO CompanyID CancelMsg">
+      <wsdl:input name="doStopRequest" message="impl:doStopRequest" />
+      <wsdl:output name="doStopResponse" message="impl:doStopResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="doCancel" parameterOrder="empID AFM_NO CompanyID CancelMsg">
+      <wsdl:input name="doCancelRequest" message="impl:doCancelRequest" />
+      <wsdl:output name="doCancelResponse" message="impl:doCancelResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createTravleForm" parameterOrder="empID AFM_NO">
+      <wsdl:input name="createTravleFormRequest" message="impl:createTravleFormRequest" />
+      <wsdl:output name="createTravleFormResponse" message="impl:createTravleFormResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTravleAmount" parameterOrder="empID AFM_NO">
+      <wsdl:input name="getTravleAmountRequest" message="impl:getTravleAmountRequest" />
+      <wsdl:output name="getTravleAmountResponse" message="impl:getTravleAmountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getEngTravleAmount" parameterOrder="AFM_NO">
+      <wsdl:input name="getEngTravleAmountRequest" message="impl:getEngTravleAmountRequest" />
+      <wsdl:output name="getEngTravleAmountResponse" message="impl:getEngTravleAmountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="openEngTravleAPEForm" parameterOrder="loginID AFM_NO comsStatus">
+      <wsdl:input name="openEngTravleAPEFormRequest" message="impl:openEngTravleAPEFormRequest" />
+      <wsdl:output name="openEngTravleAPEFormResponse" message="impl:openEngTravleAPEFormResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="openAPEForm" parameterOrder="empID">
+      <wsdl:input name="openAPEFormRequest" message="impl:openAPEFormRequest" />
+      <wsdl:output name="openAPEFormResponse" message="impl:openAPEFormResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EngineerERPWebSoapBinding" type="impl:EngineerERPWeb">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="doStart">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="doStartRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="doStartResponse">
+        <wsdlsoap:body use="encoded" namespace="http://172.16.1.34:8080/WebAgenda/webservice/EngineerERPWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doStop">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="doStopRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="doStopResponse">
+        <wsdlsoap:body use="encoded" namespace="http://172.16.1.34:8080/WebAgenda/webservice/EngineerERPWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doCancel">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="doCancelRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="doCancelResponse">
+        <wsdlsoap:body use="encoded" namespace="http://172.16.1.34:8080/WebAgenda/webservice/EngineerERPWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createTravleForm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createTravleFormRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createTravleFormResponse">
+        <wsdlsoap:body use="encoded" namespace="http://172.16.1.34:8080/WebAgenda/webservice/EngineerERPWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTravleAmount">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getTravleAmountRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getTravleAmountResponse">
+        <wsdlsoap:body use="encoded" namespace="http://172.16.1.34:8080/WebAgenda/webservice/EngineerERPWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEngTravleAmount">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getEngTravleAmountRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getEngTravleAmountResponse">
+        <wsdlsoap:body use="encoded" namespace="http://172.16.1.34:8080/WebAgenda/webservice/EngineerERPWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="openEngTravleAPEForm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="openEngTravleAPEFormRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="openEngTravleAPEFormResponse">
+        <wsdlsoap:body use="encoded" namespace="http://172.16.1.34:8080/WebAgenda/webservice/EngineerERPWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="openAPEForm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="openAPEFormRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="openAPEFormResponse">
+        <wsdlsoap:body use="encoded" namespace="http://172.16.1.34:8080/WebAgenda/webservice/EngineerERPWeb.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EngineerERPWebService">
+    <wsdl:port name="EngineerERPWeb" binding="impl:EngineerERPWebSoapBinding">
+      <wsdlsoap:address location="http://220.130.9.24:8080/WebAgenda/webservice/EngineerERPWeb.jws" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

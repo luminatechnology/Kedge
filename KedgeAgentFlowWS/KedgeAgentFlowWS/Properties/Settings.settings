@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Kedge.ws.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="KedgeWebService_AgentflowWeb_AgentflowWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://220.130.9.24:8080/WebAgenda/webservice/AgentflowWeb.jws</Value>
+    </Setting>
+    <Setting Name="KedgeWebService_EngineerPR_EngineerPRService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerPR.jws</Value>
+    </Setting>
+    <Setting Name="KedgeWebService_EngineerBillWeb_EngineerBillWebKedgeService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerBillWebKedge.jws</Value>
+    </Setting>
+    <Setting Name="KedgeWebService_EngineerPRExt_EngineerPRService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://220.130.9.24:8080/WebAgenda/webservice/EngineerPR.jws</Value>
+    </Setting>
+    <Setting Name="KedgeWebService_EngineerBillWebExt_EngineerBillWebKedgeService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://220.130.9.24:8080/WebAgenda/webservice/EngineerBillWebKedge.jws</Value>
+    </Setting>
+    <Setting Name="KedgeWebService_EngineerERPWeb_EngineerERPWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://agentflow-qa.kindom.com.tw:8080/WebAgenda/webservice/EngineerERPWeb.jws</Value>
+    </Setting>
+    <Setting Name="KedgeWebService_EngineerERPWebExt_EngineerERPWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://220.130.9.24:8080/WebAgenda/webservice/EngineerERPWeb.jws</Value>
+    </Setting>
+    <Setting Name="KedgeAgentFlowWS_ExpenseClaimWeb_KEDGEWebServiceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://220.130.9.26:8080/WebAgenda/webservice/KEDGEWebService.jws</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BC6D61A-5D4B-4D57-BC6B-5E3F9D04377E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KedgeFinCustDev</RootNamespace>
+    <AssemblyName>KedgeFinCustDev</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KedgeProjectCust">
+      <HintPath>..\..\..\..\Bin\KedgeProjectCust.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b136cac2f602b8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\PX.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.CS.Contracts">
+      <HintPath>..\..\..\..\Bin\PX.CS.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b136cac2f602b8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\PX.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.Data.BQL.Fluent">
+      <HintPath>..\..\..\..\Bin\PX.Data.BQL.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.DbServices">
+      <HintPath>..\..\..\..\Bin\PX.DbServices.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Objects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\PX.Objects.DLL</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.Objects.FS">
+      <HintPath>..\..\..\..\Bin\PX.Objects.FS.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.SiteMap">
+      <HintPath>..\..\..\..\Bin\PX.SiteMap.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Web.UI.Frameset">
+      <HintPath>..\..\..\..\Bin\PX.Web.UI.Frameset.dll</HintPath>
+    </Reference>
+    <Reference Include="RCGV">
+      <HintPath>..\..\..\..\Bin\RCGV.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AR\ARReleaseProcessFinExt.cs" />
+    <Compile Include="FIN\Graph\APARTopNReport.cs" />
+    <Compile Include="AP\APInvoiceEntryRetainageFinExt.cs" />
+    <Compile Include="AP\APPaymentEntryFinExt.cs" />
+    <Compile Include="AP\APReleaseChecksFinExt.cs" />
+    <Compile Include="AP\DAC\APPaymentExtensions.cs" />
+    <Compile Include="AP\DAC\VendorExt.cs" />
+    <Compile Include="AP\VendorLocationMaintFinExt.cs" />
+    <Compile Include="AR\ARDocumentReleaseFinExt.cs" />
+    <Compile Include="AR\ARInvoiceEntryFinExt.cs" />
+    <Compile Include="AR\ARPaymentEntryFinExt.cs" />
+    <Compile Include="CA\CashTransferEntry.cs" />
+    <Compile Include="CA\DAC\CATransferExtensions.cs" />
+    <Compile Include="CA\Util\Constants.cs" />
+    <Compile Include="CA\Util\Messages.cs" />
+    <Compile Include="CC\CCPayableEntry.cs" />
+    <Compile Include="CC\CCReceivableEntry.cs" />
+    <Compile Include="CC\DAC\CCPayableCheck.cs" />
+    <Compile Include="CC\DAC\CCReceivableCheck.cs" />
+    <Compile Include="CC\DAC\CCReceivableCheckPostponeLog.cs" />
+    <Compile Include="CC\Util\CCList.cs" />
+    <Compile Include="CC\Util\CCVoucherUtil.cs" />
+    <Compile Include="Coms\DAC\KGComsBatch.cs" />
+    <Compile Include="Coms\DAC\KGComsInvoice.cs" />
+    <Compile Include="Coms\DAC\KGComsVoucher.cs" />
+    <Compile Include="Coms\DAC\KGComsVoucherItem.cs" />
+    <Compile Include="Coms\KGComsUploadEntry.cs" />
+    <Compile Include="CR\DAC\LocationFinExt.cs" />
+    <Compile Include="EP\AgentFlow\DAC\KGFlowFinBillingAH.cs" />
+    <Compile Include="EP\AgentFlow\DAC\KGFlowFinBillingInv.cs" />
+    <Compile Include="EP\AgentFlow\DAC\KGFlowFinBillingL.cs" />
+    <Compile Include="EP\AgentFlow\DAC\KGFlowFinBillingNote.cs" />
+    <Compile Include="EP\AgentFlow\DAC\KGFlowFinBillingWht.cs" />
+    <Compile Include="EP\AgentFlow\ExpenseClaimEntryForAgentFlow.cs" />
+    <Compile Include="EP\DAC\EPPaymentModiReq.cs" />
+    <Compile Include="EP\DAC\EPPaymentModiReqCCP.cs" />
+    <Compile Include="EP\DAC\EPPaymentModiReqCCR.cs" />
+    <Compile Include="EP\DAC\EPPaymentModiReqNMP.cs" />
+    <Compile Include="EP\DAC\EPPaymentModiReqNMR.cs" />
+    <Compile Include="EP\DAC\EPPaymentModiReqTT.cs" />
+    <Compile Include="EP\DAC\EPStringListAttribute.cs" />
+    <Compile Include="EP\DAC\KGExpenseVoucher.cs" />
+    <Compile Include="EP\ExpenseClaimEntryForWHT.cs" />
+    <Compile Include="EP\Util\EPStringList.cs" />
+    <Compile Include="EP\Util\EPVoucherUtil.cs" />
+    <Compile Include="FIN\DAC\AccountExtensions.cs" />
+    <Compile Include="FIN\DAC\KGProjHistoryByPeriod.cs" />
+    <Compile Include="FIN\DAC\KGProjHistoryTran.cs" />
+    <Compile Include="FIN\Graph\KGAcctMovementProc.cs" />
+    <Compile Include="FIN\Graph\TWNGenWHTFile.cs" />
+    <Compile Include="FIN\Graph\TWNWHTMaint.cs" />
+    <Compile Include="FIN\Graph\TWWHTMaint.cs" />
+    <Compile Include="FIN\Graph\TWWHTProcess.cs" />
+    <Compile Include="FIN\Util\FinSelector.cs" />
+    <Compile Include="FIN\Util\FinStringList.cs" />
+    <Compile Include="GL\DAC\BatchExtensions.cs" />
+    <Compile Include="GL\JournalEntry.cs" />
+    <Compile Include="GV\DAC\GVApGuiInvoiceFinExt.cs" />
+    <Compile Include="GV\GVApCmInvoiceEntryFinExt.cs" />
+    <Compile Include="GV\GVApGuiAllowanceInvoiceProcess.cs" />
+    <Compile Include="GV\GVApGuiInvoiceConfirmProcess.cs" />
+    <Compile Include="GV\GVArGuiAllowanceInvoiceProcess.cs" />
+    <Compile Include="GV\GVArGuiCmInvoiceMaintFinExt.cs" />
+    <Compile Include="GV\GVArGuiInvoiceProcess.cs" />
+    <Compile Include="KG\APDocumentRelease.cs" />
+    <Compile Include="KG\APInvoiceEntry.cs" />
+    <Compile Include="KG\APInvoiceEntryByVoucherExt.cs" />
+    <Compile Include="KG\DAC\ContractFinExt.cs" />
+    <Compile Include="KG\DAC\InventoryItemFinExt.cs" />
+    <Compile Include="KG\DAC\KGAcctConfirmLog.cs" />
+    <Compile Include="KG\DAC\KGBudApproveLevel.cs" />
+    <Compile Include="KG\DAC\KGBudApproveName.cs" />
+    <Compile Include="EP\DAC\EPExpenseClaimDetailsExtensions.cs" />
+    <Compile Include="EP\DAC\EPExpenseClaimExtensions.cs" />
+    <Compile Include="EP\DAC\GVApGuiInvoiceFinRef.cs" />
+    <Compile Include="EP\EPReleaseProcess.cs" />
+    <Compile Include="EP\ExpenseClaimEntry.cs" />
+    <Compile Include="EP\Util\EPConst.cs" />
+    <Compile Include="Examples.cs" />
+    <Compile Include="FIN\DAC\TWNWHT.cs" />
+    <Compile Include="FIN\DAC\TWNWHTTran.cs" />
+    <Compile Include="FIN\Graph\TWNWHTInquiry.cs" />
+    <Compile Include="FIN\Graph_Extension\APInvoiceEntry.cs" />
+    <Compile Include="FIN\Graph_Release\APDocumentRelease.cs" />
+    <Compile Include="GL\DAC\GLBudgetLine.cs" />
+    <Compile Include="GL\DAC\GLTranExtensions.cs" />
+    <Compile Include="GL\GLBudgetEntry.cs" />
+    <Compile Include="KG\DAC\APRegisterExtensions.cs" />
+    <Compile Include="KG\DAC\KGBillPayment.cs" />
+    <Compile Include="KG\DAC\KGBudGroup.cs" />
+    <Compile Include="KG\DAC\KGCurrAdminBudgetV.cs" />
+    <Compile Include="KG\DAC\KGNextAdminBudgetV.cs" />
+    <Compile Include="KG\DAC\KGPastAdminBudgetV.cs" />
+    <Compile Include="KG\DAC\KGPmBudgetMod.cs" />
+    <Compile Include="KG\DAC\KGPmBudgetModC.cs" />
+    <Compile Include="KG\DAC\KGPmBudgetModR.cs" />
+    <Compile Include="KG\DAC\KGProjectRenterMaterial.cs" />
+    <Compile Include="KG\DAC\KGProjectStage.cs" />
+    <Compile Include="KG\DAC\KGSetUpExtensions.cs" />
+    <Compile Include="KG\DAC\KGVoucherLExtensions.cs" />
+    <Compile Include="KG\KGADRWriteoffProcess.cs" />
+    <Compile Include="KG\KGBillWriteoffProcess.cs" />
+    <Compile Include="KG\KGBudApproveLevelEntry.cs" />
+    <Compile Include="KG\KGBudApproveNameEntry.cs" />
+    <Compile Include="KG\KGBudGroupEntry.cs" />
+    <Compile Include="KG\KGDailyMaterialReport.cs" />
+    <Compile Include="KG\KGPercentCompleteProcess.cs" />
+    <Compile Include="KG\KGVoucherMaint.cs" />
+    <Compile Include="KG\KGVoucherProcess.cs" />
+    <Compile Include="KG\KGWriteOffProcess.cs" />
+    <Compile Include="KG\POOrderEntry.cs" />
+    <Compile Include="KG\ProjectEntry.cs" />
+    <Compile Include="KG\Util\KGBatchNbrUtil.cs" />
+    <Compile Include="KG\Util\KGConst.cs" />
+    <Compile Include="KG\Util\KGVoucherUtil.cs" />
+    <Compile Include="LS\DAC\LSLedgerSettlement.cs" />
+    <Compile Include="LS\DAC\LSSettlementAccount.cs" />
+    <Compile Include="LS\LSLedgerStlmtEntry.cs" />
+    <Compile Include="LS\LSLedgerStlmtInq.cs" />
+    <Compile Include="LS\LSStlmtAccountMaint.cs" />
+    <Compile Include="LS\UtilFunctions.cs" />
+    <Compile Include="NM\DAC\NMApTeleTransLog.cs" />
+    <Compile Include="NM\DAC\NMBankAccount.cs" />
+    <Compile Include="NM\DAC\NMCheckBook.cs" />
+    <Compile Include="NM\DAC\NMDailyReportTmp.cs" />
+    <Compile Include="NM\DAC\NMPayableCheck.cs" />
+    <Compile Include="NM\DAC\NMPreference.cs" />
+    <Compile Include="NM\DAC\NMReceivableCheck.cs" />
+    <Compile Include="NM\DAC\NMSettlementLog.cs" />
+    <Compile Include="NM\DAC\NMUploadHistoricalTempData.cs" />
+    <Compile Include="NM\DAC\NMUploadVendorLocationTemp.cs" />
+    <Compile Include="NM\NMApBankFeedbackProcess.cs" />
+    <Compile Include="NM\NMApCheckBankProcess.cs" />
+    <Compile Include="NM\NMApCheckCashProcess.cs" />
+    <Compile Include="NM\NMApCheckConfirmProcess.cs" />
+    <Compile Include="NM\NMApCheckEntry.cs" />
+    <Compile Include="NM\NMApCheckModifyProcess.cs" />
+    <Compile Include="NM\NMApCheckProcess.cs" />
+    <Compile Include="NM\NMApCheckSendProcess.cs" />
+    <Compile Include="NM\NMApTeleTransProcess.cs" />
+    <Compile Include="NM\NMArCheckCashProcess.cs" />
+    <Compile Include="NM\NMArCheckCollProcess.cs" />
+    <Compile Include="NM\NMArCheckEntry.cs" />
+    <Compile Include="NM\NMArCheckModifyProcess.cs" />
+    <Compile Include="NM\NMBankAccountMaint.cs" />
+    <Compile Include="NM\NMCheckBookMaint.cs" />
+    <Compile Include="NM\NMPrintableProcess.cs" />
+    <Compile Include="NM\NMSetting.cs" />
+    <Compile Include="NM\NMSettlementReport.cs" />
+    <Compile Include="NM\NMTrConfirmProcess.cs" />
+    <Compile Include="NM\NMUploadHistorical.cs" />
+    <Compile Include="NM\NMUploadVendorLocation.cs" />
+    <Compile Include="NM\Util\NMAccountAttribute.cs" />
+    <Compile Include="NM\Util\NMBankAccountAttribute.cs" />
+    <Compile Include="NM\Util\NMBankCodeAttribute.cs" />
+    <Compile Include="NM\Util\NMBatchNbrUtil.cs" />
+    <Compile Include="NM\Util\NMCheckBookUtil.cs" />
+    <Compile Include="NM\Util\NMLocationUtil.cs" />
+    <Compile Include="NM\Util\NMSegmentKey.cs" />
+    <Compile Include="NM\Util\NMStringList.cs" />
+    <Compile Include="NM\Util\NMSubAttribute.cs" />
+    <Compile Include="NM\Util\NMVoucherUtil.cs" />
+    <Compile Include="KG\KGLoginHomeEntry.cs" />
+    <Compile Include="GV\DAC\APARCheckV.cs" />
+    <Compile Include="KG\DAC\KGWIPPerPayDifferenceV.cs" />
+    <Compile Include="FIN\DAC\APARTopNV.cs" />
+    <Compile Include="FIN\DAC\APARTopNTemp.cs" />
+    <Compile Include="NM\NMApPaymentProcess.cs" />
+    <Compile Include="NM\DAC\NMApPaymentProcessLog.cs" />
+    <Compile Include="KG\DAC\KGPostageGLTranV.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PS\DAC\PSPaymentSlip.cs" />
+    <Compile Include="PS\DAC\PSPaymentSlipDetails.cs" />
+    <Compile Include="PS\DAC\PSUploadPaymentSlipTemp.cs" />
+    <Compile Include="PS\PSPaymentSlipEntry.cs" />
+    <Compile Include="PS\PSPaymentSlipProcess.cs" />
+    <Compile Include="PS\PSUploadPaymentSlip.cs" />
+    <Compile Include="PS\Util\PSStringList.cs" />
+    <Compile Include="RC\DAC\RCFeaturesSet.cs" />
+    <Compile Include="RC\RCFeaturesSetEntry.cs" />
+    <Compile Include="RC\Util\RCFeatureAttribute.cs" />
+    <Compile Include="RC\Util\RCFeaturesSetProperties.cs" />
+    <Compile Include="RC\Util\RCFeaturesSetUtil.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

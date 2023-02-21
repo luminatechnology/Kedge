@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BC6D61A-5D4B-4D57-BC6B-5E3F9D04377E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KedgeProjectCust</RootNamespace>
+    <AssemblyName>KedgeProjectCust</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.10.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Bin\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\..\..\Bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="KedgeAgentFlowWS">
+      <HintPath>..\..\..\..\Bin\KedgeAgentFlowWS.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.19.9.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b136cac2f602b8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\PX.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.CS.Contracts">
+      <HintPath>..\..\..\..\Bin\PX.CS.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b136cac2f602b8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\PX.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.Data.BQL.Dynamic">
+      <HintPath>..\..\..\..\Bin\PX.Data.BQL.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Data.BQL.Fluent">
+      <HintPath>..\..\..\..\Bin\PX.Data.BQL.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.DbServices">
+      <HintPath>..\..\..\..\Bin\PX.DbServices.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.LicensePolicy">
+      <HintPath>..\..\..\..\Bin\PX.LicensePolicy.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Objects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\PX.Objects.DLL</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.Objects.FS">
+      <HintPath>..\..\..\..\Bin\PX.Objects.FS.dll</HintPath>
+    </Reference>
+    <Reference Include="RCGV">
+      <HintPath>..\..\..\..\Bin\RCGV.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Words.NET">
+      <HintPath>..\..\..\..\Bin\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentFlowWebServiceUtil.cs" />
+    <Compile Include="APInvoiceEntry.cs" />
+    <Compile Include="APInvoiceEntryAgentFlowExt.cs" />
+    <Compile Include="APInvoiceEntryBillSummaryExt.cs" />
+    <Compile Include="APInvoiceEntryCheckDiscount.cs" />
+    <Compile Include="APInvoiceEntryExt\PrepaymentsExt.cs" />
+    <Compile Include="APInvoiceEntryRetainageKedgeExt.cs" />
+    <Compile Include="ApprovalUtil.cs" />
+    <Compile Include="APReleaseProcess.cs" />
+    <Compile Include="ChangeOrderEntry.cs" />
+    <Compile Include="DAC\APRegisterExtensions.cs" />
+    <Compile Include="DAC\APTranExtensions.cs" />
+    <Compile Include="DAC\ContractExtensions.cs" />
+    <Compile Include="DAC\CostBudgetFilterExtensions.cs" />
+    <Compile Include="DAC\EPApprovalExtensions.cs" />
+    <Compile Include="DAC\IKG505002.cs" />
+    <Compile Include="DAC\IKGSelfInspectionLine.cs" />
+    <Compile Include="DAC\KG505002Month.cs" />
+    <Compile Include="DAC\KG505002Year.cs" />
+    <Compile Include="DAC\KG605002.cs" />
+    <Compile Include="DAC\KG605003.cs" />
+    <Compile Include="DAC\KGApproveSetup.cs" />
+    <Compile Include="DAC\KGBillFile.cs" />
+    <Compile Include="DAC\KGBillPayment.cs" />
+    <Compile Include="DAC\KGBillSegPricing.cs" />
+    <Compile Include="DAC\KGBillSummary.cs" />
+    <Compile Include="DAC\KGChangeOrderFile.cs" />
+    <Compile Include="DAC\KGContractCategory.cs" />
+    <Compile Include="DAC\KGContractDoc.cs" />
+    <Compile Include="DAC\KGContractDocTag.cs" />
+    <Compile Include="DAC\KGContractEvaluation.cs" />
+    <Compile Include="DAC\KGContractEvaluationL.cs" />
+    <Compile Include="DAC\KGContractPricingRule.cs" />
+    <Compile Include="DAC\KGContractRelatedVendor.cs" />
+    <Compile Include="DAC\KGContractSegPricing.cs" />
+    <Compile Include="DAC\KGContractTag.cs" />
+    <Compile Include="DAC\KGDailyMaterial.cs" />
+    <Compile Include="DAC\KGDailyNote.cs" />
+    <Compile Include="DAC\KGDailyRenter.cs" />
+    <Compile Include="DAC\KGDailyRenterM.cs" />
+    <Compile Include="DAC\KGDailyRenterVendor.cs" />
+    <Compile Include="DAC\KGDailyRenterVendorM.cs" />
+    <Compile Include="DAC\KGDailyReport.cs" />
+    <Compile Include="DAC\KGDailySchedule.cs" />
+    <Compile Include="DAC\KGDailyTask.cs" />
+    <Compile Include="DAC\KGDeductionAPTran.cs" />
+    <Compile Include="DAC\KGFinConnectSetup.cs" />
+    <Compile Include="DAC\KGFinIntegrationSetup.cs" />
+    <Compile Include="DAC\KGFlowBudChgApplyDetail.cs" />
+    <Compile Include="DAC\KGFlowBudChgApplyNew.cs" />
+    <Compile Include="DAC\KGFlowBudChgApplyNewDetail.cs" />
+    <Compile Include="DAC\KGFlowChangeManagement.cs" />
+    <Compile Include="DAC\KGFlowContractor.cs" />
+    <Compile Include="DAC\KGFlowPurchase.cs" />
+    <Compile Include="DAC\KGFlowPurchaseBidDocDetail.cs" />
+    <Compile Include="DAC\KGFlowPurchaseRequisitionDetail.cs" />
+    <Compile Include="DAC\KGFlowPutChg.cs" />
+    <Compile Include="DAC\KGFlowPutRvn.cs" />
+    <Compile Include="DAC\KGFlowRequisitions.cs" />
+    <Compile Include="DAC\KGFlowRequisitionsDetail.cs" />
+    <Compile Include="DAC\KGFlowSubAcc.cs" />
+    <Compile Include="DAC\KGFlowSubAccDetail.cs" />
+    <Compile Include="DAC\KGFlowSubAccInv.cs" />
+    <Compile Include="DAC\KGFlowSubAccMfq.cs" />
+    <Compile Include="DAC\KGFlowSubAccPay.cs" />
+    <Compile Include="DAC\KGFlowSubAccVenDed.cs" />
+    <Compile Include="DAC\KGFlowSubAccVendorEvaluate.cs" />
+    <Compile Include="DAC\KGFlowSubAccVendorEvaluateDetail.cs" />
+    <Compile Include="DAC\KGFlowSubVenAdd.cs" />
+    <Compile Include="DAC\KGFlowUploadFile.cs" />
+    <Compile Include="DAC\KGInspectionConstant.cs" />
+    <Compile Include="DAC\KGInspectionFileTemplate.cs" />
+    <Compile Include="DAC\KGMonthlyInspection.cs" />
+    <Compile Include="DAC\KGMonthlyInspectionL.cs" />
+    <Compile Include="DAC\KGMonthlyInspectionSign.cs" />
+    <Compile Include="DAC\KGMonthlyInspectionTemplateH.cs" />
+    <Compile Include="DAC\KGMonthlyInspectionTemplateL.cs" />
+    <Compile Include="DAC\KGMonthlyInspectionTemplateS.cs" />
+    <Compile Include="DAC\KGMonthlyInspectTicket.cs" />
+    <Compile Include="DAC\KGMonthlyInspectTicketL.cs" />
+    <Compile Include="DAC\KGMonthlyInspectTicketLFile.cs" />
+    <Compile Include="DAC\KGNewChangeOrder.cs" />
+    <Compile Include="DAC\KGNewChangeOrderLine.cs" />
+    <Compile Include="DAC\KGOwnerRevenue.cs" />
+    <Compile Include="DAC\KGOwnerRevenueAllocation.cs" />
+    <Compile Include="DAC\KGPoOrderFile.cs" />
+    <Compile Include="DAC\KGPoOrderPayment.cs" />
+    <Compile Include="DAC\KGPostageSetup.cs" />
+    <Compile Include="DAC\KGRequestFile.cs" />
+    <Compile Include="DAC\KGRequisitionDoc.cs" />
+    <Compile Include="DAC\KGRequisitionFile.cs" />
+    <Compile Include="DAC\KGRequisitionsUploadTemp.cs" />
+    <Compile Include="DAC\KGRequistionPayment.cs" />
+    <Compile Include="DAC\KGSafetyHealthCategoryDeductionSetup.cs" />
+    <Compile Include="DAC\KGSafetyHealthInspection.cs" />
+    <Compile Include="DAC\KGSafetyHealthInspectionL.cs" />
+    <Compile Include="DAC\KGSafetyHealthInspectionTemplateH.cs" />
+    <Compile Include="DAC\KGSafetyHealthInspectionTemplateL.cs" />
+    <Compile Include="DAC\KGSafetyHealthInspectionTemplateS.cs" />
+    <Compile Include="DAC\KGSafetyHealthInspectTicket.cs" />
+    <Compile Include="DAC\KGSafetyHealthInspectTicketL.cs" />
+    <Compile Include="DAC\KGSafetyHealthInspectTicketLFile.cs" />
+    <Compile Include="DAC\KGSelfInspection.cs" />
+    <Compile Include="DAC\KGSelfInspectionLine.cs" />
+    <Compile Include="DAC\KGSelfInspectionReview.cs" />
+    <Compile Include="DAC\KGSelfInspectionTemplateH.cs" />
+    <Compile Include="DAC\KGSelfInspectionTemplateL.cs" />
+    <Compile Include="DAC\KGSetUp.cs" />
+    <Compile Include="DAC\KGTempPaymentWriteOff.cs" />
+    <Compile Include="DAC\KGUsageFlag.cs" />
+    <Compile Include="DAC\KGValuation.cs" />
+    <Compile Include="DAC\KGValuationDetail.cs" />
+    <Compile Include="DAC\KGValuationDetailA.cs" />
+    <Compile Include="DAC\KGValuationDetailD.cs" />
+    <Compile Include="DAC\KGVendorEvaluation.cs" />
+    <Compile Include="DAC\KGVendorEvaluationQuest.cs" />
+    <Compile Include="DAC\KGVendorPrice.cs" />
+    <Compile Include="DAC\KGVoucherDigestSetup.cs" />
+    <Compile Include="DAC\KGVoucherH.cs" />
+    <Compile Include="DAC\KGVoucherL.cs" />
+    <Compile Include="DAC\PMBudgetExtensions.cs" />
+    <Compile Include="DAC\PMChangeOrderBudgetExtensions.cs" />
+    <Compile Include="DAC\PMChangeOrderCostBudgetExt.cs" />
+    <Compile Include="DAC\PMChangeOrderExtensions.cs" />
+    <Compile Include="DAC\PMChangeOrderLineExtensions.cs" />
+    <Compile Include="DAC\PMCommitmentExtensions.cs" />
+    <Compile Include="DAC\PMTaskExtensions.cs" />
+    <Compile Include="DAC\POLineExtensions.cs" />
+    <Compile Include="DAC\POOrderAPDoc.cs" />
+    <Compile Include="DAC\POOrderExtensions.cs" />
+    <Compile Include="DAC\RQBiddingVendorExtensions.cs" />
+    <Compile Include="DAC\RQRequestExtensions.cs" />
+    <Compile Include="DAC\RQRequestLineExtensions.cs" />
+    <Compile Include="DAC\RQRequisitionExtensions.cs" />
+    <Compile Include="DAC\RQRequisitionLineExtensions.cs" />
+    <Compile Include="DAC\vKGPORetainage.cs" />
+    <Compile Include="KG605002Report.cs" />
+    <Compile Include="KG605003Report.cs" />
+    <Compile Include="KGContractCategoryMaint.cs" />
+    <Compile Include="KGContractEvalEntry.cs" />
+    <Compile Include="KGCreatePORetainageProc.cs" />
+    <Compile Include="KGDailyRenterActualEntry.cs" />
+    <Compile Include="KGDailyRenterEntry.cs" />
+    <Compile Include="KGDailyReportEntry.cs" />
+    <Compile Include="KGDailyReportInq.cs" />
+    <Compile Include="KGLookUpAttributeUtil.cs" />
+    <Compile Include="KGMonthlyInspectFileAllEntry.cs" />
+    <Compile Include="KGMonthlyInspectFileEntry.cs" />
+    <Compile Include="KGMonthlyInspectionEntry.cs" />
+    <Compile Include="KGMonthlyInspectionTemplate.cs" />
+    <Compile Include="KGMonthlyInspectTicketEntry.cs" />
+    <Compile Include="KGOwnerRevenueAllocEntry.cs" />
+    <Compile Include="KGOwnerRevenueEntry.cs" />
+    <Compile Include="KGPercentCompleteProcess.cs" />
+    <Compile Include="KGRefundRetainageProc.cs" />
+    <Compile Include="KGRenterApplyEntry.cs" />
+    <Compile Include="KGRenterConfirmProcess.cs" />
+    <Compile Include="KGRequisitionsUploadTempEntry.cs" />
+    <Compile Include="KGSafetyHealthCategoryDeductionEntry.cs" />
+    <Compile Include="KGSafetyHealthInspectionEntry.cs" />
+    <Compile Include="KGSafetyHealthInspectionTemplate.cs" />
+    <Compile Include="KGSafetyHealthInspectTicketEntry.cs" />
+    <Compile Include="KGSafetyHealthInspectTicketLFileAllEntry.cs" />
+    <Compile Include="KGSafetyHealthInspectTicketLFileEntry.cs" />
+    <Compile Include="KGSelfInspectionEntry.cs" />
+    <Compile Include="KGSelfInspectionTemplate.cs" />
+    <Compile Include="KGSetting.cs" />
+    <Compile Include="KGValuationConfirmProcess.cs" />
+    <Compile Include="KGValuationEntry.cs" />
+    <Compile Include="KGValuationInq.cs" />
+    <Compile Include="KGVendorPriceEntry.cs" />
+    <Compile Include="KGVenEvaluationEntry.cs" />
+    <Compile Include="KGVoucherDigestSetting.cs" />
+    <Compile Include="KGVoucherMaint.cs" />
+    <Compile Include="KGVoucherProcess.cs" />
+    <Compile Include="POOrderEntry.cs" />
+    <Compile Include="PowerPointUtil\KGPptTemplateUtil.cs" />
+    <Compile Include="PowerPointUtil\Pptx.cs" />
+    <Compile Include="PowerPointUtil\PptxParagraph.cs" />
+    <Compile Include="PowerPointUtil\PptxSlide.cs" />
+    <Compile Include="PowerPointUtil\PptxTable.cs" />
+    <Compile Include="ProjectEntry.cs" />
+    <Compile Include="DAC\ComplianceDocumentExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RQBiddingEntry.cs" />
+    <Compile Include="RQRequestEntry.cs" />
+    <Compile Include="RQRequestProcess.cs" />
+    <Compile Include="RQRequisitionEntry.cs" />
+    <Compile Include="SubcontractEntry.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Util\APInvoiceValuationPhaseUtil.cs" />
+    <Compile Include="Util\CalcPostageUtil.cs" />
+    <Compile Include="VendorLocationMaint.cs" />
+    <Compile Include="VendorMaint.cs" />
+    <Compile Include="VoucherUntil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\KedgeProjectCust.csprojAssemblyReference.cache" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

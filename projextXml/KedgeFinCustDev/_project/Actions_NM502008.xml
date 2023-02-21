@@ -1,0 +1,6 @@
+﻿<Actions ScreenID="NM502008">
+    <Action IsActive="True" ActionName="fileUpload" ActionType="G" WindowMode="S">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+</Actions>

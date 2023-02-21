@@ -1,0 +1,12 @@
+﻿<Sql TableName="KGComsBatch" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGComsBatch">
+  <col name="CompanyID" type="Int" nullable="true" default="Zero" />
+  <col name="BatchID" type="Int" identity="true" />
+  <col name="Desc" type="NVarChar(255)" nullable="true" />
+  <col name="VoucherCount" type="Int" nullable="true" />
+  <col name="VoucherItemCount" type="Int" nullable="true" />
+  <col name="InvoiceCount" type="Int" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedDateTime" type="DateTime" nullable="true" />
+</table>]]></CDATA>
+</Sql>

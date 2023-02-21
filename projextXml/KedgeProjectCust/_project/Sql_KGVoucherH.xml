@@ -1,0 +1,37 @@
+﻿<Sql TableName="KGVoucherH" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGVoucherH">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="VoucherHeaderID" type="Int" identity="true" />
+  <col name="DocType" type="Char(3)" />
+  <col name="RefNbr" type="NVarChar(15)" />
+  <col name="VoucherKey" type="NVarChar(11)" nullable="true" />
+  <col name="VoucherDate" type="DateTime" nullable="true" />
+  <col name="VoucherNo" type="NVarChar(11)" nullable="true" />
+  <col name="ContractID" type="Int" nullable="true" />
+  <col name="ContractCD" type="NVarChar(30)" nullable="true" />
+  <col name="ContractDesc" type="NVarChar(60)" nullable="true" />
+  <col name="VendorType" type="NChar(2)" nullable="true" />
+  <col name="VendorID" type="Int" nullable="true" />
+  <col name="VendorCD" type="NVarChar(30)" nullable="true" />
+  <col name="Status" type="NChar(1)" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="PONbr" type="NVarChar(15)" nullable="true" />
+  <col name="DAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="CAmt" type="Decimal(19,4)" nullable="true" />
+  <index name="KGVoucherH_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="PK_KGVoucherH_1" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="VoucherHeaderID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

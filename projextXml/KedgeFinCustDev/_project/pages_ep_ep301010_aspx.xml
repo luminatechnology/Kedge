@@ -1,0 +1,26 @@
+﻿<Page path="~/pages/ep/ep301010.aspx" pageSource="pVZNb9s4ED2nQP8DoUVuGzveYi+BHKwjOW3QODVsN8ltQUtTmw1NqiSVWD3sb98ZUbIlJ80KWRsw6CE58+brccLjv9iUr4Bdc7XKcTEMot8CNuHWgaGNSyFR9k9/L7H9S202MTguZG9TigM2yp0eP4Jyd8JAng0DZ3II2C2XIuUOZvAjB+uGwTcuLcojnVaax9MPpwP89rjNtr3EBuxKrcEIZ4cBWfu7PhCwhXB046tytEhL3AE7Pn//7v27EP3wEBdFBuxWGJdzOeVu3QF8pQIRnEVaOfSCXcXDIMH1gLCWoqnkCXzSMgVDm9k6ngfM5IqjV3Mwj6gI1RyF2fZseh9zx+c6NwmUmlK7O2r9UURoxZLcWZSBuhMpQR2cnh6jo+jCDd/g5vS+92X5HRJne+Npb7zNQFmIJBeVCxMulAvY1IgNN8WtgKdhgHF1FZijMOJSLnnyEOnNhqvUltIa5Pxgl3mjj6imtNFAeenzNoOMLFJIjJaYopGUAYsBcaVf1Ecj0mGwwl+EpLM8q/RiTXGVgGxLF9yswPng9D3a/ktww/5BSFEY9hvJOn8hd9X6lfRdvpA9xpgPDRUJRbPUtf87eJbGPao6z3NXUMB+ngiVwvaMYUoP0hvxzAmtyLDE1OLS65nAZglml8ASTvmJ4RvPZR11MgTpeJNJXQDm5EY77CWQGObKh/ITLgCPYO81ZGzn4DUvdO5muYTKxb3gj2dOzh03aF3mG1XX6zVfgrSVW/OJDzOCm4uf6Pz9xKf0uV3vsjaMMixctEbaAVtrPXTthWBXntZnruKAtUyF/QO/q/KpU9ileKjxP/y6cj7+uu+pA0oVvgn+s1g+gVit8cTgz9Ns26V2qE129VPxAXZlAiJzqG+Ufs+tI6LziSBaRrUPQpVZ9jRxpX7kyNIoL1Qy1VZ4bT4FnwGyvcyz+CXypC/KMvp2Z3kG326W5veF4SoGm1Sccw2PWBtNpqGwlNJWnTd4zPrgfIaCKMi29jDFXtdRONNPjeweHe0MvF5W3cqoXXxX8aCmJSKm55ZD3xC2DYQ89RsMqVE/RWtIHnBVQymFNzkJKkptoPFeABbOArZuJMUKUxBhCRJqehTwH+m70Ns9tueGGxobYYziltoZFV5XLdTbPHEUpU4XFtw+dD4caetoHuh8oSo+lEDzxvHJyWu3LopIm0wbvBVx0zXGJyfHBzzW5rOXbSFhuhxr+rwin/2pTtGr24ldC/Wwe0MhFc6n8q2KW137ViVRbgpCONrgrOfWC74F+/bKQmWd817jbkWlMax0K55Gx8fCYkcXEyw+jDp60BW1Aayi9KL4P0ouMIbJuuk8jj8tSglJp2eMrxlN0TvOqG408leyazVENfg3pAeAnoLyMcPRjXj3Dl8X/RSwseI426U1NU2EajxHu5lsVE4oF9zUY4gXtOuRXhxzOCz2G9MbYfRT9sHj+y8=">
+    <PXGridLevel DataMember="ClaimDetails" ParentId="phG_grid_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="APRefNbr" />
+                    <Prop Key="Width" Value="140" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="EPExpenseClaim__UsrDocType" />
+                    <Prop Key="Width" Value="70" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="RefNbr" OriginalIndex="11" />
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrGuarPayableCD" />
+                    <Prop Key="Width" Value="140" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="EmployeeID" OriginalIndex="12" />
+        </Children>
+    </PXGridLevel>
+</Page>

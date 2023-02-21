@@ -1,0 +1,676 @@
+﻿<Report Name="gv601001.rpx">
+    <Report Name="report1" version="20200826">
+        <CommonSettings>
+            <ViewPdf>True</ViewPdf>
+        </CommonSettings>
+        <Filters>
+            <FilterExp>
+                <Condition>GreaterOrEqual</Condition>
+                <DataField>GVApGuiCmInvoice.AccConfirmNbr</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@P_AccConfirmNbrB</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>@P_AccConfirmNbrB</DataField>
+            </FilterExp>
+            <FilterExp>
+                <Condition>LessOrEqual</Condition>
+                <DataField>GVApGuiCmInvoice.AccConfirmNbr</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@P_AccConfirmNbrE</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>@P_AccConfirmNbrE</DataField>
+            </FilterExp>
+            <FilterExp>
+                <Condition>GreaterOrEqual</Condition>
+                <DataField>GVApGuiCmInvoice.GuiCmInvoiceNbr</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@P_GuiCmInvoiceNbrB</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>@P_GuiCmInvoiceNbrB</DataField>
+            </FilterExp>
+            <FilterExp>
+                <Condition>LessOrEqual</Condition>
+                <DataField>GVApGuiCmInvoice.GuiCmInvoiceNbr</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@P_GuiCmInvoiceNbrE</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>@P_GuiCmInvoiceNbrE</DataField>
+            </FilterExp>
+            <FilterExp>
+                <Condition>GreaterOrEqual</Condition>
+                <DataField>GVApGuiCmInvoice.InvoiceDate</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@P_InvoiceDateB</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>@P_InvoiceDateB</DataField>
+            </FilterExp>
+            <FilterExp>
+                <Condition>LessOrEqual</Condition>
+                <DataField>GVApGuiCmInvoice.InvoiceDate</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@P_InvoiceDateE</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>@P_InvoiceDateE</DataField>
+            </FilterExp>
+            <FilterExp>
+                <DataField>GVApGuiCmInvoice.VendorUniformNumber</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@P_VendorUniformNumber</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>@P_VendorUniformNumber</DataField>
+            </FilterExp>
+        </Filters>
+        <PageSettings>
+            <Margins>
+                <Bottom>0.5cm</Bottom>
+                <Left>0.5cm</Left>
+                <Right>0.5cm</Right>
+                <Top>0.5cm</Top>
+            </Margins>
+        </PageSettings>
+        <Parameters>
+            <ReportParameter>
+                <Name>P_AccConfirmNbrB</Name>
+                <Nullable>True</Nullable>
+                <Prompt>AccConfirmNbr From</Prompt>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_AccConfirmNbrE</Name>
+                <Nullable>True</Nullable>
+                <Prompt>AccConfirmNbr To</Prompt>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_GuiCmInvoiceNbrB</Name>
+                <Nullable>True</Nullable>
+                <Prompt>Gui Cm Invoice Nbr From</Prompt>
+                <ViewName>=[GVApGuiCmInvoice.GuiCmInvoiceNbr]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_GuiCmInvoiceNbrE</Name>
+                <Nullable>True</Nullable>
+                <Prompt>Gui Cm Invoice Nbr To</Prompt>
+                <ViewName>=[GVApGuiCmInvoice.GuiCmInvoiceNbr]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <Name>P_VendorUniformNumber</Name>
+                <Nullable>True</Nullable>
+                <Prompt>Vendor Uniform Number</Prompt>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <Name>P_InvoiceDateB</Name>
+                <Nullable>True</Nullable>
+                <Prompt>Cm Invoice Date From</Prompt>
+                <Type>DateTime</Type>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <Name>P_InvoiceDateE</Name>
+                <Nullable>True</Nullable>
+                <Prompt>Cm Invoice Date To</Prompt>
+                <Type>DateTime</Type>
+            </ReportParameter>
+        </Parameters>
+        <Relations>
+            <ReportRelation>
+                <ChildName>GVRegistration</ChildName>
+                <JoinType>Inner</JoinType>
+                <Links>
+                    <RelationRow>
+                        <ChildField>RegistrationCD</ChildField>
+                        <ParentField>RegistrationCD</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>GVApGuiCmInvoice</ParentName>
+            </ReportRelation>
+        </Relations>
+        <SchemaUrl>http://localhost/AcumaticaL2/</SchemaUrl>
+        <Tables>
+            <ReportTable Name="GVApGuiCmInvoice">
+                <Fields>
+                    <ReportField Name="AccConfirmNbr">
+                    </ReportField>
+                    <ReportField Name="ApInvoiceNbr">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Day">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Month">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="ConfirmPerson">
+                    </ReportField>
+                    <ReportField Name="ConfirmPerson_description">
+                    </ReportField>
+                    <ReportField Name="ConfirmPerson_Users_username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="DeclareMonth">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="DeclareYear">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="GuiCmInvoiceID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="GuiCmInvoiceNbr">
+                    </ReportField>
+                    <ReportField Name="GuiType">
+                    </ReportField>
+                    <ReportField Name="Hold">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="InvoiceDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Day">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Hour">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Month">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="PrintCount">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="RegistrationCD">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD_description">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD_GVRegistration_siteNameChinese">
+                    </ReportField>
+                    <ReportField Name="Remark">
+                    </ReportField>
+                    <ReportField Name="SalesAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Setup">
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="TaxAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TaxCode">
+                    </ReportField>
+                    <ReportField Name="TaxRate">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TotalAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                    <ReportField Name="VendorAddress">
+                    </ReportField>
+                    <ReportField Name="VendorID">
+                    </ReportField>
+                    <ReportField Name="VendorID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorID_description">
+                    </ReportField>
+                    <ReportField Name="VendorID_Segment1">
+                    </ReportField>
+                    <ReportField Name="VendorID_Vendor_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorName">
+                    </ReportField>
+                    <ReportField Name="VendorUniformNumber">
+                    </ReportField>
+                    <ReportField Name="VoidDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="VoidDate_Day">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Hour">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Month">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="VoidReason">
+                    </ReportField>
+                </Fields>
+                <FullName>RCGV.GV.DAC.GVApGuiCmInvoice</FullName>
+            </ReportTable>
+            <ReportTable Name="GVRegistration">
+                <Fields>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="DeclarationMethod">
+                    </ReportField>
+                    <ReportField Name="DeclarationPayCode">
+                    </ReportField>
+                    <ReportField Name="GovUniformNumber">
+                    </ReportField>
+                    <ReportField Name="IsActive">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="ParentRegistrationCD">
+                    </ReportField>
+                    <ReportField Name="QrCodeSeedString">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD">
+                    </ReportField>
+                    <ReportField Name="RegistrationID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="SiteAddress">
+                    </ReportField>
+                    <ReportField Name="SiteFax">
+                    </ReportField>
+                    <ReportField Name="SiteNameChinese">
+                    </ReportField>
+                    <ReportField Name="SiteNameEnglish">
+                    </ReportField>
+                    <ReportField Name="SiteTelephone">
+                    </ReportField>
+                    <ReportField Name="SpecialTaxType">
+                    </ReportField>
+                    <ReportField Name="TaxAuthority">
+                    </ReportField>
+                    <ReportField Name="TaxCityCode">
+                    </ReportField>
+                    <ReportField Name="TaxPayer">
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                </Fields>
+                <FullName>RCGV.GV.DAC.GVRegistration</FullName>
+            </ReportTable>
+        </Tables>
+        <Sections>
+            <Detail Name="detailSection1">
+                <Height>2.32804cm</Height>
+                <PageBreak>After</PageBreak>
+                <Items>
+                    <SubReport Name="subReport1">
+                        <Location>0px, 0px</Location>
+                        <Parameters>
+                            <ExternalParameter>
+                                <Name>P_AccConfirmNbr</Name>
+                                <ValueExpr>=[GVApGuiCmInvoice.AccConfirmNbr]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_FootMsg</Name>
+                                <ValueExpr>='第一聯：交付原銷貨人作為銷項稅額之扣減憑證'</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_SiteName</Name>
+                                <ValueExpr>=[GVRegistration.SiteNameChinese]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_SiteAddress</Name>
+                                <ValueExpr>=[GVRegistration.SiteAddress]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_UniformNumber</Name>
+                                <ValueExpr>=[GVRegistration.GovUniformNumber]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_GuiCmInvoiceID</Name>
+                                <Type>Integer</Type>
+                                <ValueExpr>=[GVApGuiCmInvoice.GuiCmInvoiceID]</ValueExpr>
+                            </ExternalParameter>
+                        </Parameters>
+                        <ReportName>GV601001Sub1.rpx</ReportName>
+                        <Size>752px, 32px</Size>
+                    </SubReport>
+                    <SubReport Name="subReport2">
+                        <Location>0px, 56px</Location>
+                        <Parameters>
+                            <ExternalParameter>
+                                <Name>P_AccConfirmNbr</Name>
+                                <ValueExpr>=[GVApGuiCmInvoice.AccConfirmNbr]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_FootMsg</Name>
+                                <ValueExpr>='第二聯:交付原銷貨人作為記帳憑證'</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_SiteName</Name>
+                                <ValueExpr>=[GVRegistration.SiteNameChinese]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_SiteAddress</Name>
+                                <ValueExpr>=[GVRegistration.SiteAddress]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_UniformNumber</Name>
+                                <ValueExpr>=[GVRegistration.GovUniformNumber]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_GuiCmInvoiceID</Name>
+                                <Type>Integer</Type>
+                                <ValueExpr>=[GVApGuiCmInvoice.GuiCmInvoiceID]</ValueExpr>
+                            </ExternalParameter>
+                        </Parameters>
+                        <ReportName>GV601001Sub1.rpx</ReportName>
+                        <Size>752px, 32px</Size>
+                    </SubReport>
+                </Items>
+            </Detail>
+            <Detail Name="detailSection2">
+                <Height>2.32804cm</Height>
+                <Items>
+                    <SubReport Name="subReport3">
+                        <Location>0px, 0px</Location>
+                        <Parameters>
+                            <ExternalParameter>
+                                <Name>P_AccConfirmNbr</Name>
+                                <ValueExpr>=[GVApGuiCmInvoice.AccConfirmNbr]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_FootMsg</Name>
+                                <ValueExpr>='第三聯:由進貨人作為進項稅額之扣減憑證'</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_SiteName</Name>
+                                <ValueExpr>=[GVRegistration.SiteNameChinese]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_SiteAddress</Name>
+                                <ValueExpr>=[GVRegistration.SiteAddress]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_UniformNumber</Name>
+                                <ValueExpr>=[GVRegistration.GovUniformNumber]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_GuiCmInvoiceID</Name>
+                                <Type>Integer</Type>
+                                <ValueExpr>=[GVApGuiCmInvoice.GuiCmInvoiceID]</ValueExpr>
+                            </ExternalParameter>
+                        </Parameters>
+                        <ReportName>GV601001Sub1.rpx</ReportName>
+                        <Size>752px, 32px</Size>
+                    </SubReport>
+                    <SubReport Name="subReport4">
+                        <Location>0px, 56px</Location>
+                        <Parameters>
+                            <ExternalParameter>
+                                <Name>P_AccConfirmNbr</Name>
+                                <ValueExpr>=[GVApGuiCmInvoice.AccConfirmNbr]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_FootMsg</Name>
+                                <ValueExpr>='第四聯:由進貨人作為記帳減憑證'</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_SiteName</Name>
+                                <ValueExpr>=[GVRegistration.SiteNameChinese]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_SiteAddress</Name>
+                                <ValueExpr>=[GVRegistration.SiteAddress]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_UniformNumber</Name>
+                                <ValueExpr>=[GVRegistration.GovUniformNumber]</ValueExpr>
+                            </ExternalParameter>
+                            <ExternalParameter>
+                                <Name>P_GuiCmInvoiceID</Name>
+                                <Type>Integer</Type>
+                                <ValueExpr>=[GVApGuiCmInvoice.GuiCmInvoiceID]</ValueExpr>
+                            </ExternalParameter>
+                        </Parameters>
+                        <ReportName>GV601001Sub1.rpx</ReportName>
+                        <Size>752px, 32px</Size>
+                    </SubReport>
+                </Items>
+            </Detail>
+        </Sections>
+        <Items />
+        <Groups>
+            <Group Name="G_AccConfirmNbr">
+                <Grouping>
+                    <GroupExp>
+                        <DataField>=[GVApGuiCmInvoice.AccConfirmNbr]</DataField>
+                    </GroupExp>
+                </Grouping>
+                <Headers>
+                    <Header Name="groupHeaderSection1">
+                        <Height>5.07937cm</Height>
+                        <PageBreak>After</PageBreak>
+                        <Items>
+                            <TextBox Name="textBox1">
+                                <Location>8px, 16px</Location>
+                                <Size>368px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>22px</Size>
+                                    </Font>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[GVRegistration.SiteNameChinese]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox2">
+                                <Location>8px, 40px</Location>
+                                <Size>432px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>16px</Size>
+                                    </Font>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[GVRegistration.SiteAddress]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox3">
+                                <Localizable>False</Localizable>
+                                <Location>8px, 64px</Location>
+                                <Size>168px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>16px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>='TEL:'+[GVRegistration.SiteTelephone]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox4">
+                                <Localizable>False</Localizable>
+                                <Location>176px, 64px</Location>
+                                <Size>168px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>16px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>='FAX:'+[GVRegistration.SiteFax]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox5">
+                                <Location>512px, 0px</Location>
+                                <Size>240px, 32px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Top</VerticalAlign>
+                                </Style>
+                                <Value>=[GVApGuiCmInvoice.AccConfirmNbr]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox6">
+                                <Location>0px, 120px</Location>
+                                <Size>752px, 32px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>16px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[GVApGuiCmInvoice.VendorAddress]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox7">
+                                <Location>0px, 152px</Location>
+                                <Size>752px, 32px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>22px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[GVApGuiCmInvoice.VendorName]</Value>
+                            </TextBox>
+                        </Items>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection1">
+                        <Height>0cm</Height>
+                    </Footer>
+                </Footers>
+            </Group>
+        </Groups>
+    </Report>
+</Report>

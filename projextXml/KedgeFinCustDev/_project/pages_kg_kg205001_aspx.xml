@@ -1,0 +1,99 @@
+﻿<Page path="~/pages/kg/kg205001.aspx" ControlId="13" pageSource="tVZRT9swEH5m0v5DlIlXmnQwNtSisYQCgqKq7creJpMcrTUn7hyHwh7223e2E+KOpEQdQ0JKz3ffd3f+7HNv97MzInNwrkg6z/Gj7wbvXGdIMglCLQwoQ9vvTmXJOgMukhAkoWwv0WbXOcklP72HVN5QAfmy70qRg+vMCKMxkTCGnzlksu/eEZahPeBxgXx51vUOPM/fI9nyYS/KXOciXYCgMuu7iu176eA6UypVxNdUqo9Y5+06u8dv3/SwCpPg9HEJzowKmRM2InLRInUFgBDIfxTwVGINzkXYdyP89lWm2jRiJIJzzmIQanG5CCeuM85TgjVNQNwjEMLs9JYPR6NvIZFkwnMRgUaKsShhXDPjihlm9FYVM9VtuqGxStX3vF337Run+FO1XJNENQniOexdns14HmFzhoSm0nIcCZoQ8TijsOq7hc+5ta4y2+kFhLFbEv0IeJKQNM502Wjv1Cyg9a9KVJc7Vo+OG1rWbW7ZoLljaltU+hrmDn8861iVSdlSZRlCcgvCKnqtlc450PkCQfx9b/mAImWMr5RSz2kMpRZNc6aQLBkKVf8qkroijzyX45yZbbQN/rP8JpIIOearYkuPiwZWIQ3IqlmCswn9hRl9Gz7DVcxBJu2Y9wVbwFmepKWGNjNO4UGexlQ6apOpDBZ43CErY09TgmqM++7AHM+aHMZwd32LG2n6PqDA4tJYcZcsNnMo+DLkq7QNiS60DPAP1rhmkMZcn++Kr3S1+SbAIJJctOYrA7p+DV8QVmyl4+uweWtsWgYkki/xPe1jW74y4GMtXQhZtHn7mqQ6aaPU/S2UilnClCZQW6VaGHJ1eF8SkYXif1rfWHNXKA9LSZb/q/Tb9+pIL+Fxc7u35/Pr+K75/zqc+2t0uMsyzzYfTEtJLyvH/7CFdK5zNQ10+5oYKhf/cP1EnCSywq/ctsdfP3FhE36vY8+eYr2ch22n7vvmqXvWPHXPBI01xBw/Wkzc+tl6oGfr5AdNlZ95XGUbh+0V3APL7M6qTLS1bqpfmbAd9ZTpGT0UwVa0sdsdv5CQKP0XWR96VfurgBY4J1HE81TfzGUDuv+IZa7dAq27NVoQv0J1SpbVxm6JEuZg7tMC6dPWQBSfJVVG3Y9b98YaqGV5+wjWaRFbjf71SHwq2+qz0tLaNeLuWOruKf2realPJ77alapvKKKvrEeXudqGNLWOlK66jC6wIkl5+oUI857Hf30gOk926/5QOT27O/4A">
+    <PXFormView ID="form" ParentId="phF_form" TypeFullName="PX.Web.UI.PXFormView">
+        <Children Key="Template">
+            <AddItem>
+                <PXDateTimeEdit TypeFullName="PX.Web.UI.PXDateTimeEdit">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="CstPXDateTimeEdit4" />
+                    <Prop Key="DataField" Value="VoucherDate" />
+                    <Prop Key="Enabled" Value="False" />
+                </PXDateTimeEdit>
+            </AddItem>
+            <AddItem>
+                <PXDateTimeEdit TypeFullName="PX.Web.UI.PXDateTimeEdit">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="CstPXDateTimeEdit9" />
+                    <Prop Key="DataField" Value="DocDate" />
+                </PXDateTimeEdit>
+            </AddItem>
+            <AddItem>
+                <PXTextEdit TypeFullName="PX.Web.UI.PXTextEdit">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="CstPXTextEdit" />
+                    <Prop Key="DataField" Value="UsrAccConfirmNbr" />
+                </PXTextEdit>
+            </AddItem>
+            <AddItem>
+                <PXDropDown TypeFullName="PX.Web.UI.PXDropDown">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="CstPXDropDown8" />
+                    <Prop Key="DataField" Value="APStatus" />
+                </PXDropDown>
+            </AddItem>
+            <PXLayoutRule ID="CstPXLayoutRule16" OriginalIndex="12" />
+            <PXDateTimeEdit DataField="VoucherDate" OriginalIndex="8" Remove="True" />
+            <PXTextEdit DataField="VoucherKey" OriginalIndex="9" Remove="True" />
+            <PXTextEdit DataField="VoucherNo" OriginalIndex="10" Remove="True" />
+            <PXDropDown DataField="Status" OriginalIndex="11" Remove="True" />
+        </Children>
+    </PXFormView>
+    <PXGridLevel DataMember="VoucherL" ParentId="phG_grid_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="AccountID" />
+                    <Prop Key="Width" Value="70" />
+                    <Prop Key="CommitChanges" Value="True" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="AccountID_Account_description" />
+                    <Prop Key="Width" Value="220" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrSubID" />
+                    <Prop Key="Width" Value="140" />
+                    <Prop Key="CommitChanges" Value="True" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrSubID_description" />
+                    <Prop Key="Width" Value="280" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="Cd" OriginalIndex="3" />
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="ContractID" />
+                    <Prop Key="Width" Value="70" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="ContractID_description" />
+                    <Prop Key="Width" Value="280" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="VendorID" />
+                    <Prop Key="Width" Value="140" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="VendorID_BAccount_acctName" />
+                    <Prop Key="Width" Value="280" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="AccountCD" OriginalIndex="1" Remove="True" />
+            <PXGridColumn DataField="AccountDesc" OriginalIndex="2" Remove="True" />
+            <PXGridColumn DataField="ContractCD" OriginalIndex="7" Remove="True" />
+            <PXGridColumn DataField="VendorCD" OriginalIndex="8" Remove="True" />
+        </Children>
+    </PXGridLevel>
+</Page>

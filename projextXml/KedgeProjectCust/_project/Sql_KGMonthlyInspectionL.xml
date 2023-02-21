@@ -1,0 +1,28 @@
+﻿<Sql TableName="KGMonthlyInspectionL" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGMonthlyInspectionL">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="MonthlyInspectionID" type="Int" />
+  <col name="MonthlyInspectionLineID" type="Int" identity="true" />
+  <col name="TemplateLineID" type="Int" />
+  <col name="TestResult" type="NChar(1)" nullable="true" />
+  <col name="IsChecked" type="Bit" />
+  <col name="LastMonthRemark" type="NVarChar(MAX)" nullable="true" />
+  <col name="Remark" type="NVarChar(MAX)" nullable="true" />
+  <col name="MissingNum" type="Int" />
+  <col name="Deduction" type="Decimal(5,2)" nullable="true" />
+  <col name="Score" type="Decimal(5,2)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="SegmentCD" type="NVarChar(30)" />
+  <index name="PK_KGMonthlyInspectionL_1" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="MonthlyInspectionLineID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

@@ -1,0 +1,4 @@
+﻿<Table TableName="Vendor">
+    <Column TableName="Vendor" ColumnName="UsrPersonalID" ColumnType="string" AllowNull="True" MaxLength="12" DecimalPrecision="2" DecimalLength="12" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="Vendor" ColumnName="UsrIsAlertVendor" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

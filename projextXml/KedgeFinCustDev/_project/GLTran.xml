@@ -1,0 +1,4 @@
+﻿<Table TableName="GLTran">
+    <Column TableName="GLTran" ColumnName="UsrBillPaymentID" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="GLTran" ColumnName="UsrPaymentDate" ColumnType="date" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

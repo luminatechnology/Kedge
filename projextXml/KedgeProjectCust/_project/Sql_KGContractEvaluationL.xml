@@ -1,0 +1,25 @@
+﻿<Sql TableName="KGContractEvaluationL" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGContractEvaluationL">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ContractEvaluationQuestID" type="Int" identity="true" />
+  <col name="ContractEvaluationID" type="Int" />
+  <col name="QuestSeq" type="Int" />
+  <col name="Quest" type="NVarChar(500)" />
+  <col name="Score" type="Decimal(6,2)" nullable="true" />
+  <col name="WeightScore" type="Int" nullable="true" />
+  <col name="FinalScore" type="Decimal(6,2)" nullable="true" />
+  <col name="Remark" type="NVarChar(500)" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGContractEvaluationL" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ContractEvaluationQuestID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

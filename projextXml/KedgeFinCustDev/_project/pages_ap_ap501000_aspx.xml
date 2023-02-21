@@ -1,0 +1,30 @@
+﻿<Page path="~/pages/ap/ap501000.aspx" ControlId="2" pageSource="pVVNb9pAED0nUv6DtVVuLZCqvUSmqgOhiQSJBfm6ocWewCbrXWc/COTQ394ZGxPyASXKbT27M/vem+fZcP93EPMxBF2uxh4XTdb6woIetw4MbXSExNjf+nPE1rvCuisBj7WsCLIg8k4fT0G5a2HA503mjAcWXHEpUu6gDw8erGuyWy4txls6XdSN4p+Ng0ajUeM2n9USy4JTNQEjnG0yumtYHWDBhXCUcakcLdICNQv2f+3t7u2GyKIEeDHPIbgSxnkuY+4m/4VOBUK8/bCllUMGwWm7yRJcHxDOIhRLnsCJlikY2swn7QELjFccGQ3ATLEMFtkJ89lhfNPmjg+0NwkUlVKkdC1SAoI09pd5tsxDqFaMiNdFoVhsRMbNnBCSOG2d+AwREGpUALmd8QwPxze189EdJM7Worj2fK4PEjgpXCdW9RVa61h+X8+yu57kHyPSosQYF284nYAYT/D7R6ORz17RH7g5sX36JlQKs8PggFobSakfsT9CjSshitAAuEkmlZtaPHdCqyar2KK0z2pXYh9xl0wuc7LdslZ6562j/g/EE5kO3cqQy87gXijKW6h+qh48+hdBzlUSayvK68oiHfQLehY90xEgU/RnH27PRubrFahUo2TLxbBcDHmSOGrXYmNxPIpP1VSLBIbDgc9zKSA9mi9rbNx9XbhoyE7YhSlIW6xX2lNEC316kI3AvLFTmbATtrT0mVrkr1YoN8pOnHkpm6xT/r5UtBCBnCHRhYAeuICZi6QYo2AtvIJ8QH7Frwkk90d6tuhp8RlRtdVGa+OW5YtIT0/hZeRctbmdjDQ36XKQ1NeiXsGIrAkJC/ooH5jjVDhtCG4FYasqZftY0BXqvqWzjCsMTvE/rUTdsk7VzA8ef9P77dI3+gk7KWwu+byH87jJTgSS+ACoSpH1KZut47jz9pNdQfHxa9vTHaFifFx0uln+jbBb3szPjRjjzVHmXvi+T2OP3k5nxKzU1G1PhQp/AhcpATZ5zg/rL/7ssP5yNJSzo74yPEKaizQhixeBC0VD4xrntH5kwbHi+EylVXN6Qq1M+erSMEpoZB5xE7ThlnvpysC7P8oKoHceq38=">
+    <PXGridLevel DataMember="APDocumentList" ParentId="phL_grid_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrIsConfirm" />
+                    <Prop Key="Width" Value="60" />
+                    <Prop Key="Type" Value="CheckBox" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="APInvoice__ProjectID" />
+                    <Prop Key="Width" Value="70" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="APInvoice__ProjectID_description" />
+                    <Prop Key="Width" Value="220" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="VendorID" OriginalIndex="3" />
+        </Children>
+        <Children Key="RowTemplate" />
+    </PXGridLevel>
+    <PXGrid ID="grid" ParentId="phL_grid" TypeFullName="PX.Web.UI.PXGrid">
+        <Prop Key="FastFilterFields" Value="RefNbr,VendorID,VendorID_Vendor_acctName,VendorRefNbr,APInvoice__SuppliedByVendorID,APInvoice__SuppliedByVendorID_Vendor_acctName,APInvoice__ProjectID,APInvoice__ProjectID_description" />
+    </PXGrid>
+</Page>

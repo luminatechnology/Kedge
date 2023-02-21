@@ -1,0 +1,21 @@
+﻿<Sql TableName="KGComsVoucher" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGComsVoucher">
+  <col name="CompanyID" type="Int" nullable="true" default="Zero" />
+  <col name="BatchID" type="Int" />
+  <col name="VoucherID" type="Int" identity="true" />
+  <col name="CompanyName" type="NVarChar(3)" nullable="true" />
+  <col name="VoucherKey" type="NVarChar(11)" nullable="true" />
+  <col name="VoucherNo" type="NVarChar(11)" nullable="true" />
+  <col name="VoucherDate" type="NVarChar(7)" nullable="true" />
+  <col name="Operator" type="NVarChar(12)" nullable="true" />
+  <col name="DrAmt" type="Decimal(12,0)" nullable="true" />
+  <col name="CrAmt" type="Decimal(12,0)" nullable="true" />
+  <col name="AccountantCheckUser" type="NVarChar(15)" nullable="true" />
+  <col name="UniformNo" type="NVarChar(40)" nullable="true" />
+  <col name="Project" type="NVarChar(4)" nullable="true" />
+  <col name="AccUID" type="NVarChar(22)" nullable="true" />
+  <col name="SubCode" type="NVarChar(25)" nullable="true" />
+  <col name="ErrorMsg" type="NVarChar(255)" nullable="true" />
+  <col name="CreateDate" type="DateTime" nullable="true" />
+</table>]]></CDATA>
+</Sql>

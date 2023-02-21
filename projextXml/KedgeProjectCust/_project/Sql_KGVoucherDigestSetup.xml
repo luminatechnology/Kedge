@@ -1,0 +1,23 @@
+﻿<Sql TableName="KGVoucherDigestSetup" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGVoucherDigestSetup">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="SetupID" type="Int" nullable="true" />
+  <col name="DigestID" type="Int" identity="true" />
+  <col name="AccountID" type="Int" />
+  <col name="OracleAccountCD" type="NVarChar(10)" />
+  <col name="OracleDigestRule" type="NVarChar(240)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="IsProjectCode" type="Bit" nullable="true" />
+  <index name="PK_KGVoucherDigestSetup_1" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="AccountID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

@@ -1,0 +1,32 @@
+﻿<Automation screen="KG100000">
+    <Actions ScreenID="KG100000">
+        <Action IsActive="True" ActionName="CopyPaste" ActionType="G" DisableCondition="True" WindowMode="S" HideCondition="True">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+        <Action IsActive="True" ActionName="Delete" ActionType="G" WindowMode="S" HideCondition="True">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+        <Action IsActive="True" ActionName="First" ActionType="G" DisableCondition="True" WindowMode="S" HideCondition="True">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+        <Action IsActive="True" ActionName="Insert" ActionType="G" WindowMode="S" HideCondition="True">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+        <Action IsActive="True" ActionName="Last" ActionType="G" DisableCondition="True" WindowMode="S" HideCondition="True">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+        <Action IsActive="True" ActionName="Next" ActionType="G" DisableCondition="True" WindowMode="S" HideCondition="True">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+        <Action IsActive="True" ActionName="Previous" ActionType="G" WindowMode="S" HideCondition="True">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+    </Actions>
+</Automation>

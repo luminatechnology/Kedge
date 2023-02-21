@@ -1,0 +1,4 @@
+﻿<Table TableName="GLBudgetLine">
+    <Column TableName="GLBudgetLine" ColumnName="UsrIsBudgetCheck" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="GLBudgetLine" ColumnName="UsrBudgetCheckType" ColumnType="string" AllowNull="True" MaxLength="3" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

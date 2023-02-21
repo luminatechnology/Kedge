@@ -1,0 +1,160 @@
+﻿<Sql TableName="CreateAPARGui401DataV" CustomScript="#CDATA">
+    <CDATA name="CustomScript"><![CDATA[
+CREATE OR ALTER VIEW dbo.APARGui401DataV AS
+select 
+	CompanyID,
+	DeclareYear,
+	Period,
+	DeclareBatchNbr,
+	RegistrationCD,
+	-- 應稅銷售額(1) = $AR_B1+$AR_B5+$AR_B9+$AR_B13-$ARCM_B17
+	SUM(AR_B1_5_9_13 - ARCM_B17)as ARSalesAmt,
+	-- 零稅銷售額(3) = 0
+	CAST (0 AS DECIMAL(1)) as ARSalesAmtByZero,
+	-- 特種稅額銷售額(5) = 0
+	CAST (0 AS DECIMAL(1)) as ARSalesAmtBySP,
+	-- 進項稅額(9+10) = ($AP_C29+$AP_C33+$AP_C37+$AP_C79-$APCM_C41) + ($AP_C30+$AP_C34+$AP_C38+$AP_C80-$APCM_C42)
+	SUM(AP_C29_33_37_79 - APCM_C41 + AP_C30_34_38_80 - APCM_C42) as APTaxAmt,
+	-- 得底進項稅額(12) = ($AP_C29+$AP_C33+$AP_C37+$AP_C79-$APCM_C41) + ($AP_C31+$AP_C35+$AP_C39+$AP_C81-$APCM_C43) - ($AR_B2+$AR_B6+$AR_B10+$AR_B14-$ARCM_B18)
+	SUM(AP_C29_33_37_79 - APCM_C41 + AP_C31_35_39_81 - APCM_C43 - AR_B2_6_10_14 + ARCM_B18) as APDiscountTax ,
+	CAST (0 AS DECIMAL(1)) as APForeignTax,
+	CAST (0 AS DECIMAL(1)) as ARForeignTax
+FROM (
+---進項發票
+select 
+	t.CompanyID,
+	t.DeclareYear,
+	t.Period,
+	t.DeclareBatchNbr,
+	t.RegistrationCD,
+	SUM(Case when 
+		(GuiType in (31,32,35) And TaxCode = 1) 
+		Or 
+		(GuiType = 36 And TaxCode = 2) 
+	then SalesAmt else 0 end) AR_B1_5_9_13,--B1+B5+B9+B13
+	SUM(Case when 
+		(GuiType in (31,32,35) And TaxCode = 1) 
+		Or 
+		(GuiType = 36 And TaxCode = 2) 
+	then TaxAmt else 0 end) AR_B2_6_10_14,--B2+B6+B10+B14
+	0 AS ARCM_B17,
+	0 AS ARCM_B18,
+	0 AS AP_C30_34_38_80,
+	0 AS AP_C29_33_37_79,
+	0 AS AP_C31_35_39_81,
+	0 AS APCM_C41,
+	0 AS APCM_C42,
+	0 AS APCM_C43
+from GVArGuiInvoice a
+inner join GVMediaDeclarationTemp t
+	on a.CompanyID = t.CompanyID
+	and a.DeclareBatchNbr = t.DeclareBatchNbr
+	and a.DeclareYear = t.DeclareYear
+	and a.RegistrationCD = t.RegistrationCD
+group by t.CompanyID,t.DeclareYear,t.Period,t.DeclareBatchNbr,t.RegistrationCD
+UNION ALL
+--進項折讓
+select 
+	t.CompanyID,
+	t.DeclareYear,
+	t.Period,
+	t.DeclareBatchNbr,
+	t.RegistrationCD,
+	0 AS AR_B1_5_9_13,
+	0 AS AR_B2_6_10_14,
+	SUM(Case when GuiType in (33,34) And TaxCode in (1,3) then SalesAmt else 0 end) ARCM_B17,
+	SUM(Case when GuiType in (33,34) And TaxCode in (1,3) then TaxAmt else 0 end)  ARCM_B18,
+	0 AS AP_C30_34_38_80,
+	0 AS AP_C29_33_37_79,
+	0 AS AP_C31_35_39_81,
+	0 AS APCM_C41,
+	0 AS APCM_C42,
+	0 AS APCM_C43
+from GVArGuiCmInvoice a
+inner join GVMediaDeclarationTemp t
+	on a.CompanyID = t.CompanyID
+	and a.DeclareBatchNbr = t.DeclareBatchNbr
+	and a.DeclareYear = t.DeclareYear
+	and a.RegistrationCD = t.RegistrationCD
+group by t.CompanyID,t.DeclareYear,t.Period,t.DeclareBatchNbr,t.RegistrationCD
+UNION ALL
+--銷項發票
+select 
+	t.CompanyID,
+	t.DeclareYear,
+	t.Period,
+	t.DeclareBatchNbr,
+	t.RegistrationCD,
+	0 AS AR_B1_5_9_13,
+	0 AS AR_B2_6_10_14,
+	0 AS ARCM_B17,
+	0 AS ARCM_B18,
+	SUM(Case when (
+		(GuiType in (21,22,27,26) And TaxCode = 1)--C30,C38
+		Or 
+		(GuiType = 25 And TaxCode = 1) --C34
+		Or 
+		(GuiType = 28 And TaxCode = 2) --C80
+	) And DeductionCode = 2 
+	then SalesAmt else 0 end) AP_C30_34_38_80,
+	SUM(Case when (
+		(GuiType in (21,22,27,26) And TaxCode = 1)--C29,C37
+		Or 
+		(GuiType = 25 And TaxCode = 1) --C33
+		Or 
+		(GuiType = 28 And TaxCode = 2) --C79
+	) And DeductionCode = 1 
+	then TaxAmt else 0 end) AP_C29_33_37_79,
+	SUM(Case when (
+		(GuiType in (21,22,27,26) And TaxCode = 1)--C31,C39
+		Or 
+		(GuiType = 25 And TaxCode = 1) --C35
+		Or 
+		(GuiType = 28 And TaxCode = 2) --C81
+	) And DeductionCode = 2 
+	then TaxAmt else 0 end) AP_C31_35_39_81,
+	0 AS APCM_C41,
+	0 AS APCM_C42,
+	0 AS APCM_C43
+from GVApGuiInvoice a
+inner join GVMediaDeclarationTemp t
+	on a.CompanyID = t.CompanyID
+	and a.DeclareBatchNbr = t.DeclareBatchNbr
+	and a.DeclareYear = t.DeclareYear
+	and a.RegistrationCD = t.RegistrationCD
+group by t.CompanyID,t.DeclareYear,t.Period,t.DeclareBatchNbr,t.RegistrationCD
+UNION ALL
+--銷項折讓
+select 
+	t.CompanyID,
+	t.DeclareYear,
+	t.Period,
+	t.DeclareBatchNbr,
+	t.RegistrationCD,
+	0 AS AR_B1_5_9_13,
+	0 AS AR_B2_6_10_14,
+	0 AS ARCM_B17,
+	0 AS ARCM_B18,
+	0 AS AP_C30_34_38_80,
+	0 AS AP_C29_33_37_79,
+	0 AS AP_C31_35_39_81,
+	SUM(Case when i.DeductionCode = 1 then line.TaxAmt else 0 end) APCM_C41,
+	SUM(Case when i.DeductionCode = 2 then line.SalesAmt else 0 end) APCM_C42,
+	SUM(Case when i.DeductionCode = 2 then line.TaxAmt else 0 end) APCM_C43
+from GVApGuiCmInvoice cmi 
+Inner Join GVApGuiCmInvoiceLine line
+	on cmi.CompanyID = line.CompanyID
+	and cmi.GuiCmInvoiceID = line.GuiCmInvoiceID
+Inner Join GVApGuiInvoice i
+	on cmi.CompanyID = i.CompanyID
+	and line.ApGuiInvoiceNbr = i.GuiInvoiceNbr
+inner join GVMediaDeclarationTemp t
+	on cmi.CompanyID = t.CompanyID
+	and cmi.DeclareBatchNbr = t.DeclareBatchNbr
+	and cmi.DeclareYear = t.DeclareYear
+	and cmi.RegistrationCD = t.RegistrationCD
+group by t.CompanyID,t.DeclareYear,t.Period,t.DeclareBatchNbr,t.RegistrationCD
+) as DataView
+Group by CompanyID,DeclareYear,Period,DeclareBatchNbr,RegistrationCD
+;]]></CDATA>
+</Sql>

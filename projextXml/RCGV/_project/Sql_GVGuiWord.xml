@@ -1,0 +1,20 @@
+﻿<Sql TableName="GVGuiWord" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVGuiWord">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="GuiWordID" type="Int" identity="true" />
+  <col name="GuiWordCD" type="NVarChar(2)" />
+  <col name="DeclareYear" type="Int" />
+  <col name="DeclarePeriod" type="NVarChar(2)" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_GVGuiWord" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="GuiWordID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

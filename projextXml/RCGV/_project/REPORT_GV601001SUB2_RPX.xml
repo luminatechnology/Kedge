@@ -1,0 +1,517 @@
+﻿<Report Name="gv601001sub2.rpx">
+    <Report Name="report1" version="20200826">
+        <Filters>
+            <FilterExp>
+                <DataField>GVApGuiCmInvoiceLine.GuiCmInvoiceID</DataField>
+                <Value>@P_GuiCmInvoiceID</Value>
+            </FilterExp>
+        </Filters>
+        <PageSettings>
+            <Margins>
+                <Bottom>0.5cm</Bottom>
+                <Left>0.5cm</Left>
+                <Right>0.5cm</Right>
+                <Top>0.5cm</Top>
+            </Margins>
+        </PageSettings>
+        <Parameters>
+            <ReportParameter>
+                <Name>P_GuiCmInvoiceID</Name>
+                <Type>Integer</Type>
+                <ViewName>=[GVApGuiCmInvoiceLine.GuiCmInvoiceID]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_TaxCode</Name>
+            </ReportParameter>
+        </Parameters>
+        <Relations>
+            <ReportRelation>
+                <ChildName>GVApGuiInvoice</ChildName>
+                <JoinType>Inner</JoinType>
+                <Links>
+                    <RelationRow>
+                        <ChildField>GuiInvoiceNbr</ChildField>
+                        <ParentField>ApGuiInvoiceNbr</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>GVApGuiCmInvoiceLine</ParentName>
+            </ReportRelation>
+        </Relations>
+        <SchemaUrl>http://localhost/AcumaticaL2/</SchemaUrl>
+        <Tables>
+            <ReportTable Name="GVApGuiCmInvoiceLine">
+                <Fields>
+                    <ReportField Name="ApGuiInvoiceNbr">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="GuiCmInvoiceID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="GuiCmInvoiceLineID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="ItemDesc">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="Noteid">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="Quantity">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Remark">
+                    </ReportField>
+                    <ReportField Name="SalesAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TaxAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                    <ReportField Name="Unit">
+                    </ReportField>
+                    <ReportField Name="UnitPrice">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                </Fields>
+                <FullName>RCGV.GV.DAC.GVApGuiCmInvoiceLine</FullName>
+            </ReportTable>
+            <ReportTable Name="GVApGuiInvoice">
+                <Fields>
+                    <ReportField Name="APReleased">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ConfirmDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Day">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Month">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="ConfirmPerson">
+                    </ReportField>
+                    <ReportField Name="ConfirmPerson_description">
+                    </ReportField>
+                    <ReportField Name="ConfirmPerson_Users_username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="DeclareMonth">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="DeclareYear">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="DeductionCode">
+                    </ReportField>
+                    <ReportField Name="DocDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="EPRefNbr">
+                    </ReportField>
+                    <ReportField Name="GroupCnt">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="GroupRemark">
+                    </ReportField>
+                    <ReportField Name="GuiInvoiceID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="GuiInvoiceNbr">
+                    </ReportField>
+                    <ReportField Name="GuiType">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Day">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Hour">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Month">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="InvoiceType">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LatestLineNo">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="PrintCnt">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="RefNbr">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD_description">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD_GVRegistration_siteNameChinese">
+                    </ReportField>
+                    <ReportField Name="Remark">
+                    </ReportField>
+                    <ReportField Name="SalesAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="TaxAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TaxCode">
+                    </ReportField>
+                    <ReportField Name="TaxRate">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TotalAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                    <ReportField Name="UsrConfirmBy">
+                    </ReportField>
+                    <ReportField Name="Vendor">
+                    </ReportField>
+                    <ReportField Name="Vendor_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="Vendor_description">
+                    </ReportField>
+                    <ReportField Name="Vendor_Segment1">
+                    </ReportField>
+                    <ReportField Name="Vendor_Vendor_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorAddress">
+                    </ReportField>
+                    <ReportField Name="VendorName">
+                    </ReportField>
+                    <ReportField Name="VendorUniformNumber">
+                    </ReportField>
+                    <ReportField Name="VoidDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="VoidDate_Day">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Hour">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Month">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="VoidReason">
+                    </ReportField>
+                    <ReportField Name="VoucherCategory">
+                    </ReportField>
+                </Fields>
+                <FullName>RCGV.GV.DAC.GVApGuiInvoice</FullName>
+            </ReportTable>
+        </Tables>
+        <Sections>
+            <Detail Name="detailSection1">
+                <Height>0.63492cm</Height>
+                <Variables>
+                    <ReportVariable>
+                        <Name>SalesAmt</Name>
+                        <ValueExpr>=Assign( '$SalesAmt', $SalesAmt+[GVApGuiCmInvoiceLine.SalesAmt] )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>TaxAmt</Name>
+                        <ValueExpr>=Assign( '$TaxAmt', $TaxAmt + [GVApGuiCmInvoiceLine.TaxAmt] )</ValueExpr>
+                    </ReportVariable>
+                </Variables>
+                <Items>
+                    <TextBox Name="textBox21">
+                        <CanGrow>True</CanGrow>
+                        <Location>0px, 0px</Location>
+                        <Size>24px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=Switch( #010;[GVApGuiInvoice.GuiType] = '21','三',#010;[GVApGuiInvoice.GuiType] = '25','三',#010;[GVApGuiInvoice.GuiType] = '22','二'#010;#010;)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox22">
+                        <CanGrow>True</CanGrow>
+                        <Location>24px, 0px</Location>
+                        <Size>72px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=Year( [GVApGuiInvoice.InvoiceDate])-1911 +'/'+#010;Format( '{0:00}', Month([GVApGuiInvoice.InvoiceDate] ) )+'/'+#010;Format( '{0:00}',Day( [GVApGuiInvoice.InvoiceDate]))</Value>
+                    </TextBox>
+                    <TextBox Name="textBox23">
+                        <CanGrow>True</CanGrow>
+                        <Location>96px, 0px</Location>
+                        <Size>88px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[GVApGuiCmInvoiceLine.ApGuiInvoiceNbr]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox24">
+                        <CanGrow>True</CanGrow>
+                        <Location>184px, 0px</Location>
+                        <Size>184px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[GVApGuiCmInvoiceLine.ItemDesc]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox25">
+                        <CanGrow>True</CanGrow>
+                        <Location>368px, 0px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox27">
+                        <CanGrow>True</CanGrow>
+                        <Format>#,##0</Format>
+                        <Location>448px, 0px</Location>
+                        <Size>128px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[GVApGuiCmInvoiceLine.SalesAmt]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox28">
+                        <CanGrow>True</CanGrow>
+                        <Format>#,##0</Format>
+                        <Location>576px, 0px</Location>
+                        <Size>56px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[GVApGuiCmInvoiceLine.TaxAmt]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox29">
+                        <CanGrow>True</CanGrow>
+                        <Location>632px, 0px</Location>
+                        <Size>40px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf( [@P_TaxCode] = '1', 'V', '' )</Value>
+                    </TextBox>
+                    <TextBox Name="textBox30">
+                        <CanGrow>True</CanGrow>
+                        <Location>672px, 0px</Location>
+                        <Size>40px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf( [@P_TaxCode] = '2', 'V', '' )</Value>
+                    </TextBox>
+                    <TextBox Name="textBox31">
+                        <CanGrow>True</CanGrow>
+                        <Location>712px, 0px</Location>
+                        <Size>40px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf( [@P_TaxCode] = '3', 'V', '' )</Value>
+                    </TextBox>
+                    <TextBox Name="textBox33">
+                        <CanGrow>True</CanGrow>
+                        <Location>400px, 0px</Location>
+                        <Size>48px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                </Items>
+            </Detail>
+        </Sections>
+    </Report>
+</Report>

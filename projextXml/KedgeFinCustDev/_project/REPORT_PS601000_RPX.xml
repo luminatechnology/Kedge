@@ -1,0 +1,349 @@
+﻿<Report Name="ps601000.rpx">
+    <Report Name="report1" version="20200826">
+        <Filters>
+            <FilterExp>
+                <DataField>PSPaymentSlip.RefNbr</DataField>
+                <Value>@RefNbr</Value>
+            </FilterExp>
+        </Filters>
+        <PageSettings>
+            <PaperKind>A4Small</PaperKind>
+        </PageSettings>
+        <Parameters>
+            <ReportParameter>
+                <Name>RefNbr</Name>
+                <Prompt>Ref Nbr</Prompt>
+                <ViewName>=[PSPaymentSlip.RefNbr]</ViewName>
+            </ReportParameter>
+        </Parameters>
+        <SchemaUrl>http://localhost/AcumaticaL2</SchemaUrl>
+        <Tables>
+            <ReportTable Name="PSPaymentSlip">
+                <Fields>
+                    <ReportField Name="ApproveDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Day">
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Month">
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                    </ReportField>
+                    <ReportField Name="BranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="BranchID_description">
+                    </ReportField>
+                    <ReportField Name="BranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="ContractID">
+                    </ReportField>
+                    <ReportField Name="ContractID_description">
+                    </ReportField>
+                    <ReportField Name="ContractID_PMProject_description">
+                    </ReportField>
+                    <ReportField Name="ContractID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CustomerID">
+                    </ReportField>
+                    <ReportField Name="CustomerID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="CustomerID_Customer_acctName">
+                    </ReportField>
+                    <ReportField Name="CustomerID_description">
+                    </ReportField>
+                    <ReportField Name="CustomerID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID_description">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID_Location_descr">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="DepartmentID">
+                    </ReportField>
+                    <ReportField Name="DepartmentID_description">
+                    </ReportField>
+                    <ReportField Name="DepartmentID_EPDepartment_description">
+                    </ReportField>
+                    <ReportField Name="DocBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DocDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DocDate_Day">
+                    </ReportField>
+                    <ReportField Name="DocDate_Hour">
+                    </ReportField>
+                    <ReportField Name="DocDate_Month">
+                    </ReportField>
+                    <ReportField Name="DocDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="DocDesc">
+                    </ReportField>
+                    <ReportField Name="DocType">
+                    </ReportField>
+                    <ReportField Name="EmployeeID">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_description">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_EPEmployee_acctName">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_Segment1">
+                    </ReportField>
+                    <ReportField Name="FinPeriodID">
+                    </ReportField>
+                    <ReportField Name="Hold">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LocationID">
+                    </ReportField>
+                    <ReportField Name="LocationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="RefNbr">
+                    </ReportField>
+                    <ReportField Name="Setup">
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="TargetType">
+                    </ReportField>
+                    <ReportField Name="TranPeriodID">
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                    <ReportField Name="VendorID">
+                    </ReportField>
+                    <ReportField Name="VendorID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorID_description">
+                    </ReportField>
+                    <ReportField Name="VendorID_Segment1">
+                    </ReportField>
+                    <ReportField Name="VendorID_Vendor_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID_description">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID_Location_descr">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="VoidedBy">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="VoidedDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="VoidedDate_Date">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="VoidedDate_Day">
+                    </ReportField>
+                    <ReportField Name="VoidedDate_Hour">
+                    </ReportField>
+                    <ReportField Name="VoidedDate_Month">
+                    </ReportField>
+                    <ReportField Name="VoidedDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="VoidedDate_Time">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                </Fields>
+                <FullName>PS.DAC.PSPaymentSlip</FullName>
+            </ReportTable>
+        </Tables>
+        <Sections>
+            <Detail Name="detailSection1">
+                <Height>0px</Height>
+            </Detail>
+            <PageFooter Name="pageFooterSection1">
+                <Height>1.69312cm</Height>
+                <Items>
+                    <TextBox Name="textBox1">
+                        <Location>152px, 0px</Location>
+                        <Size>56px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>16px</Size>
+                            </Font>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>出納：</Value>
+                    </TextBox>
+                    <TextBox Name="textBox2">
+                        <Location>440px, 0px</Location>
+                        <Size>56px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>16px</Size>
+                            </Font>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>主管：</Value>
+                    </TextBox>
+                    <TextBox Name="textBox3">
+                        <Location>728px, 0px</Location>
+                        <Size>88px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>16px</Size>
+                            </Font>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>繳款人：</Value>
+                    </TextBox>
+                    <TextBox Name="textBox4">
+                        <Location>672px, 40px</Location>
+                        <Size>352px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=#010;Switch( #010;[PageIndex]=1, '第一聯：繳款部門→出納→會計', #010;[PageIndex]=2, '第二聯: 繳款部門自行留存'#010;)</Value>
+                    </TextBox>
+                </Items>
+            </PageFooter>
+        </Sections>
+        <Items />
+        <Groups>
+            <Group Name="group1">
+                <Headers>
+                    <Header Name="groupHeaderSection1">
+                        <Height>0.63492cm</Height>
+                        <KeepTogether>False</KeepTogether>
+                        <Items>
+                            <SubReport Name="subReport1">
+                                <Location>0px, 0px</Location>
+                                <Parameters>
+                                    <ExternalParameter>
+                                        <Name>RefNbr</Name>
+                                        <ValueExpr>=@RefNbr</ValueExpr>
+                                    </ExternalParameter>
+                                    <ExternalParameter>
+                                        <Name>Msg</Name>
+                                        <ValueExpr>='第一聯：繳款部門→出納→會計'</ValueExpr>
+                                    </ExternalParameter>
+                                    <ExternalParameter>
+                                        <Name>IsCC</Name>
+                                        <Type>Boolean</Type>
+                                        <ValueExpr>=[PSPaymentSlip.DocType] In ('GUR','RGU')</ValueExpr>
+                                    </ExternalParameter>
+                                </Parameters>
+                                <ReportName>PS601000Sub1.rpx</ReportName>
+                                <Size>120px, 24px</Size>
+                            </SubReport>
+                        </Items>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection1">
+                        <Height>0px</Height>
+                    </Footer>
+                </Footers>
+            </Group>
+            <Group Name="group2">
+                <Headers>
+                    <Header Name="groupHeaderSection2">
+                        <Height>0.63492cm</Height>
+                        <PageBreak>Before</PageBreak>
+                        <Items>
+                            <SubReport Name="subReport2">
+                                <Location>0px, 0px</Location>
+                                <Parameters>
+                                    <ExternalParameter>
+                                        <Name>RefNbr</Name>
+                                        <ValueExpr>=@RefNbr</ValueExpr>
+                                    </ExternalParameter>
+                                    <ExternalParameter>
+                                        <Name>Msg</Name>
+                                        <ValueExpr>='第二聯: 繳款部門自行留存'</ValueExpr>
+                                    </ExternalParameter>
+                                    <ExternalParameter>
+                                        <Name>IsCC</Name>
+                                        <Type>Boolean</Type>
+                                        <ValueExpr>=[PSPaymentSlip.DocType] In ('GUR','RGU')</ValueExpr>
+                                    </ExternalParameter>
+                                </Parameters>
+                                <ReportName>PS601000Sub1.rpx</ReportName>
+                                <Size>100px, 24px</Size>
+                            </SubReport>
+                        </Items>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection2">
+                        <Height>0px</Height>
+                    </Footer>
+                </Footers>
+            </Group>
+        </Groups>
+    </Report>
+</Report>

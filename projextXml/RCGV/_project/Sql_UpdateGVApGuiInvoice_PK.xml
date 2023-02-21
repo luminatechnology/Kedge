@@ -1,0 +1,16 @@
+﻿<Sql TableName="UpdateGVApGuiInvoice_PK" CustomScript="#CDATA">
+    <CDATA name="CustomScript"><![CDATA[With UpdateData As
+(
+	SELECT CompanyID, GuiInvoiceID, RefNbr, ROW_NUMBER() OVER(PARTITION BY RefNbr ORDER BY RefNbr ASC) RN FROM GVApGuiInvoice WHERE CompanyID = 2 AND RefNbr IS NOT NULL
+)
+UPDATE GVApGuiInvoice SET LineNbr = RN
+FROM GVApGuiInvoice
+INNER JOIN UpdateData ON GVApGuiInvoice.CompanyID = UpdateData.CompanyID AND GVApGuiInvoice.GuiInvoiceID = UpdateData.GuiInvoiceID
+WHERE GVApGuiInvoice.CompanyID = 2
+GO
+
+UPDATE GVApGuiInvoice SET DocType = APRegister.DocType FROM GVApGuiInvoice
+INNER JOIN APRegister ON APRegister.CompanyID = GVApGuiInvoice.CompanyID AND APRegister.RefNbr = GVApGuiInvoice.RefNbr
+WHERE GVApGuiInvoice.CompanyID = 2
+GO]]></CDATA>
+</Sql>

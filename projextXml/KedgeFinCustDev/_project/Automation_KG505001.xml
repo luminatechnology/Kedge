@@ -1,0 +1,12 @@
+﻿<Automation screen="KG505001">
+    <Actions ScreenID="KG505001">
+        <Action IsActive="True" ActionName="viewVoucherAction" ActionType="G" WindowMode="S">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+        <Action IsActive="True" ActionName="voucherPreviewAction" ActionType="G" WindowMode="S" HideCondition="True">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+    </Actions>
+</Automation>

@@ -1,0 +1,25 @@
+﻿<Sql TableName="KGOwnerRevenue" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGOwnerRevenue">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ProjectID" type="Int" />
+  <col name="CostCodeID" type="Int" />
+  <col name="CostCodeDesc" type="NVarChar(250)" nullable="true" />
+  <col name="Qty" type="Decimal(19,6)" nullable="true" />
+  <col name="UOM" type="NVarChar(6)" nullable="true" />
+  <col name="Rate" type="Decimal(19,6)" nullable="true" />
+  <col name="Amount" type="Decimal(19,4)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <index name="PK_KGOwnerRevenue_1" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ProjectID" />
+    <col name="CostCodeID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

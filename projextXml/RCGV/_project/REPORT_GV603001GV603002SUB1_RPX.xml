@@ -1,0 +1,311 @@
+﻿<Report Name="gv603001gv603002sub1.rpx">
+    <Report version="20200826" Name="report1">
+        <Filters>
+            <FilterExp>
+                <DataField>GVApGuiInvoice.DeclareYear</DataField>
+                <Value>@DeclareYear</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>GreaterOrEqual</Condition>
+                <DataField>GVApGuiInvoice.DeclareMonth</DataField>
+                <Value>@DeclareStartMonth</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>LessOrEqual</Condition>
+                <DataField>GVApGuiInvoice.DeclareMonth</DataField>
+                <Value>@DeclareEndMonth</Value>
+            </FilterExp>
+            <FilterExp>
+                <DataField>GVApGuiInvoice.DeclareBatchNbr</DataField>
+                <Value>@DeclareBatchNbr</Value>
+            </FilterExp>
+        </Filters>
+        <Parameters>
+            <ReportParameter>
+                <Name>DeclareYear</Name>
+                <Type>Integer</Type>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>DeclareStartMonth</Name>
+                <Type>Integer</Type>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>DeclareEndMonth</Name>
+                <Type>Integer</Type>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>DeclareBatchNbr</Name>
+            </ReportParameter>
+        </Parameters>
+        <SchemaUrl>https://clouderp.kedge.com.tw/KedgeUAT/</SchemaUrl>
+        <Tables>
+            <ReportTable Name="GVApGuiInvoice">
+                <Fields>
+                    <ReportField Name="APReleased">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ConfirmDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Day">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Month">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="ConfirmPerson">
+                    </ReportField>
+                    <ReportField Name="ConfirmPerson_description">
+                    </ReportField>
+                    <ReportField Name="ConfirmPerson_Users_username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="DeclareBatchNbr">
+                    </ReportField>
+                    <ReportField Name="DeclareMonth">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="DeclareYear">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="DeductionCode">
+                    </ReportField>
+                    <ReportField Name="DocDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="EPRefNbr">
+                    </ReportField>
+                    <ReportField Name="GroupCnt">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="GroupRemark">
+                    </ReportField>
+                    <ReportField Name="GuiInvoiceID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="GuiInvoiceNbr">
+                    </ReportField>
+                    <ReportField Name="GuiType">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Day">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Hour">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Month">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="InvoiceType">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LatestLineNo">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="PrintCnt">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="RefNbr">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD_description">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD_GVRegistration_siteNameChinese">
+                    </ReportField>
+                    <ReportField Name="Remark">
+                    </ReportField>
+                    <ReportField Name="SalesAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="TaxAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TaxCode">
+                    </ReportField>
+                    <ReportField Name="TaxRate">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TotalAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                    <ReportField Name="UsrConfirmBy">
+                    </ReportField>
+                    <ReportField Name="Vendor">
+                    </ReportField>
+                    <ReportField Name="Vendor_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="Vendor_description">
+                    </ReportField>
+                    <ReportField Name="Vendor_Segment1">
+                    </ReportField>
+                    <ReportField Name="Vendor_Vendor_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorAddress">
+                    </ReportField>
+                    <ReportField Name="VendorName">
+                    </ReportField>
+                    <ReportField Name="VendorUniformNumber">
+                    </ReportField>
+                    <ReportField Name="VoidDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="VoidDate_Day">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Hour">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Month">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="VoidReason">
+                    </ReportField>
+                    <ReportField Name="VoucherCategory">
+                    </ReportField>
+                </Fields>
+                <FullName>RCGV.GV.DAC.GVApGuiInvoice</FullName>
+            </ReportTable>
+        </Tables>
+        <Sections>
+            <Detail Name="detailSection1">
+                <Height>0cm</Height>
+            </Detail>
+            <ReportHeader Name="reportHeaderSection1">
+                <Height>0px</Height>
+                <Variables>
+                    <ReportVariable>
+                        <Name>C28</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=21 Or [GVApGuiInvoice.GuiType]=26) And [GVApGuiInvoice.TaxCode]=1 And [GVApGuiInvoice.DeductionCode]=1, [GVApGuiInvoice.SalesAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C29</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=21 Or [GVApGuiInvoice.GuiType]=26) And [GVApGuiInvoice.TaxCode]=1 And [GVApGuiInvoice.DeductionCode]=1, [GVApGuiInvoice.TaxAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C30</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=21 Or [GVApGuiInvoice.GuiType]=26) And [GVApGuiInvoice.TaxCode]=1 And [GVApGuiInvoice.DeductionCode]=2, [GVApGuiInvoice.SalesAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C31</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=21 Or [GVApGuiInvoice.GuiType]=26) And [GVApGuiInvoice.TaxCode]=1 And [GVApGuiInvoice.DeductionCode]=2, [GVApGuiInvoice.TaxAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C32</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=25) And [GVApGuiInvoice.TaxCode]=1 And [GVApGuiInvoice.DeductionCode]=1, [GVApGuiInvoice.SalesAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C33</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=25) And [GVApGuiInvoice.TaxCode]=1 And [GVApGuiInvoice.DeductionCode]=1, [GVApGuiInvoice.TaxAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C34</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=25) And [GVApGuiInvoice.TaxCode]=1 And [GVApGuiInvoice.DeductionCode]=2, [GVApGuiInvoice.SalesAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C35</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=25) And [GVApGuiInvoice.TaxCode]=1 And [GVApGuiInvoice.DeductionCode]=2, [GVApGuiInvoice.TaxAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C36</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=22 Or [GVApGuiInvoice.GuiType]=27) And [GVApGuiInvoice.TaxCode]=1 And [GVApGuiInvoice.DeductionCode]=1, [GVApGuiInvoice.SalesAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C37</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=22 Or [GVApGuiInvoice.GuiType]=27) And [GVApGuiInvoice.TaxCode]=1 And [GVApGuiInvoice.DeductionCode]=1, [GVApGuiInvoice.TaxAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C38</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=22 Or [GVApGuiInvoice.GuiType]=27) And [GVApGuiInvoice.TaxCode]=1 And [GVApGuiInvoice.DeductionCode]=2, [GVApGuiInvoice.SalesAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C39</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=22 Or [GVApGuiInvoice.GuiType]=27) And [GVApGuiInvoice.TaxCode]=1 And [GVApGuiInvoice.DeductionCode]=2, [GVApGuiInvoice.TaxAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C78</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=28) And [GVApGuiInvoice.TaxCode]=2 And [GVApGuiInvoice.DeductionCode]=1, [GVApGuiInvoice.SalesAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C79</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=28) And [GVApGuiInvoice.TaxCode]=2 And [GVApGuiInvoice.DeductionCode]=1, [GVApGuiInvoice.TaxAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C80</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=28) And [GVApGuiInvoice.TaxCode]=2 And [GVApGuiInvoice.DeductionCode]=2, [GVApGuiInvoice.SalesAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C81</Name>
+                        <ValueExpr>=Sum (IIf( ([GVApGuiInvoice.GuiType]=28) And [GVApGuiInvoice.TaxCode]=2 And [GVApGuiInvoice.DeductionCode]=2, [GVApGuiInvoice.TaxAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C48</Name>
+                        <ValueExpr>=Sum (IIf( [GVApGuiInvoice.DeductionCode]=1, [GVApGuiInvoice.SalesAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>C49</Name>
+                        <ValueExpr>=Sum (IIf( [GVApGuiInvoice.DeductionCode]=2, [GVApGuiInvoice.SalesAmt], 0 ) )</ValueExpr>
+                    </ReportVariable>
+                </Variables>
+            </ReportHeader>
+        </Sections>
+    </Report>
+</Report>

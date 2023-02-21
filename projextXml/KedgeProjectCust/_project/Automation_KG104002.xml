@@ -1,0 +1,5 @@
+﻿<Automation screen="KG104002">
+    <Fields ScreenID="KG104002">
+        <Field IsActive="True" FieldName="CHECKITEM" RequiredCondition="True" ObjectName="KEDGE.DAC.KGSAFETYHEALTHINSPECTIONTEMPLATEL" />
+    </Fields>
+</Automation>

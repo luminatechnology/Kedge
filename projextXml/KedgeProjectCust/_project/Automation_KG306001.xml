@@ -1,0 +1,7 @@
+﻿<Automation screen="KG306001">
+    <Fields ScreenID="KG306001">
+        <Field IsActive="True" DisplayName="Cost Code Desc" FieldName="COSTCODEID_DESCRIPTION" ObjectName="KEDGE.DAC.KGOWNERREVENUEALLOCATION" />
+        <Field IsActive="True" DisplayName="Project Desc" FieldName="PROJECTID_DESCRIPTION" ObjectName="KEDGE.DAC.KGOWNERREVENUEALLOCATION" />
+        <Field IsActive="True" DisplayName="Proj Task Desc" FieldName="TASKID_DESCRIPTION" ObjectName="KEDGE.DAC.KGOWNERREVENUEALLOCATION" />
+    </Fields>
+</Automation>

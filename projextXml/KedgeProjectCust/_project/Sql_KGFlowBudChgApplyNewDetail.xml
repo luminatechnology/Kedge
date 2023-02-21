@@ -1,0 +1,30 @@
+﻿<Sql TableName="KGFlowBudChgApplyNewDetail" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowBudChgApplyNewDetail">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="BndID" type="Int" identity="true" />
+  <col name="BndUID" type="NVarChar(40)" />
+  <col name="BcnUID" type="NVarChar(40)" />
+  <col name="ItemNo" type="Int" nullable="true" />
+  <col name="ItemName" type="NVarChar(256)" nullable="true" />
+  <col name="PccesCode" type="NVarChar(30)" nullable="true" />
+  <col name="ItemUnit" type="NVarChar(6)" nullable="true" />
+  <col name="ItemCost" type="Decimal(19,6)" nullable="true" />
+  <col name="ItemQty" type="Decimal(19,6)" nullable="true" />
+  <col name="ItemAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="EmergencyAccQty" type="Decimal(19,6)" nullable="true" />
+  <col name="EmergencyAccCost" type="Decimal(19,6)" nullable="true" />
+  <col name="EmergencyAccAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowBudChgApplyNewDetail" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="BndID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

@@ -1,0 +1,12 @@
+﻿<Table TableName="PMChangeOrderBudget">
+    <Column TableName="PMChangeOrderBudget" ColumnName="UsrChangeReason" ColumnType="string" AllowNull="True" MaxLength="1" DecimalPrecision="2" DecimalLength="1" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="PMChangeOrderBudget" ColumnName="UsrChangeType" ColumnType="string" AllowNull="True" MaxLength="1" DecimalPrecision="2" DecimalLength="1" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="PMChangeOrderBudget" ColumnName="UsrChangePeriod" ColumnType="int" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="PMChangeOrderBudget" ColumnName="UsrBelongKind" ColumnType="string" AllowNull="True" MaxLength="1" DecimalPrecision="2" DecimalLength="1" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="PMChangeOrderBudget" ColumnName="UsrIsApprovedByCustomer" ColumnType="bool" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="PMChangeOrderBudget" ColumnName="UsrRemark" ColumnType="string" AllowNull="True" MaxLength="240" DecimalPrecision="2" DecimalLength="240" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="PMChangeOrderBudget" ColumnName="UsrInventoryDesc" ColumnType="string" AllowNull="True" MaxLength="256" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="PMChangeOrderBudget" ColumnName="UsrIsFreeItem" ColumnType="bool" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="PMChangeOrderBudget" ColumnName="UsrLineType" ColumnType="string" AllowNull="True" MaxLength="1" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="PMChangeOrderBudget" ColumnName="UsrCostBudgetType" ColumnType="string" AllowNull="True" MaxLength="15" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

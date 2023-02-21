@@ -1,0 +1,1670 @@
+﻿<Report Name="gv601001sub1.rpx">
+    <Report Name="report1" version="20200826">
+        <Filters>
+            <FilterExp>
+                <DataField>GVApGuiCmInvoice.GuiCmInvoiceID</DataField>
+                <Value>@P_GuiCmInvoiceID</Value>
+            </FilterExp>
+        </Filters>
+        <LayoutUnit>Pixel</LayoutUnit>
+        <PageSettings>
+            <Margins>
+                <Bottom>18.9px</Bottom>
+                <Left>18.9px</Left>
+                <Right>18.9px</Right>
+                <Top>18.9px</Top>
+            </Margins>
+        </PageSettings>
+        <Parameters>
+            <ReportParameter>
+                <Name>P_AccConfirmNbr</Name>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_FootMsg</Name>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_SiteName</Name>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_SiteAddress</Name>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_UniformNumber</Name>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_GuiCmInvoiceID</Name>
+                <Type>Integer</Type>
+                <ViewName>=[GVApGuiCmInvoice.GuiCmInvoiceID]</ViewName>
+            </ReportParameter>
+        </Parameters>
+        <Relations>
+            <ReportRelation>
+                <ChildName>GVRegistration</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>RegistrationCD</ChildField>
+                        <ParentField>RegistrationCD</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>GVApGuiCmInvoice</ParentName>
+            </ReportRelation>
+            <ReportRelation>
+                <ChildName>NoteDoc</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>NoteID</ChildField>
+                        <ParentField>NoteID</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>GVRegistration</ParentName>
+            </ReportRelation>
+            <ReportRelation>
+                <ChildName>UploadFile</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>FileID</ChildField>
+                        <ParentField>FileID</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>NoteDoc</ParentName>
+            </ReportRelation>
+        </Relations>
+        <SchemaUrl>http://localhost/Kedge/</SchemaUrl>
+        <Tables>
+            <ReportTable Name="GVApGuiCmInvoice">
+                <Fields>
+                    <ReportField Name="AccConfirmNbr">
+                    </ReportField>
+                    <ReportField Name="ApInvoiceNbr">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Day">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Month">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="ConfirmPerson">
+                    </ReportField>
+                    <ReportField Name="ConfirmPerson_description">
+                    </ReportField>
+                    <ReportField Name="ConfirmPerson_Users_username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="DeclareMonth">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="DeclareYear">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="GuiCmInvoiceID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="GuiCmInvoiceNbr">
+                    </ReportField>
+                    <ReportField Name="GuiType">
+                    </ReportField>
+                    <ReportField Name="Hold">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="InvoiceDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Day">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Hour">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Month">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="PrintCount">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="RegistrationCD">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD_description">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD_GVRegistration_siteNameChinese">
+                    </ReportField>
+                    <ReportField Name="Remark">
+                    </ReportField>
+                    <ReportField Name="SalesAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Setup">
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="TaxAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TaxCode">
+                    </ReportField>
+                    <ReportField Name="TaxRate">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TotalAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                    <ReportField Name="VendorAddress">
+                    </ReportField>
+                    <ReportField Name="VendorID">
+                    </ReportField>
+                    <ReportField Name="VendorID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorID_description">
+                    </ReportField>
+                    <ReportField Name="VendorID_Segment1">
+                    </ReportField>
+                    <ReportField Name="VendorID_Vendor_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorName">
+                    </ReportField>
+                    <ReportField Name="VendorUniformNumber">
+                    </ReportField>
+                    <ReportField Name="VoidDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="VoidDate_Day">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Hour">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Month">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="VoidReason">
+                    </ReportField>
+                </Fields>
+                <FullName>RCGV.GV.DAC.GVApGuiCmInvoice</FullName>
+            </ReportTable>
+            <ReportTable Name="GVRegistration">
+                <Fields>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="DeclarationMethod">
+                    </ReportField>
+                    <ReportField Name="DeclarationPayCode">
+                    </ReportField>
+                    <ReportField Name="GovUniformNumber">
+                    </ReportField>
+                    <ReportField Name="IsActive">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="ParentRegistrationCD">
+                    </ReportField>
+                    <ReportField Name="QrCodeSeedString">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD">
+                    </ReportField>
+                    <ReportField Name="RegistrationID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="SiteAddress">
+                    </ReportField>
+                    <ReportField Name="SiteFax">
+                    </ReportField>
+                    <ReportField Name="SiteNameChinese">
+                    </ReportField>
+                    <ReportField Name="SiteNameEnglish">
+                    </ReportField>
+                    <ReportField Name="SiteTelephone">
+                    </ReportField>
+                    <ReportField Name="SpecialTaxType">
+                    </ReportField>
+                    <ReportField Name="TaxAuthority">
+                    </ReportField>
+                    <ReportField Name="TaxCityCode">
+                    </ReportField>
+                    <ReportField Name="TaxPayer">
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                </Fields>
+                <FullName>RCGV.GV.DAC.GVRegistration</FullName>
+            </ReportTable>
+            <ReportTable Name="NoteDoc">
+                <Fields>
+                    <ReportField Name="EntityName">
+                    </ReportField>
+                    <ReportField Name="EntityRowValues">
+                    </ReportField>
+                    <ReportField Name="EntityType">
+                    </ReportField>
+                    <ReportField Name="FileID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                </Fields>
+                <FullName>PX.Data.NoteDoc</FullName>
+            </ReportTable>
+            <ReportTable Name="UploadFile">
+                <Fields>
+                    <ReportField Name="CheckedOutBy">
+                    </ReportField>
+                    <ReportField Name="CheckedOutComment">
+                    </ReportField>
+                    <ReportField Name="Comment">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="Data">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="Extansion">
+                    </ReportField>
+                    <ReportField Name="FileID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="FileRevisionID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="IsHidden">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsPublic">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsSystem">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastRevisionID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Name">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="OriginalName">
+                    </ReportField>
+                    <ReportField Name="PrimaryPageID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="PrimaryScreenID">
+                    </ReportField>
+                    <ReportField Name="SourceIsFolder">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="SourceLastExportDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="SourceLastExportDate_Date">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="SourceLastExportDate_Day">
+                    </ReportField>
+                    <ReportField Name="SourceLastExportDate_Hour">
+                    </ReportField>
+                    <ReportField Name="SourceLastExportDate_Month">
+                    </ReportField>
+                    <ReportField Name="SourceLastExportDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="SourceLastExportDate_Time">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="SourceLastImportDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="SourceLastImportDate_Date">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="SourceLastImportDate_Day">
+                    </ReportField>
+                    <ReportField Name="SourceLastImportDate_Hour">
+                    </ReportField>
+                    <ReportField Name="SourceLastImportDate_Month">
+                    </ReportField>
+                    <ReportField Name="SourceLastImportDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="SourceLastImportDate_Time">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="SourceLogin">
+                    </ReportField>
+                    <ReportField Name="SourceMask">
+                    </ReportField>
+                    <ReportField Name="SourceNamingFormat">
+                    </ReportField>
+                    <ReportField Name="SourcePassword">
+                    </ReportField>
+                    <ReportField Name="SourceType">
+                    </ReportField>
+                    <ReportField Name="SourceUri">
+                    </ReportField>
+                    <ReportField Name="SshCertificateName">
+                    </ReportField>
+                    <ReportField Name="Synchronizable">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                    <ReportField Name="Versioned">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                </Fields>
+                <FullName>PX.SM.UploadFile</FullName>
+            </ReportTable>
+        </Tables>
+        <Sections>
+            <Detail Name="detailSection1">
+                <Height>488px</Height>
+                <Items>
+                    <Panel Name="panel1">
+                        <Location>0px, 160px</Location>
+                        <Size>19.89418cm, 160px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Size>12px</Size>
+                            </Font>
+                        </Style>
+                        <Items>
+                            <SubReport Name="Detail">
+                                <Location>0px, 0px</Location>
+                                <Parameters>
+                                    <ExternalParameter>
+                                        <Name>P_GuiCmInvoiceID</Name>
+                                        <Type>Integer</Type>
+                                        <ValueExpr>=[GVApGuiCmInvoice.GuiCmInvoiceID]</ValueExpr>
+                                    </ExternalParameter>
+                                    <ExternalParameter>
+                                        <Name>P_TaxCode</Name>
+                                        <ValueExpr>=CStr( [GVApGuiCmInvoice.TaxCode] )</ValueExpr>
+                                    </ExternalParameter>
+                                </Parameters>
+                                <ReportName>GV601001Sub2.rpx</ReportName>
+                                <Size>752px, 0.63492cm</Size>
+                            </SubReport>
+                        </Items>
+                    </Panel>
+                    <PictureBox Name="pictureBox1">
+                        <Location>552px, 360px</Location>
+                        <MimeType>image/png</MimeType>
+                        <QRCodeSettings />
+                        <Size>184px, 72px</Size>
+                        <Source>Database</Source>
+                        <Value>=[UploadFile.Name]</Value>
+                    </PictureBox>
+                    <TextBox Name="textBox1">
+                        <Location>0px, 0px</Location>
+                        <Size>16px, 96px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>原#010;開#010;立#010;銷#010;貨</Value>
+                    </TextBox>
+                    <TextBox Name="textBox10">
+                        <Location>312px, 48px</Location>
+                        <Size>64px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>中華民國</Value>
+                    </TextBox>
+                    <TextBox Name="textBox11">
+                        <Location>408px, 48px</Location>
+                        <Size>16px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>年</Value>
+                    </TextBox>
+                    <TextBox Name="textBox12">
+                        <Location>448px, 48px</Location>
+                        <Size>16px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>月</Value>
+                    </TextBox>
+                    <TextBox Name="textBox13">
+                        <Location>488px, 48px</Location>
+                        <Size>16px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>日</Value>
+                    </TextBox>
+                    <TextBox Name="textBox14">
+                        <Location>376px, 48px</Location>
+                        <Size>32px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>=Year( [GVApGuiCmInvoice.InvoiceDate])-1911</Value>
+                    </TextBox>
+                    <TextBox Name="textBox15">
+                        <Format>00</Format>
+                        <Location>424px, 48px</Location>
+                        <Size>24px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>=Month([GVApGuiCmInvoice.InvoiceDate])</Value>
+                    </TextBox>
+                    <TextBox Name="textBox16">
+                        <Format>00</Format>
+                        <Location>464px, 48px</Location>
+                        <Size>24px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>=Day([GVApGuiCmInvoice.InvoiceDate])</Value>
+                    </TextBox>
+                    <TextBox Name="textBox17">
+                        <Location>576px, 72px</Location>
+                        <Size>176px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>='傳票號碼 '+[@P_AccConfirmNbr]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox18">
+                        <Location>0px, 112px</Location>
+                        <Size>184px, 16px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>開立發票</Value>
+                    </TextBox>
+                    <TextBox Name="textBox19">
+                        <Location>184px, 112px</Location>
+                        <Size>448px, 16px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>銷貨或折讓單內容</Value>
+                    </TextBox>
+                    <TextBox Name="textBox2">
+                        <Location>16px, 0px</Location>
+                        <Size>16px, 96px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Right>2px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>發#010;票#010;單#010;位</Value>
+                    </TextBox>
+                    <TextBox Name="textBox20">
+                        <Location>632px, 112px</Location>
+                        <Size>120px, 16px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>打(V)處</Value>
+                    </TextBox>
+                    <TextBox Name="textBox21">
+                        <Location>0px, 128px</Location>
+                        <Size>24px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>聯#010;式</Value>
+                    </TextBox>
+                    <TextBox Name="textBox22">
+                        <Location>24px, 128px</Location>
+                        <Size>72px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>發票日期</Value>
+                    </TextBox>
+                    <TextBox Name="textBox23">
+                        <Location>96px, 128px</Location>
+                        <Size>88px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>發票號碼</Value>
+                    </TextBox>
+                    <TextBox Name="textBox24">
+                        <Location>184px, 128px</Location>
+                        <Size>184px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>品名</Value>
+                    </TextBox>
+                    <TextBox Name="textBox25">
+                        <Location>368px, 128px</Location>
+                        <Size>32px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>數量</Value>
+                    </TextBox>
+                    <TextBox Name="textBox26">
+                        <Location>448px, 128px</Location>
+                        <Size>184px, 16px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>退出或折讓</Value>
+                    </TextBox>
+                    <TextBox Name="textBox27">
+                        <Location>448px, 144px</Location>
+                        <Size>128px, 16px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>金額(不含稅之退貨額)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox28">
+                        <Location>576px, 144px</Location>
+                        <Size>56px, 16px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>營業稅額</Value>
+                    </TextBox>
+                    <TextBox Name="textBox29">
+                        <Location>632px, 128px</Location>
+                        <Size>40px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>應稅</Value>
+                    </TextBox>
+                    <TextBox Name="textBox3">
+                        <Location>32px, 0px</Location>
+                        <Size>56px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>名　　稱</Value>
+                    </TextBox>
+                    <TextBox Name="textBox30">
+                        <Location>672px, 128px</Location>
+                        <Size>40px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>零#010;稅率</Value>
+                    </TextBox>
+                    <TextBox Name="textBox31">
+                        <Location>712px, 128px</Location>
+                        <Size>40px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>免稅</Value>
+                    </TextBox>
+                    <TextBox Name="textBox32">
+                        <Location>0px, 320px</Location>
+                        <Size>448px, 16px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>合　　　　計</Value>
+                    </TextBox>
+                    <TextBox Name="textBox33">
+                        <Location>400px, 128px</Location>
+                        <Size>48px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>單價</Value>
+                    </TextBox>
+                    <TextBox Name="textBox34">
+                        <Format>#,##0</Format>
+                        <Location>576px, 320px</Location>
+                        <Size>56px, 16px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$Detail_TaxAmt</Value>
+                    </TextBox>
+                    <TextBox Name="textBox35">
+                        <Format>#,##0</Format>
+                        <Location>448px, 320px</Location>
+                        <Size>128px, 16px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$Detail_SalesAmt</Value>
+                    </TextBox>
+                    <TextBox Name="textBox36">
+                        <Location>632px, 320px</Location>
+                        <Size>40px, 16px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf( [GVApGuiCmInvoice.TaxCode] = '1', 'V', '' )</Value>
+                    </TextBox>
+                    <TextBox Name="textBox37">
+                        <Location>672px, 320px</Location>
+                        <Size>40px, 16px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf( [GVApGuiCmInvoice.TaxCode] = '2', 'V', '' )</Value>
+                    </TextBox>
+                    <TextBox Name="textBox38">
+                        <Location>712px, 320px</Location>
+                        <Size>40px, 16px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf( [GVApGuiCmInvoice.TaxCode] = '3', 'V', '' )</Value>
+                    </TextBox>
+                    <TextBox Name="textBox39">
+                        <Location>0px, 336px</Location>
+                        <Size>376px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>本證明單所列銷貨退回進貨退出或折讓，確屬事實，特此證明。</Value>
+                    </TextBox>
+                    <TextBox Name="textBox4">
+                        <Location>32px, 32px</Location>
+                        <Size>56px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>營利事業#010;統一編號</Value>
+                    </TextBox>
+                    <TextBox Name="textBox40">
+                        <Location>16px, 368px</Location>
+                        <Size>120px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>原進貨營業人名稱：</Value>
+                    </TextBox>
+                    <TextBox Name="textBox41">
+                        <Location>136px, 368px</Location>
+                        <Size>152px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[@P_SiteName]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox42">
+                        <Location>16px, 384px</Location>
+                        <Size>136px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>(或原受買人)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox43">
+                        <Location>16px, 400px</Location>
+                        <Size>120px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>營利事業統一編號：</Value>
+                    </TextBox>
+                    <TextBox Name="textBox44">
+                        <Location>136px, 400px</Location>
+                        <Size>152px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[@P_UniformNumber]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox45">
+                        <Location>288px, 368px</Location>
+                        <Size>56px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>地址：</Value>
+                    </TextBox>
+                    <TextBox Name="textBox46">
+                        <CanGrow>True</CanGrow>
+                        <CanSplit>True</CanSplit>
+                        <Location>344px, 368px</Location>
+                        <Size>208px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[@P_SiteAddress]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox47">
+                        <Location>400px, 456px</Location>
+                        <Size>344px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[@P_FootMsg]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox5">
+                        <Location>32px, 64px</Location>
+                        <Size>56px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>營業所在#010;地　　址</Value>
+                    </TextBox>
+                    <TextBox Name="textBox6">
+                        <Location>88px, 0px</Location>
+                        <Size>200px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[GVApGuiCmInvoice.VendorName]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox7">
+                        <Location>88px, 32px</Location>
+                        <Size>200px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[GVApGuiCmInvoice.VendorUniformNumber]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox8">
+                        <Location>88px, 64px</Location>
+                        <Size>200px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>2px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[GVApGuiCmInvoice.VendorAddress]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox9">
+                        <Location>288px, 16px</Location>
+                        <Size>248px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>14px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>營業人銷貨退回進貨退出或折讓證明單</Value>
+                    </TextBox>
+                </Items>
+            </Detail>
+        </Sections>
+    </Report>
+</Report>

@@ -1,0 +1,23 @@
+﻿<Sql TableName="GVApArGuiTaxFreeSales" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVApArGuiTaxFreeSales">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="DeclareYear" type="Int" />
+  <col name="Period" type="Int" />
+  <col name="DeclareBatchNbr" type="NVarChar(20)" />
+  <col name="RegistrationCD" type="NVarChar(9)" />
+  <col name="TaxFreeSalse" type="Decimal(19,4)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <index name="PK_GVApArGuiTaxFreeSales" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="DeclareYear" />
+    <col name="Period" />
+    <col name="DeclareBatchNbr" />
+    <col name="RegistrationCD" />
+  </index>
+</table>]]></CDATA>
+</Sql>

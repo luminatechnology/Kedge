@@ -1,0 +1,1948 @@
+﻿<Report Name="kg607005.rpx">
+    <Report version="20200826" Name="report1">
+        <Filters>
+            <FilterExp>
+                <DataField>KGProjHistoryByPeriod.BranchID</DataField>
+                <Value>@CompanyID</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>IsNotNull</Condition>
+                <DataField>Account.UsrAccountGroup</DataField>
+            </FilterExp>
+            <FilterExp>
+                <Condition>NotEqual</Condition>
+                <DataField>Account.UsrAccountGroup</DataField>
+                <Value>預收工程款</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>NotEqual</Condition>
+                <DataField>Contract.UsrIsSettled</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@IsSettled</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>Contract.UsrIsSettled</DataField>
+            </FilterExp>
+            <FilterExp>
+                <Condition>GreaterOrEqual</Condition>
+                <DataField>KGProjHistoryByPeriod.FinPeriodID</DataField>
+                <Value>@BeginPeriod</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>LessOrEqual</Condition>
+                <DataField>KGProjHistoryByPeriod.FinPeriodID</DataField>
+                <Value>@EndPeriod</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>NotEqual</Condition>
+                <DataField>Contract.ContractCD</DataField>
+                <Value>@NonProjectCD</Value>
+            </FilterExp>
+        </Filters>
+        <Parameters>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <DefaultValue>K02</DefaultValue>
+                <Name>CompanyID</Name>
+                <Prompt>Company</Prompt>
+                <ViewName>=[KGProjHistoryByPeriod.BranchID]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <DefaultValue>=Format('{0:00}{1:yyyy}','01',Today())</DefaultValue>
+                <Name>StartPeriod</Name>
+                <Prompt>開始期間</Prompt>
+                <ViewName>=Report.GetFieldSchema( [FinPeriod.FinPeriodID] )</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <DefaultValue>=Format('{0:MMyyyy}',Today())</DefaultValue>
+                <Name>EndPeriod</Name>
+                <Prompt>結束期間</Prompt>
+                <ViewName>=Report.GetFieldSchema( [FinPeriod.FinPeriodID] )</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <DefaultValue>Actual</DefaultValue>
+                <Name>LedgerID</Name>
+                <Prompt>Ledger</Prompt>
+                <ViewName>=[KGProjHistoryByPeriod.LedgerID]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <DefaultValue>=True</DefaultValue>
+                <Name>IsSettled</Name>
+                <Type>Boolean</Type>
+            </ReportParameter>
+            <ReportParameter>
+                <DefaultValue>X</DefaultValue>
+                <Name>NonProjectCD</Name>
+                <Visible>False</Visible>
+            </ReportParameter>
+            <ReportParameter>
+                <DefaultValue>=Format('{0:MMyyyy}',#010;DateAdd( CDate(#010;Format('{0}-{1}-01' ,#010;Right( [@StartPeriod],4 ),#010;Left( [@StartPeriod],2 )#010;)), #010;'d',#010; -1 ))#010;</DefaultValue>
+                <Name>BeginPeriod</Name>
+                <Visible>False</Visible>
+            </ReportParameter>
+        </Parameters>
+        <Relations>
+            <ReportRelation>
+                <ChildName>KGProjHistoryTran</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>BranchID</ChildField>
+                        <ParentField>BranchID</ParentField>
+                    </RelationRow>
+                    <RelationRow>
+                        <ChildField>AccountID</ChildField>
+                        <ParentField>AccountID</ParentField>
+                    </RelationRow>
+                    <RelationRow>
+                        <ChildField>SubID</ChildField>
+                        <ParentField>SubID</ParentField>
+                    </RelationRow>
+                    <RelationRow>
+                        <ChildField>LedgerID</ChildField>
+                        <ParentField>LedgerID</ParentField>
+                    </RelationRow>
+                    <RelationRow>
+                        <ChildField>ProjectID</ChildField>
+                        <ParentField>ProjectID</ParentField>
+                    </RelationRow>
+                    <RelationRow>
+                        <ChildField>FinPeriodID</ChildField>
+                        <ParentField>FinPeriodID</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>KGProjHistoryByPeriod</ParentName>
+            </ReportRelation>
+            <ReportRelation>
+                <ChildName>Account</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>AccountID</ChildField>
+                        <ParentField>AccountID</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>KGProjHistoryByPeriod</ParentName>
+            </ReportRelation>
+            <ReportRelation>
+                <ChildName>Branch</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>Branch.BranchID</ChildField>
+                        <ParentField>KGProjHistoryByPeriod.BranchID</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>KGProjHistoryByPeriod</ParentName>
+            </ReportRelation>
+            <ReportRelation>
+                <ChildName>Contract</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>ContractID</ChildField>
+                        <ParentField>ProjectID</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>KGProjHistoryByPeriod</ParentName>
+            </ReportRelation>
+        </Relations>
+        <SchemaUrl>https://clouderp.kedge.com.tw/KedgeTest/</SchemaUrl>
+        <Sorting>
+            <SortExp>
+                <DataField>KGProjHistoryByPeriod.ProjectID</DataField>
+            </SortExp>
+            <SortExp>
+                <DataField>Account.UsrAccountGroup</DataField>
+            </SortExp>
+        </Sorting>
+        <Style>
+            <Font>
+                <Name>Arial</Name>
+            </Font>
+            <VerticalAlign>Bottom</VerticalAlign>
+        </Style>
+        <Tables>
+            <ReportTable Name="KGProjHistoryByPeriod">
+                <Fields>
+                    <ReportField Name="AccountID">
+                    </ReportField>
+                    <ReportField Name="AccountID_Account_description">
+                    </ReportField>
+                    <ReportField Name="AccountID_description">
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                    </ReportField>
+                    <ReportField Name="BranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="BranchID_description">
+                    </ReportField>
+                    <ReportField Name="BranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="FinPeriodID">
+                    </ReportField>
+                    <ReportField Name="FinYear">
+                    </ReportField>
+                    <ReportField Name="FinYtdBalance">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LedgerID">
+                    </ReportField>
+                    <ReportField Name="LedgerID_description">
+                    </ReportField>
+                    <ReportField Name="LedgerID_Ledger_descr">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="ProjectID">
+                    </ReportField>
+                    <ReportField Name="ProjectID_description">
+                    </ReportField>
+                    <ReportField Name="ProjectID_PMProject_description">
+                    </ReportField>
+                    <ReportField Name="Selected">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="SubID">
+                    </ReportField>
+                    <ReportField Name="SubID_description">
+                    </ReportField>
+                    <ReportField Name="SubID_Sub_description">
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                </Fields>
+                <FullName>KedgeFinCustDev.FIN.DAC.KGProjHistoryByPeriod</FullName>
+            </ReportTable>
+            <ReportTable Name="KGProjHistoryTran">
+                <Fields>
+                    <ReportField Name="AccountID">
+                    </ReportField>
+                    <ReportField Name="AccountID_Account_description">
+                    </ReportField>
+                    <ReportField Name="AccountID_description">
+                    </ReportField>
+                    <ReportField Name="AcctType">
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                    </ReportField>
+                    <ReportField Name="BranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="BranchID_description">
+                    </ReportField>
+                    <ReportField Name="BranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="FinPeriodID">
+                    </ReportField>
+                    <ReportField Name="FinPtdCredit">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="FinPtdDebit">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="FinYear">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LedgerID">
+                    </ReportField>
+                    <ReportField Name="LedgerID_description">
+                    </ReportField>
+                    <ReportField Name="LedgerID_Ledger_descr">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="ProjectID">
+                    </ReportField>
+                    <ReportField Name="ProjectID_description">
+                    </ReportField>
+                    <ReportField Name="ProjectID_PMProject_description">
+                    </ReportField>
+                    <ReportField Name="Selected">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="SubID">
+                    </ReportField>
+                    <ReportField Name="SubID_description">
+                    </ReportField>
+                    <ReportField Name="SubID_Sub_description">
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                </Fields>
+                <FullName>KedgeFinCustDev.FIN.DAC.KGProjHistoryTran</FullName>
+            </ReportTable>
+            <ReportTable Name="Account">
+                <Fields>
+                    <ReportField Name="AccountCD">
+                    </ReportField>
+                    <ReportField Name="AccountCD_Segment1">
+                    </ReportField>
+                    <ReportField Name="AccountClassID">
+                    </ReportField>
+                    <ReportField Name="AccountClassID_AccountClass_descr">
+                    </ReportField>
+                    <ReportField Name="AccountClassID_description">
+                    </ReportField>
+                    <ReportField Name="AccountGroupID">
+                    </ReportField>
+                    <ReportField Name="AccountGroupID_Segment1">
+                    </ReportField>
+                    <ReportField Name="AccountID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Active">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="AllowManualEntry">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Box1099">
+                        <DataType>Int16</DataType>
+                    </ReportField>
+                    <ReportField Name="COAOrder">
+                        <DataType>Int16</DataType>
+                    </ReportField>
+                    <ReportField Name="ControlAccountModule">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CuryID">
+                    </ReportField>
+                    <ReportField Name="Description">
+                    </ReportField>
+                    <ReportField Name="DirectPost">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="GLConsolAccountCD">
+                    </ReportField>
+                    <ReportField Name="GLConsolAccountCD_description">
+                    </ReportField>
+                    <ReportField Name="GLConsolAccountCD_GLConsolAccount_description">
+                    </ReportField>
+                    <ReportField Name="GroupMask">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="Included">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsCashAccount">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoSubDetail">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="PostOption">
+                    </ReportField>
+                    <ReportField Name="ReadableActive">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="RequireUnits">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="RevalCuryRateTypeId">
+                    </ReportField>
+                    <ReportField Name="Secured">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="TaxCategoryID">
+                    </ReportField>
+                    <ReportField Name="TaxCategoryID_description">
+                    </ReportField>
+                    <ReportField Name="TaxCategoryID_TaxCategory_descr">
+                    </ReportField>
+                    <ReportField Name="TransactionsForGivenCurrencyExists">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                    <ReportField Name="Type">
+                    </ReportField>
+                    <ReportField Name="TypeTotal">
+                    </ReportField>
+                    <ReportField Name="UsrAccountGroup">
+                    </ReportField>
+                </Fields>
+                <FullName>PX.Objects.GL.Account</FullName>
+            </ReportTable>
+            <ReportTable Name="Branch">
+                <Fields>
+                    <ReportField Name="AcctMapNbr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="AcctName">
+                    </ReportField>
+                    <ReportField Name="Active">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="BAccountID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="BaseCuryID">
+                    </ReportField>
+                    <ReportField Name="BranchCD">
+                    </ReportField>
+                    <ReportField Name="BranchCD_Segment1">
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="BranchOrOrganizationLogoNameReport">
+                    </ReportField>
+                    <ReportField Name="CEmail">
+                    </ReportField>
+                    <ReportField Name="CFSFiler">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ContactName">
+                    </ReportField>
+                    <ReportField Name="CountryID">
+                    </ReportField>
+                    <ReportField Name="CountryID_Country_description">
+                    </ReportField>
+                    <ReportField Name="CountryID_description">
+                    </ReportField>
+                    <ReportField Name="CTelNumber">
+                    </ReportField>
+                    <ReportField Name="DefaultPrinterID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="DefaultPrinterID_description">
+                    </ReportField>
+                    <ReportField Name="DefaultPrinterID_SMPrinter_printerName">
+                    </ReportField>
+                    <ReportField Name="ForeignEntity">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="GroupMask">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="Included">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LedgerCD">
+                    </ReportField>
+                    <ReportField Name="LedgerID">
+                    </ReportField>
+                    <ReportField Name="LedgerID_description">
+                    </ReportField>
+                    <ReportField Name="LedgerID_Ledger_descr">
+                    </ReportField>
+                    <ReportField Name="LogoName">
+                    </ReportField>
+                    <ReportField Name="LogoNameReport">
+                    </ReportField>
+                    <ReportField Name="MainLogoName">
+                    </ReportField>
+                    <ReportField Name="NameControl">
+                    </ReportField>
+                    <ReportField Name="OrganizationID">
+                    </ReportField>
+                    <ReportField Name="OrganizationID_description">
+                    </ReportField>
+                    <ReportField Name="OrganizationID_Organization_organizationName">
+                    </ReportField>
+                    <ReportField Name="OrganizationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="OrganizationLogoNameReport">
+                    </ReportField>
+                    <ReportField Name="OverrideThemeVariables">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ParentBranchID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="PhoneMask">
+                    </ReportField>
+                    <ReportField Name="Reporting1099">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="RoleName">
+                    </ReportField>
+                    <ReportField Name="RoleName_description">
+                    </ReportField>
+                    <ReportField Name="RoleName_Roles_descr">
+                    </ReportField>
+                    <ReportField Name="Secured">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="TCC">
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                </Fields>
+                <FullName>PX.Objects.GL.Branch</FullName>
+            </ReportTable>
+            <ReportTable Name="Contract">
+                <Fields>
+                    <ReportField Name="ActivationDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ActivationDate_Day">
+                    </ReportField>
+                    <ReportField Name="ActivationDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ActivationDate_Month">
+                    </ReportField>
+                    <ReportField Name="ActivationDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="AIALevel">
+                    </ReportField>
+                    <ReportField Name="AllocationID">
+                    </ReportField>
+                    <ReportField Name="AllowNonProjectAccountGroups">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="AllowOverride">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="AllowOverrideCury">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="AllowOverrideRate">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Approved">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ApproverID">
+                    </ReportField>
+                    <ReportField Name="ApproverID_description">
+                    </ReportField>
+                    <ReportField Name="ApproverID_EPEmployee_acctName">
+                    </ReportField>
+                    <ReportField Name="ApproverID_Segment1">
+                    </ReportField>
+                    <ReportField Name="AutoAllocate">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="AutomaticReleaseAR">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="AutoRenew">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="AutoRenewDays">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Balance">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="BaseType">
+                    </ReportField>
+                    <ReportField Name="BillingID">
+                    </ReportField>
+                    <ReportField Name="BillingLineCntr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="BudgetMetricsEnabled">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="CalendarID">
+                    </ReportField>
+                    <ReportField Name="CalendarID_CSCalendar_description">
+                    </ReportField>
+                    <ReportField Name="CalendarID_description">
+                    </ReportField>
+                    <ReportField Name="CaseItemID">
+                    </ReportField>
+                    <ReportField Name="CaseItemID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CertifiedJob">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ChangeOrderWorkflow">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ClassID">
+                    </ReportField>
+                    <ReportField Name="ClassType">
+                    </ReportField>
+                    <ReportField Name="ContractAccountGroup">
+                    </ReportField>
+                    <ReportField Name="ContractCD">
+                    </ReportField>
+                    <ReportField Name="ContractCD_Segment1">
+                    </ReportField>
+                    <ReportField Name="ContractID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="ContractInfo">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CreateProforma">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="CurrentRecurring">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CurrentRenewal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CurrentSetup">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryID">
+                    </ReportField>
+                    <ReportField Name="CustomerID">
+                    </ReportField>
+                    <ReportField Name="CustomerID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="CustomerID_Customer_acctName">
+                    </ReportField>
+                    <ReportField Name="CustomerID_description">
+                    </ReportField>
+                    <ReportField Name="CustomerID_Segment1">
+                    </ReportField>
+                    <ReportField Name="Days">
+                    </ReportField>
+                    <ReportField Name="DaysBeforeExpiration">
+                    </ReportField>
+                    <ReportField Name="DefaultAccountID">
+                    </ReportField>
+                    <ReportField Name="DefaultAccountID_Account_description">
+                    </ReportField>
+                    <ReportField Name="DefaultAccountID_description">
+                    </ReportField>
+                    <ReportField Name="DefaultAccountID_Segment1">
+                    </ReportField>
+                    <ReportField Name="DefaultAccrualAccountID">
+                    </ReportField>
+                    <ReportField Name="DefaultAccrualAccountID_Account_description">
+                    </ReportField>
+                    <ReportField Name="DefaultAccrualAccountID_description">
+                    </ReportField>
+                    <ReportField Name="DefaultAccrualAccountID_Segment1">
+                    </ReportField>
+                    <ReportField Name="DefaultAccrualSubID">
+                    </ReportField>
+                    <ReportField Name="DefaultAccrualSubID_description">
+                    </ReportField>
+                    <ReportField Name="DefaultAccrualSubID_Segment1">
+                    </ReportField>
+                    <ReportField Name="DefaultAccrualSubID_Segment2">
+                    </ReportField>
+                    <ReportField Name="DefaultAccrualSubID_Sub_description">
+                    </ReportField>
+                    <ReportField Name="DefaultBranchID">
+                    </ReportField>
+                    <ReportField Name="DefaultBranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="DefaultBranchID_description">
+                    </ReportField>
+                    <ReportField Name="DefaultBranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="DefaultSubID">
+                    </ReportField>
+                    <ReportField Name="DefaultSubID_description">
+                    </ReportField>
+                    <ReportField Name="DefaultSubID_Segment1">
+                    </ReportField>
+                    <ReportField Name="DefaultSubID_Segment2">
+                    </ReportField>
+                    <ReportField Name="DefaultSubID_Sub_description">
+                    </ReportField>
+                    <ReportField Name="Description">
+                    </ReportField>
+                    <ReportField Name="DetailedBilling">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="DiscontinueAfter">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DiscontinueAfter_Day">
+                    </ReportField>
+                    <ReportField Name="DiscontinueAfter_Hour">
+                    </ReportField>
+                    <ReportField Name="DiscontinueAfter_Month">
+                    </ReportField>
+                    <ReportField Name="DiscontinueAfter_Quarter">
+                    </ReportField>
+                    <ReportField Name="DiscountID">
+                    </ReportField>
+                    <ReportField Name="Duration">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="DurationType">
+                    </ReportField>
+                    <ReportField Name="EffectiveFrom">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="EffectiveFrom_Day">
+                    </ReportField>
+                    <ReportField Name="EffectiveFrom_Hour">
+                    </ReportField>
+                    <ReportField Name="EffectiveFrom_Month">
+                    </ReportField>
+                    <ReportField Name="EffectiveFrom_Quarter">
+                    </ReportField>
+                    <ReportField Name="ExpireDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ExpireDate_Day">
+                    </ReportField>
+                    <ReportField Name="ExpireDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ExpireDate_Month">
+                    </ReportField>
+                    <ReportField Name="ExpireDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="GraceDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="GracePeriod">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="GroupMask">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="Hold">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IncludeCO">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IncludeQtyInAIA">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsActive">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsCancelled">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsCompleted">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsContinuous">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsLastActionUndoable">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsPendingUpdate">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsTemplate">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastActiveRevID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="LastChangeOrderNumber">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LastProformaNumber">
+                    </ReportField>
+                    <ReportField Name="LimitsEnabled">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LineCtr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="LocationID">
+                    </ReportField>
+                    <ReportField Name="LocationID_description">
+                    </ReportField>
+                    <ReportField Name="LocationID_Location_descr">
+                    </ReportField>
+                    <ReportField Name="LocationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="LockCommitments">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="MasterContractID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Min">
+                    </ReportField>
+                    <ReportField Name="NonProject">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="OriginalContractID">
+                    </ReportField>
+                    <ReportField Name="OriginalContractID_Contract_description">
+                    </ReportField>
+                    <ReportField Name="OriginalContractID_description">
+                    </ReportField>
+                    <ReportField Name="OriginalContractID_Segment1">
+                    </ReportField>
+                    <ReportField Name="OwnerID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="OwnerID_description">
+                    </ReportField>
+                    <ReportField Name="OwnerID_Owner_displayName">
+                    </ReportField>
+                    <ReportField Name="PendingRecurring">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="PendingRenewal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="PendingSetup">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="PrepaymentDefCode">
+                    </ReportField>
+                    <ReportField Name="PrepaymentDefCode_description">
+                    </ReportField>
+                    <ReportField Name="PrepaymentDefCode_DRDeferredCode_description">
+                    </ReportField>
+                    <ReportField Name="PrepaymentEnabled">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="QuoteNbr">
+                    </ReportField>
+                    <ReportField Name="RateTableID">
+                    </ReportField>
+                    <ReportField Name="RateTypeID">
+                    </ReportField>
+                    <ReportField Name="RefreshOnRenewal">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Refundable">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="RefundPeriod">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Rejected">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="RenewalBillingStartDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="RenewalBillingStartDate_Day">
+                    </ReportField>
+                    <ReportField Name="RenewalBillingStartDate_Hour">
+                    </ReportField>
+                    <ReportField Name="RenewalBillingStartDate_Month">
+                    </ReportField>
+                    <ReportField Name="RenewalBillingStartDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="RestrictToEmployeeList">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="RestrictToResourceList">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="RetainageMaxPct">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="RetainageMode">
+                    </ReportField>
+                    <ReportField Name="RetainagePct">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="RevID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="SalesPersonID">
+                    </ReportField>
+                    <ReportField Name="SalesPersonID_description">
+                    </ReportField>
+                    <ReportField Name="SalesPersonID_SalesPerson_descr">
+                    </ReportField>
+                    <ReportField Name="SalesPersonID_Segment1">
+                    </ReportField>
+                    <ReportField Name="ScheduleStartsOn">
+                    </ReportField>
+                    <ReportField Name="Secured">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Selected">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ServiceActivate">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="SiteAddress">
+                    </ReportField>
+                    <ReportField Name="StartDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="StartDate_Day">
+                    </ReportField>
+                    <ReportField Name="StartDate_Hour">
+                    </ReportField>
+                    <ReportField Name="StartDate_Month">
+                    </ReportField>
+                    <ReportField Name="StartDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="SteppedRetainage">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="StrIsTemplate">
+                    </ReportField>
+                    <ReportField Name="TemplateID">
+                    </ReportField>
+                    <ReportField Name="TemplateID_ContractTemplate_description">
+                    </ReportField>
+                    <ReportField Name="TemplateID_description">
+                    </ReportField>
+                    <ReportField Name="TemplateID_Segment1">
+                    </ReportField>
+                    <ReportField Name="TerminationDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="TerminationDate_Day">
+                    </ReportField>
+                    <ReportField Name="TerminationDate_Hour">
+                    </ReportField>
+                    <ReportField Name="TerminationDate_Month">
+                    </ReportField>
+                    <ReportField Name="TerminationDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="TermsID">
+                    </ReportField>
+                    <ReportField Name="TermsID_description">
+                    </ReportField>
+                    <ReportField Name="TermsID_Terms_descr">
+                    </ReportField>
+                    <ReportField Name="TotalDue">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TotalPending">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TotalRecurring">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TotalsCalculated">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="TotalUsage">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                    <ReportField Name="Type">
+                    </ReportField>
+                    <ReportField Name="UsrFinalCost">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrFinalRevenue">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrFinSettleDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrFinSettleDate_Day">
+                    </ReportField>
+                    <ReportField Name="UsrFinSettleDate_Hour">
+                    </ReportField>
+                    <ReportField Name="UsrFinSettleDate_Month">
+                    </ReportField>
+                    <ReportField Name="UsrFinSettleDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="UsrFinStartDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrFinStartDate_Day">
+                    </ReportField>
+                    <ReportField Name="UsrFinStartDate_Hour">
+                    </ReportField>
+                    <ReportField Name="UsrFinStartDate_Month">
+                    </ReportField>
+                    <ReportField Name="UsrFinStartDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="UsrIsSettled">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrModCostTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrModRevenueTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrOriCost">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrOriRevenue">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrSiteArea">
+                    </ReportField>
+                    <ReportField Name="VisibleInAP">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="VisibleInAR">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="VisibleInCA">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="VisibleInCR">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="VisibleInEA">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="VisibleInGL">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="VisibleInIN">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="VisibleInPO">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="VisibleInSO">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="VisibleInTA">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="WorkgroupID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                </Fields>
+                <FullName>PX.Objects.CT.Contract</FullName>
+            </ReportTable>
+        </Tables>
+        <Version>20200826</Version>
+        <ViewerFields>
+            <ViewerField Name="Contract.DefaultBranchID">
+                <Description>分公司</Description>
+                <ViewName>分公司</ViewName>
+            </ViewerField>
+        </ViewerFields>
+        <Sections>
+            <PageHeader Name="pageHeaderSection1">
+                <Height>3.59788cm</Height>
+                <Items>
+                    <TextBox Name="textBox1">
+                        <Location>264px, 8px</Location>
+                        <Size>192px, 0.63492cm</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <Value>=[Branch.AcctName]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox10">
+                        <Location>272px, 112px</Location>
+                        <Size>120px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>期(年)初餘額</Value>
+                    </TextBox>
+                    <TextBox Name="textBox11">
+                        <Location>392px, 112px</Location>
+                        <Size>120px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>本期增加</Value>
+                    </TextBox>
+                    <TextBox Name="textBox12">
+                        <Location>512px, 112px</Location>
+                        <Size>72px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>完工結轉</Value>
+                    </TextBox>
+                    <TextBox Name="textBox13">
+                        <Location>584px, 112px</Location>
+                        <Size>104px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>期末餘額</Value>
+                    </TextBox>
+                    <TextBox Name="textBox2">
+                        <Location>280px, 32px</Location>
+                        <Size>159.99984px, 23.99998px</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <Value>KG在建工程變動明細報表</Value>
+                    </TextBox>
+                    <TextBox Name="textBox3">
+                        <Location>248px, 56px</Location>
+                        <Size>224px, 23.99998px</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <Value>='會計期間 ' + Left( [@EndPeriod], 2 )+'-'+Right([@EndPeriod], 4)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox4">
+                        <Location>536px, 9px</Location>
+                        <Size>152px, 0.63492cm</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>='使用者:  '+ Report.GetDefUI('RowAccessInfo.DisplayName')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox5">
+                        <Location>472px, 32px</Location>
+                        <Size>216px, 23.99998px</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>='印表日期: ' + Concat( '民國', Year( Today() ) - 1911 , '年' , Month( Today() ),  '月' , Day(Today()) ,   '日')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox6">
+                        <Location>496px, 56px</Location>
+                        <Size>192px, 23.99998px</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>='印表時間: ' + Format( '{0: HH:mm:ss}', NOW() )</Value>
+                    </TextBox>
+                    <TextBox Name="textBox7">
+                        <Location>544px, 80px</Location>
+                        <Size>144px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>='頁數: ' + [PageOf]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox8">
+                        <Location>8px, 112px</Location>
+                        <Size>56px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                        </Style>
+                        <Value>工地代碼</Value>
+                    </TextBox>
+                    <TextBox Name="textBox9">
+                        <Location>64px, 112px</Location>
+                        <Size>144px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>微軟正黑體</Name>
+                                <Size>11px</Size>
+                            </Font>
+                        </Style>
+                        <Value>工地名稱</Value>
+                    </TextBox>
+                </Items>
+            </PageHeader>
+            <Detail Name="detailSection1">
+                <Height>0cm</Height>
+                <Visible>False</Visible>
+            </Detail>
+            <PageFooter Name="pageFooterSection1">
+                <Height>0.63492cm</Height>
+            </PageFooter>
+        </Sections>
+        <Items />
+        <Groups>
+            <Group Name="group3">
+                <Headers>
+                    <Header Name="groupHeaderSection3">
+                        <Height>0.21164cm</Height>
+                        <Visible>False</Visible>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection3">
+                        <Height>0.84656cm</Height>
+                        <Items>
+                            <TextBox Name="textBox36">
+                                <Format>='#,##0'</Format>
+                                <Location>272px, 16px</Location>
+                                <Size>3.1746cm, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=sum (#010;IIf([KGProjHistoryByPeriod.FinPeriodID]=@StartPeriod,[KGProjHistoryByPeriod.FinYtdBalance]+[KGProjHistoryTran.FinPtdDebit]-[KGProjHistoryTran.FinPtdCredit],0)#010;)</Value>
+                            </TextBox>
+                            <TextBox Name="textBox37">
+                                <Format>='#,##0'</Format>
+                                <Location>392px, 16px</Location>
+                                <Size>119.99999px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>= sum([KGProjHistoryTran.FinPtdDebit]-[KGProjHistoryTran.FinPtdCredit])</Value>
+                            </TextBox>
+                            <TextBox Name="textBox38">
+                                <Format>='#,##0'</Format>
+                                <Location>584px, 16px</Location>
+                                <Size>104px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=sum(#010;IIf( [KGProjHistoryByPeriod.FinPeriodID]=@EndPeriod, [KGProjHistoryByPeriod.FinYtdBalance], 0 )#010;)</Value>
+                            </TextBox>
+                            <TextBox Name="textBox39">
+                                <Location>512px, 16px</Location>
+                                <Size>72px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>-</Value>
+                            </TextBox>
+                            <TextBox Name="textBox40">
+                                <Location>272px, 0px</Location>
+                                <Size>120px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>總計</Value>
+                            </TextBox>
+                            <TextBox Name="textBox41">
+                                <Location>392px, 0px</Location>
+                                <Size>120px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>總計</Value>
+                            </TextBox>
+                            <TextBox Name="textBox42">
+                                <Location>512px, 0px</Location>
+                                <Size>72px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>總計</Value>
+                            </TextBox>
+                            <TextBox Name="textBox43">
+                                <Location>584px, 0px</Location>
+                                <Size>104px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>總計</Value>
+                            </TextBox>
+                        </Items>
+                    </Footer>
+                </Footers>
+            </Group>
+            <Group Name="ProjectCD">
+                <Grouping>
+                    <GroupExp>
+                        <DataField>=[Contract.ContractCD]</DataField>
+                    </GroupExp>
+                </Grouping>
+                <Headers>
+                    <Header Name="groupHeaderSection2">
+                        <Height>0.21164cm</Height>
+                        <Visible>False</Visible>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection2">
+                        <Height>1.69312cm</Height>
+                        <Items>
+                            <Line Name="line1">
+                                <Location>272px, 32px</Location>
+                                <Size>415.99997px, 8px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                            </Line>
+                            <Line Name="line4">
+                                <Location>272px, 56px</Location>
+                                <Size>415.99997px, 8px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                            </Line>
+                            <TextBox Name="textBox16">
+                                <Format>='#,##0'</Format>
+                                <Location>272px, 40px</Location>
+                                <Size>120px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=$在建工程期初餘額 + $工程損益期初餘額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox21">
+                                <Location>216px, 16px</Location>
+                                <Size>55.99993px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                                <Value>工程損益</Value>
+                            </TextBox>
+                            <TextBox Name="textBox23">
+                                <Location>216px, 0px</Location>
+                                <Size>55.99993px, 15.99998px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                                <Value>在建工程</Value>
+                            </TextBox>
+                            <TextBox Name="textBox24">
+                                <Format>='#,##0'</Format>
+                                <Location>272px, 16px</Location>
+                                <Size>120px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=$工程損益期初餘額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox25">
+                                <Location>216px, 40px</Location>
+                                <Size>56px, 16.00006px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                                <Value>合計</Value>
+                            </TextBox>
+                            <TextBox Name="textBox26">
+                                <Format>='#,##0'</Format>
+                                <Location>272px, 0px</Location>
+                                <Size>120px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=$在建工程期初餘額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox27">
+                                <Format>='#,##0'</Format>
+                                <Location>392px, 40px</Location>
+                                <Size>119.99999px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=$在建工程本期增加 + $工程損益本期增加</Value>
+                            </TextBox>
+                            <TextBox Name="textBox28">
+                                <Location>512px, 40px</Location>
+                                <Size>72px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>-</Value>
+                            </TextBox>
+                            <TextBox Name="textBox29">
+                                <Format>='#,##0'</Format>
+                                <Location>584px, 40px</Location>
+                                <Size>104px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=$在建工程期末餘額 + $工程損益期末餘額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox30">
+                                <Location>512px, 0px</Location>
+                                <Size>72px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>-</Value>
+                            </TextBox>
+                            <TextBox Name="textBox31">
+                                <Location>512px, 16px</Location>
+                                <Size>72px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>-</Value>
+                            </TextBox>
+                            <TextBox Name="textBox32">
+                                <Format>='#,##0'</Format>
+                                <Location>584px, 0px</Location>
+                                <Size>104px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=$在建工程期末餘額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox33">
+                                <Format>='#,##0'</Format>
+                                <Location>584px, 16px</Location>
+                                <Size>104px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=$工程損益期末餘額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox34">
+                                <Format>='#,##0'</Format>
+                                <Location>392px, 0px</Location>
+                                <Size>120px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=$在建工程本期增加</Value>
+                            </TextBox>
+                            <TextBox Name="textBox35">
+                                <Format>='#,##0'</Format>
+                                <Location>392px, 16px</Location>
+                                <Size>120px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=$工程損益本期增加</Value>
+                            </TextBox>
+                            <TextBox Name="textBox44">
+                                <CanGrow>True</CanGrow>
+                                <Location>64px, 0px</Location>
+                                <Size>144px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                                <Value>=[KGProjHistoryByPeriod.ProjectID_description]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox45">
+                                <Location>8px, 0px</Location>
+                                <Size>48px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                                <Value>=[KGProjHistoryByPeriod.ProjectID]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox46">
+                                <CanGrow>True</CanGrow>
+                                <Location>64px, 16px</Location>
+                                <Size>144px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                                <Value>=[KGProjHistoryByPeriod.ProjectID_description]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox47">
+                                <Location>8px, 16px</Location>
+                                <Size>48px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                                <Value>=[KGProjHistoryByPeriod.ProjectID]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox48">
+                                <CanGrow>True</CanGrow>
+                                <Location>64px, 40px</Location>
+                                <Size>144px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                                <Value>=[KGProjHistoryByPeriod.ProjectID_description]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox49">
+                                <Location>8px, 40px</Location>
+                                <Size>48px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                                <Value>=[KGProjHistoryByPeriod.ProjectID]</Value>
+                            </TextBox>
+                        </Items>
+                    </Footer>
+                </Footers>
+            </Group>
+            <Group Name="ProjectCD+AccountGroup">
+                <Grouping>
+                    <GroupExp>
+                        <DataField>=[Contract.ContractCD]</DataField>
+                    </GroupExp>
+                    <GroupExp>
+                        <DataField>=[Account.UsrAccountGroup]</DataField>
+                        <SortOrder>Descending</SortOrder>
+                    </GroupExp>
+                </Grouping>
+                <Headers>
+                    <Header Name="groupHeaderSection1">
+                        <Height>0.42328cm</Height>
+                        <Variables>
+                            <ReportVariable>
+                                <Name>期初餘額</Name>
+                                <ValueExpr>=sum (#010;IIf([KGProjHistoryByPeriod.FinPeriodID]=[@BeginPeriod],[KGProjHistoryByPeriod.FinYtdBalance],0)#010;)</ValueExpr>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>本期增加</Name>
+                                <ValueExpr>=Sum(#010;IIf([KGProjHistoryByPeriod.FinPeriodID]&lt;&gt;[@BeginPeriod],#010;[KGProjHistoryTran.FinPtdDebit]-[KGProjHistoryTran.FinPtdCredit]#010;,0)#010;)</ValueExpr>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>期末餘額</Name>
+                                <ValueExpr>=sum(#010;IIf( [KGProjHistoryByPeriod.FinPeriodID]=@EndPeriod, [KGProjHistoryByPeriod.FinYtdBalance], 0 )#010;)</ValueExpr>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>在建工程期初餘額</Name>
+                                <ResetGroup>group2</ResetGroup>
+                                <ValueExpr>=Assign( '$在建工程期初餘額',$在建工程期初餘額 + IIF([Account.UsrAccountGroup] = '工程損益', 0 , $期初餘額 )  )</ValueExpr>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>在建工程本期增加</Name>
+                                <ResetGroup>group2</ResetGroup>
+                                <ValueExpr>=Assign( '$在建工程本期增加',$在建工程本期增加 + IIF([Account.UsrAccountGroup] = '工程損益', 0 , $本期增加 )  )</ValueExpr>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>在建工程期末餘額</Name>
+                                <ResetGroup>group2</ResetGroup>
+                                <ValueExpr>=Assign( '$在建工程期末餘額',$在建工程期末餘額 + IIF([Account.UsrAccountGroup] = '工程損益', 0 , $期末餘額 )  )</ValueExpr>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>工程損益期初餘額</Name>
+                                <ResetGroup>group2</ResetGroup>
+                                <ValueExpr>= IIF([Account.UsrAccountGroup] = '工程損益', $期初餘額 , $工程損益期初餘額)</ValueExpr>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>工程損益本期增加</Name>
+                                <ResetGroup>group2</ResetGroup>
+                                <ValueExpr>= IIF([Account.UsrAccountGroup] = '工程損益', $本期增加 , $工程損益本期增加)</ValueExpr>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>工程損益期末餘額</Name>
+                                <ResetGroup>group2</ResetGroup>
+                                <ValueExpr>= IIF([Account.UsrAccountGroup] = '工程損益', $期末餘額 , $工程損益期末餘額)</ValueExpr>
+                            </ReportVariable>
+                        </Variables>
+                        <VisibleExpr>= NOT [Account.UsrAccountGroup] = '工程損益'</VisibleExpr>
+                        <Items>
+                            <TextBox Name="textBox14">
+                                <Location>8px, 0px</Location>
+                                <Size>48px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                                <Value>=[KGProjHistoryByPeriod.ProjectID]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox15">
+                                <CanGrow>True</CanGrow>
+                                <Location>64px, 0px</Location>
+                                <Size>144px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                                <Value>=[KGProjHistoryByPeriod.ProjectID_description]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox17">
+                                <Format>='#,##0'</Format>
+                                <Location>392px, 0px</Location>
+                                <Size>120px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=$本期增加</Value>
+                            </TextBox>
+                            <TextBox Name="textBox18">
+                                <Location>512px, 0px</Location>
+                                <Size>72px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>-</Value>
+                            </TextBox>
+                            <TextBox Name="textBox19">
+                                <Format>='#,##0'</Format>
+                                <Location>584px, 0px</Location>
+                                <Size>104px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=$期末餘額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox20">
+                                <Location>216px, 0px</Location>
+                                <Size>55.99991px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                </Style>
+                                <Value>=[Account.UsrAccountGroup]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox22">
+                                <Format>='#,##0'</Format>
+                                <Location>272px, 0px</Location>
+                                <Size>120px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>微軟正黑體</Name>
+                                        <Size>11px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>=$期初餘額</Value>
+                            </TextBox>
+                        </Items>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection1">
+                        <Height>0cm</Height>
+                        <Visible>False</Visible>
+                    </Footer>
+                </Footers>
+            </Group>
+        </Groups>
+    </Report>
+</Report>

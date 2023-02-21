@@ -1,0 +1,552 @@
+﻿<Report Name="nm600200.rpx">
+    <Report Name="report1" version="20200826">
+        <Filters>
+            <FilterExp>
+                <DataField>NMPayableCheck.PrintBatchNbr</DataField>
+                <Value>@PrintBatchNbr</Value>
+            </FilterExp>
+        </Filters>
+        <PageSettings>
+            <Margins>
+                <Bottom>0mm</Bottom>
+                <Left>0mm</Left>
+                <Right>0mm</Right>
+                <Top>0mm</Top>
+            </Margins>
+        </PageSettings>
+        <Parameters>
+            <ReportParameter>
+                <Name>PrintBatchNbr</Name>
+                <Prompt>PrintBatchNbr</Prompt>
+                <Required>True</Required>
+            </ReportParameter>
+        </Parameters>
+        <SchemaUrl>https://clouderp.kedge.com.tw/KedgeDEV/</SchemaUrl>
+        <Tables>
+            <ReportTable Name="NMPayableCheck">
+                <Fields>
+                    <ReportField Name="BankAccountID">
+                    </ReportField>
+                    <ReportField Name="BankAccountID_description">
+                    </ReportField>
+                    <ReportField Name="BankAccountID_NMBankAccount_bankName">
+                    </ReportField>
+                    <ReportField Name="BaseCuryAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="BillPaymentID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="BookNbr">
+                    </ReportField>
+                    <ReportField Name="BookNbr_description">
+                    </ReportField>
+                    <ReportField Name="BookNbr_NMCheckBook_description">
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                    </ReportField>
+                    <ReportField Name="BranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="BranchID_description">
+                    </ReportField>
+                    <ReportField Name="BranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CashAccountID">
+                    </ReportField>
+                    <ReportField Name="CashAccountID_CashAccount_descr">
+                    </ReportField>
+                    <ReportField Name="CashAccountID_description">
+                    </ReportField>
+                    <ReportField Name="CashBatchNbr">
+                    </ReportField>
+                    <ReportField Name="CashCashierID">
+                    </ReportField>
+                    <ReportField Name="CashCashierID_description">
+                    </ReportField>
+                    <ReportField Name="CashCashierID_EPEmployee_acctName">
+                    </ReportField>
+                    <ReportField Name="CashCashierID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CashReverseBatchNbr">
+                    </ReportField>
+                    <ReportField Name="CheckDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CheckDate_Day">
+                    </ReportField>
+                    <ReportField Name="CheckDate_Hour">
+                    </ReportField>
+                    <ReportField Name="CheckDate_Month">
+                    </ReportField>
+                    <ReportField Name="CheckDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="CheckNbr">
+                    </ReportField>
+                    <ReportField Name="ConfirmBatchNbr">
+                    </ReportField>
+                    <ReportField Name="ConfirmReverseBatchNbr">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CuryID">
+                    </ReportField>
+                    <ReportField Name="CuryInfoID">
+                        <DataType>Int64</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRate">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryViewState">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="DeliverDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DeliverDate_Day">
+                    </ReportField>
+                    <ReportField Name="DeliverDate_Hour">
+                    </ReportField>
+                    <ReportField Name="DeliverDate_Month">
+                    </ReportField>
+                    <ReportField Name="DeliverDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="DeliverMethod">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="DepositDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DepositDate_Day">
+                    </ReportField>
+                    <ReportField Name="DepositDate_Hour">
+                    </ReportField>
+                    <ReportField Name="DepositDate_Month">
+                    </ReportField>
+                    <ReportField Name="DepositDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="Description">
+                    </ReportField>
+                    <ReportField Name="DueDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DueDate_Day">
+                    </ReportField>
+                    <ReportField Name="DueDate_Hour">
+                    </ReportField>
+                    <ReportField Name="DueDate_Month">
+                    </ReportField>
+                    <ReportField Name="DueDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="EtdDepositDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="EtdDepositDate_Day">
+                    </ReportField>
+                    <ReportField Name="EtdDepositDate_Hour">
+                    </ReportField>
+                    <ReportField Name="EtdDepositDate_Month">
+                    </ReportField>
+                    <ReportField Name="EtdDepositDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="IsIssuedByBank">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="ModifyCashierID">
+                    </ReportField>
+                    <ReportField Name="ModifyCashierID_description">
+                    </ReportField>
+                    <ReportField Name="ModifyCashierID_EPEmployee_acctName">
+                    </ReportField>
+                    <ReportField Name="ModifyCashierID_Segment1">
+                    </ReportField>
+                    <ReportField Name="ModifyDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ModifyDate_Day">
+                    </ReportField>
+                    <ReportField Name="ModifyDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ModifyDate_Month">
+                    </ReportField>
+                    <ReportField Name="ModifyDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="ModifyReason">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="OriCuryAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="PayableCashierID">
+                    </ReportField>
+                    <ReportField Name="PayableCashierID_description">
+                    </ReportField>
+                    <ReportField Name="PayableCashierID_EPEmployee_acctName">
+                    </ReportField>
+                    <ReportField Name="PayableCashierID_Segment1">
+                    </ReportField>
+                    <ReportField Name="PayableCheckCD">
+                    </ReportField>
+                    <ReportField Name="PayableCheckID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="PaymentDocDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="PaymentDocDate_Day">
+                    </ReportField>
+                    <ReportField Name="PaymentDocDate_Hour">
+                    </ReportField>
+                    <ReportField Name="PaymentDocDate_Month">
+                    </ReportField>
+                    <ReportField Name="PaymentDocDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="PaymentDocNo">
+                    </ReportField>
+                    <ReportField Name="PaymentMethodID">
+                    </ReportField>
+                    <ReportField Name="PrintBatchNbr">
+                    </ReportField>
+                    <ReportField Name="PrintChineseAmt">
+                    </ReportField>
+                    <ReportField Name="PrintCount">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="PrintDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="PrintDate_Day">
+                    </ReportField>
+                    <ReportField Name="PrintDate_Hour">
+                    </ReportField>
+                    <ReportField Name="PrintDate_Month">
+                    </ReportField>
+                    <ReportField Name="PrintDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="PrintUser">
+                    </ReportField>
+                    <ReportField Name="ProjectID">
+                    </ReportField>
+                    <ReportField Name="ProjectID_description">
+                    </ReportField>
+                    <ReportField Name="ProjectID_PMProject_description">
+                    </ReportField>
+                    <ReportField Name="ProjectID_Segment1">
+                    </ReportField>
+                    <ReportField Name="ProjectPeriod">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Receiver">
+                    </ReportField>
+                    <ReportField Name="RefNbr">
+                    </ReportField>
+                    <ReportField Name="Selected">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="SendCashierID">
+                    </ReportField>
+                    <ReportField Name="SendCashierID_description">
+                    </ReportField>
+                    <ReportField Name="SendCashierID_EPEmployee_acctName">
+                    </ReportField>
+                    <ReportField Name="SendCashierID_Segment1">
+                    </ReportField>
+                    <ReportField Name="Setup">
+                    </ReportField>
+                    <ReportField Name="SourceCode">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Status">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Title">
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                    <ReportField Name="VendorID">
+                    </ReportField>
+                    <ReportField Name="VendorID_BAccount2_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorID_description">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID">
+                    </ReportField>
+                </Fields>
+                <FullName>NM.DAC.NMPayableCheck</FullName>
+            </ReportTable>
+        </Tables>
+        <Sections>
+            <PageHeader Name="pageHeaderSection1">
+                <Height>0cm</Height>
+            </PageHeader>
+            <Detail Name="detailSection1">
+                <Height>29.7cm</Height>
+                <Items>
+                    <Line Name="line1">
+                        <LineStyle>Dashed</LineStyle>
+                        <Location>0px, 72px</Location>
+                        <Size>792px, 8px</Size>
+                        <Visible>False</Visible>
+                    </Line>
+                    <Line Name="line2">
+                        <Direction>Vertical</Direction>
+                        <LineStyle>Dashed</LineStyle>
+                        <Location>128px, 0px</Location>
+                        <Size>8px, 1128px</Size>
+                        <Visible>False</Visible>
+                    </Line>
+                    <Line Name="line3">
+                        <LineStyle>Dashed</LineStyle>
+                        <Location>0px, 432px</Location>
+                        <Size>792px, 8px</Size>
+                        <Visible>False</Visible>
+                    </Line>
+                    <Line Name="line4">
+                        <LineStyle>Dashed</LineStyle>
+                        <Location>0px, 800px</Location>
+                        <Size>792px, 8px</Size>
+                        <Visible>False</Visible>
+                    </Line>
+                    <TextBox Name="textBox1">
+                        <Location>168px, 640px</Location>
+                        <Size>80px, 32px</Size>
+                    </TextBox>
+                    <TextBox Name="textBox10">
+                        <Location>168px, 608px</Location>
+                        <Size>80px, 32px</Size>
+                    </TextBox>
+                    <TextBox Name="textBox11">
+                        <Location>576px, 864px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=Year([NMPayableCheck.EtdDepositDate])-1911</Value>
+                    </TextBox>
+                    <TextBox Name="textBox12">
+                        <Location>624px, 864px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=Month([NMPayableCheck.EtdDepositDate])</Value>
+                    </TextBox>
+                    <TextBox Name="textBox13">
+                        <Location>664px, 864px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=Day([NMPayableCheck.EtdDepositDate])</Value>
+                    </TextBox>
+                    <TextBox Name="textBox14">
+                        <Location>160px, 880px</Location>
+                        <Size>280px, 40px</Size>
+                    </TextBox>
+                    <TextBox Name="textBox15">
+                        <Location>312px, 928px</Location>
+                        <Size>408px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>16px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[NMPayableCheck.Title]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox16">
+                        <Location>304px, 960px</Location>
+                        <Size>424px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>16px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[NMPayableCheck.PrintChineseAmt]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox17">
+                        <Location>304px, 992px</Location>
+                        <Size>240px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>16px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>='$'+[NMPayableCheck.OriCuryAmount]+'.-'</Value>
+                    </TextBox>
+                    <TextBox Name="textBox18">
+                        <Location>0px, 1016px</Location>
+                        <Size>104px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[NMPayableCheck.Title]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox19">
+                        <Location>0px, 1056px</Location>
+                        <Size>64px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>='$'+[NMPayableCheck.OriCuryAmount]+'.-'</Value>
+                    </TextBox>
+                    <TextBox Name="textBox2">
+                        <Location>160px, 680px</Location>
+                        <Size>40px, 32px</Size>
+                    </TextBox>
+                    <TextBox Name="textBox20">
+                        <Location>0px, 1080px</Location>
+                        <Size>96px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=(Year([NMPayableCheck.EtdDepositDate])-1911)+'年'+Month([NMPayableCheck.EtdDepositDate])+'月'+Day([NMPayableCheck.EtdDepositDate])+'日'</Value>
+                    </TextBox>
+                    <TextBox Name="textBox3">
+                        <Location>248px, 632px</Location>
+                        <Size>200px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[NMPayableCheck.Title]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox4">
+                        <Location>248px, 664px</Location>
+                        <Size>200px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=(Year([NMPayableCheck.EtdDepositDate])-1911)+'年'+Month([NMPayableCheck.EtdDepositDate])+'月'+Day([NMPayableCheck.EtdDepositDate])+'日'</Value>
+                    </TextBox>
+                    <TextBox Name="textBox5">
+                        <Location>248px, 704px</Location>
+                        <Size>200px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>='$'+[NMPayableCheck.OriCuryAmount]+'.-'</Value>
+                    </TextBox>
+                    <TextBox Name="textBox6">
+                        <Location>248px, 736px</Location>
+                        <Size>200px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[NMPayableCheck.PayableCheckCD]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox9">
+                        <Location>168px, 576px</Location>
+                        <Size>80px, 32px</Size>
+                    </TextBox>
+                </Items>
+            </Detail>
+        </Sections>
+    </Report>
+</Report>

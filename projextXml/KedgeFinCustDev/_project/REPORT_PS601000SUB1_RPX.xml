@@ -1,0 +1,2093 @@
+﻿<Report Name="ps601000sub1.rpx">
+    <Report Name="report1" version="20200826">
+        <Filters>
+            <FilterExp>
+                <DataField>PSPaymentSlip.RefNbr</DataField>
+                <Value>@RefNbr</Value>
+            </FilterExp>
+        </Filters>
+        <PageSettings>
+            <Margins>
+                <Bottom>0.8cm</Bottom>
+                <Left>0.8cm</Left>
+                <Right>0.8cm</Right>
+                <Top>0.8cm</Top>
+            </Margins>
+            <PaperKind>A4Small</PaperKind>
+        </PageSettings>
+        <Parameters>
+            <ReportParameter>
+                <Name>RefNbr</Name>
+                <Prompt>Ref Nbr</Prompt>
+                <Required>True</Required>
+                <ViewName>=[PSPaymentSlip.RefNbr]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>Msg</Name>
+            </ReportParameter>
+            <ReportParameter>
+                <DefaultValue>False</DefaultValue>
+                <Name>IsCC</Name>
+                <Type>Boolean</Type>
+            </ReportParameter>
+        </Parameters>
+        <Relations>
+            <ReportRelation>
+                <ChildName>PSPaymentSlipDetails</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>RefNbr</ChildField>
+                        <ParentField>RefNbr</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>PSPaymentSlip</ParentName>
+            </ReportRelation>
+            <ReportRelation>
+                <ChildName>NMBankAccount</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>BankAccountID</ChildField>
+                        <ParentField>BankAccountID</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>PSPaymentSlipDetails</ParentName>
+            </ReportRelation>
+        </Relations>
+        <SchemaUrl>http://localhost/AcumaticaL2</SchemaUrl>
+        <Tables>
+            <ReportTable Name="NMBankAccount">
+                <Fields>
+                    <ReportField Name="AccountID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="AccountName">
+                    </ReportField>
+                    <ReportField Name="AccountType">
+                    </ReportField>
+                    <ReportField Name="AccountType_description">
+                    </ReportField>
+                    <ReportField Name="AccountType_SegmentValue_descr">
+                    </ReportField>
+                    <ReportField Name="ActivationDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ActivationDate_Day">
+                    </ReportField>
+                    <ReportField Name="ActivationDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ActivationDate_Month">
+                    </ReportField>
+                    <ReportField Name="ActivationDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="BankAccount">
+                    </ReportField>
+                    <ReportField Name="BankAccountCD">
+                    </ReportField>
+                    <ReportField Name="BankAccountID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="BankAddress">
+                    </ReportField>
+                    <ReportField Name="BankCode">
+                    </ReportField>
+                    <ReportField Name="BankCode_description">
+                    </ReportField>
+                    <ReportField Name="BankCode_SegmentValue_descr">
+                    </ReportField>
+                    <ReportField Name="BankName">
+                    </ReportField>
+                    <ReportField Name="BankPhone">
+                    </ReportField>
+                    <ReportField Name="BankShortName">
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="CashAccountID">
+                    </ReportField>
+                    <ReportField Name="CashAccountID_CashAccount_descr">
+                    </ReportField>
+                    <ReportField Name="CashAccountID_description">
+                    </ReportField>
+                    <ReportField Name="Contactor">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CuryID">
+                    </ReportField>
+                    <ReportField Name="Description">
+                    </ReportField>
+                    <ReportField Name="EnableIssueByBank">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsCheckPrintAble">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsSettlement">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="Noteid">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="PaymentMethodID">
+                    </ReportField>
+                    <ReportField Name="SettlementDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="SettlementDate_Day">
+                    </ReportField>
+                    <ReportField Name="SettlementDate_Hour">
+                    </ReportField>
+                    <ReportField Name="SettlementDate_Month">
+                    </ReportField>
+                    <ReportField Name="SettlementDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="SubID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                </Fields>
+                <FullName>NM.DAC.NMBankAccount</FullName>
+            </ReportTable>
+            <ReportTable Name="PSPaymentSlip">
+                <Fields>
+                    <ReportField Name="ApproveDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Day">
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Month">
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                    </ReportField>
+                    <ReportField Name="BranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="BranchID_description">
+                    </ReportField>
+                    <ReportField Name="BranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="ContractID">
+                    </ReportField>
+                    <ReportField Name="ContractID_description">
+                    </ReportField>
+                    <ReportField Name="ContractID_PMProject_description">
+                    </ReportField>
+                    <ReportField Name="ContractID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CustomerID">
+                    </ReportField>
+                    <ReportField Name="CustomerID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="CustomerID_Customer_acctName">
+                    </ReportField>
+                    <ReportField Name="CustomerID_description">
+                    </ReportField>
+                    <ReportField Name="CustomerID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID_description">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID_Location_descr">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="DepartmentID">
+                    </ReportField>
+                    <ReportField Name="DepartmentID_description">
+                    </ReportField>
+                    <ReportField Name="DepartmentID_EPDepartment_description">
+                    </ReportField>
+                    <ReportField Name="DocBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DocDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DocDate_Day">
+                    </ReportField>
+                    <ReportField Name="DocDate_Hour">
+                    </ReportField>
+                    <ReportField Name="DocDate_Month">
+                    </ReportField>
+                    <ReportField Name="DocDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="DocDesc">
+                    </ReportField>
+                    <ReportField Name="DocType">
+                    </ReportField>
+                    <ReportField Name="EmployeeID">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_description">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_EPEmployee_acctName">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_Segment1">
+                    </ReportField>
+                    <ReportField Name="FinPeriodID">
+                    </ReportField>
+                    <ReportField Name="Hold">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LocationID">
+                    </ReportField>
+                    <ReportField Name="LocationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="RefNbr">
+                    </ReportField>
+                    <ReportField Name="Setup">
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="TargetType">
+                    </ReportField>
+                    <ReportField Name="TranPeriodID">
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                    <ReportField Name="VendorID">
+                    </ReportField>
+                    <ReportField Name="VendorID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorID_description">
+                    </ReportField>
+                    <ReportField Name="VendorID_Segment1">
+                    </ReportField>
+                    <ReportField Name="VendorID_Vendor_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID_description">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID_Location_descr">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="VoidedBy">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="VoidedDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="VoidedDate_Date">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="VoidedDate_Day">
+                    </ReportField>
+                    <ReportField Name="VoidedDate_Hour">
+                    </ReportField>
+                    <ReportField Name="VoidedDate_Month">
+                    </ReportField>
+                    <ReportField Name="VoidedDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="VoidedDate_Time">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                </Fields>
+                <FullName>PS.DAC.PSPaymentSlip</FullName>
+            </ReportTable>
+            <ReportTable Name="PSPaymentSlipDetails">
+                <Fields>
+                    <ReportField Name="ActualDueDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ActualDueDate_Day">
+                    </ReportField>
+                    <ReportField Name="ActualDueDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ActualDueDate_Month">
+                    </ReportField>
+                    <ReportField Name="ActualDueDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="ArPaymentRefNbr">
+                    </ReportField>
+                    <ReportField Name="AuthDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="AuthDate_Day">
+                    </ReportField>
+                    <ReportField Name="AuthDate_Hour">
+                    </ReportField>
+                    <ReportField Name="AuthDate_Month">
+                    </ReportField>
+                    <ReportField Name="AuthDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="BankAccountID">
+                    </ReportField>
+                    <ReportField Name="BankAccountID_description">
+                    </ReportField>
+                    <ReportField Name="BankAccountID_NMBankAccount_bankName">
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                    </ReportField>
+                    <ReportField Name="BranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="BranchID_description">
+                    </ReportField>
+                    <ReportField Name="BranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CheckDueDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CheckDueDate_Day">
+                    </ReportField>
+                    <ReportField Name="CheckDueDate_Hour">
+                    </ReportField>
+                    <ReportField Name="CheckDueDate_Month">
+                    </ReportField>
+                    <ReportField Name="CheckDueDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="CheckIssuer">
+                    </ReportField>
+                    <ReportField Name="ContractID">
+                    </ReportField>
+                    <ReportField Name="ContractID_description">
+                    </ReportField>
+                    <ReportField Name="ContractID_PMProject_description">
+                    </ReportField>
+                    <ReportField Name="ContractID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CustomerID">
+                    </ReportField>
+                    <ReportField Name="CustomerID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="CustomerID_Customer_acctName">
+                    </ReportField>
+                    <ReportField Name="CustomerID_description">
+                    </ReportField>
+                    <ReportField Name="CustomerID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID_description">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID_Location_descr">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="DueDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DueDate_Day">
+                    </ReportField>
+                    <ReportField Name="DueDate_Hour">
+                    </ReportField>
+                    <ReportField Name="DueDate_Month">
+                    </ReportField>
+                    <ReportField Name="DueDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="EmployeeID">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_description">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_EPEmployee_acctName">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_Segment1">
+                    </ReportField>
+                    <ReportField Name="EtdDepositDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="EtdDepositDate_Day">
+                    </ReportField>
+                    <ReportField Name="EtdDepositDate_Hour">
+                    </ReportField>
+                    <ReportField Name="EtdDepositDate_Month">
+                    </ReportField>
+                    <ReportField Name="EtdDepositDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="GuarClass">
+                    </ReportField>
+                    <ReportField Name="GuarPayableCD">
+                    </ReportField>
+                    <ReportField Name="GuarReceviableCD">
+                    </ReportField>
+                    <ReportField Name="GuarType">
+                    </ReportField>
+                    <ReportField Name="InventoryID">
+                    </ReportField>
+                    <ReportField Name="InventoryID_description">
+                    </ReportField>
+                    <ReportField Name="InventoryID_InventoryItem_descr">
+                    </ReportField>
+                    <ReportField Name="InventoryID_Segment1">
+                    </ReportField>
+                    <ReportField Name="IssueDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="IssueDate_Day">
+                    </ReportField>
+                    <ReportField Name="IssueDate_Hour">
+                    </ReportField>
+                    <ReportField Name="IssueDate_Month">
+                    </ReportField>
+                    <ReportField Name="IssueDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="IsVoid">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="OriBankAccount">
+                    </ReportField>
+                    <ReportField Name="OriBankCode">
+                    </ReportField>
+                    <ReportField Name="OriBankCode_description">
+                    </ReportField>
+                    <ReportField Name="OriBankCode_SegmentValue_descr">
+                    </ReportField>
+                    <ReportField Name="PaymentCategory">
+                    </ReportField>
+                    <ReportField Name="PaymentMethodID">
+                    </ReportField>
+                    <ReportField Name="PaymentRefNbr">
+                    </ReportField>
+                    <ReportField Name="PaymentSlipDetailID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="PONbr">
+                    </ReportField>
+                    <ReportField Name="PONbr_description">
+                    </ReportField>
+                    <ReportField Name="PONbr_POOrder_orderDesc">
+                    </ReportField>
+                    <ReportField Name="POOrderType">
+                    </ReportField>
+                    <ReportField Name="ProcessDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ProcessDate_Day">
+                    </ReportField>
+                    <ReportField Name="ProcessDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ProcessDate_Month">
+                    </ReportField>
+                    <ReportField Name="ProcessDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="Qty">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="RefNbr">
+                    </ReportField>
+                    <ReportField Name="SlipDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="SlipDate_Day">
+                    </ReportField>
+                    <ReportField Name="SlipDate_Hour">
+                    </ReportField>
+                    <ReportField Name="SlipDate_Month">
+                    </ReportField>
+                    <ReportField Name="SlipDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="TranAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TranDesc">
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                    <ReportField Name="UnitCost">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Uom">
+                    </ReportField>
+                    <ReportField Name="VendorID">
+                    </ReportField>
+                    <ReportField Name="VendorID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorID_description">
+                    </ReportField>
+                    <ReportField Name="VendorID_Segment1">
+                    </ReportField>
+                    <ReportField Name="VendorID_Vendor_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID_description">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID_Location_descr">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID_Segment1">
+                    </ReportField>
+                </Fields>
+                <FullName>PS.DAC.PSPaymentSlipDetails</FullName>
+            </ReportTable>
+        </Tables>
+        <Sections>
+            <Detail Name="PS_detailSection">
+                <Height>1.90476cm</Height>
+                <VisibleExpr>=[@IsCC] = False</VisibleExpr>
+                <Items>
+                    <TextBox Name="textBox19">
+                        <Location>0px, 0px</Location>
+                        <Size>32px, 72px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=Assign( '$Seq', $Seq+1)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox20">
+                        <Location>776px, 0px</Location>
+                        <Size>288px, 72px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                            </Padding>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([PSPaymentSlipDetails.TranDesc],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox26">
+                        <Location>584px, 0px</Location>
+                        <Size>72px, 72px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[PSPaymentSlipDetails.ActualDueDate]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox27">
+                        <Location>392px, 0px</Location>
+                        <Size>120px, 72px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([PSPaymentSlipDetails.PaymentRefNbr],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox28">
+                        <Location>336px, 0px</Location>
+                        <Size>56px, 72px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([NMBankAccount.BankAccountCD],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox29">
+                        <Location>248px, 0px</Location>
+                        <Size>88px, 72px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([NMBankAccount.BankShortName],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox30">
+                        <Location>192px, 0px</Location>
+                        <Size>56px, 72px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([PSPaymentSlipDetails.PaymentMethodID],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox50">
+                        <Location>512px, 0px</Location>
+                        <Size>72px, 72px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[PSPaymentSlipDetails.CheckDueDate]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox51">
+                        <Format>#,0</Format>
+                        <Location>656px, 0px</Location>
+                        <Size>120px, 72px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([PSPaymentSlipDetails.TranAmt],0)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox53">
+                        <Location>32px, 0px</Location>
+                        <Size>160px, 72px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=Switch(#010;	[PSPaymentSlip.TargetType] = 'C',#010;	[PSPaymentSlipDetails.CustomerID_Customer_acctName],#010;	[PSPaymentSlip.TargetType] = 'V',#010;	[PSPaymentSlipDetails.VendorID_Vendor_acctName],#010;	[PSPaymentSlip.TargetType] = 'E',#010;	[PSPaymentSlipDetails.EmployeeID_EPEmployee_acctName]#010;)</Value>
+                    </TextBox>
+                </Items>
+            </Detail>
+            <Detail Name="CC_detailSection">
+                <Expanded>False</Expanded>
+                <Height>0.63492cm</Height>
+                <VisibleExpr>=[@IsCC] = True</VisibleExpr>
+                <Items>
+                    <TextBox Name="textBox22">
+                        <Location>120px, 0px</Location>
+                        <Size>128px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[PSPaymentSlipDetails.IssueDate]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox23">
+                        <Location>248px, 0px</Location>
+                        <Size>128px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[PSPaymentSlipDetails.AuthDate]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox24">
+                        <Location>376px, 0px</Location>
+                        <Size>168px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([PSPaymentSlipDetails.GuarClass],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox39">
+                        <Location>544px, 0px</Location>
+                        <Size>160px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([PSPaymentSlipDetails.PaymentRefNbr],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox40">
+                        <Location>704px, 0px</Location>
+                        <Size>128px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[PSPaymentSlipDetails.ActualDueDate]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox47">
+                        <Format>#,0</Format>
+                        <Location>832px, 0px</Location>
+                        <Size>168px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Right>Solid</Right>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([PSPaymentSlipDetails.TranAmt],0)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox48">
+                        <Location>48px, 0px</Location>
+                        <Size>72px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                                <Left>Solid</Left>
+                                <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=Assign( '$Seq2', $Seq2+1)</Value>
+                    </TextBox>
+                </Items>
+            </Detail>
+        </Sections>
+        <Items />
+        <Groups>
+            <Group Name="Comm">
+                <Headers>
+                    <Header Name="groupHeaderSection1">
+                        <Height>4.65608cm</Height>
+                        <PrintOnEveryPage>True</PrintOnEveryPage>
+                        <Variables>
+                            <ReportVariable>
+                                <Name>Seq</Name>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>Seq2</Name>
+                            </ReportVariable>
+                        </Variables>
+                        <Items>
+                            <Line Name="line3">
+                                <Location>48px, 40px</Location>
+                                <Size>952px, 8px</Size>
+                            </Line>
+                            <TextBox Name="textBox1">
+                                <Location>0px, 0px</Location>
+                                <Size>1064px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>14px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[PSPaymentSlip.BranchID_description]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox10">
+                                <Location>64px, 120px</Location>
+                                <Size>136px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>14px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>繳款對象：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox17">
+                                <Location>200px, 144px</Location>
+                                <Size>320px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>14px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                </Style>
+                                <Value>=Concat(#010;	Year( [PSPaymentSlip.DocDate] )-1911,'年',#010;	PadLeft(Month( [PSPaymentSlip.DocDate] ),2,'0'),'月',#010;	PadLeft(Day( [PSPaymentSlip.DocDate] ),2,'0'),'日'#010;)</Value>
+                            </TextBox>
+                            <TextBox Name="textBox2">
+                                <Location>0px, 16px</Location>
+                                <Size>1056px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>14px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>繳款單</Value>
+                            </TextBox>
+                            <TextBox Name="textBox25">
+                                <Location>64px, 144px</Location>
+                                <Size>136px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>14px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>日期：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox3">
+                                <CanGrow>True</CanGrow>
+                                <Location>656px, 56px</Location>
+                                <Size>320px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>14px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                </Style>
+                                <Value>=[PSPaymentSlip.DocDesc]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox31">
+                                <CanGrow>True</CanGrow>
+                                <Location>520px, 56px</Location>
+                                <Size>136px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>14px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>描述：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox4">
+                                <Location>200px, 56px</Location>
+                                <Size>320px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>14px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                </Style>
+                                <Value>=[PSPaymentSlip.RefNbr]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox5">
+                                <Location>64px, 56px</Location>
+                                <Size>136px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>14px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>繳款單號：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox6">
+                                <Location>200px, 80px</Location>
+                                <Size>320px, 40px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>14px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                </Style>
+                                <Value>=[PSPaymentSlip.ContractID]+' - '+[PSPaymentSlip.ContractID_description]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox7">
+                                <Location>64px, 80px</Location>
+                                <Size>136px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>14px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>專案：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox9">
+                                <Location>200px, 120px</Location>
+                                <Size>320px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>14px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                </Style>
+                                <Value>=Switch(#010;	[PSPaymentSlip.TargetType] = 'C',#010;	Concat( [PSPaymentSlip.CustomerID], ' - ',[PSPaymentSlip.CustomerID_Customer_acctName]),#010;	[PSPaymentSlip.TargetType] = 'V',#010;	Concat( [PSPaymentSlip.VendorID], ' - ',[PSPaymentSlip.VendorID_Vendor_acctName]),#010;	[PSPaymentSlip.TargetType] = 'E',#010;	Concat( [PSPaymentSlip.EmployeeID], ' - ',[PSPaymentSlip.EmployeeID_EPEmployee_acctName])#010;)</Value>
+                            </TextBox>
+                        </Items>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection1">
+                        <Height>0cm</Height>
+                    </Footer>
+                </Footers>
+            </Group>
+            <Group Name="PS">
+                <Headers>
+                    <Header Name="groupHeaderSection2">
+                        <Height>0.63492cm</Height>
+                        <VisibleExpr>=[@IsCC] = False</VisibleExpr>
+                        <Items>
+                            <TextBox Name="textBox11">
+                                <Location>192px, 0px</Location>
+                                <Size>56px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>繳款方式</Value>
+                            </TextBox>
+                            <TextBox Name="textBox12">
+                                <Location>248px, 0px</Location>
+                                <Size>88px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>銀行/分行名稱</Value>
+                            </TextBox>
+                            <TextBox Name="textBox13">
+                                <Location>336px, 0px</Location>
+                                <Size>56px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>帳戶簡碼</Value>
+                            </TextBox>
+                            <TextBox Name="textBox14">
+                                <Location>392px, 0px</Location>
+                                <Size>120px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>票號/授權碼</Value>
+                            </TextBox>
+                            <TextBox Name="textBox15">
+                                <Location>584px, 0px</Location>
+                                <Size>72px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>實際到期日</Value>
+                            </TextBox>
+                            <TextBox Name="textBox16">
+                                <Location>656px, 0px</Location>
+                                <Size>120px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>金額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox18">
+                                <Location>512px, 0px</Location>
+                                <Size>72px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>支票到期日</Value>
+                            </TextBox>
+                            <TextBox Name="textBox32">
+                                <Location>776px, 0px</Location>
+                                <Size>288px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Right>Solid</Right>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>說明</Value>
+                            </TextBox>
+                            <TextBox Name="textBox52">
+                                <Location>32px, 0px</Location>
+                                <Size>160px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>繳款對象</Value>
+                            </TextBox>
+                            <TextBox Name="textBox8">
+                                <Location>0px, 0px</Location>
+                                <Size>32px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>項次</Value>
+                            </TextBox>
+                        </Items>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection2">
+                        <Height>0.63492cm</Height>
+                        <VisibleExpr>=[@IsCC] = False</VisibleExpr>
+                        <Items>
+                            <TextBox Name="textBox36">
+                                <Location>0px, 0px</Location>
+                                <Size>584px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                            </TextBox>
+                            <TextBox Name="textBox37">
+                                <Location>584px, 0px</Location>
+                                <Size>72px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Right>2px</Right>
+                                    </Padding>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>小計：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox38">
+                                <Location>776px, 0px</Location>
+                                <Size>288px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Right>Solid</Right>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                            </TextBox>
+                            <TextBox Name="textBox49">
+                                <Format>#,0</Format>
+                                <Location>656px, 0px</Location>
+                                <Size>120px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Right>1px</Right>
+                                    </Padding>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=Sum(IsNull([PSPaymentSlipDetails.TranAmt],0))</Value>
+                            </TextBox>
+                        </Items>
+                    </Footer>
+                </Footers>
+            </Group>
+            <Group Name="CC">
+                <Headers>
+                    <Header Name="groupHeaderSection3">
+                        <Expanded>False</Expanded>
+                        <Height>0.63492cm</Height>
+                        <VisibleExpr>=[@IsCC] = True</VisibleExpr>
+                        <Items>
+                            <TextBox Name="textBox21">
+                                <Location>48px, 0px</Location>
+                                <Size>72px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>項次</Value>
+                            </TextBox>
+                            <TextBox Name="textBox41">
+                                <Location>832px, 0px</Location>
+                                <Size>168px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Right>Solid</Right>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>金額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox42">
+                                <Location>704px, 0px</Location>
+                                <Size>128px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>到期日</Value>
+                            </TextBox>
+                            <TextBox Name="textBox43">
+                                <Location>544px, 0px</Location>
+                                <Size>160px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>票號/授權碼</Value>
+                            </TextBox>
+                            <TextBox Name="textBox44">
+                                <Location>376px, 0px</Location>
+                                <Size>168px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>保證票類別</Value>
+                            </TextBox>
+                            <TextBox Name="textBox45">
+                                <Location>248px, 0px</Location>
+                                <Size>128px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>授權書日</Value>
+                            </TextBox>
+                            <TextBox Name="textBox46">
+                                <Location>120px, 0px</Location>
+                                <Size>128px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>發票日</Value>
+                            </TextBox>
+                        </Items>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection3">
+                        <Expanded>False</Expanded>
+                        <Height>0.63492cm</Height>
+                        <VisibleExpr>=[@IsCC] = True</VisibleExpr>
+                        <Items>
+                            <TextBox Name="textBox33">
+                                <Location>48px, 0px</Location>
+                                <Size>656px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                            </TextBox>
+                            <TextBox Name="textBox34">
+                                <Location>704px, 0px</Location>
+                                <Size>128px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Right>2px</Right>
+                                    </Padding>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>小計：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox35">
+                                <Format>#,0</Format>
+                                <Location>832px, 0px</Location>
+                                <Size>168px, 24px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Solid</Bottom>
+                                        <Left>Solid</Left>
+                                        <Right>Solid</Right>
+                                        <Top>Solid</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Right>1px</Right>
+                                    </Padding>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=Sum(IsNull([PSPaymentSlipDetails.TranAmt],0))</Value>
+                            </TextBox>
+                        </Items>
+                    </Footer>
+                </Footers>
+            </Group>
+        </Groups>
+    </Report>
+</Report>

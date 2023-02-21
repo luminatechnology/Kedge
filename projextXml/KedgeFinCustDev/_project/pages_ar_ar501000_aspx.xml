@@ -1,0 +1,13 @@
+﻿<Page path="~/pages/ar/ar501000.aspx" pageSource="pVVNb9pAED03Uv7DylVuLZCqvURQlUBoI0FqYZrkhhZ7irdZ77q7az566G/vzBqDSYMKKqf1frx5M2/e0L74xEI+Bzbkal7gohP0XgdsxK0DQwcDIXHvd3O3Y5tDYd29gGUj85sB6xZO3yxAuQdhoMg7gTMFBOyeS5FwB2P4WYB1neA7lxb3ezrZ4HbHH1qXrVarwW2+asQ2YLcqBSOc7QQUa1pdCNhEOHrxTTlaJJ51wC4+np+dn7Uxi5LgZJ0DuxfGFVyG3KX/pE4AbYx+1dPKYQbstt8JYlxfEk+/FUoewxctEzB0mKf9KGCmUBwzisAsEAZBXrXz1VX42OeOR7owMXikBFN6EAkRwTQutu9s+Q6pWjGjvCa+YqERGTdrYkjF6eu4yJABscYKYG53PMPL4WPj6+wHxM42uuPG7t4YJHCsMNF51e5xKWc8furpLOMqsX63ohk9O2Ul8gIjV2g1dhvhmgjBar9DWNt3g/Jdib2fz9TA97uZmVKufXBcSFsGQIrNl6i3m88KTMo1a9IdUvLdYSWHh4X8bETiIea4+Eu3LyDmKX6/b7Xy1TOJI7em3H+9FSqB1RW7pPbtSqmX2INCzSt7dJMfhXXUl5H4RfVBF20uRsBNnFYXdylXLXXNXZx+y8lcVetET0LR8aaFbtXPAs2IqfPcCa2o/KyqPyKwnZIDtALaEe0wECATtN7YS/OG9ZCfzqhY9fX0uhvHusB2m/I4diQuhl+rONRWlLE871LLISxA7vUeVdbv+sRGkM3A/NXt5QNsYi2LTG3e1xHKAw/haZOEEi0BKNYEVq4rxRyZ9BCQBCPz4FcK8dO1Xm3K7D9xVdWwrL02btu5fmekF7tebh5DBVOhgFXYvtF5Xy9V6eOjEEoJjrwc8jUVbgQu1clt/8hXO0VPfvBiC5yEcVJ+keOusP9RTdQDv47lOBAqxD+hk0pp1l+NmGOcbub2GnBMg+IEmKNjUk5g491tHJt1s2zm5dZtm9Fa82ObJg7NHj8fuVDkwwecWnoZsBvFcYQnlTVGQtVm3nZSD/laF45FqV6O0Tpep32r1Gi8MLD/AA==">
+    <PXGridLevel DataMember="ARDocumentList" ParentId="phL_grid_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="PSPaymentSlipNbr" />
+                    <Prop Key="Width" Value="140" />
+                    <Prop Key="LinkCommand" Value="viewPSPaymentSlip" />
+                </PXGridColumn>
+            </AddItem>
+        </Children>
+    </PXGridLevel>
+</Page>

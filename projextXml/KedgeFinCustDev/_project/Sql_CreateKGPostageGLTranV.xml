@@ -1,0 +1,20 @@
+﻿<Sql TableName="CreateKGPostageGLTranV" SqlScriptPriority="2" CustomScript="#CDATA">
+    <CDATA name="CustomScript"><![CDATA[
+CREATE OR ALTER VIEW dbo.KGPostageGLTranV AS
+select 
+	gltran.CompanyID,
+	gltran.module,
+	gltran.batchnbr,
+	gltran.AccountID,
+	gltran.SubID,
+	gltran.BranchID,
+	gltran.UsrBillPaymentID,
+	gltran.CuryDebitAmt,
+	gltran.CuryCreditAmt,
+	gltran.CuryDebitAmt - gltran.CuryCreditAmt as NetAmount
+from batch 
+	inner join gltran on batch.CompanyID = gltran.CompanyID
+				      and batch.Module = gltran.Module
+					  and batch.BatchNbr = gltran.BatchNbr
+where batch.usrstagecode in ('T2','P4','PD')]]></CDATA>
+</Sql>

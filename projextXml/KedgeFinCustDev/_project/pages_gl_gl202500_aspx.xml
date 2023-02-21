@@ -1,0 +1,13 @@
+﻿<Page path="~/pages/gl/gl202500.aspx" pageSource="rVhbT+M4FH4Gif8QZcXbinbY5WWU7m5JgUHT0qrhMm8rk3haD4mdsR1o92F/+54TOyFp0pBFIISKe/yd+3dse8d/OQuyos6U8FUGH0au/4vrzIjSVOIXlyyGtX8HrytqMGVK3zP6cpLki64zzrS4eKZcPzBJs3TkaplR9+jw4J7ELCKaLunPjCo9cr+TWFHX8UVkka+mp8PTs+HwhKh0cxIq17nmayqZViMXtf1dCCDcLdO4545r/BDllrvO8R9Hh0eHHnhijLzdptS5Z1JnJF4QvX7TfATwQP9nX3ANXjjXk5EbwudPaGm+tIhJSL+IOKISv0zXk8B1ZMYJ+BRQ+QwwAHLgpZvPi28TokkgMhnSHCkCpx5YhIZ8Gg6Py33K7HMWkiVEbtGkkTsOQ5FxvaShkLgRnbkhCXi9+HYyf/xBQ61OrqYnVm5GGNeuA+4q9oixucXIoykHnk/i+JGET75IEsIjla8WJgY73zpGSUCe8/QkCdP+GmqCKovpDLr3T2hKeTTnV5JFI3cFf12LiY4tIfuShZoJEBBZqgo8B366TbKenm8XUBYiuuA/3VZlZQhMjRl4b9AWBW+wkycsgEGlAvYVxOn+gpjurwe0Mocwhu6k/wtlqzX8/9vZMN3sVMo4+pEpjWUbsH8wFtBo2AgHwRPjiGhrByTjWLyAIOOrImH5UkCJDNfF0iVUPPQdVP0lo3Gkyuj6k18nVIWSpZgi1wm2PFwIxfC/WlFN6TONa6WE3uWrDsZzRpNHKht1bDYceEvxckuTNAZOsEsWZUq2ItPLLKa78Qk0kdoXcZYUlgBZPYIRNlLBzCRFitgEaVbWagEe0FVCsVnUU54HGpVuN9KBTuTBqcSmAeivafh0LjamMNZPY6hsbJwuLCPRsCyGjhZyx6yYKHXdy7ZCMk/2RcR0mX0olaL27Vqhu9JzUqQT8cJz9Ug1XSrz73fsrwFAwei5LaD9MBWpEmtQA+tQYRNdsJ+IoGC6lLXL7/CbrvLb3hRjgGeEw1C5AMxtZ3Iasu/RiEMT5ukdh2HYpa0u9wbotfKJWtt4dKHuCL4BG9Awk7RJbhXAUuSCE+BpWLk0h4FBXyYwJBCkBIjgtLHvlm40NoBtpRqd7beqJtbbkg/hpFrn+5ncdnd8IdHo9D61taNtSZ9JjIBLIGLs6+vO1LWJW/iDjzDnagrBUmWbdrNyi3Bfus+PHr14tZAsvQQ2XdLvkqp1bbz2ctxp+WmNwy3Z+BDhleiml4rYddP7mwwncKUTrEu9/K7ieYPmtPZM0au6SjwCmC/2QGJvjmO2gm5Z4mmnYXQnQkuKu+XLoWhn4HlzBnbimEmIf4Eg7PjBW0NvM8ysr3jtQz1ixA1mwZ498bo4qn3H+8feHo8aA23XkRZf36+uepB4dxb8+XguIzTEkvLZ7+nm3aW4Mw4/KrUlqTcrtR9AK5P32vk2j3Y2Wcml709zN4+177kRQfY4oZqwuFcR9gxi9QT1UbktDzz/AxDuqzWC9QK9jekr3QIjXwqZlJfG0/zS+HqOtt+XaNXt9pRd3tfsBblyo/PMicdBCLy117VYIz2sVTzV5Cccwjhe9x4Yj8RL5WxnSnjGeIkxHJYIQEjUzE/UVLu14OJdGgsS1dtg32sGPlg4yBcYeEN89PW82nn9x0C8XtIDuEfDTZvDPRbHpkrSSsNfNGfnV7oFdRUR8EJIfL7i5qHpTsb48mTenPwx/J4OIQjmpevPhUizNFc3mvP8mOGTnPHKZwzTSHbVqHJK/llSji8PlzJ/Iinv59azV19aHjb+Aw==">
+    <PXGridLevel DataMember="AccountRecords" ParentId="phL_grid_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrAccountGroup" />
+                    <Prop Key="Width" Value="140" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="Type" OriginalIndex="3" />
+        </Children>
+    </PXGridLevel>
+</Page>

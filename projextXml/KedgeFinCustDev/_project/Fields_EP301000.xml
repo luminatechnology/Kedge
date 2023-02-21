@@ -1,0 +1,3 @@
+﻿<Fields ScreenID="EP301000">
+    <Field IsActive="True" DisplayName="總金額" FieldName="CURYEXTCOST" ObjectName="PX.OBJECTS.EP.EPEXPENSECLAIMDETAILS" />
+</Fields>

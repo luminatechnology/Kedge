@@ -1,0 +1,4 @@
+﻿<Table TableName="APPayment">
+    <Column TableName="APPayment" ColumnName="UsrBillPaymentID" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APPayment" ColumnName="UsrTTUploadKey" ColumnType="string" AllowNull="True" MaxLength="7" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

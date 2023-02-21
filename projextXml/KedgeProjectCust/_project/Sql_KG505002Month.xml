@@ -1,0 +1,33 @@
+﻿<Sql TableName="KG505002Month" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KG505002Month">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="BatchID" type="NVarChar(50)" />
+  <col name="BatchSeq" type="Int" />
+  <col name="BranchID" type="Int" nullable="true" />
+  <col name="FinPeriodID" type="NVarChar(6)" nullable="true" />
+  <col name="ContractCD" type="NVarChar(30)" nullable="true" />
+  <col name="ContractDesc" type="NVarChar(60)" nullable="true" />
+  <col name="VendorName" type="NVarChar(60)" nullable="true" />
+  <col name="CumIncomeLast" type="Decimal(19,4)" nullable="true" />
+  <col name="CumIncomeThis" type="Decimal(19,4)" nullable="true" />
+  <col name="RecIncomeThis" type="Decimal(19,4)" nullable="true" />
+  <col name="CumCostLast" type="Decimal(19,4)" nullable="true" />
+  <col name="CumCostThis" type="Decimal(19,4)" nullable="true" />
+  <col name="RecCostThis" type="Decimal(19,4)" nullable="true" />
+  <col name="CumProfitLast" type="Decimal(19,4)" nullable="true" />
+  <col name="CumProfitThis" type="Decimal(19,4)" nullable="true" />
+  <col name="RecProfitThis" type="Decimal(19,4)" nullable="true" />
+  <col name="IncomeAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="ProjectProgrees" type="Decimal(18,2)" nullable="true" />
+  <col name="ProfitRate" type="Decimal(18,2)" nullable="true" />
+  <col name="ExpenseAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="Profit" type="Decimal(19,4)" nullable="true" />
+  <col name="LabelThis" type="NVarChar(10)" nullable="true" />
+  <col name="LabelLast" type="NVarChar(10)" nullable="true" />
+  <index name="PK_KG505002Month" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="BatchID" />
+    <col name="BatchSeq" />
+  </index>
+</table>]]></CDATA>
+</Sql>

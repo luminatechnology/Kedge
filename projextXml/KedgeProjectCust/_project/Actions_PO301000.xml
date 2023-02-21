@@ -1,0 +1,6 @@
+﻿<Actions ScreenID="PO301000">
+    <Action IsActive="True" ActionName="createRequestFile" ActionType="G" After="printSimpleContract" MenuFolderType="19" WindowMode="S">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+</Actions>

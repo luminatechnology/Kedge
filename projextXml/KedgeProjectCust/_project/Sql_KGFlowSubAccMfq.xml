@@ -1,0 +1,36 @@
+﻿<Sql TableName="KGFlowSubAccMfq" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowSubAccMfq">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="MfqID" type="Int" identity="true" />
+  <col name="MfqUID" type="NVarChar(40)" />
+  <col name="AccUID" type="NVarChar(40)" />
+  <col name="ItemName" type="NVarChar(256)" nullable="true" />
+  <col name="PccesCode" type="NVarChar(30)" nullable="true" />
+  <col name="ItemUnit" type="NVarChar(6)" nullable="true" />
+  <col name="SubItemQty" type="Decimal(25,6)" nullable="true" />
+  <col name="SubItemCost" type="Decimal(19,6)" nullable="true" />
+  <col name="SubItemAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="AddAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="PrintOrder" type="Decimal(19,4)" nullable="true" />
+  <col name="PreQty" type="Decimal(19,6)" nullable="true" />
+  <col name="PreAmt" type="Decimal(19,6)" nullable="true" />
+  <col name="ItemQty" type="Decimal(25,6)" nullable="true" />
+  <col name="ItemCost" type="Decimal(19,6)" nullable="true" />
+  <col name="ItemAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="AccQty" type="Decimal(19,6)" nullable="true" />
+  <col name="AccAmt" type="Decimal(19,6)" nullable="true" />
+  <col name="Percentage" type="Decimal(7,4)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowSubAccMfq" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="MfqID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

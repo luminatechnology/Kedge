@@ -1,0 +1,12 @@
+﻿<Fields ScreenID="RQ504000">
+    <Field IsActive="True" DisplayName="專案描述" FieldName="USRCONTRACTID_DESCRIPTION" ObjectName="PX.OBJECTS.RQ.RQREQUESTLINEOWNED" />
+    <Field IsActive="True" DisplayName="計價單元描述" FieldName="USRCOSTCODEID_DESCRIPTION" ObjectName="PX.OBJECTS.RQ.RQREQUESTLINEOWNED" />
+    <Field IsActive="True" DisplayName="成本任務描述" FieldName="USRPROJECTTASKID_DESCRIPTION" ObjectName="PX.OBJECTS.RQ.RQREQUESTLINEOWNED" />
+    <Field IsActive="True" FieldName="ADDEXISTS" HideCondition="True" ObjectName="PX.OBJECTS.RQ.RQREQUESTSELECTION" />
+    <Field IsActive="True" FieldName="DEPARTMENTID" HideCondition="True" ObjectName="PX.OBJECTS.RQ.RQREQUESTSELECTION" />
+    <Field IsActive="True" FieldName="MYESCALATED" HideCondition="True" ObjectName="PX.OBJECTS.RQ.RQREQUESTSELECTION" />
+    <Field IsActive="True" FieldName="MYWORKGROUP" HideCondition="True" ObjectName="PX.OBJECTS.RQ.RQREQUESTSELECTION" />
+    <Field IsActive="True" FieldName="SELECTEDPRIORITY" HideCondition="True" ObjectName="PX.OBJECTS.RQ.RQREQUESTSELECTION" />
+    <Field IsActive="True" FieldName="VENDORID" HideCondition="True" ObjectName="PX.OBJECTS.RQ.RQREQUESTSELECTION" />
+    <Field IsActive="True" FieldName="WORKGROUPID" HideCondition="True" ObjectName="PX.OBJECTS.RQ.RQREQUESTSELECTION" />
+</Fields>

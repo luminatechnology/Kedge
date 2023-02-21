@@ -1,0 +1,32 @@
+﻿<Sql TableName="KGFlowPutChg" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowPutChg">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ChgID" type="Int" identity="true" />
+  <col name="ChgUID" type="NVarChar(40)" />
+  <col name="RvnUID" type="NVarChar(40)" />
+  <col name="ItemNo" type="NVarChar(40)" nullable="true" />
+  <col name="ItemName" type="NVarChar(256)" nullable="true" />
+  <col name="PccesCode" type="NVarChar(30)" nullable="true" />
+  <col name="ItemUnit" type="NVarChar(6)" nullable="true" />
+  <col name="PreCost" type="Decimal(19,6)" nullable="true" />
+  <col name="PreQty" type="Decimal(19,6)" nullable="true" />
+  <col name="PreAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="ChgCost" type="Decimal(19,4)" nullable="true" />
+  <col name="ChgQty" type="Decimal(19,6)" nullable="true" />
+  <col name="ChgAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="BelongKindCode" type="NVarChar(30)" nullable="true" />
+  <col name="ReasonKindCode" type="NVarChar(30)" nullable="true" />
+  <index name="PK_KGFlowPutChg" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ChgID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

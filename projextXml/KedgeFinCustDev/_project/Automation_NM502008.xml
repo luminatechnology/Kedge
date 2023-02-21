@@ -1,0 +1,11 @@
+﻿<Automation screen="NM502008">
+    <Actions ScreenID="NM502008">
+        <Action IsActive="True" ActionName="fileUpload" ActionType="G" WindowMode="S">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+    </Actions>
+    <Fields ScreenID="NM502008">
+        <Field IsActive="True" DisplayName="TranDate" FieldName="TRANDATETE" ObjectName="NM.NMAPBANKFEEDBACKPROCESS+DETAILSTABLE" />
+    </Fields>
+</Automation>

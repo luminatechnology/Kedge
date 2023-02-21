@@ -1,0 +1,120 @@
+﻿<Sql TableName="KGDeductionAPTran" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGDeductionAPTran">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="TranType" type="Char(3)" />
+  <col name="RefNbr" type="NVarChar(15)" />
+  <col name="LineNbr" type="Int" />
+  <col name="SortOrder" type="Int" nullable="true" />
+  <col name="BranchID" type="Int" />
+  <col name="TranID" type="Int" identity="true" />
+  <col name="BatchNbr" type="NVarChar(15)" />
+  <col name="AccountID" type="Int" nullable="true" />
+  <col name="SubID" type="Int" nullable="true" />
+  <col name="CuryInfoID" type="BigInt" />
+  <col name="CuryTranAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="TranAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="CuryCashDiscBal" type="Decimal(19,4)" />
+  <col name="CashDiscBal" type="Decimal(19,4)" />
+  <col name="CuryOrigRetainageAmt" type="Decimal(19,4)" />
+  <col name="OrigRetainageAmt" type="Decimal(19,4)" />
+  <col name="CuryRetainageBal" type="Decimal(19,4)" />
+  <col name="RetainageBal" type="Decimal(19,4)" />
+  <col name="CuryOrigTranAmt" type="Decimal(19,4)" default="Zero" />
+  <col name="OrigTranAmt" type="Decimal(19,4)" default="Zero" />
+  <col name="CuryTranBal" type="Decimal(19,4)" default="Zero" />
+  <col name="TranBal" type="Decimal(19,4)" default="Zero" />
+  <col name="CuryTaxableAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="TaxableAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="CuryTaxAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="TaxAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="CuryRetainedTaxableAmt" type="Decimal(19,4)" default="Zero" />
+  <col name="RetainedTaxableAmt" type="Decimal(19,4)" default="Zero" />
+  <col name="CuryRetainedTaxAmt" type="Decimal(19,4)" default="Zero" />
+  <col name="RetainedTaxAmt" type="Decimal(19,4)" default="Zero" />
+  <col name="CuryExpenseAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="ExpenseAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="Qty" type="Decimal(25,6)" nullable="true" />
+  <col name="BaseQty" type="Decimal(25,6)" nullable="true" />
+  <col name="CuryUnitCost" type="Decimal(19,6)" nullable="true" />
+  <col name="ManualPrice" type="Bit" nullable="true" default="Zero" />
+  <col name="ManualDisc" type="Bit" nullable="true" />
+  <col name="CuryLineAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="LineAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="DiscountsAppliedToLine" type="VarBinary(MAX)" nullable="true" />
+  <col name="OrigLineNbr" type="Int" nullable="true" />
+  <col name="OrigGroupDiscountRate" type="Decimal(21,18)" />
+  <col name="OrigDocumentDiscountRate" type="Decimal(21,18)" />
+  <col name="GroupDiscountRate" type="Decimal(21,18)" nullable="true" />
+  <col name="DocumentDiscountRate" type="Decimal(21,18)" />
+  <col name="UnitCost" type="Decimal(19,6)" nullable="true" />
+  <col name="TranClass" type="Char(1)" />
+  <col name="DrCr" type="Char(1)" />
+  <col name="TranDate" type="SmallDateTime" />
+  <col name="TranDesc" type="NVarChar(256)" nullable="true" />
+  <col name="Released" type="Bit" />
+  <col name="NonBillable" type="Bit" default="Zero" />
+  <col name="POOrderType" type="Char(2)" nullable="true" />
+  <col name="PONbr" type="NVarChar(15)" nullable="true" />
+  <col name="ReceiptType" type="Char(2)" nullable="true" />
+  <col name="ReceiptNbr" type="NVarChar(15)" nullable="true" />
+  <col name="POLineNbr" type="Int" nullable="true" />
+  <col name="ReceiptLineNbr" type="Int" nullable="true" />
+  <col name="LCDocType" type="Char(1)" nullable="true" />
+  <col name="LCRefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="LCLineNbr" type="Int" nullable="true" />
+  <col name="PPVDocType" type="Char(3)" nullable="true" />
+  <col name="PPVRefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="InventoryID" type="Int" nullable="true" />
+  <col name="SiteID" type="Int" nullable="true" />
+  <col name="UOM" type="NVarChar(6)" nullable="true" />
+  <col name="LineType" type="Char(2)" />
+  <col name="TaxCategoryID" type="NVarChar(10)" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="Box1099" type="SmallInt" nullable="true" />
+  <col name="FinPeriodID" type="Char(6)" />
+  <col name="TranPeriodID" type="Char(6)" />
+  <col name="DeferredCode" type="NVarChar(10)" nullable="true" />
+  <col name="ScheduleID" type="NVarChar(10)" nullable="true" />
+  <col name="DefScheduleID" type="Int" nullable="true" />
+  <col name="VendorID" type="Int" />
+  <col name="Date" type="SmallDateTime" nullable="true" />
+  <col name="ProjectID" type="Int" nullable="true" />
+  <col name="TaskID" type="Int" nullable="true" />
+  <col name="CostCodeID" type="Int" nullable="true" />
+  <col name="LCTranID" type="Int" nullable="true" />
+  <col name="LandedCostCodeID" type="NVarChar(15)" nullable="true" />
+  <col name="TaxID" type="NVarChar(30)" nullable="true" />
+  <col name="DiscountID" type="NVarChar(10)" nullable="true" />
+  <col name="DiscountSequenceID" type="NVarChar(10)" nullable="true" />
+  <col name="DiscAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="CuryDiscAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="DiscPct" type="Decimal(9,6)" nullable="true" />
+  <col name="POPPVAmt" type="Decimal(19,4)" default="Zero" />
+  <col name="EmployeeID" type="Int" nullable="true" />
+  <col name="RetainagePct" type="Decimal(9,6)" default="Zero" />
+  <col name="CuryRetainageAmt" type="Decimal(19,4)" default="Zero" />
+  <col name="RetainageAmt" type="Decimal(19,4)" default="Zero" />
+  <col name="POAccrualType" type="Char(1)" nullable="true" />
+  <col name="POAccrualRefNoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="POAccrualLineNbr" type="Int" nullable="true" />
+  <col name="UnreceivedQty" type="Decimal(25,6)" nullable="true" />
+  <col name="BaseUnreceivedQty" type="Decimal(25,6)" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="ValuationID" type="Int" nullable="true" />
+  <col name="ValuationType" type="NVarChar(1)" nullable="true" />
+  <col name="ReverseRefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="IsManageFee" type="Bit" nullable="true" />
+  <index name="KGDeductionAPTran_PK" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="TranType" />
+    <col name="RefNbr" />
+    <col name="LineNbr" />
+  </index>
+</table>]]></CDATA>
+</Sql>

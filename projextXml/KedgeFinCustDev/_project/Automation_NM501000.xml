@@ -1,0 +1,7 @@
+﻿<Automation screen="NM501000">
+    <Fields ScreenID="NM501000">
+        <Field IsActive="True" DisplayName="銀行全名" FieldName="COLLBANKACCOUNTID_NMBANKACCOUNT_BANKNAME" ObjectName="NM.DAC.NMRECEIVABLECHECK" />
+        <Field IsActive="True" DisplayName="開票銀行名稱" FieldName="ORIBANKCODE_DESCRIPTION" ObjectName="NM.DAC.NMRECEIVABLECHECK" />
+        <Field IsActive="True" DisplayName="銀行帳號簡碼" FieldName="CollBankAccountID" ObjectName="NM.DAC.NMReceivableCheck" />
+    </Fields>
+</Automation>

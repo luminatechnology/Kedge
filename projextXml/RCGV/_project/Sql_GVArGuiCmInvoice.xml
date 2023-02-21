@@ -1,0 +1,45 @@
+﻿<Sql TableName="GVArGuiCmInvoice" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVArGuiCmInvoice">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="GuiCmInvoiceID" type="Int" identity="true" />
+  <col name="GuiCmInvoiceNbr" type="NVarChar(40)" />
+  <col name="RegistrationCD" type="NVarChar(9)" />
+  <col name="InvoiceDate" type="DateTime" />
+  <col name="DeclareYear" type="Int" />
+  <col name="DeclareMonth" type="Int" />
+  <col name="CustomerID" type="Int" />
+  <col name="CustName" type="NVarChar(240)" />
+  <col name="CustUniformNumber" type="NVarChar(8)" />
+  <col name="GuiType" type="NVarChar(2)" />
+  <col name="TaxCode" type="NVarChar(1)" />
+  <col name="SalesAmt" type="Decimal(19,4)" />
+  <col name="TaxAmt" type="Decimal(19,4)" />
+  <col name="Remark" type="NVarChar(240)" nullable="true" />
+  <col name="ConfirmDate" type="DateTime" nullable="true" />
+  <col name="ConfirmBy" type="UniqueIdentifier" nullable="true" />
+  <col name="VoidDate" type="DateTime" nullable="true" />
+  <col name="VoidReason" type="NVarChar(240)" nullable="true" />
+  <col name="VoidBy" type="UniqueIdentifier" nullable="true" />
+  <col name="PrintCnt" type="Int" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="DeclarePeriod" type="NVarChar(1)" nullable="true" />
+  <col name="Status" type="NVarChar(1)" nullable="true" />
+  <col name="Hold" type="Bit" nullable="true" />
+  <col name="TotalAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="DeclareBatchNbr" type="NVarChar(20)" nullable="true" />
+  <col name="BatchNbr" type="NVarChar(15)" nullable="true" />
+  <col name="DeclaredByID" type="UniqueIdentifier" nullable="true" />
+  <col name="DeclaredDateTime" type="DateTime" nullable="true" />
+  <index name="GVArGuiCmInvoice_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

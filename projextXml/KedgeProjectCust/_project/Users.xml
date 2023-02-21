@@ -1,0 +1,3 @@
+﻿<Table TableName="Users">
+    <Column TableName="Users" ColumnName="Username" ColumnType="string" MaxLength="128" DecimalPrecision="0" DecimalLength="0" IsUnicode="True" />
+</Table>

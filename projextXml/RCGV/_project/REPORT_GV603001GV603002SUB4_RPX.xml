@@ -1,0 +1,231 @@
+﻿<Report Name="gv603001gv603002sub4.rpx">
+    <Report version="20200826" Name="report1">
+        <Filters>
+            <FilterExp>
+                <DataField>GVArGuiCmInvoice.DeclareYear</DataField>
+                <Value>@DeclareYear</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>GreaterOrEqual</Condition>
+                <DataField>GVArGuiCmInvoice.DeclareMonth</DataField>
+                <Value>@DeclareStartMonth</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>LessOrEqual</Condition>
+                <DataField>GVArGuiCmInvoice.DeclareMonth</DataField>
+                <Value>@DeclareEndMonth</Value>
+            </FilterExp>
+            <FilterExp>
+                <DataField>GVArGuiCmInvoice.DeclareBatchNbr</DataField>
+                <Value>@DeclareBatchNbr</Value>
+            </FilterExp>
+        </Filters>
+        <Parameters>
+            <ReportParameter>
+                <Name>DeclareYear</Name>
+                <Type>Integer</Type>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>DeclareStartMonth</Name>
+                <Type>Integer</Type>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>DeclareEndMonth</Name>
+                <Type>Integer</Type>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>DeclareBatchNbr</Name>
+            </ReportParameter>
+        </Parameters>
+        <SchemaUrl>https://clouderp.kedge.com.tw/KedgeUAT/</SchemaUrl>
+        <Tables>
+            <ReportTable Name="GVArGuiCmInvoice">
+                <Fields>
+                    <ReportField Name="BatchNbr">
+                    </ReportField>
+                    <ReportField Name="ConfirmBy">
+                    </ReportField>
+                    <ReportField Name="ConfirmBy_description">
+                    </ReportField>
+                    <ReportField Name="ConfirmBy_Users_username">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Day">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Month">
+                    </ReportField>
+                    <ReportField Name="ConfirmDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CustName">
+                    </ReportField>
+                    <ReportField Name="CustomerID">
+                    </ReportField>
+                    <ReportField Name="CustomerID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="CustomerID_Customer_acctName">
+                    </ReportField>
+                    <ReportField Name="CustomerID_description">
+                    </ReportField>
+                    <ReportField Name="CustomerID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CustUniformNumber">
+                    </ReportField>
+                    <ReportField Name="DeclareBatchNbr">
+                    </ReportField>
+                    <ReportField Name="DeclareMonth">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="DeclarePeriod">
+                    </ReportField>
+                    <ReportField Name="DeclareYear">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="GuiCmInvoiceID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="GuiCmInvoiceNbr">
+                    </ReportField>
+                    <ReportField Name="GuiType">
+                    </ReportField>
+                    <ReportField Name="Hold">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="InvoiceDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Day">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Hour">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Month">
+                    </ReportField>
+                    <ReportField Name="InvoiceDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="PrintCnt">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="RegistrationCD">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD_description">
+                    </ReportField>
+                    <ReportField Name="RegistrationCD_GVRegistration_siteNameChinese">
+                    </ReportField>
+                    <ReportField Name="Remark">
+                    </ReportField>
+                    <ReportField Name="SalesAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Setup">
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="TaxAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TaxCode">
+                    </ReportField>
+                    <ReportField Name="TotalAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                    <ReportField Name="VoidBy">
+                    </ReportField>
+                    <ReportField Name="VoidBy_description">
+                    </ReportField>
+                    <ReportField Name="VoidBy_Users_username">
+                    </ReportField>
+                    <ReportField Name="VoidDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="VoidDate_Day">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Hour">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Month">
+                    </ReportField>
+                    <ReportField Name="VoidDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="VoidReason">
+                    </ReportField>
+                </Fields>
+                <FullName>RCGV.GV.DAC.GVArGuiCmInvoice</FullName>
+            </ReportTable>
+        </Tables>
+        <Sections>
+            <Detail Name="detailSection1">
+                <Height>0cm</Height>
+            </Detail>
+            <ReportHeader Name="reportHeaderSection1">
+                <Height>0px</Height>
+                <Variables>
+                    <ReportVariable>
+                        <Name>B17</Name>
+                        <ValueExpr>=Sum (IIf( ([GVArGuiCmInvoice.GuiType]=33 Or [GVArGuiCmInvoice.GuiType]=34) And ([GVArGuiCmInvoice.TaxCode]=1 Or [GVArGuiCmInvoice.TaxCode]=3 ), [GVArGuiCmInvoice.SalesAmt], 0 ))</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>B18</Name>
+                        <ValueExpr>=Sum (IIf( ([GVArGuiCmInvoice.GuiType]=33 Or [GVArGuiCmInvoice.GuiType]=34) And ([GVArGuiCmInvoice.TaxCode]=1 Or [GVArGuiCmInvoice.TaxCode]=3 ), [GVArGuiCmInvoice.TaxAmt], 0 ))</ValueExpr>
+                    </ReportVariable>
+                </Variables>
+            </ReportHeader>
+        </Sections>
+    </Report>
+</Report>

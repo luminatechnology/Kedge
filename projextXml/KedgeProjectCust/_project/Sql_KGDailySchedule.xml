@@ -1,0 +1,31 @@
+﻿<Sql TableName="KGDailySchedule" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGDailySchedule">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="DailyScheduleID" type="Int" identity="true" />
+  <col name="DailyReportID" type="Int" />
+  <col name="DailyTaskID" type="Int" />
+  <col name="ProjectTaskID" type="Int" />
+  <col name="CostCodeID" type="Int" />
+  <col name="InventoryID" type="Int" />
+  <col name="InventoryDesc" type="NVarChar(255)" />
+  <col name="ActualQty" type="Decimal(19,6)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="AccountGroupID" type="Int" />
+  <col name="ContractID" type="Int" />
+  <col name="RevisedQty" type="Decimal(19,6)" nullable="true" />
+  <col name="AccumulateQty" type="Decimal(19,6)" nullable="true" />
+  <col name="Qty" type="Decimal(19,6)" nullable="true" />
+  <col name="ChangeOrderQty" type="Decimal(19,6)" nullable="true" />
+  <index name="PK_KGPMDailySchedule" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="DailyScheduleID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

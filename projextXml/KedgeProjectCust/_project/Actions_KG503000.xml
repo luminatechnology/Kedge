@@ -1,0 +1,46 @@
+﻿<Actions ScreenID="KG503000">
+    <Action IsActive="True" ActionName="Cancel" ActionType="G" WindowMode="S" HideCondition="True">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="CopyPaste" ActionType="G" WindowMode="S" HideCondition="True">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="Delete" ActionType="G" WindowMode="S" HideCondition="True">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="First" ActionType="G" WindowMode="S" HideCondition="True">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="Insert" ActionType="G" WindowMode="S" HideCondition="True">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="Last" ActionType="G" WindowMode="S" HideCondition="True">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="Next" ActionType="G" WindowMode="S" HideCondition="True">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="Previous" ActionType="G" WindowMode="S" HideCondition="True">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="Save" ActionType="G" WindowMode="S" HideCondition="True">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="sendApprovalAction" ActionType="G" WindowMode="S">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="valuationVendorConfirmAction" ActionType="G" WindowMode="S">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+</Actions>

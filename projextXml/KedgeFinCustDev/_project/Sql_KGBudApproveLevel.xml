@@ -1,0 +1,76 @@
+﻿<Sql TableName="KGBudApproveLevel" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGBudApproveLevel">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="BudLevelID" type="Int" identity="true" />
+  <col name="BranchID" type="Int" />
+  <col name="CompanyCode" type="NVarChar(3)" />
+  <col name="BudgetYear" type="Int" />
+  <col name="GroupNo" type="Int" nullable="true" />
+  <col name="Remark" type="NVarChar(MAX)" nullable="true" />
+  <col name="Level1" type="Bit" nullable="true" />
+  <col name="Level2" type="Bit" nullable="true" />
+  <col name="Level3" type="Bit" nullable="true" />
+  <col name="Level4" type="Bit" nullable="true" />
+  <col name="Level5" type="Bit" nullable="true" />
+  <col name="Level6" type="Bit" nullable="true" />
+  <col name="Level7" type="Bit" nullable="true" />
+  <col name="Level8" type="Bit" nullable="true" />
+  <col name="Level9" type="Bit" nullable="true" />
+  <col name="Level10" type="Bit" nullable="true" />
+  <col name="Level11" type="Bit" nullable="true" />
+  <col name="Level12" type="Bit" nullable="true" />
+  <col name="Level13" type="Bit" nullable="true" />
+  <col name="Level14" type="Bit" nullable="true" />
+  <col name="Level15" type="Bit" nullable="true" />
+  <col name="Level16" type="Bit" nullable="true" />
+  <col name="Level17" type="Bit" nullable="true" />
+  <col name="Level18" type="Bit" nullable="true" />
+  <col name="Level19" type="Bit" nullable="true" />
+  <col name="Level20" type="Bit" nullable="true" />
+  <col name="Level1Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level2Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level3Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level4Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level5Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level6Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level7Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level8Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level9Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level10Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level11Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level12Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level13Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level14Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level15Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level16Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level17Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level18Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level19Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="Level20Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="ApprovalLevelID" type="Int" nullable="true" />
+  <col name="SubGroupNo" type="Int" nullable="true" />
+  <col name="BillingType" type="NVarChar(1)" nullable="true" />
+  <col name="BelongSClass" type="NVarChar(25)" nullable="true" />
+  <col name="BelongMClass" type="NVarChar(25)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="InventoryID" type="Int" nullable="true" />
+  <col name="EPDocType" type="NVarChar(3)" nullable="true" />
+  <col name="CreditAccountID" type="Int" nullable="true" />
+  <col name="CreditSubID" type="Int" nullable="true" />
+  <index name="KGBudApproveLevel_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="PK_EPBudApproveLevel" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="BudLevelID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

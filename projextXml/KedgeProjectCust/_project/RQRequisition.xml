@@ -1,0 +1,6 @@
+﻿<Table TableName="RQRequisition">
+    <Column TableName="RQRequisition" ColumnName="UsrProjectID" ColumnType="int" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="RQRequisition" ColumnName="UsrKGFlowUID" ColumnType="string" AllowNull="True" MaxLength="40" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="RQRequisition" ColumnName="UsrApprovalStatus" ColumnType="string" AllowNull="True" MaxLength="2" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="RQRequisition" ColumnName="UsrReturnUrl" ColumnType="string" AllowNull="True" MaxLength="2048" DecimalPrecision="2" DecimalLength="2048" IsNewColumn="True" IsUnicode="True" />
+</Table>

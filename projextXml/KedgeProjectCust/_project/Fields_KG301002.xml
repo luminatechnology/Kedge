@@ -1,0 +1,6 @@
+﻿<Fields ScreenID="KG301002">
+    <Field IsActive="True" FieldName="ACTINSTEADQTY" RequiredCondition="False" ObjectName="KEDGE.DAC.KGDAILYRENTER" />
+    <Field IsActive="True" FieldName="ACTQTY" RequiredCondition="False" ObjectName="KEDGE.DAC.KGDAILYRENTER" />
+    <Field IsActive="True" FieldName="ACTSELFQTY" RequiredCondition="False" ObjectName="KEDGE.DAC.KGDAILYRENTER" />
+    <Field IsActive="True" FieldName="ACTWORKCONTENT" RequiredCondition="True" ObjectName="KEDGE.DAC.KGDAILYRENTER" />
+</Fields>

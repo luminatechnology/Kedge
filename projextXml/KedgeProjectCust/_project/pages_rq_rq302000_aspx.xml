@@ -1,0 +1,334 @@
+﻿<Page path="~/pages/rq/rq302000.aspx" ControlId="80" pageSource="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">
+    <PXGridLevel DataMember="Lines" ParentId="phG_tab_Items#0_grid_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrContractID" />
+                    <Prop Key="Width" Value="70" />
+                    <Prop Key="MatrixMode" Value="True" />
+                    <Prop Key="CommitChanges" Value="True" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrContractID_description" />
+                    <Prop Key="Width" Value="220" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrProjectTaskID" />
+                    <Prop Key="Width" Value="70" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrProjectTaskID_description" />
+                    <Prop Key="Width" Value="280" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrCostCodeID" />
+                    <Prop Key="Width" Value="70" />
+                    <Prop Key="CommitChanges" Value="True" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrCostCodeID_description" />
+                    <Prop Key="Width" Value="280" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="LineNbr" OriginalIndex="1" />
+            <PXGridColumn DataField="InventoryID" OriginalIndex="2" />
+            <PXGridColumn DataField="Description" OriginalIndex="7" />
+            <PXGridColumn DataField="SiteID" OriginalIndex="6" />
+        </Children>
+    </PXGridLevel>
+    <PXGrid ID="grid" ParentId="phG_tab_Items#0_grid" TypeFullName="PX.Web.UI.PXGrid">
+        <Prop Key="MatrixMode" Value="True" />
+        <Prop Key="SyncPosition" Value="True" />
+    </PXGrid>
+    <PXTab ID="tab" ParentId="phG_tab" TypeFullName="PX.Web.UI.PXTab">
+        <Children Key="Items">
+            <AddItem>
+                <PXTabItem TypeFullName="PX.Web.UI.PXTabItem">
+                    <Prop Key="Text" Value="Requisition Information" />
+                    <Children Key="Template">
+                        <AddItem>
+                            <PXFormView TypeFullName="PX.Web.UI.PXFormView">
+                                <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                <Prop Key="ID" Value="CstFormView3" />
+                                <Prop Key="DataMember" Value="KGRequistionDoc" />
+                                <Children Key="Template">
+                                    <AddItem>
+                                        <PXLayoutRule TypeFullName="PX.Web.UI.PXLayoutRule">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="ID" Value="CstPXLayoutRule66" />
+                                            <Prop Key="StartColumn" Value="True" />
+                                        </PXLayoutRule>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXLayoutRule TypeFullName="PX.Web.UI.PXLayoutRule">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="ID" Value="CstPXLayoutRule79" />
+                                            <Prop Key="StartGroup" Value="True" />
+                                            <Prop Key="GroupCaption" Value="RequisitionClass" />
+                                        </PXLayoutRule>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXDropDown TypeFullName="PX.Web.UI.PXDropDown">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="ID" Value="CstPXDropDown80" />
+                                            <Prop Key="DataField" Value="RequisitionClass" />
+                                        </PXDropDown>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXLayoutRule TypeFullName="PX.Web.UI.PXLayoutRule">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="ID" Value="CstPXLayoutRule71" />
+                                            <Prop Key="StartGroup" Value="True" />
+                                            <Prop Key="GroupCaption" Value="Pricing Information Group" />
+                                        </PXLayoutRule>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXNumberEdit TypeFullName="PX.Web.UI.PXNumberEdit">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="ID" Value="CstPXNumberEdit67" />
+                                            <Prop Key="DataField" Value="DefRetainagePct" />
+                                            <Prop Key="LabelWidth" Value="185px" />
+                                        </PXNumberEdit>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXDropDown TypeFullName="PX.Web.UI.PXDropDown">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="ID" Value="CstPXDropDown68" />
+                                            <Prop Key="DataField" Value="PaymentCalculateMethod" />
+                                            <Prop Key="LabelWidth" Value="185px" />
+                                            <Prop Key="Width" Value="120px" />
+                                        </PXDropDown>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXNumberEdit TypeFullName="PX.Web.UI.PXNumberEdit">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="ID" Value="CstPXNumberEdit69" />
+                                            <Prop Key="DataField" Value="PerformanceGuaranteePct" />
+                                            <Prop Key="LabelWidth" Value="185px" />
+                                        </PXNumberEdit>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXNumberEdit TypeFullName="PX.Web.UI.PXNumberEdit">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="ID" Value="CstPXNumberEdit70" />
+                                            <Prop Key="DataField" Value="WarrantyYear" />
+                                            <Prop Key="LabelWidth" Value="185px" />
+                                        </PXNumberEdit>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXLayoutRule TypeFullName="PX.Web.UI.PXLayoutRule">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="ID" Value="CstPXLayoutRule72" />
+                                            <Prop Key="StartGroup" Value="True" />
+                                            <Prop Key="GroupCaption" Value="Payment Terms Group" />
+                                        </PXLayoutRule>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXPanel TypeFullName="PX.Web.UI.PXPanel">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="ID" Value="CstPanel75" />
+                                            <Children Key="Controls">
+                                                <AddItem>
+                                                    <PXGrid TypeFullName="PX.Web.UI.PXGrid">
+                                                        <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                                        <Prop Key="ID" Value="CstPXGrid76" />
+                                                        <Children Key="Levels">
+                                                            <AddItem>
+                                                                <PXGridLevel TypeFullName="PX.Web.UI.PXGridLevel">
+                                                                    <Prop Key="DataMember" Value="KGReqPayment" />
+                                                                    <Children Key="Columns">
+                                                                        <AddItem>
+                                                                            <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                                                                                <Prop Key="DataField" Value="PaymentPeriod" />
+                                                                                <Prop Key="Width" Value="50" />
+                                                                            </PXGridColumn>
+                                                                        </AddItem>
+                                                                        <AddItem>
+                                                                            <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                                                                                <Prop Key="DataField" Value="PaymentPct" />
+                                                                                <Prop Key="Width" Value="60" />
+                                                                            </PXGridColumn>
+                                                                        </AddItem>
+                                                                    </Children>
+                                                                </PXGridLevel>
+                                                            </AddItem>
+                                                        </Children>
+                                                        <Prop Key="DataSourceID" Value="ds" />
+                                                        <Prop Key="SyncPosition" Value="True" />
+                                                        <Prop Key="SkinID" Value="ShortList" />
+                                                        <Prop Key="Width" Value="500px" />
+                                                        <Prop Key="AutoAdjustColumns" Value="True" />
+                                                        <Prop Key="Height" Value="100px" />
+                                                    </PXGrid>
+                                                </AddItem>
+                                            </Children>
+                                            <Prop Key="Width" Value="125px" />
+                                        </PXPanel>
+                                    </AddItem>
+                                </Children>
+                                <Prop Key="DataSourceID" Value="ds" />
+                                <Prop Key="SyncPosition" Value="True" />
+                                <Prop Key="Width" Value="100%" />
+                            </PXFormView>
+                        </AddItem>
+                    </Children>
+                </PXTabItem>
+            </AddItem>
+            <AddItem>
+                <PXTabItem TypeFullName="PX.Web.UI.PXTabItem">
+                    <Prop Key="Text" Value="Purchase Remark" />
+                    <Children Key="Template">
+                        <AddItem>
+                            <PXFormView TypeFullName="PX.Web.UI.PXFormView">
+                                <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                <Prop Key="ID" Value="CstFormView77" />
+                                <Prop Key="DataMember" Value="KGRequistionDoc" />
+                                <Prop Key="DataSourceID" Value="ds" />
+                                <Prop Key="SyncPosition" Value="True" />
+                                <Children Key="Template">
+                                    <AddItem>
+                                        <PXTextEdit TypeFullName="PX.Web.UI.PXTextEdit">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="DataField" Value="Remark" />
+                                            <Prop Key="TextMode" Value="MultiLine" />
+                                            <Prop Key="LabelWidth" Value="0" />
+                                            <Prop Key="Width" Value="600px" />
+                                            <Prop Key="Height" Value="200px" />
+                                            <Prop Key="CommitChanges" Value="True" />
+                                            <Prop Key="ID" Value="edRemark" />
+                                        </PXTextEdit>
+                                    </AddItem>
+                                    <Item OriginalIndex="0" />
+                                </Children>
+                                <Prop Key="SkinID" Value="Transparent" />
+                                <Prop Key="AutoSize.Enabled" Value="True" />
+                            </PXFormView>
+                        </AddItem>
+                    </Children>
+                </PXTabItem>
+            </AddItem>
+            <AddItem>
+                <PXTabItem TypeFullName="PX.Web.UI.PXTabItem">
+                    <Prop Key="Text" Value="AgentFlow File" />
+                    <Children Key="Template">
+                        <AddItem>
+                            <PXGrid TypeFullName="PX.Web.UI.PXGrid">
+                                <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                <Prop Key="ID" Value="CstPXGrid61" />
+                                <Children Key="Levels">
+                                    <AddItem>
+                                        <PXGridLevel TypeFullName="PX.Web.UI.PXGridLevel">
+                                            <Prop Key="DataMember" Value="KGReqsFile" />
+                                            <Children Key="Columns">
+                                                <AddItem>
+                                                    <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                                                        <Prop Key="DataField" Value="FileType" />
+                                                        <Prop Key="Width" Value="70" />
+                                                    </PXGridColumn>
+                                                </AddItem>
+                                                <AddItem>
+                                                    <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                                                        <Prop Key="DataField" Value="FIleDesc" />
+                                                        <Prop Key="Width" Value="280" />
+                                                    </PXGridColumn>
+                                                </AddItem>
+                                            </Children>
+                                        </PXGridLevel>
+                                    </AddItem>
+                                </Children>
+                                <Prop Key="AutoSize.Container" Value="Window" />
+                                <Prop Key="AutoSize.Enabled" Value="True" />
+                                <Prop Key="Width" Value="100%" />
+                                <Prop Key="DataSourceID" Value="ds" />
+                                <Prop Key="SyncPosition" Value="True" />
+                                <Prop Key="SkinID" Value="Details" />
+                                <Prop Key="Mode.InitNewRow" Value="True" />
+                            </PXGrid>
+                        </AddItem>
+                    </Children>
+                    <Prop Key="Visible" Value="False" />
+                </PXTabItem>
+            </AddItem>
+        </Children>
+    </PXTab>
+    <PXGridLevel DataMember="Vendors" ParentId="phG_tab_Items#2_gridVendor_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrVendQuoteCost" />
+                    <Prop Key="Width" Value="100" />
+                    <Prop Key="CommitChanges" Value="True" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="Location__VShipTermsID" OriginalIndex="5" />
+        </Children>
+    </PXGridLevel>
+    <PXFormView ID="form" ParentId="phF_form" TypeFullName="PX.Web.UI.PXFormView">
+        <Children Key="Template">
+            <PXDateTimeEdit DataField="OrderDate" OriginalIndex="4" />
+            <AddItem>
+                <PXDropDown TypeFullName="PX.Web.UI.PXDropDown">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="CstPXDropDown78" />
+                    <Prop Key="DataField" Value="UsrApprovalStatus" />
+                </PXDropDown>
+            </AddItem>
+            <PXLayoutRule OriginalIndex="6" />
+            <PXTextEdit DataField="Description" OriginalIndex="7" />
+            <PXCheckBox DataField="Approved" OriginalIndex="5" />
+            <AddItem>
+                <PXTextEdit TypeFullName="PX.Web.UI.PXTextEdit">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="CstPXTextEdit78" />
+                    <Prop Key="DataField" Value="UsrRedirect" />
+                    <Prop Key="Enabled" Value="False" />
+                    <Prop Key="CommitChanges" Value="True" />
+                    <Prop Key="LinkCommand.Command" Value="ViewOriginalDocument" />
+                    <Prop Key="LinkCommand.Target" Value="ds" />
+                </PXTextEdit>
+            </AddItem>
+            <PXLayoutRule OriginalIndex="8" />
+            <AddItem>
+                <PXSegmentMask TypeFullName="PX.Web.UI.PXSegmentMask">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="CstPXSegmentMask62" />
+                    <Prop Key="DataField" Value="UsrProjectID" />
+                </PXSegmentMask>
+            </AddItem>
+            <PXSegmentMask DataField="CustomerLocationID" OriginalIndex="12" />
+        </Children>
+    </PXFormView>
+    <PXSegmentMask DataField="VendorID" ParentId="phG_tab_Items#2_pnlBidding_edVendorID" TypeFullName="PX.Web.UI.PXSegmentMask">
+        <Prop Key="Size" Value="L" />
+    </PXSegmentMask>
+    <PXSegmentMask DataField="VendorLocationID" ParentId="phG_tab_Items#2_pnlBidding_edVendorLocationID" TypeFullName="PX.Web.UI.PXSegmentMask">
+        <Prop Key="Size" Value="L" />
+    </PXSegmentMask>
+    <PXTextEdit DataField="VendorRefNbr" ParentId="phG_tab_Items#2_pnlBidding_edVendorRefNbr" TypeFullName="PX.Web.UI.PXTextEdit">
+        <Prop Key="Size" Value="M" />
+    </PXTextEdit>
+    <PXGridLevel DataMember="Approval" ParentId="phG_tab_Items#4_gridApproval_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrReturnUrl" />
+                    <Prop Key="Width" Value="280" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="Reason" OriginalIndex="7" />
+        </Children>
+    </PXGridLevel>
+    <PXCheckBox DataField="Hold" ParentId="phF_form_chkHold" TypeFullName="PX.Web.UI.PXCheckBox">
+        <Prop Key="CommitChanges" Value="True" />
+    </PXCheckBox>
+</Page>

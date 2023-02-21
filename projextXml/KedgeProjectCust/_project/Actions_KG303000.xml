@@ -1,0 +1,6 @@
+﻿<Actions ScreenID="KG303000">
+    <Action IsActive="True" ActionName="viewDailyRenterCD" ActionType="G" DisplayName="ViewDailyRenterCD" WindowMode="S">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+</Actions>

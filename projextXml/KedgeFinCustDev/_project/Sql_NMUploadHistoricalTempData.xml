@@ -1,0 +1,24 @@
+﻿<Sql TableName="NMUploadHistoricalTempData" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="NMUploadHistoricalTempData">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="TempSeq" type="Int" identity="true" />
+  <col name="Error" type="NVarChar(255)" nullable="true" />
+  <col name="PayableCheckCD" type="NVarChar(25)" nullable="true" />
+  <col name="BankAccountID" type="Int" nullable="true" />
+  <col name="CheckNbr" type="NVarChar(25)" nullable="true" />
+  <col name="CheckDate" type="DateTime" nullable="true" />
+  <col name="EtdDepositDate" type="DateTime" nullable="true" />
+  <col name="PayableCashierID" type="Int" nullable="true" />
+  <col name="OriCuryAmount" type="Decimal(19,2)" nullable="true" />
+  <col name="VendorID" type="Int" nullable="true" />
+  <col name="VendorLocationID" type="Int" nullable="true" />
+  <col name="CheckTitle" type="NVarChar(255)" nullable="true" />
+  <col name="ProjectID" type="Int" nullable="true" />
+  <col name="ProjectPeriod" type="Int" nullable="true" />
+  <col name="Description" type="NVarChar(255)" nullable="true" />
+  <index name="PK_NMUploadHistoricalTempData" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="TempSeq" />
+  </index>
+</table>]]></CDATA>
+</Sql>

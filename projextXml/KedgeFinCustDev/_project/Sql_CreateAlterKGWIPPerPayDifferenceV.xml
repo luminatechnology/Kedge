@@ -1,0 +1,28 @@
+﻿<Sql TableName="CreateAlterKGWIPPerPayDifferenceV" SqlScriptPriority="2" CustomScript="#CDATA">
+    <CDATA name="CustomScript"><![CDATA[CREATE OR ALTER VIEW dbo.KGWIPPerPayDifferenceV
+as
+select 
+        pp.CompanyID,
+	ht.LedgerID,
+	pp.FinPeriodID,
+	pp.BranchID,
+	pp.ProjectID ,
+	SUM((case when acct.UsrAccountGroup <> N'預收工程款' then pp.FinYtdBalance else 0 end)) as WIPBalance,
+	SUM((case when acct.UsrAccountGroup = N'預收工程款' then pp.FinYtdBalance else 0 end)) as PrePayBalance
+	from KGProjHistoryByPeriod pp
+left join KGProjHistoryTran ht on pp.CompanyID = ht.CompanyID
+	and pp.BranchID = ht.BranchID
+	and pp.AccountID = ht.AccountID
+	and pp.SubID = ht.SubID
+	and pp.LedgerID = ht.LedgerID
+	and pp.ProjectID = ht.ProjectID
+	and pp.FinPeriodID = ht.FinPeriodID
+Left join Account acct on pp.CompanyID = acct.CompanyID
+	and pp.AccountID = acct.AccountID
+Where acct.UsrAccountGroup is not null
+-----
+--and ht.LedgerID = 4
+--and pp.ProjectID not in (425,424,477,0)
+-----
+group by pp.CompanyID,ht.LedgerID,pp.FinPeriodID,pp.BranchID,pp.ProjectID]]></CDATA>
+</Sql>

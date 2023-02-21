@@ -1,0 +1,10 @@
+﻿<Table TableName="RQRequisitionLine">
+    <Column TableName="RQRequisitionLine" ColumnName="UsrContractCD" ColumnType="string" AllowNull="True" MaxLength="30" DecimalPrecision="2" DecimalLength="30" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="RQRequisitionLine" ColumnName="UsrProjectTaskID" ColumnType="int" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="RQRequisitionLine" ColumnName="UsrCostCodeID" ColumnType="int" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="RQRequisitionLine" ColumnName="UsrContractID" ColumnType="int" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="RQRequisitionLine" ColumnName="UsrAccountGroupID" ColumnType="int" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="RQRequisitionLine" ColumnName="UsrContractDesc" ColumnType="string" AllowNull="True" MaxLength="240" DecimalPrecision="2" DecimalLength="240" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="RQRequisitionLine" ColumnName="UsrCostCodeDesc" ColumnType="string" AllowNull="True" MaxLength="240" DecimalPrecision="2" DecimalLength="240" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="RQRequisitionLine" ColumnName="UsrProjectTaskDesc" ColumnType="string" AllowNull="True" MaxLength="240" DecimalPrecision="2" DecimalLength="240" IsNewColumn="True" IsUnicode="True" />
+</Table>

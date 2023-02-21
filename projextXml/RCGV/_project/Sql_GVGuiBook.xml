@@ -1,0 +1,36 @@
+﻿<Sql TableName="GVGuiBook" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVGuiBook">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="GuiBookID" type="Int" identity="true" />
+  <col name="GuiBookCD" type="NVarChar(240)" />
+  <col name="RegistrationCD" type="NVarChar(9)" />
+  <col name="GovUniformNumber" type="NVarChar(10)" />
+  <col name="DeclareYear" type="Int" />
+  <col name="DeclarePeriod" type="NVarChar(1)" />
+  <col name="GuiType" type="NVarChar(2)" />
+  <col name="GuiBookDesc" type="NVarChar(240)" />
+  <col name="GuiWordCD" type="NVarChar(2)" />
+  <col name="StartNum" type="NVarChar(8)" />
+  <col name="EndNum" type="NVarChar(8)" />
+  <col name="CurrentNum" type="NVarChar(8)" nullable="true" />
+  <col name="CurrentGuiDate" type="DateTime" nullable="true" />
+  <col name="StartMonth" type="Int" />
+  <col name="EndMonth" type="Int" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="GuiNumberDetailID" type="Int" />
+  <col name="isLock" type="Bit" nullable="true" />
+  <col name="LockBy" type="UniqueIdentifier" nullable="true" />
+  <col name="Hold" type="Bit" nullable="true" />
+  <index name="PK_GVGuiBook" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="GuiBookID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

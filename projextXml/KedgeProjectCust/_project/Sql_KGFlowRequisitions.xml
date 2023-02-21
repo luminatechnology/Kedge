@@ -1,0 +1,30 @@
+﻿<Sql TableName="KGFlowRequisitions" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowRequisitions">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ReqID" type="Int" identity="true" />
+  <col name="ReqUID" type="NVarChar(40)" />
+  <col name="ApprovalID" type="Int" nullable="true" />
+  <col name="DeptName" type="NVarChar(60)" nullable="true" />
+  <col name="ProjectName" type="NVarChar(60)" nullable="true" />
+  <col name="ProjectCode" type="NVarChar(30)" nullable="true" />
+  <col name="CreateUserName" type="NVarChar(60)" nullable="true" />
+  <col name="RequisitionsNo" type="NVarChar(20)" nullable="true" />
+  <col name="UsrDefinedName" type="NVarChar(60)" nullable="true" />
+  <col name="NeedDate" type="DateTime" nullable="true" />
+  <col name="RequisitionsExplain" type="NVarChar(MAX)" nullable="true" />
+  <col name="Message" type="NVarChar(MAX)" nullable="true" />
+  <col name="StateUID" type="NVarChar(5)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowRequisitions_1" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ReqID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

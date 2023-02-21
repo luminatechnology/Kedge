@@ -1,0 +1,34 @@
+﻿<Sql TableName="KGFlowSubAccDetail" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowSubAccDetail">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="AdID" type="Int" identity="true" />
+  <col name="AdUID" type="NVarChar(40)" />
+  <col name="AccUID" type="NVarChar(40)" />
+  <col name="Sno" type="Int" />
+  <col name="FundsName" type="NVarChar(10)" nullable="true" />
+  <col name="ReserveDedReturnReserve" type="Decimal(18,4)" nullable="true" />
+  <col name="DedReturnPrePay" type="Decimal(18,4)" nullable="true" />
+  <col name="Ven2Value" type="Decimal(18,4)" nullable="true" />
+  <col name="DedValue" type="Decimal(18,4)" nullable="true" />
+  <col name="AddValue" type="Decimal(18,4)" nullable="true" />
+  <col name="TaxValue" type="Decimal(18,4)" nullable="true" />
+  <col name="RealPayValue" type="Decimal(18,4)" nullable="true" />
+  <col name="InvoiceValue" type="Decimal(18,4)" nullable="true" />
+  <col name="WageReport" type="Decimal(18,4)" nullable="true" />
+  <col name="WithholdingTax" type="Decimal(18,4)" nullable="true" />
+  <col name="WarrantyCash" type="Bit" nullable="true" />
+  <col name="WarrantyTicket" type="Bit" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowSubAccDetail" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="AdID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

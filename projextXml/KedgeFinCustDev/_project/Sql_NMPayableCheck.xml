@@ -1,0 +1,76 @@
+﻿<Sql TableName="NMPayableCheck" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="NMPayableCheck">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="PayableCheckID" type="Int" identity="true" />
+  <col name="PayableCheckCD" type="NVarChar(50)" nullable="true" />
+  <col name="Status" type="Int" />
+  <col name="BranchID" type="Int" nullable="true" />
+  <col name="PayableCashierID" type="Int" />
+  <col name="SendCashierID" type="Int" nullable="true" />
+  <col name="CashCashierID" type="Int" nullable="true" />
+  <col name="ModifyCashierID" type="Int" nullable="true" />
+  <col name="CheckDate" type="DateTime" />
+  <col name="DueDate" type="DateTime" nullable="true" />
+  <col name="EtdDepositDate" type="DateTime" nullable="true" />
+  <col name="BankAccountID" type="Int" />
+  <col name="BookNbr" type="NVarChar(50)" nullable="true" />
+  <col name="CheckNbr" type="NChar(12)" nullable="true" />
+  <col name="CuryID" type="NVarChar(5)" nullable="true" />
+  <col name="CuryInfoID" type="BigInt" nullable="true" />
+  <col name="OriCuryAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="BaseCuryAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="SourceCode" type="Int" nullable="true" />
+  <col name="VendorID" type="Int" nullable="true" />
+  <col name="VendorLocationID" type="Int" nullable="true" />
+  <col name="Title" type="NVarChar(50)" nullable="true" />
+  <col name="ProjectID" type="Int" nullable="true" />
+  <col name="ProjectPeriod" type="Int" nullable="true" />
+  <col name="Description" type="NVarChar(255)" nullable="true" />
+  <col name="PaymentDocNo" type="NVarChar(10)" nullable="true" />
+  <col name="PaymentDocDate" type="DateTime" nullable="true" />
+  <col name="DeliverMethod" type="Int" nullable="true" />
+  <col name="Receiver" type="NVarChar(255)" nullable="true" />
+  <col name="DeliverDate" type="DateTime" nullable="true" />
+  <col name="ModifyDate" type="DateTime" nullable="true" />
+  <col name="ModifyReason" type="NVarChar(255)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="DepositDate" type="DateTime" nullable="true" />
+  <col name="PrintDate" type="DateTime" nullable="true" />
+  <col name="PrintUser" type="UniqueIdentifier" nullable="true" />
+  <col name="PrintCount" type="Int" nullable="true" />
+  <col name="RefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="CashBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="ConfirmBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="ConfirmReverseBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="CashReverseBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="BillPaymentID" type="Int" nullable="true" />
+  <col name="IsIssuedByBank" type="Bit" nullable="true" />
+  <col name="PrintBatchNbr" type="NVarChar(255)" nullable="true" />
+  <col name="PrintChineseAmt" type="NVarChar(255)" nullable="true" />
+  <col name="PaymentReverseBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="PaymentBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="FeedbackStatus" type="NVarChar(5)" nullable="true" />
+  <col name="ConfirmAPPaymentBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="ConfirmWriteoffPostageBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="APPaymentReverseBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="WriteoffPostageReverseBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="ConfirmPPMBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="PPMReverseBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="IsManualCheckNbr" type="Bit" nullable="true" />
+  <index name="NMPayableCheck_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="PK_NMPayableCheck" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="PayableCheckID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

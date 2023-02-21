@@ -1,0 +1,260 @@
+﻿<Report Name="gv603004.rpx">
+    <Report version="20200826" Name="report1">
+        <Filters>
+            <FilterExp>
+                <DataField>APARTopNTemp.BatchNbr</DataField>
+                <Value>@BatchNbr</Value>
+            </FilterExp>
+        </Filters>
+        <Parameters>
+            <ReportParameter>
+                <Name>BatchNbr</Name>
+                <Required>True</Required>
+            </ReportParameter>
+        </Parameters>
+        <SchemaUrl>http://localhost/AcumaticaKedge/</SchemaUrl>
+        <Sorting>
+            <SortExp>
+                <DataField>APARTopNTemp.Seq</DataField>
+            </SortExp>
+        </Sorting>
+        <Tables>
+            <ReportTable Name="APARTopNTemp">
+                <Fields>
+                    <ReportField Name="Amount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="BatchNbr">
+                    </ReportField>
+                    <ReportField Name="BuildTotalAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="Name">
+                    </ReportField>
+                    <ReportField Name="Seq">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Type">
+                    </ReportField>
+                    <ReportField Name="UniformNumber">
+                    </ReportField>
+                </Fields>
+                <FullName>KedgeFinCustDev.FIN.DAC.APARTopNTemp</FullName>
+            </ReportTable>
+        </Tables>
+        <Version>20200826</Version>
+        <Sections>
+            <PageHeader Name="pageHeaderSection1">
+                <Height>0.42328cm</Height>
+                <Items>
+                    <TextBox Name="textBox1">
+                        <Location>0px, 0px</Location>
+                        <Size>40px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold, Underline</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <Value>名次</Value>
+                    </TextBox>
+                    <TextBox Name="textBox2">
+                        <Location>40px, 0px</Location>
+                        <Size>96px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold, Underline</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <Value>公司統編</Value>
+                    </TextBox>
+                    <TextBox Name="textBox3">
+                        <Location>136px, 0px</Location>
+                        <Size>368px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold, Underline</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <Value>公司名稱</Value>
+                    </TextBox>
+                    <TextBox Name="textBox4">
+                        <Location>504px, 0px</Location>
+                        <Size>136px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold, Underline</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <Value>未稅金額</Value>
+                    </TextBox>
+                    <TextBox Name="textBox5">
+                        <Location>640px, 0px</Location>
+                        <Size>56px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold, Underline</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <Value>百分比%</Value>
+                    </TextBox>
+                </Items>
+            </PageHeader>
+            <Detail Name="detailSection1">
+                <Height>0.42328cm</Height>
+                <Items>
+                    <TextBox Name="textBox10">
+                        <Location>0px, 0px</Location>
+                        <Size>40px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <Value>=[APARTopNTemp.Seq]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox6">
+                        <Format>0.##%</Format>
+                        <Location>640px, 0px</Location>
+                        <Size>56px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>= IIf([APARTopNTemp.BuildTotalAmt]&gt;0 , [APARTopNTemp.Amount]/[APARTopNTemp.BuildTotalAmt] ,'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox7">
+                        <Format>#,0</Format>
+                        <Location>504px, 0px</Location>
+                        <Size>136px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>=[APARTopNTemp.Amount]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox8">
+                        <Location>136px, 0px</Location>
+                        <Size>368px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                        </Style>
+                        <Value>=[APARTopNTemp.Name]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox9">
+                        <Location>40px, 0px</Location>
+                        <Size>96px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                        </Style>
+                        <Value>=[APARTopNTemp.UniformNumber]</Value>
+                    </TextBox>
+                </Items>
+            </Detail>
+            <ReportFooter Name="reportFooterSection1">
+                <Height>1.69312cm</Height>
+                <Variables>
+                    <ReportVariable>
+                        <Name>BuildTotal</Name>
+                        <ValueExpr>=[APARTopNTemp.BuildTotalAmt]</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>TotalAmt</Name>
+                        <ValueExpr>=Sum([APARTopNTemp.Amount])</ValueExpr>
+                    </ReportVariable>
+                </Variables>
+                <Items>
+                    <TextBox Name="textBox11">
+                        <Location>136px, 0px</Location>
+                        <Size>368px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                        </Style>
+                        <Value>合計：</Value>
+                    </TextBox>
+                    <TextBox Name="textBox12">
+                        <Location>136px, 32px</Location>
+                        <Size>368px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                        </Style>
+                        <Value>=IIf([APARTopNTemp.Type]='AP','5104 進項發票合計總數 (C) :','4104 銷項發票合計總數 (C) :')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox13">
+                        <Format>#,0</Format>
+                        <Location>504px, 0px</Location>
+                        <Size>136px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>=$TotalAmt</Value>
+                    </TextBox>
+                    <TextBox Name="textBox14">
+                        <Format>#,0</Format>
+                        <Location>504px, 24px</Location>
+                        <Size>136px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>=CDec($BuildTotal)</Value>
+                    </TextBox>
+                </Items>
+            </ReportFooter>
+        </Sections>
+    </Report>
+</Report>

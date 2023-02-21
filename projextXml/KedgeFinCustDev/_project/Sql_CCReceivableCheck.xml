@@ -1,0 +1,56 @@
+﻿<Sql TableName="CCReceivableCheck" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="CCReceivableCheck">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="GuarReceviableID" type="Int" identity="true" />
+  <col name="GuarReceviableCD" type="VarChar(15)" />
+  <col name="BranchID" type="Int" />
+  <col name="DocDate" type="DateTime" />
+  <col name="Status" type="Char(1)" />
+  <col name="IssueDate" type="DateTime" nullable="true" />
+  <col name="AuthDate" type="DateTime" nullable="true" />
+  <col name="TargetType" type="Char(1)" />
+  <col name="CustomerID" type="Int" nullable="true" />
+  <col name="CustomerLocationID" type="Int" nullable="true" />
+  <col name="VendorID" type="Int" nullable="true" />
+  <col name="VendorLocationID" type="Int" nullable="true" />
+  <col name="ProjectID" type="Int" />
+  <col name="GuarType" type="Char(1)" />
+  <col name="GuarClass" type="Char(2)" />
+  <col name="GuarNbr" type="NVarChar(30)" />
+  <col name="GuarTitle" type="NVarChar(255)" nullable="true" />
+  <col name="GuarAmt" type="Decimal(19,4)" />
+  <col name="DueDate" type="DateTime" nullable="true" />
+  <col name="ContractorID" type="Int" nullable="true" />
+  <col name="CashierID" type="Int" />
+  <col name="GuarReleaseDate" type="DateTime" nullable="true" />
+  <col name="GuarReceiveDate" type="DateTime" nullable="true" />
+  <col name="GuarReturnDate" type="DateTime" nullable="true" />
+  <col name="BatchNbr" type="NVarChar(15)" nullable="true" />
+  <col name="ReturnBatchNbr" type="NVarChar(15)" nullable="true" />
+  <col name="Description" type="NVarChar(255)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="PONbr" type="NVarChar(15)" nullable="true" />
+  <col name="POOrderType" type="Char(2)" nullable="true" />
+  <col name="IsPostpone" type="Bit" nullable="true" />
+  <col name="PostDueDate" type="DateTime" nullable="true" />
+  <col name="CheckIssuer" type="NVarChar(255)" nullable="true" />
+  <col name="OriBankCode" type="NVarChar(7)" nullable="true" />
+  <col name="OriBankAccount" type="NVarChar(15)" nullable="true" />
+  <col name="CCPostageAmt" type="Decimal(18,6)" nullable="true" />
+  <index name="CCReceivableCheck_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="PK_CCReceivableCheck" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="GuarReceviableID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

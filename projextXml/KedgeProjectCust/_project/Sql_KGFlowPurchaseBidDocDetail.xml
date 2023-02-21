@@ -1,0 +1,40 @@
+﻿<Sql TableName="KGFlowPurchaseBidDocDetail" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowPurchaseBidDocDetail">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="PpbID" type="Int" identity="true" />
+  <col name="PpbUID" type="NVarChar(40)" />
+  <col name="PpmUID" type="NVarChar(40)" nullable="true" />
+  <col name="PppUID" type="NVarChar(40)" nullable="true" />
+  <col name="InvNo" type="NVarChar(50)" nullable="true" />
+  <col name="CompanyName" type="NVarChar(60)" nullable="true" />
+  <col name="ContactPhone" type="NVarChar(50)" nullable="true" />
+  <col name="Contactor" type="NVarChar(255)" nullable="true" />
+  <col name="FinalAmt" type="Decimal(25,9)" nullable="true" />
+  <col name="BudTotalAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="Adderss" type="NVarChar(100)" nullable="true" />
+  <col name="SalaryPayRatio" type="Decimal(18,4)" nullable="true" />
+  <col name="PayType" type="Int" nullable="true" />
+  <col name="CostDay1" type="Int" nullable="true" />
+  <col name="CostRatio1" type="Decimal(18,4)" nullable="true" />
+  <col name="CostDay2" type="Int" nullable="true" />
+  <col name="CostRatio2" type="Decimal(18,4)" nullable="true" />
+  <col name="ResPercent" type="Decimal(18,4)" nullable="true" />
+  <col name="AdvancePercent" type="Decimal(18,4)" nullable="true" />
+  <col name="PerformanceBondPercent" type="Decimal(18,4)" nullable="true" />
+  <col name="WarrantyYearsOf" type="Int" nullable="true" />
+  <col name="WarrantyCondition" type="VarChar(MAX)" nullable="true" />
+  <col name="BudFinalPercent" type="Decimal(18,4)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowPurchaseBidDocDetail_1" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="PpbID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

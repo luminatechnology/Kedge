@@ -1,0 +1,9 @@
+﻿<Actions ScreenID="AP301000">
+    <Action IsActive="True" ActionName="KG606002Rpt" ActionType="R" DestinationScreenID="KG606002" DisplayName="KG傳票明細" DisableCondition="e7c6335b-9f6c-4c20-8c1f-1eb0f5d67fca" MenuFolderType="21" WindowMode="S">
+        <Param IsActive="True" Value="=[UsrAccConfirmNbr]" ActionName="KG606002Rpt" Name="UsrAccConfirmNbrFrom" FromSchema="False" />
+        <Param IsActive="True" Value="=[UsrAccConfirmNbr]" ActionName="KG606002Rpt" Name="UsrAccConfirmNbrTo" FromSchema="False" />
+        <Param IsActive="True" Value="=''" ActionName="KG606002Rpt" Name="CreatedByID" FromSchema="False" />
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+</Actions>

@@ -1,0 +1,10 @@
+﻿<Automation screen="RQ301000">
+    <Fields ScreenID="RQ301000">
+        <Field IsActive="True" DisplayName="計價單元描述" FieldName="COSTCODEID_DESCRIPTION" ObjectName="PX.OBJECTS.PM.PMCOSTBUDGET" />
+        <Field IsActive="True" DisplayName="成本任務" FieldName="PROJECTTASKID" ObjectName="PX.OBJECTS.PM.PMCOSTBUDGET" />
+        <Field IsActive="True" DisplayName="成本任務描述" FieldName="PROJECTTASKID_DESCRIPTION" ObjectName="PX.OBJECTS.PM.PMCOSTBUDGET" />
+        <Field IsActive="True" DisplayName="專案描述" FieldName="USRCONTRACTID_DESCRIPTION" ObjectName="PX.OBJECTS.RQ.RQREQUESTLINE" />
+        <Field IsActive="True" DisplayName="計價單元描述" FieldName="USRCOSTCODEID_DESCRIPTION" ObjectName="PX.OBJECTS.RQ.RQREQUESTLINE" />
+        <Field IsActive="True" DisplayName="成本任務描述" FieldName="USRPROJECTTASKID_DESCRIPTION" ObjectName="PX.OBJECTS.RQ.RQREQUESTLINE" />
+    </Fields>
+</Automation>

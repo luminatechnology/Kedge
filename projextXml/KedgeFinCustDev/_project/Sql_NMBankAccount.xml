@@ -1,0 +1,45 @@
+﻿<Sql TableName="NMBankAccount" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="NMBankAccount">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="BankAccountID" type="Int" identity="true" />
+  <col name="BankAccountCD" type="NVarChar(50)" />
+  <col name="BankName" type="NVarChar(50)" />
+  <col name="BankShortName" type="NVarChar(30)" />
+  <col name="BankAddress" type="NVarChar(255)" nullable="true" />
+  <col name="BankPhone" type="NVarChar(50)" nullable="true" />
+  <col name="BankCode" type="NChar(7)" nullable="true" />
+  <col name="BankAccount" type="NVarChar(50)" />
+  <col name="BranchID" type="Int" />
+  <col name="Contactor" type="NVarChar(50)" nullable="true" />
+  <col name="CuryID" type="NVarChar(5)" />
+  <col name="CashAccountID" type="Int" />
+  <col name="AccountID" type="Int" nullable="true" />
+  <col name="SubID" type="Int" nullable="true" />
+  <col name="AccountType" type="NVarChar(2)" />
+  <col name="AccountName" type="NVarChar(60)" nullable="true" />
+  <col name="Description" type="NVarChar(255)" nullable="true" />
+  <col name="IsSettlement" type="Bit" />
+  <col name="ActivationDate" type="DateTime" nullable="true" />
+  <col name="SettlementDate" type="DateTime" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="PaymentMethodID" type="NVarChar(10)" nullable="true" />
+  <col name="EnableIssueByBank" type="Bit" nullable="true" />
+  <col name="IsCheckPrintAble" type="Bit" nullable="true" />
+  <col name="RestrictedAmount" type="Decimal(19,4)" nullable="true" />
+  <index name="NMBankAccount_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="PK_NMBank" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="BankAccountID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

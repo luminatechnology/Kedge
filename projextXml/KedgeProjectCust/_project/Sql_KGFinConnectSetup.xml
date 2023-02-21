@@ -1,0 +1,15 @@
+﻿<Sql TableName="KGFinConnectSetup" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFinConnectSetup">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ConnectSite" type="NChar(1)" />
+  <col name="Host" type="Char(120)" />
+  <col name="Sid" type="Char(60)" />
+  <col name="Port" type="Int" />
+  <col name="UserName" type="NChar(60)" />
+  <col name="UserPwd" type="NChar(60)" />
+  <index name="PK_KGFinConnectSetup" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ConnectSite" />
+  </index>
+</table>]]></CDATA>
+</Sql>

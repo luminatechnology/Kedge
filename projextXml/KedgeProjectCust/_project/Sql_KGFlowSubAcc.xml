@@ -1,0 +1,71 @@
+﻿<Sql TableName="KGFlowSubAcc" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowSubAcc">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="AccID" type="Int" identity="true" />
+  <col name="AccUID" type="NVarChar(40)" />
+  <col name="ApprovalID" type="Int" nullable="true" />
+  <col name="DeptName" type="NVarChar(60)" nullable="true" />
+  <col name="ProjectName" type="NVarChar(60)" nullable="true" />
+  <col name="ProjectCode" type="NVarChar(30)" nullable="true" />
+  <col name="SubUID" type="NVarChar(40)" nullable="true" />
+  <col name="SubCode" type="NVarChar(15)" nullable="true" />
+  <col name="SubName" type="NVarChar(60)" nullable="true" />
+  <col name="Title" type="NVarChar(60)" nullable="true" />
+  <col name="RvnNum" type="Int" nullable="true" />
+  <col name="RvnAddAmount" type="Decimal(18,4)" nullable="true" />
+  <col name="RvnSumAddAmount" type="Decimal(18,4)" nullable="true" />
+  <col name="RvnTotalExTax" type="Decimal(18,4)" nullable="true" />
+  <col name="BudAmount" type="Decimal(18,4)" nullable="true" />
+  <col name="SumAddAmt" type="Decimal(18,4)" nullable="true" />
+  <col name="SubmittalDate" type="DateTime" nullable="true" />
+  <col name="PointWorkBudAmount" type="Decimal(18,4)" nullable="true" />
+  <col name="PointWorkSubAmount" type="Decimal(18,4)" nullable="true" />
+  <col name="PointWorkPercentage" type="Decimal(18,4)" nullable="true" />
+  <col name="Num" type="Int" nullable="true" />
+  <col name="AccNo" type="NVarChar(15)" nullable="true" />
+  <col name="Sdate" type="DateTime" nullable="true" />
+  <col name="Fdate" type="DateTime" nullable="true" />
+  <col name="StateUID" type="NVarChar(5)" nullable="true" />
+  <col name="Message" type="NVarChar(MAX)" nullable="true" />
+  <col name="SumDedApproveValue" type="Decimal(18,4)" nullable="true" />
+  <col name="NoDedApproveValue" type="Decimal(18,4)" nullable="true" />
+  <col name="DedApproveNoAccValue" type="Decimal(18,4)" nullable="true" />
+  <col name="DedApproveAccValue" type="Decimal(18,4)" nullable="true" />
+  <col name="Ctotal" type="Decimal(18,4)" nullable="true" />
+  <col name="SubAccCreateDate" type="DateTime" nullable="true" />
+  <col name="IsProjectSubmittal" type="Bit" nullable="true" />
+  <col name="Total" type="Decimal(18,4)" nullable="true" />
+  <col name="Tax" type="Decimal(18,4)" nullable="true" />
+  <col name="Realpay" type="Decimal(18,4)" nullable="true" />
+  <col name="Reserve" type="Decimal(18,4)" nullable="true" />
+  <col name="DedApprove" type="Decimal(18,4)" nullable="true" />
+  <col name="AddApprove" type="Decimal(18,4)" nullable="true" />
+  <col name="PaymentProcessMode" type="NVarChar(25)" nullable="true" />
+  <col name="ResTax" type="Decimal(18,4)" nullable="true" />
+  <col name="AccCategory" type="NVarChar(1)" nullable="true" />
+  <col name="Score1" type="Decimal(18,4)" nullable="true" />
+  <col name="Score2" type="Decimal(18,4)" nullable="true" />
+  <col name="Score3" type="Decimal(18,4)" nullable="true" />
+  <col name="Comment1" type="NVarChar(MAX)" nullable="true" />
+  <col name="Comment2" type="NVarChar(MAX)" nullable="true" />
+  <col name="Comment3" type="NVarChar(MAX)" nullable="true" />
+  <col name="SumScore" type="Decimal(18,4)" nullable="true" />
+  <col name="Level" type="NVarChar(2)" nullable="true" />
+  <col name="IsSettlementAcc" type="Bit" nullable="true" />
+  <col name="FlowInitiator" type="NVarChar(25)" nullable="true" />
+  <col name="FlowPaymentCategory" type="NVarChar(25)" nullable="true" />
+  <col name="ClassifyCode" type="VarChar(1)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowSubAcc" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="AccID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

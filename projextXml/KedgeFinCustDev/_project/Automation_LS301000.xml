@@ -1,0 +1,9 @@
+﻿<Automation screen="LS301000">
+    <Fields ScreenID="LS301000">
+        <Field IsActive="True" FieldName="BATCHNBR" ObjectName="PX.OBJECTS.GL.GLTRAN" />
+        <Field IsActive="True" DisplayName="Original Credit Amt" FieldName="CURYCREDITAMT" ObjectName="PX.OBJECTS.GL.GLTRAN" />
+        <Field IsActive="True" DisplayName="Original Debit Amt" FieldName="CURYDEBITAMT" ObjectName="PX.OBJECTS.GL.GLTRAN" />
+        <Field IsActive="True" FieldName="LINENBR" ObjectName="PX.OBJECTS.GL.GLTRAN" />
+        <Field IsActive="True" FieldName="SELECTED" ObjectName="PX.OBJECTS.GL.GLTRAN" />
+    </Fields>
+</Automation>

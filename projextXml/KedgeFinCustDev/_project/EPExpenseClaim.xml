@@ -1,0 +1,27 @@
+﻿<Table TableName="EPExpenseClaim">
+    <Column TableName="EPExpenseClaim" ColumnName="UsrVendorID" ColumnType="int" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrVendorLocationID" ColumnType="int" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrFinancialYear" ColumnType="string" AllowNull="True" MaxLength="4" DecimalPrecision="2" DecimalLength="4" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrTargetType" ColumnType="string" AllowNull="True" MaxLength="1" DecimalPrecision="2" DecimalLength="1" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrDocType" ColumnType="string" AllowNull="True" MaxLength="3" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrGnhi2Amt" ColumnType="decimal" AllowNull="True" MaxLength="18" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrLbpAmt" ColumnType="decimal" AllowNull="True" MaxLength="18" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrWhtAmt" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrLbiAmt" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrHliAmt" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrApprovalStatus" ColumnType="string" AllowNull="True" MaxLength="2" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrKGFlowUID" ColumnType="string" AllowNull="True" MaxLength="40" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrReturnUrl" ColumnType="string" AllowNull="True" MaxLength="2048" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrAmtNMP" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrAmtNMR" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrAmtCCP" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrAmtTT" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrAmtCCR" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrIsRejectByAcct" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrSkipFlowFlag" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrBankAccountID" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrBankTxnAmt" ColumnType="decimal" AllowNull="True" DecimalPrecision="4" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrIsTmpPayment" ColumnType="bool" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrLineCntr" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaim" ColumnName="UsrStageCode" ColumnType="string" AllowNull="True" MaxLength="2" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

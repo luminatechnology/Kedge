@@ -1,0 +1,16 @@
+﻿<Fields ScreenID="PM308000">
+    <Field IsActive="True" FieldName="PROJECTNBR" ObjectName="PX.OBJECTS.PM.PMCHANGEORDER" />
+    <Field IsActive="True" DisplayName="計價單元描述" FieldName="COSTCODEID_DESCRIPTION" ObjectName="PX.OBJECTS.PM.PMCHANGEORDERCOSTBUDGET" />
+    <Field IsActive="True" DisplayName="工料編號描述" FieldName="INVENTORYID_DESCRIPTION" ObjectName="PX.OBJECTS.PM.PMCHANGEORDERCOSTBUDGET" />
+    <Field IsActive="True" DisplayName="成本任務描述" FieldName="PROJECTTASKID_DESCRIPTION" ObjectName="PX.OBJECTS.PM.PMCHANGEORDERCOSTBUDGET" />
+    <Field IsActive="True" FieldName="USRBELONGKIND" RequiredCondition="True" ObjectName="PX.OBJECTS.PM.PMCHANGEORDERCOSTBUDGET" />
+    <Field IsActive="True" FieldName="USRCHANGEREASON" RequiredCondition="True" ObjectName="PX.OBJECTS.PM.PMCHANGEORDERCOSTBUDGET" />
+    <Field IsActive="True" DisplayName="計價單元描述" FieldName="COSTCODEID_DESCRIPTION" ObjectName="PX.OBJECTS.PM.PMCHANGEORDERLINE" />
+    <Field IsActive="True" DisplayName="成本任務描述" FieldName="TASKID_DESCRIPTION" ObjectName="PX.OBJECTS.PM.PMCHANGEORDERLINE" />
+    <Field IsActive="True" FieldName="USRBELONGKIND" RequiredCondition="True" ObjectName="PX.OBJECTS.PM.PMCHANGEORDERLINE" />
+    <Field IsActive="True" FieldName="USRCHANGEREASON" RequiredCondition="True" ObjectName="PX.OBJECTS.PM.PMCHANGEORDERLINE" />
+    <Field IsActive="True" DisplayName="計價單元描述" FieldName="COSTCODEID_DESCRIPTION" ObjectName="PX.OBJECTS.PM.PMCHANGEORDERREVENUEBUDGET" />
+    <Field IsActive="True" DisplayName="收入任務" FieldName="PROJECTTASKID" ObjectName="PX.OBJECTS.PM.PMCHANGEORDERREVENUEBUDGET" />
+    <Field IsActive="True" DisplayName="收入任務描述" FieldName="PROJECTTASKID_DESCRIPTION" ObjectName="PX.OBJECTS.PM.PMCHANGEORDERREVENUEBUDGET" />
+    <Field IsActive="True" DisplayName="分包契約描述" FieldName="ORDERNBR_POORDER_ORDERDESC" ObjectName="PX.OBJECTS.PM.POLINEPM" />
+</Fields>

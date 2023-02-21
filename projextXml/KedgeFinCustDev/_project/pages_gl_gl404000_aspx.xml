@@ -1,0 +1,19 @@
+﻿<Page path="~/pages/gl/gl404000.aspx" pageSource="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">
+    <PXGridLevel DataMember="GLTranEnq" ParentId="phG_grid_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="ProjectID" />
+                    <Prop Key="Width" Value="70" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="ProjectID_description" />
+                    <Prop Key="Width" Value="280" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="TranPeriodID" OriginalIndex="5" />
+        </Children>
+    </PXGridLevel>
+</Page>

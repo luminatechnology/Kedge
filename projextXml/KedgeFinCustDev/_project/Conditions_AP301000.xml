@@ -1,0 +1,6 @@
+﻿<Conditions screen="AP301000">
+    <AutomationScreenCondition ConditionID="e7c6335b-9f6c-4c20-8c1f-1eb0f5d67fca" ScreenID="AP301000" ConditionName="IsNotOpenAndClose" Order="1" AppendSystemCondition="False" JoinMethod="AND" InvertCondition="False">
+        <FilterRow LineNbr="1" CloseBrackets="0" OpenBrackets="0" FieldName="Status" Condition="2" Operator="0" Value2="" Value="N" IsActive="True" IsFromScheme="True" />
+        <FilterRow LineNbr="2" CloseBrackets="0" OpenBrackets="0" FieldName="Status" Condition="2" Operator="0" Value2="" Value="C" IsActive="True" IsFromScheme="True" />
+    </AutomationScreenCondition>
+</Conditions>

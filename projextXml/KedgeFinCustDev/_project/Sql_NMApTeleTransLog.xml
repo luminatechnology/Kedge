@@ -1,0 +1,25 @@
+﻿<Sql TableName="NMApTeleTransLog" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="NMApTeleTransLog">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="LogID" type="Int" identity="true" />
+  <col name="BillPaymentID" type="Int" />
+  <col name="VendorLocationID" type="Int" nullable="true" />
+  <col name="BankAccountID" type="Int" nullable="true" />
+  <col name="TeleTransRefNbr" type="NVarChar(25)" />
+  <col name="Type" type="Int" />
+  <col name="CustNbr" type="NVarChar(7)" nullable="true" />
+  <col name="Status" type="Int" />
+  <col name="ReturnMsg" type="NVarChar(255)" nullable="true" />
+  <col name="IsNew" type="Bit" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <index name="PK_NMApTeleTransLog" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="LogID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

@@ -1,0 +1,4 @@
+﻿<Table TableName="InventoryItem">
+    <Column TableName="InventoryItem" ColumnName="UsrSettledAccountID" ColumnType="int" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="InventoryItem" ColumnName="UsrSettledSubID" ColumnType="int" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+</Table>

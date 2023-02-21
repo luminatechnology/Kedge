@@ -1,0 +1,37 @@
+﻿<Sql TableName="KGContractPricingRule" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGContractPricingRule">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="PricingRuleID" type="Int" identity="true" />
+  <col name="OrderType" type="Char(2)" />
+  <col name="OrderNbr" type="NVarChar(15)" />
+  <col name="IsPrepayments" type="Bit" nullable="true" />
+  <col name="PrepaymentRatioUntaxed" type="Decimal(5,2)" nullable="true" />
+  <col name="PrepaymentsAmtUntaxed" type="Decimal(19,2)" nullable="true" />
+  <col name="DeductionRatioPeriod" type="Decimal(5,2)" nullable="true" />
+  <col name="EstimatedAmtPeriod" type="Decimal(5,2)" nullable="true" />
+  <col name="IsPerformanceGuarantee" type="Bit" nullable="true" />
+  <col name="IsWarranty" type="Bit" nullable="true" />
+  <col name="WarrantyRatioUntaxed" type="Decimal(5,2)" nullable="true" />
+  <col name="FixedAmtUntaxed" type="Decimal(10,0)" nullable="true" />
+  <col name="WarrantyCalcuMethod" type="NChar(1)" nullable="true" />
+  <col name="WarrantyYear" type="Decimal(5,1)" nullable="true" />
+  <col name="WarrantyGuaranteeCashRatio" type="Decimal(5,2)" nullable="true" />
+  <col name="WarrantyGuaranteeTicketRatio" type="Decimal(5,2)" nullable="true" />
+  <col name="IsWarrantyPaymentMethod" type="Bit" nullable="true" />
+  <col name="RetainageApply" type="Bit" />
+  <col name="DefRetainagePct" type="Decimal(9,6)" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="WarrantyCalUntaxedRB" type="NVarChar(1)" nullable="true" />
+  <index name="PK_KGContractPricingRule" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="PricingRuleID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

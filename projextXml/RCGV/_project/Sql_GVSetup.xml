@@ -1,0 +1,9 @@
+﻿<Sql TableName="GVSetup" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVSetup">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="GuiCmInvoiceNbr" type="NVarChar(9)" />
+  <col name="ZeroDocCDNbr" type="NVarChar(9)" />
+  <col name="AutoNumbering" type="Bit" nullable="true" />
+  <col name="GuiApCmInvoiceNbr" type="NVarChar(9)" nullable="true" />
+</table>]]></CDATA>
+</Sql>

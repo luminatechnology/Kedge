@@ -1,0 +1,22 @@
+﻿<Sql TableName="GVLookupCodeValue" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVLookupCodeValue">
+  <col name="LookupCodeValueID" type="Int" identity="true" />
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="LookupCodeTypeID" type="Int" />
+  <col name="LookupCode" type="NVarChar(60)" />
+  <col name="LookupCodeValue" type="NVarChar(240)" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="IsActive" type="Bit" nullable="true" />
+  <index name="PK_GVLookupCodeValue" clustered="true" primary="true" unique="true">
+    <col name="LookupCodeValueID" />
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

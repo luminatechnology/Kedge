@@ -1,0 +1,6 @@
+﻿<Table TableName="PMTask">
+    <Column TableName="PMTask" ColumnName="UsrActualStartDate" ColumnType="date" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="PMTask" ColumnName="UsrActualEndDate" ColumnType="date" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="PMTask" ColumnName="UsrConstructedPct" ColumnType="decimal" AllowNull="True" MaxLength="19" DecimalPrecision="4" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="PMTask" ColumnName="UsrSchConstructedPct" ColumnType="decimal" AllowNull="True" MaxLength="19" DecimalPrecision="4" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+</Table>

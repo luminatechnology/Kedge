@@ -1,0 +1,37 @@
+﻿<Sql TableName="KGFlowPurchase" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowPurchase">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="PpmID" type="Int" identity="true" />
+  <col name="PpmUID" type="NVarChar(40)" />
+  <col name="ApprovalID" type="Int" nullable="true" />
+  <col name="DeptName" type="NVarChar(60)" nullable="true" />
+  <col name="ProjectName" type="NVarChar(60)" nullable="true" />
+  <col name="ProjectCode" type="NVarChar(30)" nullable="true" />
+  <col name="CreateUserName" type="NVarChar(60)" nullable="true" />
+  <col name="PurchaseProgramNo" type="NVarChar(15)" nullable="true" />
+  <col name="PurchaseProgramName" type="NVarChar(60)" nullable="true" />
+  <col name="PayType" type="NVarChar(1)" nullable="true" />
+  <col name="CostDay1" type="Int" nullable="true" />
+  <col name="CostRatio1" type="Decimal(5,2)" nullable="true" />
+  <col name="CostDay2" type="Int" nullable="true" />
+  <col name="CostRatio2" type="Decimal(5,2)" nullable="true" />
+  <col name="ResPercent" type="Decimal(9,6)" nullable="true" />
+  <col name="PerformanceBondPercent" type="Decimal(9,6)" nullable="true" />
+  <col name="WarrantyYearsOf" type="Decimal(5,2)" nullable="true" />
+  <col name="Explain" type="NVarChar(MAX)" nullable="true" />
+  <col name="Message" type="NVarChar(MAX)" nullable="true" />
+  <col name="StateUID" type="NVarChar(5)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowPurchase_1" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="PpmID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

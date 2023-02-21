@@ -1,0 +1,48 @@
+﻿<Sql TableName="TWNWHTTran" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="TWNWHTTran">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="WHTTranID" type="Int" identity="true" />
+  <col name="TranType" type="Char(3)" />
+  <col name="DocType" type="Char(3)" nullable="true" />
+  <col name="RefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="LineNbr" type="Int" nullable="true" />
+  <col name="BatchNbr" type="NVarChar(15)" nullable="true" />
+  <col name="TranDate" type="SmallDateTime" nullable="true" />
+  <col name="PayAmt" type="Decimal(10,2)" nullable="true" />
+  <col name="PaymentDate" type="SmallDateTime" nullable="true" />
+  <col name="Jurisdiction" type="Char(2)" nullable="true" />
+  <col name="TaxationAgreements" type="Char(2)" nullable="true" />
+  <col name="PersonalID" type="NVarChar(10)" nullable="true" />
+  <col name="PropertyID" type="NVarChar(12)" nullable="true" />
+  <col name="TypeOfIn" type="Char(1)" nullable="true" />
+  <col name="WHTFmtCode" type="Char(2)" nullable="true" />
+  <col name="WHTFmtSub" type="Char(2)" nullable="true" />
+  <col name="PayeeName" type="NVarChar(30)" nullable="true" />
+  <col name="PayeeAddr" type="NVarChar(70)" nullable="true" />
+  <col name="GNHI2Pct" type="Decimal(5,2)" nullable="true" />
+  <col name="GNHI2Code" type="Char(2)" nullable="true" />
+  <col name="GNHI2Amt" type="Decimal(10,2)" nullable="true" />
+  <col name="WHTTaxPct" type="Decimal(10,2)" nullable="true" />
+  <col name="WHTAmt" type="Decimal(10,2)" nullable="true" />
+  <col name="NetAmt" type="Decimal(10,2)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="EPRefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="BranchID" type="Int" nullable="true" />
+  <col name="DuTypeCode" type="NVarChar(8)" nullable="true" />
+  <index name="PK_TWNWHTTran" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="WHTTranID" />
+  </index>
+  <index name="TWNWHTTran_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

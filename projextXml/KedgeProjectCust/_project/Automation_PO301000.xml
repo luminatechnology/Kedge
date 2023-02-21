@@ -1,0 +1,15 @@
+﻿<Automation screen="PO301000">
+    <Fields ScreenID="PO301000">
+        <Field IsActive="True" DisplayName="計價單元描述" FieldName="COSTCODEID_DESCRIPTION" ObjectName="PX.OBJECTS.PM.PMCOSTBUDGET" />
+        <Field IsActive="True" DisplayName="成本任務" FieldName="PROJECTTASKID" ObjectName="PX.OBJECTS.PM.PMCOSTBUDGET" />
+        <Field IsActive="True" DisplayName="計價單元描述" FieldName="COSTCODEID_DESCRIPTION" ObjectName="PX.OBJECTS.PO.POLINE" />
+        <Field IsActive="True" DisplayName="專案描述" FieldName="PROJECTID_DESCRIPTION" ObjectName="PX.OBJECTS.PO.POLINE" />
+        <Field IsActive="True" DisplayName="成本任務描述" FieldName="TASKID_DESCRIPTION" ObjectName="PX.OBJECTS.PO.POLINE" />
+    </Fields>
+    <Actions ScreenID="PO301000">
+        <Action IsActive="True" ActionName="createRequestFile" ActionType="G" After="printSimpleContract" MenuFolderType="19" WindowMode="S">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+    </Actions>
+</Automation>

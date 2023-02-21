@@ -1,0 +1,17 @@
+﻿<Sql TableName="GVApGuiCmInvoiceDetail" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVApGuiCmInvoiceDetail">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="GuiCmInvoiceLineID" type="Int" />
+  <col name="GuiCmInvoiceDetailID" type="Int" identity="true" />
+  <col name="RefNbr" type="NVarChar(40)" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="GuiCmInvoiceID" type="Int" />
+</table>]]></CDATA>
+</Sql>

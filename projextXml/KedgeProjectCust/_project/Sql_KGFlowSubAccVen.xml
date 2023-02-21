@@ -1,0 +1,44 @@
+﻿<Sql TableName="KGFlowSubAccVen" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowSubAccVen">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ValID" type="Int" identity="true" />
+  <col name="VenUID" type="NVarChar(40)" />
+  <col name="AccUID" type="NVarChar(40)" />
+  <col name="PrjUID" type="NVarChar(30)" nullable="true" />
+  <col name="VenDate" type="DateTime" nullable="true" />
+  <col name="VenName" type="NVarChar(200)" nullable="true" />
+  <col name="VenUnit" type="NVarChar(20)" nullable="true" />
+  <col name="VenQty" type="Decimal(18,4)" nullable="true" />
+  <col name="VenCost" type="Decimal(18,4)" nullable="true" />
+  <col name="VenAmt" type="Decimal(18,2)" nullable="true" />
+  <col name="VenTax" type="Decimal(18,4)" nullable="true" />
+  <col name="Managefare" type="Decimal(18,4)" nullable="true" />
+  <col name="ManagefarTax" type="Decimal(18,4)" nullable="true" />
+  <col name="VenKindName" type="NVarChar(200)" nullable="true" />
+  <col name="AddSubCode" type="NVarChar(64)" nullable="true" />
+  <col name="AddSubName" type="NVarChar(200)" nullable="true" />
+  <col name="AddSubItemNo" type="NVarChar(20)" nullable="true" />
+  <col name="AddSubItemName" type="NVarChar(200)" nullable="true" />
+  <col name="AddSubAccNum" type="Int" nullable="true" />
+  <col name="DedSubCode" type="NVarChar(64)" nullable="true" />
+  <col name="DedSubName" type="NVarChar(200)" nullable="true" />
+  <col name="DedSubItemNo" type="NVarChar(20)" nullable="true" />
+  <col name="DedSubItemName" type="NVarChar(200)" nullable="true" />
+  <col name="DedSubAccNum" type="Int" nullable="true" />
+  <col name="IsDedApprove" type="Bit" nullable="true" />
+  <col name="PointWorkStaff" type="NVarChar(25)" nullable="true" />
+  <col name="NoManagefareDesc" type="VarChar(400)" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowSubAccVen" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ValID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

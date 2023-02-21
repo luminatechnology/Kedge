@@ -1,0 +1,21 @@
+﻿<Sql TableName="KGContractCategory" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGContractCategory">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ContractCategoryID" type="Int" identity="true" />
+  <col name="ContractCategoryCD" type="NVarChar(50)" />
+  <col name="ContractType" type="NChar(1)" />
+  <col name="ContractDesc" type="NVarChar(MAX)" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGContractCategory_1" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ContractCategoryID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

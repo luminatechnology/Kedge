@@ -1,0 +1,5 @@
+﻿<Automation screen="NM501001">
+    <Fields ScreenID="NM501001">
+        <Field IsActive="True" DisplayName="開票銀行名稱" FieldName="ORIBANKCODE_DESCRIPTION" ObjectName="NM.DAC.NMRECEIVABLECHECK" />
+    </Fields>
+</Automation>

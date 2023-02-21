@@ -1,0 +1,5 @@
+﻿<Automation screen="NM502000">
+    <Fields ScreenID="NM502000">
+        <Field IsActive="True" DisplayName="EtdDepositDate" FieldName="PAYDATE" ObjectName="NM.NMAPCHECKPROCESS+PARAMTABLE" />
+    </Fields>
+</Automation>

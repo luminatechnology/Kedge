@@ -1,0 +1,26 @@
+﻿<Automation screen="AP301000">
+    <Fields ScreenID="AP301000">
+        <Field IsActive="True" DisplayName="加款描述" FieldName="KGVALUATION__DESCRIPTION" ObjectName="KEDGE.DAC.KGVALUATIONDETAIL" />
+        <Field IsActive="True" DisplayName="廠商合約描述" FieldName="ORDERNBR_POORDER_ORDERDESC" ObjectName="KEDGE.DAC.KGVALUATIONDETAIL" />
+        <Field IsActive="True" DisplayName="扣款描述" FieldName="KGVALUATION__DESCRIPTION" ObjectName="PX.OBJECTS.AP.KGVALUATIONDETAILDEDUCTION" />
+        <Field IsActive="True" DisplayName="供應商描述" FieldName="ORDERNBR_POORDER_ORDERDESC" ObjectName="PX.OBJECTS.AP.KGVALUATIONDETAILDEDUCTION" />
+    </Fields>
+    <Actions ScreenID="AP301000">
+        <Action IsActive="True" ActionName="AddAddition" ActionType="G" WindowMode="S">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+        <Action IsActive="True" ActionName="AddDeduction" ActionType="G" WindowMode="S">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+        <Action IsActive="True" ActionName="addKGVoucher" ActionType="G" Before="WebServIntegration" MenuFolderType="19" WindowMode="S">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+        <Action IsActive="True" ActionName="ReturnRetainage" ActionType="G" WindowMode="S">
+            <StateActionFields />
+            <StateActionParams />
+        </Action>
+    </Actions>
+</Automation>

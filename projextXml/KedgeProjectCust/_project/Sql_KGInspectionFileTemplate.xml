@@ -1,0 +1,21 @@
+﻿<Sql TableName="KGInspectionFileTemplate" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGInspectionFileTemplate">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="InspectionFileTemplateID" type="Int" identity="true" />
+  <col name="SetupID" type="Int" />
+  <col name="InspectionType" type="NVarChar(60)" />
+  <col name="Description" type="NVarChar(60)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGInspectionFileTemplate" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="InspectionFileTemplateID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

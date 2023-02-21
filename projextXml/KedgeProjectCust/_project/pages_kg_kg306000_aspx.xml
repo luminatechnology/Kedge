@@ -1,0 +1,7 @@
+﻿<Page path="~/Pages/KG/KG306000.aspx" pageSource="rVZNUxs5ED07VfkPKm1xZQwsSSplu5aM+aoA8XoM7C0lRo2toJEmkgbjHPLb05oPjwBPhaXii+V263X3636SBlv/kAmbAzljal7gYkjjvyg5Z9aB8X8cCYm2n1FrsdGRNtkYHBNyOyvNlBwUTh/eg3LXwkCRD6kzBVByxaTgzMEUvhdg3ZDeMmnRHmteI38+3uu/6/f728zmD9uppeRULcAIZ4fUR/vaOFAyE87vuFTOL3iZNyVbo7dvBlhFleBslQO5EsYVTE6YW7wgdQ+AEBj/Y6yVwxrI6XhIU1zv+ExL00SyFE605GD8n/linFAyLRTDmhIw9wiEML1B/vBx8t+YOZbowqRQ5nimGf8EC3YvtMGidF5IpCRh98CRH+SFkjIix4WpIG0FiZVYceOLnpV0XgvuS9rp97fo2zek/viaL1jmyQQ+h+3Px1+WCswUsB8FHCpnVoH3xIiMmdWVgOWQYg+QA7+mxOffG8RMyhuW3sU6y5jidtTufPSpK02e+BP/LVy8wHEC2+RdZecrpiTagDiINoTtDaInbPpOR0GfRh1t2+1u21F31/xoeCZKmFv88awbbSZNu7zlHLIbMI+5DBtFTkDMFwiz388fUClS6qWXy4ngsBZERf4MstzPRvmrTuuMrXThpoWEMrHQsPMsw8Qx46Z6WRM/qilst3S1c93RINwTbB89ti502a8jxloWmWq6HYXpJzDPsBGowbvNs9EVJdj4riL6SIDkyIDR3yB1p2Nkra4v8O2g7ve17G2sZSOD6wAXhW/9IReuM0Dr8vejKmbaMdnit24b5bEejF6vFUYzsC+VxV63LI67ZXFsBCcH/FuB1eBhlogfOLV+futRRqNQ84avZKXSibbCCY0cVjzMEeEFWtqoGUS8E8q7VKe27RBQpZ8zPPKkDTvksy+tj6Qano/V1l7Jc9X7GiBAqOwdQ1jn/b7fdrPd83+gvnKwqRG5524Nu7v7WtxYW+fv2T+RY4M1xgzb1D68Fu5ftwr7/UqUS521le2+EmSKqvoDuRxkulDut0B40YUjFjiUQ1pNcRSM8cAPutdcKV0mlB/fa6G4xlvmUDF8HPBGe+dCNbLZ2a/iN7trrNSP1idm6usmWhtGvdJwji3G95dwF7Bsb5FKcZe5xHdMcC565843gy9uCrcG7IJMIcfEnS/AaGlPx7a5XxGldhpteAIE7Dw74n4B">
+    <PXDataSource ID="ds" ParentId="phDS_ds" TypeFullName="PX.Web.UI.PXDataSource">
+        <Children Key="CallbackCommands">
+            <PXDSCallbackCommand Name="Save" OriginalIndex="0" Remove="True" />
+        </Children>
+    </PXDataSource>
+</Page>

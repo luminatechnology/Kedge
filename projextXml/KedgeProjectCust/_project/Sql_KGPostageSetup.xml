@@ -1,0 +1,41 @@
+﻿<Sql TableName="KGPostageSetup" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGPostageSetup">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="SetupID" type="Int" />
+  <col name="CostIntervalEnd" type="Int" nullable="true" />
+  <col name="CostInterval" type="Int" nullable="true" />
+  <col name="LongTerm" type="Int" nullable="true" />
+  <col name="FirstPostCost" type="Int" nullable="true" />
+  <col name="CostIntervalPostCost" type="Int" nullable="true" />
+  <col name="KGCashAccountID" type="Int" nullable="true" />
+  <col name="KGCheckAccountID" type="Int" nullable="true" />
+  <col name="KGPostageAccountID" type="Int" nullable="true" />
+  <col name="KGCashSubID" type="Int" nullable="true" />
+  <col name="KGCheckSubID" type="Int" nullable="true" />
+  <col name="KGPostageSubID" type="Int" nullable="true" />
+  <col name="KGTTAccountID" type="Int" nullable="true" />
+  <col name="KGEmpCouponAccountID" type="Int" nullable="true" />
+  <col name="KGVenCouponAccountID" type="Int" nullable="true" />
+  <col name="KGTTSubID" type="Int" nullable="true" />
+  <col name="KGEmpCouponSubID" type="Int" nullable="true" />
+  <col name="KGVenCouponSubID" type="Int" nullable="true" />
+  <col name="KGTTFeeSubID" type="Int" nullable="true" />
+  <col name="KGTTFeeAccountID" type="Int" nullable="true" />
+  <col name="KGAuthAccountID" type="Int" nullable="true" />
+  <col name="KGAuthSubID" type="Int" nullable="true" />
+  <col name="KGTempWriteoffAccountID" type="Int" nullable="true" />
+  <col name="KGTempWriteoffSubID" type="Int" nullable="true" />
+  <index name="KGPostageSetup_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

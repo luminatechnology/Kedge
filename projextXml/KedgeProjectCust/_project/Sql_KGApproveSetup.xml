@@ -1,0 +1,22 @@
+﻿<Sql TableName="KGApproveSetup" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGApproveSetup">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ApproveSetupID" type="Int" identity="true" />
+  <col name="ContractID" type="Int" />
+  <col name="SetupID" type="Int" nullable="true" />
+  <col name="ApprovalSite" type="NChar(1)" />
+  <col name="IsAutoApproved" type="Bit" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGProjectApproveSetup" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ApproveSetupID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

@@ -1,0 +1,23 @@
+﻿<Sql TableName="KGDailyReport" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGDailyReport">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="DailyReportID" type="Int" identity="true" />
+  <col name="DailyReportCD" type="NVarChar(10)" nullable="true" />
+  <col name="ContractID" type="Int" />
+  <col name="WorkDate" type="DateTime" />
+  <col name="WeatherAM" type="Char(1)" nullable="true" />
+  <col name="WeatherPM" type="Char(1)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGPMDailyReport" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="DailyReportID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

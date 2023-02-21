@@ -1,0 +1,37 @@
+﻿<Sql TableName="KGProjHistoryTran" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGProjHistoryTran">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="AccountID" type="Int" />
+  <col name="BranchID" type="Int" />
+  <col name="ProjectID" type="Int" />
+  <col name="LedgerID" type="Int" />
+  <col name="SubID" type="Int" />
+  <col name="FinPeriodID" type="Char(6)" />
+  <col name="FinYear" type="Char(4)" nullable="true" />
+  <col name="PeriodNbr" type="Char(2)" nullable="true" />
+  <col name="AcctType" type="Char(1)" nullable="true" />
+  <col name="FinPtdDebit" type="Decimal(19,4)" nullable="true" />
+  <col name="FinPtdCredit" type="Decimal(19,4)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="KGProjHistoryTran_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="PK_KGProjHistoryTran" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="AccountID" />
+    <col name="BranchID" />
+    <col name="ProjectID" />
+    <col name="LedgerID" />
+    <col name="SubID" />
+    <col name="FinPeriodID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

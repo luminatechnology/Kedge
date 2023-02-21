@@ -1,0 +1,1035 @@
+﻿<Report Name="nm603001.rpx">
+    <Report version="20200826" Name="report1">
+        <CommonSettings>
+            <ViewPdf>True</ViewPdf>
+        </CommonSettings>
+        <Filters>
+            <FilterExp>
+                <Condition>GreaterOrEqual</Condition>
+                <DataField>NMSettlementLog.SettlementDate</DataField>
+                <Value>@SettlementDateFrom</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>LessOrEqual</Condition>
+                <DataField>NMSettlementLog.SettlementDate</DataField>
+                <Value>@SettlementDateTo</Value>
+            </FilterExp>
+            <FilterExp>
+                <DataField>NMSettlementLog.BranchID</DataField>
+                <Value>@BranchID</Value>
+            </FilterExp>
+        </Filters>
+        <Parameters>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <Name>BranchID</Name>
+                <Prompt>Branch</Prompt>
+                <Required>True</Required>
+                <ViewName>=[NMSettlementLog.BranchID]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <Name>SettlementDateFrom</Name>
+                <Prompt>Settlement Date From</Prompt>
+                <Required>True</Required>
+                <Type>DateTime</Type>
+                <ViewName>=[NMSettlementLog.SettlementDate]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <Name>SettlementDateTo</Name>
+                <Prompt>Settletment Date To</Prompt>
+                <Required>True</Required>
+                <Type>DateTime</Type>
+                <ViewName>=[NMSettlementLog.SettlementDate]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <DefaultValue>=False</DefaultValue>
+                <Name>DisplayZero</Name>
+                <Nullable>True</Nullable>
+                <Prompt>Display Zero</Prompt>
+                <Type>Boolean</Type>
+            </ReportParameter>
+        </Parameters>
+        <Relations>
+            <ReportRelation>
+                <ChildName>NMDailyReportTmp</ChildName>
+                <JoinType>Inner</JoinType>
+                <Links>
+                    <RelationRow>
+                        <ChildField>SettlementID</ChildField>
+                        <ParentField>SettlementID</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>NMSettlementLog</ParentName>
+            </ReportRelation>
+        </Relations>
+        <SchemaUrl>http://localhost/Kedge</SchemaUrl>
+        <Sorting>
+            <SortExp>
+                <DataField>NMDailyReportTmp.BankCode</DataField>
+            </SortExp>
+            <SortExp>
+                <DataField>NMDailyReportTmp.BankAccount</DataField>
+            </SortExp>
+            <SortExp>
+                <DataField>NMDailyReportTmp.SettledType</DataField>
+            </SortExp>
+            <SortExp>
+                <DataField>NMDailyReportTmp.Seq</DataField>
+            </SortExp>
+        </Sorting>
+        <Tables>
+            <ReportTable Name="NMSettlementLog">
+                <Fields>
+                    <ReportField Name="BranchID">
+                    </ReportField>
+                    <ReportField Name="BranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="BranchID_description">
+                    </ReportField>
+                    <ReportField Name="BranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="Noteid">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="SettledBy">
+                    </ReportField>
+                    <ReportField Name="SettlementDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="SettlementDate_Day">
+                    </ReportField>
+                    <ReportField Name="SettlementDate_Hour">
+                    </ReportField>
+                    <ReportField Name="SettlementDate_Month">
+                    </ReportField>
+                    <ReportField Name="SettlementDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="SettlementID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                </Fields>
+                <FullName>NM.DAC.NMSettlementLog</FullName>
+            </ReportTable>
+            <ReportTable Name="NMDailyReportTmp">
+                <Fields>
+                    <ReportField Name="AccountID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="AccountTypeDesc">
+                    </ReportField>
+                    <ReportField Name="BankAccount">
+                    </ReportField>
+                    <ReportField Name="BankCode">
+                    </ReportField>
+                    <ReportField Name="BankCode_description">
+                    </ReportField>
+                    <ReportField Name="BankCode_SegmentValue_descr">
+                    </ReportField>
+                    <ReportField Name="BankShortName">
+                    </ReportField>
+                    <ReportField Name="BegBalance">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="CashAccountAlias">
+                    </ReportField>
+                    <ReportField Name="CashAccountID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryCreditAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryCreditCnt">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryDebitAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryDebitCnt">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="NMSettlementDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="NMSettlementDate_Day">
+                    </ReportField>
+                    <ReportField Name="NMSettlementDate_Hour">
+                    </ReportField>
+                    <ReportField Name="NMSettlementDate_Month">
+                    </ReportField>
+                    <ReportField Name="NMSettlementDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="RestrictedAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Seq">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="SettledType">
+                    </ReportField>
+                    <ReportField Name="SettlementID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Subid">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                </Fields>
+                <FullName>NM.DAC.NMDailyReportTmp</FullName>
+            </ReportTable>
+        </Tables>
+        <Version>20200826</Version>
+        <Sections>
+            <Detail Name="detailSection1">
+                <Height>0.42328cm</Height>
+                <Variables>
+                    <ReportVariable>
+                        <Name>TypeIsOther</Name>
+                        <ValueExpr>=[NMDailyReportTmp.SettledType] = 'C'</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>IsPayable</Name>
+                        <ValueExpr>=Substring([NMDailyReportTmp.BankShortName], 0, 2) = '應付'</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>Income</Name>
+                        <ValueExpr>=IIf($TypeIsOther, #010;     IIf($IsPayable = False, [NMDailyReportTmp.CuryDebitAmt], [NMDailyReportTmp.CuryCreditAmt]), #010;     [NMDailyReportTmp.CuryDebitAmt])</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>Expenditure</Name>
+                        <ValueExpr>=IIf($TypeIsOther, #010;     IIf($IsPayable = True, [NMDailyReportTmp.CuryDebitAmt], [NMDailyReportTmp.CuryCreditAmt]), #010;     [NMDailyReportTmp.CuryCreditAmt])</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>Balance</Name>
+                        <ValueExpr>=IIf($TypeIsOther, #010;     IIf($IsPayable = False, [NMDailyReportTmp.BegBalance] + [NMDailyReportTmp.CuryDebitAmt] - [NMDailyReportTmp.CuryCreditAmt],#010;                             [NMDailyReportTmp.BegBalance] + [NMDailyReportTmp.CuryCreditAmt] - [NMDailyReportTmp.CuryDebitAmt]), #010;     [NMDailyReportTmp.BegBalance] + [NMDailyReportTmp.CuryDebitAmt] - [NMDailyReportTmp.CuryCreditAmt])</ValueExpr>
+                    </ReportVariable>
+                </Variables>
+                <VisibleExpr>=IIf($TypeIsOther,#010;     True,#010;     IIf(CBool([@DisplayZero]), True, $Income &gt; 0 Or $Expenditure &gt; 0 Or $Balance &gt; 0) )</VisibleExpr>
+                <Items>
+                    <TextBox Name="textBox16">
+                        <Location>0px, 0px</Location>
+                        <Size>64px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf( [NMDailyReportTmp.SettledType]='C', '* ', '' )+[NMDailyReportTmp.BankShortName]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox17">
+                        <Format>#,##0</Format>
+                        <Location>536px, 0px</Location>
+                        <Size>80px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$Balance</Value>
+                    </TextBox>
+                    <TextBox Name="textBox18">
+                        <Format>#,##0</Format>
+                        <Location>616px, 0px</Location>
+                        <Size>80px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[NMDailyReportTmp.RestrictedAmt]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox19">
+                        <Format>###0</Format>
+                        <Location>496px, 0px</Location>
+                        <Size>40px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf($TypeIsOther, #010;    IIf($IsPayable = True, [NMDailyReportTmp.CuryDebitCnt], [NMDailyReportTmp.CuryCreditCnt]), #010;    [NMDailyReportTmp.CuryCreditCnt])</Value>
+                    </TextBox>
+                    <TextBox Name="textBox20">
+                        <Format>#,##0</Format>
+                        <Location>416px, 0px</Location>
+                        <Size>80px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$Expenditure</Value>
+                    </TextBox>
+                    <TextBox Name="textBox21">
+                        <Format>###0</Format>
+                        <Location>376px, 0px</Location>
+                        <Size>40px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf($TypeIsOther, #010;    IIf($IsPayable = False, [NMDailyReportTmp.CuryDebitCnt], [NMDailyReportTmp.CuryCreditCnt]), #010;    [NMDailyReportTmp.CuryDebitCnt])</Value>
+                    </TextBox>
+                    <TextBox Name="textBox22">
+                        <Format>#,##0</Format>
+                        <Location>296px, 0px</Location>
+                        <Size>80px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$Income</Value>
+                    </TextBox>
+                    <TextBox Name="textBox23">
+                        <Format>#,##0</Format>
+                        <Location>216px, 0px</Location>
+                        <Size>80px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[NMDailyReportTmp.BegBalance]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox24">
+                        <Location>176px, 0px</Location>
+                        <Size>40px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[NMDailyReportTmp.AccountTypeDesc]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox25">
+                        <Location>64px, 0px</Location>
+                        <Size>112px, 16px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>10px</Size>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf($TypeIsOther, [NMDailyReportTmp.BankAccount], [NMDailyReportTmp.CashAccountAlias])</Value>
+                    </TextBox>
+                    <TextBox Name="textBox39">
+                        <Location>0px, 16px</Location>
+                        <Size>24px, 0.42328cm</Size>
+                        <Value>=Assign( '$V_CreditAmt', $V_CreditAmt +[NMDailyReportTmp.CuryCreditAmt] )</Value>
+                        <Visible>False</Visible>
+                    </TextBox>
+                    <TextBox Name="textBox40">
+                        <Location>24px, 16px</Location>
+                        <Size>24px, 0.42328cm</Size>
+                        <Value>=Assign( '$V_CreditCnt', $V_CreditCnt +[NMDailyReportTmp.CuryCreditCnt] )</Value>
+                        <Visible>False</Visible>
+                    </TextBox>
+                    <TextBox Name="textBox41">
+                        <Location>48px, 16px</Location>
+                        <Size>24px, 0.42328cm</Size>
+                        <Value>=Assign( '$V_DebitAmt', $V_DebitAmt +[NMDailyReportTmp.CuryDebitAmt] )</Value>
+                        <Visible>False</Visible>
+                    </TextBox>
+                    <TextBox Name="textBox42">
+                        <Location>72px, 16px</Location>
+                        <Size>24px, 0.42328cm</Size>
+                        <Value>=Assign( '$V_DebitCnt', $V_DebitCnt +[NMDailyReportTmp.CuryDebitCnt] )</Value>
+                        <Visible>False</Visible>
+                    </TextBox>
+                    <TextBox Name="textBox43">
+                        <Location>96px, 16px</Location>
+                        <Size>24px, 0.42328cm</Size>
+                        <Value>=Assign( '$V_BegBalance', $V_BegBalance +[NMDailyReportTmp.BegBalance] )</Value>
+                        <Visible>False</Visible>
+                    </TextBox>
+                    <TextBox Name="textBox44">
+                        <Location>120px, 16px</Location>
+                        <Size>24px, 0.42328cm</Size>
+                        <Value>=Assign( '$V_RestrictedAmt', $V_RestrictedAmt+[NMDailyReportTmp.RestrictedAmt] )</Value>
+                        <Visible>False</Visible>
+                    </TextBox>
+                    <TextBox Name="textBox45">
+                        <Location>144px, 16px</Location>
+                        <Size>24px, 0.42328cm</Size>
+                        <Value>=Assign( '$V_ZeroCreditAmt', $V_ZeroCreditAmt +#010;IIf( [NMDailyReportTmp.AccountTypeDesc]='零用金', [NMDailyReportTmp.CuryCreditAmt], 0 )#010;#010; )</Value>
+                        <Visible>False</Visible>
+                    </TextBox>
+                    <TextBox Name="textBox46">
+                        <Location>168px, 16px</Location>
+                        <Size>24px, 0.42328cm</Size>
+                        <Value>=Assign( '$V_ZeroDebitAmt', $V_ZeroDebitAmt +#010;IIf( [NMDailyReportTmp.AccountTypeDesc]='零用金', [NMDailyReportTmp.CuryDebitAmt], 0 )#010;#010; )</Value>
+                        <Visible>False</Visible>
+                    </TextBox>
+                    <TextBox Name="textBox54">
+                        <Location>192px, 16px</Location>
+                        <Size>24px, 0.42328cm</Size>
+                        <Value>=Assign( '$V_ZeroBegBalance', $V_ZeroBegBalance +#010;IIf( [NMDailyReportTmp.AccountTypeDesc]='零用金', [NMDailyReportTmp.BegBalance], 0 )#010;#010; )</Value>
+                        <Visible>False</Visible>
+                    </TextBox>
+                </Items>
+            </Detail>
+        </Sections>
+        <Items />
+        <Groups>
+            <Group Name="group1">
+                <Grouping>
+                    <GroupExp>
+                        <DataField>=[NMSettlementLog.SettlementID]</DataField>
+                    </GroupExp>
+                </Grouping>
+                <Headers>
+                    <Header Name="groupHeaderSection1">
+                        <Height>2.53968cm</Height>
+                        <PrintOnEveryPage>True</PrintOnEveryPage>
+                        <Variables>
+                            <ReportVariable>
+                                <Name>V_CreditAmt</Name>
+                                <ResetGroup>group2</ResetGroup>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>V_CreditCnt</Name>
+                                <ResetGroup>group2</ResetGroup>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>V_DebitAmt</Name>
+                                <ResetGroup>group2</ResetGroup>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>V_DebitCnt</Name>
+                                <ResetGroup>group2</ResetGroup>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>V_BegBalance</Name>
+                                <ResetGroup>group2</ResetGroup>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>V_RestrictedAmt</Name>
+                                <ResetGroup>group2</ResetGroup>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>V_ZeroCreditAmt</Name>
+                                <ResetGroup>group2</ResetGroup>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>V_ZeroDebitAmt</Name>
+                                <ResetGroup>group2</ResetGroup>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>V_ZeroBegBalance</Name>
+                            </ReportVariable>
+                        </Variables>
+                        <Items>
+                            <TextBox Name="textBox2">
+                                <Location>0px, 0px</Location>
+                                <Size>696px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>出納收支日報表</Value>
+                            </TextBox>
+                            <TextBox Name="textBox3">
+                                <Location>0px, 48px</Location>
+                                <Size>304px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <Value>='公司別：'+[NMSettlementLog.BranchID_Branch_acctName]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox5">
+                                <Location>0px, 72px</Location>
+                                <Size>320px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <Value>=#010;Format('截止日期：中華民國{0:000}年{1:00}月{2:00}日', #010;(Year([NMSettlementLog.SettlementDate])-1911),#010;Month([NMSettlementLog.SettlementDate]),#010;Day([NMSettlementLog.SettlementDate])#010;)#010;#010;#010;#010;</Value>
+                            </TextBox>
+                            <TextBox Name="textBox6">
+                                <Location>480px, 24px</Location>
+                                <Size>216px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <Value>=Format( '印表日期：{0:00}年{1:00}月{2:00}日'#010;, Year( [@Today])-1911,Month( [@Today]),Day( [@Today]) )</Value>
+                            </TextBox>
+                            <TextBox Name="textBox7">
+                                <Location>480px, 48px</Location>
+                                <Size>216px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <Value>=Format( '印表時間：{0:HH}:{1:mm}:{2:ss}'#010;, Now() ,Now(),Now())</Value>
+                            </TextBox>
+                            <TextBox Name="textBox8">
+                                <Location>488px, 72px</Location>
+                                <Size>56px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                </Style>
+                                <Value>頁數：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox9">
+                                <Location>544px, 72px</Location>
+                                <Size>80px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                </Style>
+                                <Value>=Format( '{0}/{1}', [PageIndex],[PageCount] )</Value>
+                            </TextBox>
+                        </Items>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection1">
+                        <Height>1.48148cm</Height>
+                        <PageBreak>After</PageBreak>
+                        <Style>
+                            <BorderColor>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Top>Dashed</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Top>2px</Top>
+                            </BorderWidth>
+                        </Style>
+                        <Items>
+                            <TextBox Name="textBox48">
+                                <Location>24px, 16px</Location>
+                                <Size>96px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>董事長：____________</Value>
+                            </TextBox>
+                            <TextBox Name="textBox49">
+                                <Location>160px, 16px</Location>
+                                <Size>96px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>總經理：____________</Value>
+                            </TextBox>
+                            <TextBox Name="textBox50">
+                                <Location>296px, 16px</Location>
+                                <Size>96px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>副總經理：____________</Value>
+                            </TextBox>
+                            <TextBox Name="textBox51">
+                                <Location>432px, 16px</Location>
+                                <Size>96px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>覆　核：____________</Value>
+                            </TextBox>
+                            <TextBox Name="textBox52">
+                                <Location>568px, 16px</Location>
+                                <Size>96px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>制　表：____________</Value>
+                            </TextBox>
+                            <TextBox Name="textBox53">
+                                <Location>0px, 40px</Location>
+                                <Size>696px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>＊＊＊＊＊＊＊報表結束，以下空白＊＊＊＊＊＊＊</Value>
+                            </TextBox>
+                        </Items>
+                    </Footer>
+                </Footers>
+            </Group>
+            <Group Name="group2">
+                <Grouping>
+                    <GroupExp>
+                        <DataField>=[NMDailyReportTmp.SettlementID]</DataField>
+                    </GroupExp>
+                    <GroupExp>
+                        <DataField>=[NMDailyReportTmp.SettledType]</DataField>
+                    </GroupExp>
+                </Grouping>
+                <Headers>
+                    <Header Name="groupHeaderSection2">
+                        <Height>0.84656cm</Height>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Dashed</Bottom>
+                                <Top>Dashed</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Top>2px</Top>
+                            </BorderWidth>
+                        </Style>
+                        <Items>
+                            <TextBox Name="textBox1">
+                                <Location>616px, 8px</Location>
+                                <Size>80px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>限制金額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox10">
+                                <Location>496px, 8px</Location>
+                                <Size>40px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>筆數</Value>
+                            </TextBox>
+                            <TextBox Name="textBox11">
+                                <Location>416px, 8px</Location>
+                                <Size>80px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>本日支出</Value>
+                            </TextBox>
+                            <TextBox Name="textBox12">
+                                <Location>376px, 8px</Location>
+                                <Size>40px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>筆數</Value>
+                            </TextBox>
+                            <TextBox Name="textBox13">
+                                <Location>296px, 8px</Location>
+                                <Size>80px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>本日收入</Value>
+                            </TextBox>
+                            <TextBox Name="textBox14">
+                                <Location>216px, 8px</Location>
+                                <Size>80px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>前日結餘</Value>
+                            </TextBox>
+                            <TextBox Name="textBox15">
+                                <Location>0px, 8px</Location>
+                                <Size>216px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>行 庫 別  &amp;  帳 號</Value>
+                            </TextBox>
+                            <TextBox Name="textBox4">
+                                <Location>536px, 8px</Location>
+                                <Size>80px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>本日結餘</Value>
+                            </TextBox>
+                        </Items>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection2">
+                        <Height>0cm</Height>
+                    </Footer>
+                </Footers>
+            </Group>
+            <Group Name="group3">
+                <Grouping>
+                    <GroupExp>
+                        <DataField>=[NMDailyReportTmp.SettlementID]</DataField>
+                    </GroupExp>
+                    <GroupExp>
+                        <DataField>=[NMDailyReportTmp.SettledType]</DataField>
+                    </GroupExp>
+                </Grouping>
+                <Headers>
+                    <Header Name="groupHeaderSection3">
+                        <Height>0cm</Height>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection3">
+                        <Height>3.1746cm</Height>
+                        <VisibleExpr>=[NMDailyReportTmp.SettledType] = 'A'</VisibleExpr>
+                        <Items>
+                            <Line Name="line1">
+                                <LineStyle>Dotted</LineStyle>
+                                <Location>0px, 8px</Location>
+                                <Size>696px, 0.21164cm</Size>
+                            </Line>
+                            <Line Name="line2">
+                                <LineStyle>Dotted</LineStyle>
+                                <Location>0px, 102px</Location>
+                                <Size>696px, 0.21164cm</Size>
+                            </Line>
+                            <TextBox Name="textBox26">
+                                <Location>0px, 16px</Location>
+                                <Size>96px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>銀行帳戶總計：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox27">
+                                <Format>#,##0</Format>
+                                <Location>296px, 16px</Location>
+                                <Size>80px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=$V_DebitAmt</Value>
+                            </TextBox>
+                            <TextBox Name="textBox28">
+                                <Format>###0</Format>
+                                <Location>376px, 16px</Location>
+                                <Size>40px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=$V_DebitCnt</Value>
+                            </TextBox>
+                            <TextBox Name="textBox29">
+                                <Format>###0</Format>
+                                <Location>496px, 16px</Location>
+                                <Size>40px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=$V_CreditCnt</Value>
+                            </TextBox>
+                            <TextBox Name="textBox30">
+                                <Format>#,##0</Format>
+                                <Location>416px, 16px</Location>
+                                <Size>80px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=$V_CreditAmt</Value>
+                            </TextBox>
+                            <TextBox Name="textBox31">
+                                <Location>456px, 32px</Location>
+                                <Size>96px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>◎非休眠銀存合計：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox32">
+                                <Location>456px, 48px</Location>
+                                <Size>96px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>◎零用金合計：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox33">
+                                <Location>456px, 64px</Location>
+                                <Size>96px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>◎受限制金額合計：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox34">
+                                <Location>456px, 80px</Location>
+                                <Size>96px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>◎銀存合計：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox35">
+                                <Format>#,##0</Format>
+                                <Location>552px, 32px</Location>
+                                <Size>80px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=$V_BegBalance+$V_DebitAmt-$V_CreditAmt</Value>
+                            </TextBox>
+                            <TextBox Name="textBox36">
+                                <Format>#,##0</Format>
+                                <Location>552px, 48px</Location>
+                                <Size>80px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=$V_ZeroDebitAmt-$V_ZeroCreditAmt+$V_ZeroBegBalance</Value>
+                            </TextBox>
+                            <TextBox Name="textBox37">
+                                <Format>#,##0</Format>
+                                <Location>552px, 64px</Location>
+                                <Size>80px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=$V_RestrictedAmt</Value>
+                            </TextBox>
+                            <TextBox Name="textBox38">
+                                <Format>#,##0</Format>
+                                <Location>552px, 80px</Location>
+                                <Size>80px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=$V_BegBalance+$V_DebitAmt-$V_CreditAmt/*$V_DebitAmt-$V_CreditAmt*/</Value>
+                            </TextBox>
+                            <TextBox Name="textBox47">
+                                <Format>#,##0</Format>
+                                <Location>216px, 16px</Location>
+                                <Size>80px, 16px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                        <Size>10px</Size>
+                                    </Font>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=$V_BegBalance</Value>
+                            </TextBox>
+                        </Items>
+                    </Footer>
+                </Footers>
+            </Group>
+        </Groups>
+    </Report>
+</Report>

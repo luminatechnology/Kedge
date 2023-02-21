@@ -1,0 +1,2648 @@
+﻿<Report Name="kg605002.rpx">
+    <Report Name="report1" version="20200826">
+        <Filters>
+            <FilterExp>
+                <DataField>KG605002.BatchID</DataField>
+                <Value>@P_BatchID</Value>
+            </FilterExp>
+        </Filters>
+        <PageSettings>
+            <Margins>
+                <Left>0.75px</Left>
+                <Right>0.75cm</Right>
+            </Margins>
+            <PaperKind>A4Small</PaperKind>
+        </PageSettings>
+        <Parameters>
+            <ReportParameter>
+                <Name>P_BatchID</Name>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_ContractCD</Name>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_Description</Name>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_TotalAmt</Name>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>P_DeadLine</Name>
+            </ReportParameter>
+        </Parameters>
+        <SchemaUrl>http://localhost/AcumaticaL2</SchemaUrl>
+        <Sorting>
+            <SortExp>
+                <DataField>KG605002.BatchSeq</DataField>
+            </SortExp>
+        </Sorting>
+        <Style>
+            <BorderWidth>
+                <Bottom>1px</Bottom>
+            </BorderWidth>
+        </Style>
+        <Tables>
+            <ReportTable Name="KG605002">
+                <Fields>
+                    <ReportField Name="AccountCD">
+                    </ReportField>
+                    <ReportField Name="Balance">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="BatchID">
+                    </ReportField>
+                    <ReportField Name="BatchSeq">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="BilledQty">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CostCodeCD">
+                    </ReportField>
+                    <ReportField Name="CostCodeDesc">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CuryBilledAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryLineAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRevisedAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryUnitCost">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryUnitRate">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="FinalAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="FinalQty">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="InventoryCD">
+                    </ReportField>
+                    <ReportField Name="InvetoryDesc">
+                    </ReportField>
+                    <ReportField Name="IsFinal">
+                    </ReportField>
+                    <ReportField Name="OrderDesc">
+                    </ReportField>
+                    <ReportField Name="OrderNbr">
+                    </ReportField>
+                    <ReportField Name="OrderQty">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="ProjectCode">
+                    </ReportField>
+                    <ReportField Name="ProjectTaskCD">
+                    </ReportField>
+                    <ReportField Name="ProjectTaskDesc">
+                    </ReportField>
+                    <ReportField Name="RefNbr">
+                    </ReportField>
+                    <ReportField Name="RevisedQty">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TranDesc">
+                    </ReportField>
+                    <ReportField Name="Uom">
+                    </ReportField>
+                    <ReportField Name="UsrInvPrTypeName">
+                    </ReportField>
+                    <ReportField Name="VendorName">
+                    </ReportField>
+                </Fields>
+                <FullName>Kedge.DAC.KG605002</FullName>
+            </ReportTable>
+        </Tables>
+        <Width>66.5cm</Width>
+        <Sections>
+            <Detail Name="detailSection1">
+                <Height>0.63492cm</Height>
+                <ProcessOrder>Always</ProcessOrder>
+                <Variables>
+                    <ReportVariable>
+                        <Name>V_CuryRevisedAmount</Name>
+                        <ValueExpr>=Assign( '$V_CuryRevisedAmount', #010;$V_CuryRevisedAmount +#010;IIf( [KG605002.CostCodeCD] = Null, 0, IsNull([KG605002.CuryRevisedAmount],0))#010;)#010;</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>V_Balance</Name>
+                        <ValueExpr>=Assign( '$V_Balance',#010;$V_Balance +#010;IIf( [KG605002.CostCodeCD] = Null, 0, IsNull([KG605002.Balance],0)) )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>V_CuryLineAmt</Name>
+                        <ValueExpr>=Assign( '$V_CuryLineAmt', #010;$V_CuryLineAmt+#010;IsNull([KG605002.CuryLineAmt],0)#010; )</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>V_CuryBilledAmt</Name>
+                        <ValueExpr>=Assign( '$V_CuryBilledAmt', #010;$V_CuryBilledAmt +  IsNull([KG605002.CuryBilledAmt],0))</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>V_BA</Name>
+                        <ValueExpr>=Assign( '$V_BA', #010;$V_BA +#010;IIf([KG605002.OrderNbr]=Null, #010;0, #010;IsNull([KG605002.FinalAmount],0)-IsNull([KG605002.CuryBilledAmt],0))#010;)</ValueExpr>
+                    </ReportVariable>
+                </Variables>
+                <Items>
+                    <TextBox Name="textBox14">
+                        <Location>0px, 0px</Location>
+                        <Size>72px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>2px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.ProjectTaskCD],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox15">
+                        <Location>72px, 0px</Location>
+                        <Size>120px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.ProjectTaskDesc],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox16">
+                        <CanGrow>True</CanGrow>
+                        <Location>384px, 0px</Location>
+                        <Size>368px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.InventoryCD]+'-'+[KG605002.InvetoryDesc],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox17">
+                        <Location>752px, 0px</Location>
+                        <Size>64px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.AccountCD],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox19">
+                        <Location>816px, 0px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.Uom],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox43">
+                        <Location>848px, 0px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.UsrInvPrTypeName],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox44">
+                        <Format>#,0</Format>
+                        <Location>880px, 0px</Location>
+                        <Size>48px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf( [KG605002.CostCodeCD] = Null, '', IsNull([KG605002.RevisedQty],0))</Value>
+                    </TextBox>
+                    <TextBox Name="textBox46">
+                        <Format>#,0.00</Format>
+                        <Location>928px, 0px</Location>
+                        <Size>96px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf( [KG605002.CostCodeCD] = Null, '', IsNull([KG605002.CuryUnitRate],0))</Value>
+                    </TextBox>
+                    <TextBox Name="textBox47">
+                        <Format>#,0.00</Format>
+                        <Location>1024px, 0px</Location>
+                        <Size>104px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf( [KG605002.CostCodeCD] = Null, '', IsNull([KG605002.CuryRevisedAmount],0))</Value>
+                    </TextBox>
+                    <TextBox Name="textBox60">
+                        <Location>2384px, 0px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.IsFinal],'N')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox61">
+                        <Location>1344px, 0px</Location>
+                        <Size>216px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>0px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.OrderDesc],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox62">
+                        <Format>#,0</Format>
+                        <Location>2296px, 0px</Location>
+                        <Size>88px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf([KG605002.OrderNbr]=Null, #010;0, #010;IsNull([KG605002.FinalAmount],0)-IsNull([KG605002.CuryBilledAmt],0))#010;#010;</Value>
+                    </TextBox>
+                    <TextBox Name="textBox63">
+                        <Format>##0.00%</Format>
+                        <Location>2232px, 0px</Location>
+                        <Size>64px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>2px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=#010;IIf( CDec([@P_TotalAmt]) = 0, #010;	0, #010;	IsNull([KG605002.FinalAmount],0)/CDec([@P_TotalAmt])#010; )#010;</Value>
+                    </TextBox>
+                    <TextBox Name="textBox64">
+                        <Format>#,0.00</Format>
+                        <Location>2152px, 0px</Location>
+                        <Size>80px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>0px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.FinalAmount],0)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox65">
+                        <Format>#,0.00</Format>
+                        <Location>2096px, 0px</Location>
+                        <Size>56px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>0px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.FinalQty],0)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox66">
+                        <Format>#,0.00</Format>
+                        <Location>2008px, 0px</Location>
+                        <Size>88px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>0px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.CuryBilledAmt],0)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox67">
+                        <Format>#,0.00</Format>
+                        <Location>1696px, 0px</Location>
+                        <Size>64px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>0px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.OrderQty],0)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox68">
+                        <Format>#,0.00</Format>
+                        <Location>1760px, 0px</Location>
+                        <Size>80px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>0px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.CuryUnitCost],0)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox7">
+                        <Location>1560px, 0px</Location>
+                        <Size>136px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>0px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.VendorName],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox70">
+                        <Format>#,0.00</Format>
+                        <Location>1944px, 0px</Location>
+                        <Size>64px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>0px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.BilledQty],0)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox71">
+                        <Format>#,0.00</Format>
+                        <Location>1840px, 0px</Location>
+                        <Size>104px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>0px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.CuryLineAmt],0)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox72">
+                        <Location>1232px, 0px</Location>
+                        <Size>112px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>0px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.ProjectCode]+'-'+[KG605002.OrderNbr],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox75">
+                        <Format>#,0.00</Format>
+                        <Location>1128px, 0px</Location>
+                        <Size>104px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf( [KG605002.CostCodeCD] = Null, '', IsNull([KG605002.Balance],0))</Value>
+                    </TextBox>
+                    <TextBox Name="textBox76">
+                        <Location>2416px, 0px</Location>
+                        <Size>88px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Right>2px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.RefNbr],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox84">
+                        <Location>264px, 0px</Location>
+                        <Size>120px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.CostCodeDesc],'')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox85">
+                        <Location>192px, 0px</Location>
+                        <Size>72px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IsNull([KG605002.CostCodeCD],'')</Value>
+                    </TextBox>
+                </Items>
+            </Detail>
+            <ReportHeader Name="reportHeaderSection1">
+                <Height>3.38624cm</Height>
+                <Items>
+                    <TextBox Name="textBox1">
+                        <Location>0px, 0px</Location>
+                        <Size>2296px, 32px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>2px</Default>
+                                <Right>2px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>20px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>預算發包請款結算一覽表</Value>
+                    </TextBox>
+                    <TextBox Name="textBox11">
+                        <Location>72px, 56px</Location>
+                        <Size>2224px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>2px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[@P_DeadLine]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox2">
+                        <Location>0px, 32px</Location>
+                        <Size>72px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>2px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>專案名稱：</Value>
+                    </TextBox>
+                    <TextBox Name="textBox20">
+                        <Location>880px, 104px</Location>
+                        <Size>48px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>數量</Value>
+                    </TextBox>
+                    <TextBox Name="textBox21">
+                        <Location>928px, 104px</Location>
+                        <Size>96px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>單價</Value>
+                    </TextBox>
+                    <TextBox Name="textBox22">
+                        <Location>1024px, 104px</Location>
+                        <Size>104px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>複價</Value>
+                    </TextBox>
+                    <TextBox Name="textBox23">
+                        <Location>1232px, 104px</Location>
+                        <Size>112px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>1px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>合約編號</Value>
+                    </TextBox>
+                    <TextBox Name="textBox24">
+                        <Location>1344px, 104px</Location>
+                        <Size>216px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>合約項目名稱</Value>
+                    </TextBox>
+                    <TextBox Name="textBox25">
+                        <Location>1560px, 104px</Location>
+                        <Size>136px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>承攬廠商</Value>
+                    </TextBox>
+                    <TextBox Name="textBox26">
+                        <Location>1696px, 104px</Location>
+                        <Size>64px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>數量</Value>
+                    </TextBox>
+                    <TextBox Name="textBox27">
+                        <Location>1760px, 104px</Location>
+                        <Size>80px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>單價</Value>
+                    </TextBox>
+                    <TextBox Name="textBox28">
+                        <Location>1840px, 104px</Location>
+                        <Size>104px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>複價</Value>
+                    </TextBox>
+                    <TextBox Name="textBox29">
+                        <Location>1944px, 104px</Location>
+                        <Size>64px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>數量</Value>
+                    </TextBox>
+                    <TextBox Name="textBox3">
+                        <Location>0px, 56px</Location>
+                        <Size>72px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>2px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>資料統計截止日：</Value>
+                    </TextBox>
+                    <TextBox Name="textBox30">
+                        <Location>2008px, 104px</Location>
+                        <Size>88px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>複價</Value>
+                    </TextBox>
+                    <TextBox Name="textBox31">
+                        <Location>2096px, 104px</Location>
+                        <Size>56px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>數量</Value>
+                    </TextBox>
+                    <TextBox Name="textBox32">
+                        <Location>2152px, 104px</Location>
+                        <Size>80px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>複價</Value>
+                    </TextBox>
+                    <TextBox Name="textBox33">
+                        <Location>2232px, 104px</Location>
+                        <Size>64px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>2px</Right>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>比例</Value>
+                    </TextBox>
+                    <TextBox Name="textBox34">
+                        <CanGrow>True</CanGrow>
+                        <Location>2296px, 80px</Location>
+                        <Size>88px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Bottom</VerticalAlign>
+                        </Style>
+                        <Value>尚可計價</Value>
+                    </TextBox>
+                    <TextBox Name="textBox35">
+                        <CanGrow>True</CanGrow>
+                        <Location>2384px, 80px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Bottom</VerticalAlign>
+                        </Style>
+                        <Value>是否</Value>
+                    </TextBox>
+                    <TextBox Name="textBox36">
+                        <Location>0px, 80px</Location>
+                        <Size>72px, 48px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>2px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>專案任務</Value>
+                    </TextBox>
+                    <TextBox Name="textBox37">
+                        <Location>264px, 80px</Location>
+                        <Size>120px, 48px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>計價單元描述</Value>
+                    </TextBox>
+                    <TextBox Name="textBox38">
+                        <Location>384px, 80px</Location>
+                        <Size>368px, 48px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>工項代碼</Value>
+                    </TextBox>
+                    <TextBox Name="textBox39">
+                        <Location>752px, 80px</Location>
+                        <Size>64px, 48px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>會計科目</Value>
+                    </TextBox>
+                    <TextBox Name="textBox4">
+                        <Location>72px, 32px</Location>
+                        <Size>2024px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=[@P_ContractCD]+'-'+[@P_Description]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox40">
+                        <Location>816px, 80px</Location>
+                        <Size>32px, 48px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>單位</Value>
+                    </TextBox>
+                    <TextBox Name="textBox41">
+                        <Location>848px, 80px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Bottom</VerticalAlign>
+                        </Style>
+                        <Value>發包</Value>
+                    </TextBox>
+                    <TextBox Name="textBox42">
+                        <Location>880px, 80px</Location>
+                        <Size>352px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>預算</Value>
+                    </TextBox>
+                    <TextBox Name="textBox45">
+                        <Location>1232px, 80px</Location>
+                        <Size>712px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>1px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>發包契約</Value>
+                    </TextBox>
+                    <TextBox Name="textBox5">
+                        <Location>2096px, 32px</Location>
+                        <Size>56px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>列印日期：</Value>
+                    </TextBox>
+                    <TextBox Name="textBox51">
+                        <Location>1944px, 80px</Location>
+                        <Size>152px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>估驗(A)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox53">
+                        <Location>2096px, 80px</Location>
+                        <Size>200px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>2px</Right>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>結算完工成本(B)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox58">
+                        <Location>2296px, 0px</Location>
+                        <Size>208px, 80px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>2px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Size>10px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox6">
+                        <Location>2152px, 32px</Location>
+                        <Size>144px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>2px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=Today()</Value>
+                    </TextBox>
+                    <TextBox Name="textBox69">
+                        <Location>848px, 104px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Top>0px</Top>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>類型</Value>
+                    </TextBox>
+                    <TextBox Name="textBox73">
+                        <Location>1128px, 104px</Location>
+                        <Size>104px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>餘額</Value>
+                    </TextBox>
+                    <TextBox Name="textBox77">
+                        <CanGrow>True</CanGrow>
+                        <Location>2416px, 80px</Location>
+                        <Size>88px, 48px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>2px</Right>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>結算單號</Value>
+                    </TextBox>
+                    <TextBox Name="textBox82">
+                        <Location>192px, 80px</Location>
+                        <Size>72px, 48px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>計價單元</Value>
+                    </TextBox>
+                    <TextBox Name="textBox83">
+                        <Location>72px, 80px</Location>
+                        <Size>120px, 48px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>專案任務描述</Value>
+                    </TextBox>
+                    <TextBox Name="textBox91">
+                        <CanGrow>True</CanGrow>
+                        <Location>2296px, 104px</Location>
+                        <Size>88px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Top>0px</Top>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>(B-A)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox92">
+                        <CanGrow>True</CanGrow>
+                        <Location>2384px, 104px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <BackColor>DodgerBlue</BackColor>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>0px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                                <Top>0px</Top>
+                            </BorderWidth>
+                            <Color>White</Color>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Top</VerticalAlign>
+                        </Style>
+                        <Value>結算</Value>
+                    </TextBox>
+                </Items>
+            </ReportHeader>
+            <ReportFooter Name="reportFooterSection1">
+                <Height>0.63492cm</Height>
+                <Items>
+                    <TextBox Name="textBox10">
+                        <Location>880px, 0px</Location>
+                        <Size>48px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox12">
+                        <Location>848px, 0px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox13">
+                        <Location>816px, 0px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox18">
+                        <Location>752px, 0px</Location>
+                        <Size>64px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox48">
+                        <CanGrow>True</CanGrow>
+                        <Location>384px, 0px</Location>
+                        <Size>368px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox49">
+                        <Location>264px, 0px</Location>
+                        <Size>120px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>總計</Value>
+                    </TextBox>
+                    <TextBox Name="textBox50">
+                        <Location>0px, 0px</Location>
+                        <Size>72px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>2px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox52">
+                        <Location>1232px, 0px</Location>
+                        <Size>608px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox54">
+                        <Location>2096px, 0px</Location>
+                        <Size>56px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox55">
+                        <Format>#,0</Format>
+                        <Location>2152px, 0px</Location>
+                        <Size>80px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=CDec([@P_TotalAmt])</Value>
+                    </TextBox>
+                    <TextBox Name="textBox56">
+                        <Location>2232px, 0px</Location>
+                        <Size>64px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>2px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIf(CDec([@P_TotalAmt]) = 0#010;,'0%'#010;,'100%'#010;)#010;#010;</Value>
+                    </TextBox>
+                    <TextBox Name="textBox57">
+                        <Format>#,0.00</Format>
+                        <Location>2296px, 0px</Location>
+                        <Size>88px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$V_BA</Value>
+                    </TextBox>
+                    <TextBox Name="textBox59">
+                        <Location>2384px, 0px</Location>
+                        <Size>32px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox74">
+                        <Format>#,0.00</Format>
+                        <Location>1128px, 0px</Location>
+                        <Size>104px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$V_Balance</Value>
+                    </TextBox>
+                    <TextBox Name="textBox78">
+                        <Location>2416px, 0px</Location>
+                        <Size>88px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>2px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox79">
+                        <Format>#,0.00</Format>
+                        <Location>1840px, 0px</Location>
+                        <Size>104px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$V_CuryLineAmt</Value>
+                    </TextBox>
+                    <TextBox Name="textBox8">
+                        <Format>#,0.00</Format>
+                        <Location>1024px, 0px</Location>
+                        <Size>104px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$V_CuryRevisedAmount</Value>
+                    </TextBox>
+                    <TextBox Name="textBox80">
+                        <Format>#,0.00</Format>
+                        <Location>2008px, 0px</Location>
+                        <Size>88px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$V_CuryBilledAmt</Value>
+                    </TextBox>
+                    <TextBox Name="textBox81">
+                        <Location>1944px, 0px</Location>
+                        <Size>64px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                                <Right>1px</Right>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox86">
+                        <Location>192px, 0px</Location>
+                        <Size>72px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox87">
+                        <Location>72px, 0px</Location>
+                        <Size>120px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox9">
+                        <Location>928px, 0px</Location>
+                        <Size>96px, 24px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Default>Black</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>2px</Bottom>
+                                <Default>1px</Default>
+                                <Left>0px</Left>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                </Items>
+            </ReportFooter>
+        </Sections>
+        <Items />
+        <Groups>
+            <Group Name="G_CostCodeID">
+                <Headers>
+                    <Header Name="groupHeaderSection1">
+                        <Height>0px</Height>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection1">
+                        <Height>0px</Height>
+                    </Footer>
+                </Footers>
+            </Group>
+        </Groups>
+    </Report>
+</Report>

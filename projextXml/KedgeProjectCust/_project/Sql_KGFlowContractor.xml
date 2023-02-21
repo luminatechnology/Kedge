@@ -1,0 +1,37 @@
+﻿<Sql TableName="KGFlowContractor" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowContractor">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="SubID" type="Int" identity="true" />
+  <col name="SubUID" type="NVarChar(40)" />
+  <col name="ApprovalID" type="Int" nullable="true" />
+  <col name="DeptName" type="NVarChar(60)" nullable="true" />
+  <col name="ProjectCode" type="NVarChar(30)" nullable="true" />
+  <col name="ProjectName" type="NVarChar(60)" nullable="true" />
+  <col name="SubCode" type="NVarChar(15)" nullable="true" />
+  <col name="SubName" type="NVarChar(60)" nullable="true" />
+  <col name="CntTypeName" type="NVarChar(20)" nullable="true" />
+  <col name="PurchaseOwnerName" type="NVarChar(60)" nullable="true" />
+  <col name="InvNo" type="NVarChar(50)" nullable="true" />
+  <col name="Title" type="NVarChar(60)" nullable="true" />
+  <col name="GetProjectDate" type="DateTime" nullable="true" />
+  <col name="Ctotal" type="Decimal(19,4)" nullable="true" />
+  <col name="Ctax" type="Decimal(19,4)" nullable="true" />
+  <col name="Camount" type="Decimal(19,4)" nullable="true" />
+  <col name="Message" type="NVarChar(MAX)" nullable="true" />
+  <col name="StateUID" type="NVarChar(5)" nullable="true" />
+  <col name="PurchaseNo" type="NVarChar(64)" nullable="true" />
+  <col name="MergeNo" type="NVarChar(64)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowContractor_1" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="SubID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

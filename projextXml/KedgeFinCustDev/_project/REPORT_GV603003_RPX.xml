@@ -1,0 +1,453 @@
+﻿<Report Name="gv603003.rpx">
+    <Report Name="report1" version="20200826">
+        <Filters>
+            <FilterExp>
+                <DataField>APARCheckV.BranchCD</DataField>
+                <Value>@BranchCD</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>IsNull</Condition>
+                <DataField>@BatchNbrFrom</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>GreaterOrEqual</Condition>
+                <DataField>APARCheckV.BatchNbr</DataField>
+                <Value>@BatchNbrFrom</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>IsNull</Condition>
+                <DataField>@BatchNbTo</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>LessOrEqual</Condition>
+                <DataField>APARCheckV.BatchNbr</DataField>
+                <Value>@BatchNbrTo</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>IsNull</Condition>
+                <DataField>@DateEnteredFrom</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>GreaterOrEqual</Condition>
+                <DataField>APARCheckV.DateEntered</DataField>
+                <Value>@DateEnteredFrom</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>IsNull</Condition>
+                <DataField>@DateEnteredTo</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>LessOrEqual</Condition>
+                <DataField>APARCheckV.DateEntered</DataField>
+                <Value>@DateEnteredTo</Value>
+            </FilterExp>
+        </Filters>
+        <Parameters>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <DefaultValue>=Report.GetDefExt('OrganizationBranchReportParameters.BranchCD')</DefaultValue>
+                <Name>BranchCD</Name>
+                <Nullable>True</Nullable>
+                <Prompt>Branch</Prompt>
+                <Required>True</Required>
+                <ViewName>=[APARCheckV.BranchCD]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <Name>BatchNbrFrom</Name>
+                <Nullable>True</Nullable>
+                <Prompt>Batch Nbr From</Prompt>
+                <ViewName>=[APARCheckV.BatchNbr]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <Name>BatchNbTo</Name>
+                <Nullable>True</Nullable>
+                <Prompt>Batch Nbr To</Prompt>
+                <ViewName>=[APARCheckV.BatchNbr]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <Name>DateEnteredFrom</Name>
+                <Nullable>True</Nullable>
+                <Prompt>Date Entered From</Prompt>
+                <Type>DateTime</Type>
+                <ViewName>=[APARCheckV.DateEntered]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <Name>DateEnteredTo</Name>
+                <Nullable>True</Nullable>
+                <Prompt>Date Entered To</Prompt>
+                <Type>DateTime</Type>
+                <ViewName>=[APARCheckV.DateEntered]</ViewName>
+            </ReportParameter>
+        </Parameters>
+        <SchemaUrl>https://clouderp.kedge.com.tw/KedgeTest</SchemaUrl>
+        <Sorting>
+            <SortExp>
+                <DataField>APARCheckV.DataType</DataField>
+            </SortExp>
+            <SortExp>
+                <DataField>APARCheckV.DateEntered</DataField>
+            </SortExp>
+            <SortExp>
+                <DataField>APARCheckV.BatchNbr</DataField>
+            </SortExp>
+        </Sorting>
+        <Tables>
+            <ReportTable Name="APARCheckV">
+                <Fields>
+                    <ReportField Name="AccountCD">
+                    </ReportField>
+                    <ReportField Name="Acctcd">
+                    </ReportField>
+                    <ReportField Name="AcctDesc">
+                    </ReportField>
+                    <ReportField Name="AcctName">
+                    </ReportField>
+                    <ReportField Name="BatchNbr">
+                    </ReportField>
+                    <ReportField Name="BranchCD">
+                    </ReportField>
+                    <ReportField Name="ContractCD">
+                    </ReportField>
+                    <ReportField Name="Credit">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DataType">
+                    </ReportField>
+                    <ReportField Name="DateEntered">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DateEntered_Day">
+                    </ReportField>
+                    <ReportField Name="DateEntered_Hour">
+                    </ReportField>
+                    <ReportField Name="DateEntered_Month">
+                    </ReportField>
+                    <ReportField Name="DateEntered_Quarter">
+                    </ReportField>
+                    <ReportField Name="Debit">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Gvcmtaxamt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="GVInvTaxAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Inv">
+                    </ReportField>
+                    <ReportField Name="ProjectDesc">
+                    </ReportField>
+                    <ReportField Name="TranDesc">
+                    </ReportField>
+                    <ReportField Name="UsrAccConfirmNbr">
+                    </ReportField>
+                </Fields>
+                <FullName>GV.DAC.APARCheckV</FullName>
+            </ReportTable>
+        </Tables>
+        <Width>42.32804cm</Width>
+        <Sections>
+            <Detail Name="detailSection1">
+                <Height>0.42328cm</Height>
+                <Items>
+                    <TextBox Name="textBox30">
+                        <Format>#,##0.##</Format>
+                        <Location>1088px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Style>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>=[APARCheckV.GVInvTaxAmt]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox31">
+                        <Location>0px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Value>=[APARCheckV.DateEntered]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox32">
+                        <Location>88px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Value>=[APARCheckV.BatchNbr]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox33">
+                        <Location>176px, 0px</Location>
+                        <Size>104px, 16px</Size>
+                        <Value>=[APARCheckV.UsrAccConfirmNbr]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox34">
+                        <Location>280px, 0px</Location>
+                        <Size>104px, 16px</Size>
+                        <Value>=[APARCheckV.Inv]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox35">
+                        <Location>384px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Value>=[APARCheckV.AccountCD]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox36">
+                        <Location>472px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Value>=[APARCheckV.AcctDesc]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox37">
+                        <Location>560px, 0px</Location>
+                        <Size>48px, 16px</Size>
+                        <Value>=[APARCheckV.ContractCD]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox38">
+                        <Location>608px, 0px</Location>
+                        <Size>128px, 16px</Size>
+                        <Value>=[APARCheckV.ProjectDesc]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox39">
+                        <Location>736px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Value>=[APARCheckV.Acctcd]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox40">
+                        <Location>824px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Value>=[APARCheckV.AcctName]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox42">
+                        <Location>912px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Value>=[APARCheckV.TranDesc]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox43">
+                        <Format>#,##0.##</Format>
+                        <Location>1000px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Style>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>=[APARCheckV.Debit]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox44">
+                        <Format>#,##0.##</Format>
+                        <Location>1176px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Style>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>=IsNull([APARCheckV.Debit],0) - IsNull([APARCheckV.GVInvTaxAmt],0)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox45">
+                        <Format>#,##0.##</Format>
+                        <Location>1264px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Style>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>=[APARCheckV.Credit]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox46">
+                        <Format>#,##0.##</Format>
+                        <Location>1352px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Style>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>=[APARCheckV.Gvcmtaxamt]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox47">
+                        <Format>#,##0.##</Format>
+                        <Location>1440px, 0px</Location>
+                        <Size>88px, 16px</Size>
+                        <Style>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <Value>=IsNull([APARCheckV.Credit],0) - IsNull([APARCheckV.Gvcmtaxamt],0)</Value>
+                    </TextBox>
+                </Items>
+            </Detail>
+        </Sections>
+        <Items />
+        <Groups>
+            <Group Name="group1">
+                <Headers>
+                    <Header Name="groupHeaderSection1">
+                        <Height>2.75132cm</Height>
+                        <Variables>
+                            <ReportVariable>
+                                <Name>V_DateEntered_Min</Name>
+                                <ValueExpr>=Min([APARCheckV.DateEntered])</ValueExpr>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>V_DateEntered_Max</Name>
+                                <ValueExpr>=Max([APARCheckV.DateEntered])</ValueExpr>
+                            </ReportVariable>
+                        </Variables>
+                        <Items>
+                            <TextBox Name="textBox1">
+                                <Location>0px, 0px</Location>
+                                <Size>1528px, 16px</Size>
+                                <Style>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>進銷項-檢查表</Value>
+                            </TextBox>
+                            <TextBox Name="textBox10">
+                                <Location>72px, 32px</Location>
+                                <Size>248px, 16px</Size>
+                                <Value>=Concat( Min( [APARCheckV.BatchNbr]),' ~ ',Max( [APARCheckV.BatchNbr]) )</Value>
+                            </TextBox>
+                            <TextBox Name="textBox11">
+                                <Location>72px, 48px</Location>
+                                <Size>248px, 16px</Size>
+                                <Value>=Concat( #010;Format( '{0}{1}{2}', Year( $V_DateEntered_Min),#010;PadLeft( Month( $V_DateEntered_Min), 2, '0' ),#010;PadLeft( Day( $V_DateEntered_Min), 2, '0' ))#010;,' ~ ',#010;Format( '{0}{1}{2}', Year( $V_DateEntered_Max),#010;PadLeft( Month( $V_DateEntered_Max), 2, '0' ),#010;PadLeft( Day( $V_DateEntered_Max), 2, '0' ))#010; )</Value>
+                            </TextBox>
+                            <TextBox Name="textBox12">
+                                <Location>0px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>傳票日期</Value>
+                            </TextBox>
+                            <TextBox Name="textBox13">
+                                <Location>88px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>傳票批次號碼</Value>
+                            </TextBox>
+                            <TextBox Name="textBox14">
+                                <Location>176px, 88px</Location>
+                                <Size>104px, 16px</Size>
+                                <Value>傳票號碼</Value>
+                            </TextBox>
+                            <TextBox Name="textBox15">
+                                <Location>280px, 88px</Location>
+                                <Size>104px, 16px</Size>
+                                <Value>計價/收款參照號碼</Value>
+                            </TextBox>
+                            <TextBox Name="textBox16">
+                                <Location>384px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>會計科目</Value>
+                            </TextBox>
+                            <TextBox Name="textBox17">
+                                <Location>472px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>會計科目名稱</Value>
+                            </TextBox>
+                            <TextBox Name="textBox18">
+                                <Location>560px, 88px</Location>
+                                <Size>48px, 16px</Size>
+                                <Value>案別</Value>
+                            </TextBox>
+                            <TextBox Name="textBox19">
+                                <Location>608px, 88px</Location>
+                                <Size>128px, 16px</Size>
+                                <Value>案別名稱</Value>
+                            </TextBox>
+                            <TextBox Name="textBox2">
+                                <Location>0px, 16px</Location>
+                                <Size>72px, 16px</Size>
+                                <Value>公司別</Value>
+                            </TextBox>
+                            <TextBox Name="textBox20">
+                                <Location>736px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>廠商編號</Value>
+                            </TextBox>
+                            <TextBox Name="textBox21">
+                                <Location>824px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>廠商名稱</Value>
+                            </TextBox>
+                            <TextBox Name="textBox23">
+                                <Location>912px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>摘要</Value>
+                            </TextBox>
+                            <TextBox Name="textBox24">
+                                <Location>1000px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>借方傳票金額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox25">
+                                <Location>1176px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>借方差異</Value>
+                            </TextBox>
+                            <TextBox Name="textBox26">
+                                <Location>1088px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>借方憑證金額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox27">
+                                <Location>1264px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>貸方傳票金額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox28">
+                                <Location>1352px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>貸方憑證金額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox29">
+                                <Location>1440px, 88px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>貸方差異</Value>
+                            </TextBox>
+                            <TextBox Name="textBox3">
+                                <Location>0px, 32px</Location>
+                                <Size>72px, 16px</Size>
+                                <Value>傳票批次號碼</Value>
+                            </TextBox>
+                            <TextBox Name="textBox4">
+                                <Location>1264px, 32px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>報表日期：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox5">
+                                <Location>1264px, 48px</Location>
+                                <Size>88px, 16px</Size>
+                                <Value>報表時間：</Value>
+                            </TextBox>
+                            <TextBox Name="textBox6">
+                                <Location>1352px, 32px</Location>
+                                <Size>176px, 16px</Size>
+                                <Value>=Format( '中華民國{0}年{1}月{2}日', #010;PadLeft( Year( [@Today])-1911, 3, '0' ),#010;PadLeft( Month( [@Today]), 2, '0' ),#010;PadLeft( Day( [@Today]), 2, '0' )#010;)</Value>
+                            </TextBox>
+                            <TextBox Name="textBox7">
+                                <Location>1352px, 48px</Location>
+                                <Size>176px, 16px</Size>
+                                <Value>=Format( '{0}:{1}', #010;PadLeft(Hour( Now() ), 2, '0' ),#010;PadLeft(Minute( Now() ), 2, '0' )#010;)#010;#010;</Value>
+                            </TextBox>
+                            <TextBox Name="textBox8">
+                                <Location>0px, 48px</Location>
+                                <Size>72px, 16px</Size>
+                                <Value>傳票日期</Value>
+                            </TextBox>
+                            <TextBox Name="textBox9">
+                                <Location>72px, 16px</Location>
+                                <Size>248px, 16px</Size>
+                                <Value>=[APARCheckV.BranchCD]</Value>
+                            </TextBox>
+                        </Items>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection1">
+                        <Height>0px</Height>
+                    </Footer>
+                </Footers>
+            </Group>
+        </Groups>
+    </Report>
+</Report>

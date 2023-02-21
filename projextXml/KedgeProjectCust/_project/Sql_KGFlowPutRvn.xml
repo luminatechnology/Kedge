@@ -1,0 +1,30 @@
+﻿<Sql TableName="KGFlowPutRvn" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowPutRvn">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="RvnID" type="Int" identity="true" />
+  <col name="RvnUID" type="NVarChar(40)" />
+  <col name="BcaUID" type="NVarChar(40)" />
+  <col name="SubCode" type="NVarChar(15)" nullable="true" />
+  <col name="SubName" type="NVarChar(60)" nullable="true" />
+  <col name="InvUID" type="NVarChar(50)" nullable="true" />
+  <col name="Title" type="NVarChar(60)" nullable="true" />
+  <col name="Num" type="Int" nullable="true" />
+  <col name="PutRvnNo" type="NVarChar(15)" nullable="true" />
+  <col name="InputDate" type="DateTime" nullable="true" />
+  <col name="AddDay" type="Int" nullable="true" />
+  <col name="FinishDate" type="DateTime" nullable="true" />
+  <col name="Cmemo" type="NVarChar(200)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowPutRvn" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="RvnID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

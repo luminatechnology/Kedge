@@ -1,0 +1,34 @@
+﻿<Sql TableName="KGDailyRenter" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGDailyRenter">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="DailyRenterID" type="Int" identity="true" />
+  <col name="DailyRenterCD" type="NVarChar(15)" />
+  <col name="ContractID" type="Int" />
+  <col name="WorkDate" type="DateTime" />
+  <col name="OrderNbr" type="NVarChar(15)" />
+  <col name="LineNbr" type="Int" />
+  <col name="ReqQty" type="Decimal(18,4)" />
+  <col name="ActQty" type="Decimal(18,4)" nullable="true" />
+  <col name="ReqSelfQty" type="Decimal(18,4)" />
+  <col name="ActSelfQty" type="Decimal(18,4)" nullable="true" />
+  <col name="ReqInsteadQty" type="Decimal(18,4)" />
+  <col name="ActInsteadQty" type="Decimal(18,4)" nullable="true" />
+  <col name="ReqWorkContent" type="NVarChar(MAX)" />
+  <col name="ActWorkContent" type="NVarChar(MAX)" nullable="true" />
+  <col name="Status" type="NChar(1)" />
+  <col name="Hold" type="Bit" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="VendorID" type="Int" nullable="true" />
+  <index name="PK_KGDailyRenter" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="DailyRenterID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

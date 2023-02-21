@@ -1,0 +1,16 @@
+﻿<Sql TableName="UpdateKGBillPayment_PK" CustomScript="#CDATA">
+    <CDATA name="CustomScript"><![CDATA[With UpdateData As
+(
+	SELECT CompanyID, BillPaymentID, RefNbr, ROW_NUMBER() OVER(PARTITION BY RefNbr ORDER BY RefNbr ASC) RN FROM KGBillPayment WHERE CompanyID = 2 AND RefNbr IS NOT NULL
+)
+UPDATE KGBillPayment SET LineNbr = RN
+FROM KGBillPayment
+INNER JOIN UpdateData ON KGBillPayment.CompanyID = UpdateData.CompanyID AND KGBillPayment.BillPaymentID = UpdateData.BillPaymentID
+WHERE KGBillPayment.CompanyID = 2
+GO
+
+UPDATE KGBillPayment SET DocType = APRegister.DocType FROM KGBillPayment
+INNER JOIN APRegister ON APRegister.CompanyID = KGBillPayment.CompanyID AND APRegister.RefNbr = KGBillPayment.RefNbr
+WHERE KGBillPayment.CompanyID = 2
+GO]]></CDATA>
+</Sql>

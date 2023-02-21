@@ -1,0 +1,29 @@
+﻿<Sql TableName="KGFlowSubAccVendorEvaluate" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowSubAccVendorEvaluate">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="EvaluateID" type="Int" identity="true" />
+  <col name="EvaluateUID" type="NVarChar(40)" />
+  <col name="AccUID" type="NVarChar(40)" nullable="true" />
+  <col name="SubCode" type="NVarChar(15)" nullable="true" />
+  <col name="SubName" type="NVarChar(60)" nullable="true" />
+  <col name="Title" type="NVarChar(60)" nullable="true" />
+  <col name="EvaluationCode" type="NVarChar(22)" nullable="true" />
+  <col name="QuestionDocCode" type="NVarChar(20)" nullable="true" />
+  <col name="TimePeriodName" type="NVarChar(200)" nullable="true" />
+  <col name="VendorTypeName" type="NVarChar(200)" nullable="true" />
+  <col name="EvaluateDate" type="DateTime" nullable="true" />
+  <col name="WeightScore" type="Decimal(18,4)" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowSubAccVendorEvaluate" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="EvaluateID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

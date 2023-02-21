@@ -1,0 +1,31 @@
+﻿<Sql TableName="GVArGuiZeroDoc" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVArGuiZeroDoc">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ZeroDocID" type="Int" identity="true" />
+  <col name="ZeroDocCD" type="NVarChar(13)" />
+  <col name="RegistrationCD" type="NVarChar(9)" />
+  <col name="DocNbr" type="NVarChar(30)" />
+  <col name="DocDate" type="DateTime" />
+  <col name="DeclareYear" type="Int" />
+  <col name="DeclareMonth" type="Int" />
+  <col name="DocType" type="NVarChar(2)" />
+  <col name="SalesType" type="NVarChar(1)" />
+  <col name="DataType" type="NVarChar(1)" />
+  <col name="CustomerID" type="Int" />
+  <col name="CustUniformNumber" type="NVarChar(9)" />
+  <col name="SalesAmt" type="Decimal(19,4)" />
+  <col name="OriCurrency" type="NVarChar(3)" />
+  <col name="OriSalesAmt" type="Decimal(19,4)" />
+  <col name="Quantity" type="Decimal(25,6)" />
+  <col name="Status" type="NVarChar(1)" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="Remark" type="NVarChar(240)" />
+</table>]]></CDATA>
+</Sql>

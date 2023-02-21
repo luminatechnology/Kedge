@@ -1,0 +1,4 @@
+﻿<Table TableName="APTran">
+    <Column TableName="APTran" ColumnName="UsrEPProjectID" ColumnType="int" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APTran" ColumnName="UsrTmpPaymentReleased" ColumnType="decimal" AllowNull="True" MaxLength="19" DecimalPrecision="4" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+</Table>

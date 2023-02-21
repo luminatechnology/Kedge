@@ -1,0 +1,171 @@
+﻿<Sql TableName="CreateAlterAPARCheckV" SqlScriptPriority="2" CustomScript="#CDATA">
+    <CDATA name="CustomScript"><![CDATA[CREATE OR ALTER VIEW [dbo].[APARCheckV]
+AS
+SELECT
+  APRegister.CompanyID,
+  'AP' as DataType,
+  Branch.BranchCD,
+  Batch.BatchNbr,
+  Batch.UsrAccConfirmNbr,
+  Batch.DateEntered,
+  Account.AccountCD,
+  Account.Description AS AcctDesc,
+  Contract.ContractCD,
+  Contract.Description AS ProjectDesc,
+  BAccount.AcctCD,
+  BAccount.AcctName,
+  GLTran.TranDesc,
+  SUM(GLTran.DebitAmt) AS Debit,
+  APRegister.RefNbr AS INV,
+  (
+    CASE
+      WHEN SUM(GLTran.DebitAmt) > 0 THEN (
+        SELECT
+          SUM(GVApGuiInvoiceDetail.TaxAmt)
+        FROM
+          GVApGuiInvoiceDetail
+        WHERE
+          GVApGuiInvoiceDetail.CompanyID = APRegister.CompanyID
+          AND GVApGuiInvoiceDetail.APRefNbr = APRegister.RefNbr
+      )
+      WHEN SUM(GLTran.DebitAmt) <= 0 THEN 0
+    END
+  ) AS GVInvTaxAmt,
+  SUM(GLTran.CreditAmt) AS Credit,
+  (
+    CASE
+      WHEN SUM(GLTran.CreditAmt) > 0 THEN (
+        SELECT
+          SUM(GVApGuiCmInvoiceLine.TaxAmt)
+        FROM
+          GVApGuiCmInvoiceLine
+          INNER JOIN GVApGuiInvoice ON GVApGuiCmInvoiceLine.CompanyID = GVApGuiInvoice.CompanyID
+          AND GVApGuiCmInvoiceLine.ApGuiInvoiceNbr = GVApGuiInvoice.GuiInvoiceNbr
+          INNER JOIN GVApGuiInvoiceDetail ON GVApGuiInvoice.CompanyID = GVApGuiInvoiceDetail.CompanyID
+          AND GVApGuiInvoice.GuiInvoiceID = GVApGuiInvoiceDetail.GuiInvoiceID
+        WHERE
+          GVApGuiInvoice.CompanyID = 2
+          AND GVApGuiInvoiceDetail.APRefNbr = APRegister.RefNbr
+      )
+      WHEN SUM(GLTran.CreditAmt) <= 0 THEN 0
+    END
+  ) AS GVCmTaxAmt
+FROM
+  GLTran
+  INNER JOIN Account ON GLTran.CompanyID = Account.CompanyID
+  AND GLTran.AccountID = Account.AccountID
+  INNER JOIN Ledger ON GLTran.CompanyID = Ledger.CompanyID
+  AND GLTran.LedgerID = Ledger.LedgerID
+  INNER JOIN Batch ON GLTran.CompanyID = Batch.CompanyID
+  AND GLTran.BatchNbr = Batch.BatchNbr
+  LEFT JOIN APRegister ON Batch.CompanyID = APRegister.CompanyID
+  AND Batch.UsrAccConfirmNbr = APRegister.UsrAccConfirmNbr
+  LEFT JOIN Contract ON GLTran.CompanyID = Contract.CompanyID
+  AND GLTran.ProjectID = Contract.ContractID
+  LEFT JOIN BAccount ON APRegister.CompanyID = BAccount.CompanyID
+  AND APRegister.VendorID = BAccount.BAccountID
+  INNER JOIN Branch ON Batch.CompanyID = Branch.CompanyID
+  AND Batch.BranchID = Branch.BranchID
+WHERE
+  Account.AccountCD = '1155'
+  AND GLTran.Posted = 1
+  AND Ledger.BalanceType = 'A'
+GROUP BY
+  APRegister.CompanyID,
+  Branch.BranchCD,
+  Batch.BatchNbr,
+  Batch.UsrAccConfirmNbr,
+  Batch.DateEntered,
+  Account.AccountCD,
+  Account.Description,
+  Contract.ContractCD,
+  Contract.Description,
+  BAccount.AcctCD,
+  BAccount.AcctName,
+  APRegister.RefNbr,
+  GLTran.TranDesc
+UNION ALL
+SELECT
+  ARRegister.CompanyID,
+  'AR' as DataType,
+  Branch.BranchCD,
+  Batch.BatchNbr,
+  Batch.UsrAccConfirmNbr,
+  Batch.DateEntered,
+  Account.AccountCD,
+  Account.Description AS AcctDesc,
+  Contract.ContractCD,
+  Contract.Description AS ProjectDesc,
+  BAccount.AcctCD,
+  BAccount.AcctName,
+  GLTran.TranDesc,
+  SUM(GLTran.DebitAmt) AS Debit,
+  ARRegister.RefNbr AS INV,
+  (
+    CASE
+      WHEN SUM(GLTran.DebitAmt) > 0 THEN (
+        SELECT
+          SUM(GVArGuiCmInvoiceLine.TaxAmt)
+        FROM
+          GVArGuiCmInvoiceLine
+          INNER JOIN GVArGuiInvoice ON GVArGuiCmInvoiceLine.CompanyID = GVArGuiInvoice.CompanyID
+          AND GVArGuiCmInvoiceLine.ArGuiInvoiceNbr = GVArGuiInvoice.GuiInvoiceNbr
+          INNER JOIN GVArGuiInvoiceDetail ON GVArGuiInvoice.CompanyID = GVArGuiInvoiceDetail.CompanyID
+          AND GVArGuiInvoice.GuiInvoiceID = GVArGuiInvoiceDetail.GuiInvoiceID
+        WHERE
+          GVArGuiInvoice.CompanyID = 2
+          AND GVArGuiInvoiceDetail.ARRefNbr = ARRegister.RefNbr
+      )
+      WHEN SUM(GLTran.DebitAmt) <= 0 THEN 0
+    END
+  ) AS GVCmTaxAmt,
+  SUM(GLTran.CreditAmt) AS Credit,
+  (
+    CASE
+      WHEN SUM(GLTran.CreditAmt) > 0 THEN (
+        SELECT
+          SUM(GVArGuiInvoiceDetail.TaxAmt)
+        FROM
+          GVArGuiInvoiceDetail
+        WHERE
+          GVArGuiInvoiceDetail.CompanyID = ARRegister.CompanyID
+          AND GVArGuiInvoiceDetail.ARRefNbr = ARRegister.RefNbr
+      )
+      WHEN SUM(GLTran.CreditAmt) <= 0 THEN 0
+    END
+  ) AS GVInvTaxAmt
+FROM
+  GLTran
+  INNER JOIN Account ON GLTran.CompanyID = Account.CompanyID
+  AND GLTran.AccountID = Account.AccountID
+  INNER JOIN Ledger ON GLTran.CompanyID = Ledger.CompanyID
+  AND GLTran.LedgerID = Ledger.LedgerID
+  INNER JOIN Batch ON GLTran.CompanyID = Batch.CompanyID
+  AND GLTran.BatchNbr = Batch.BatchNbr
+  LEFT JOIN ARRegister ON Batch.CompanyID = ARRegister.CompanyID
+  AND Batch.BatchNbr = ARRegister.BatchNbr
+  LEFT JOIN Contract ON GLTran.CompanyID = Contract.CompanyID
+  AND GLTran.ProjectID = Contract.ContractID
+  LEFT JOIN BAccount ON ARRegister.CompanyID = BAccount.CompanyID
+  AND ARRegister.CustomerID = BAccount.BAccountID
+  INNER JOIN Branch ON Batch.CompanyID = Branch.CompanyID
+  AND Batch.BranchID = Branch.BranchID
+WHERE
+  Account.AccountCD = '2115'
+  AND GLTran.Posted = 1
+  AND Ledger.BalanceType = 'A'
+GROUP BY
+  ARRegister.CompanyID,
+  Branch.BranchCD,
+  Batch.BatchNbr,
+  Batch.UsrAccConfirmNbr,
+  Batch.DateEntered,
+  Account.AccountCD,
+  Account.Description,
+  Contract.ContractCD,
+  Contract.Description,
+  BAccount.AcctCD,
+  BAccount.AcctName,
+  GLTran.TranDesc,
+  ARRegister.RefNbr]]></CDATA>
+</Sql>

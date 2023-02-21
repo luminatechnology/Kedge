@@ -1,0 +1,13 @@
+﻿<Table TableName="KGBillPayment">
+    <Column TableName="KGBillPayment" ColumnName="UsrIsCheckIssued" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="KGBillPayment" ColumnName="UsrPayableCheckID" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="KGBillPayment" ColumnName="UsrEPRefNbr" ColumnType="string" AllowNull="True" MaxLength="15" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="KGBillPayment" ColumnName="UsrNMBatchNbr" ColumnType="string" AllowNull="True" MaxLength="25" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="KGBillPayment" ColumnName="UsrTrConfirmID" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="KGBillPayment" ColumnName="UsrTrConfirmDate" ColumnType="date" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="KGBillPayment" ColumnName="UsrTrConfirmBy" ColumnType="guid" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="KGBillPayment" ColumnName="UsrTrPaymentType" ColumnType="string" AllowNull="True" MaxLength="1" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="KGBillPayment" ColumnName="UsrIsWriteOff" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="KGBillPayment" ColumnName="UsrIsTrConfirm" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="KGBillPayment" ColumnName="UsrCreatePaymentType" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

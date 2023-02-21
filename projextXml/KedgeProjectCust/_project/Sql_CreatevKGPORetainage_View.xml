@@ -1,0 +1,40 @@
+﻿<Sql TableName="CreatevKGPORetainage_View" SqlScriptPriority="1" CustomScript="#CDATA">
+    <CDATA name="CustomScript"><![CDATA[IF EXISTS (SELECT * FROM sys.views WHERE name = 'vKGPORetainage' AND SCHEMA_ID = SCHEMA_ID('dbo')) 
+DROP VIEW [dbo].[vKGPORetainage]
+GO
+
+CREATE VIEW [dbo].[vKGPORetainage] AS
+SELECT
+p.CompanyID,
+p.OrderDate,
+p.OrderType, 
+p.OrderNbr, 
+p.VendorID,
+p.ProjectID,
+c.ContractCD,
+ISNULL((SELECT SUM(CuryRetainageTotal) FROM APRegister a1 
+		WHERE a1.CompanyID = p.CompanyID 
+		AND a1.DeletedDatabaseRecord = 0
+		AND a1.DocType = 'INV'
+		AND a1.UsrPOOrderType = p.OrderType 
+		AND a1.UsrPONbr = p.OrderNbr 
+		AND a1.RetainageApply = 1 
+		AND NOT EXISTS (SELECT * FROM ARRegister adj WHERE adj.CompanyID = a1.CompanyID 
+													 AND adj.DeletedDatabaseRecord = 0
+													 AND adj.OrigDocType = a1.DocType 
+													 AND adj.OrigRefNbr = a1.RefNbr)
+		GROUP BY a1.UsrPOOrderType, a1.UsrPONbr), 0) AS RetainageTotal,
+ISNULL((SELECT SUM(RetentionReturnWithTaxAmt) FROM APRegister a2 
+		INNER JOIN KGBillSummary k ON k.CompanyID = a2.CompanyID AND k.DocType = a2.DocType AND k.RefNbr = a2.RefNbr
+		WHERE a2.CompanyID = p.CompanyID 
+		AND a2.DeletedDatabaseRecord = 0
+		AND a2.DocType = 'INV'
+		AND a2.UsrPOOrderType = p.OrderType 
+		AND a2.UsrPONbr = p.OrderNbr 
+		AND a2.IsRetainageDocument = 1 
+		GROUP BY a2.UsrPOOrderType, a2.UsrPONbr), 0) AS RetainageReleased
+FROM POOrder p
+INNER JOIN Contract c ON c.CompanyID = p.CompanyID AND c.ContractID = p.ProjectID
+WHERE p.RetainageApply = 1 AND p.CompanyID > 1 
+ORDER BY p.OrderNbr OFFSET 0 rows]]></CDATA>
+</Sql>

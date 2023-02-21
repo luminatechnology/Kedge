@@ -1,0 +1,65 @@
+﻿<Sql TableName="NMReceivableCheck" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="NMReceivableCheck">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ReceivableCheckID" type="Int" identity="true" />
+  <col name="OriBankCode" type="NVarChar(7)" />
+  <col name="CheckNbr" type="NVarChar(15)" />
+  <col name="OriBankAccount" type="NVarChar(15)" nullable="true" />
+  <col name="CollBankAccountID" type="Int" nullable="true" />
+  <col name="Status" type="Int" />
+  <col name="BranchID" type="Int" />
+  <col name="CheckCashierID" type="Int" nullable="true" />
+  <col name="CollCashierID" type="Int" nullable="true" />
+  <col name="CashCashierID" type="Int" nullable="true" />
+  <col name="ModifyCashierID" type="Int" nullable="true" />
+  <col name="CheckDate" type="DateTime" />
+  <col name="CollCheckDate" type="DateTime" nullable="true" />
+  <col name="DepositDate" type="DateTime" nullable="true" />
+  <col name="ReverseDate" type="DateTime" nullable="true" />
+  <col name="DueDate" type="DateTime" nullable="true" />
+  <col name="CheckInDays" type="Int" nullable="true" />
+  <col name="EtdDepositDate" type="DateTime" />
+  <col name="CuryID" type="NVarChar(5)" />
+  <col name="CuryInfoID" type="BigInt" nullable="true" />
+  <col name="OriCuryAmount" type="Decimal(19,4)" />
+  <col name="BaseCuryAmount" type="Decimal(19,4)" />
+  <col name="CollEmployeeID" type="Int" />
+  <col name="CheckIssuer" type="NVarChar(255)" nullable="true" />
+  <col name="CustomerID" type="Int" nullable="true" />
+  <col name="IsByElse" type="Bit" />
+  <col name="ProjectID" type="Int" />
+  <col name="ProjectPeriod" type="Int" nullable="true" />
+  <col name="Description" type="NVarChar(255)" nullable="true" />
+  <col name="ARAccountID" type="Int" nullable="true" />
+  <col name="ARSubaccountID" type="Int" nullable="true" />
+  <col name="Module" type="NVarChar(10)" nullable="true" />
+  <col name="ARRefNbr" type="NVarChar(10)" nullable="true" />
+  <col name="PayRefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="CollBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="CollReverseBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="CashBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="CashReverseBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="Reason" type="NVarChar(255)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="CheckProcessDate" type="DateTime" nullable="true" />
+  <col name="CustomerLocationID" type="Int" nullable="true" />
+  <col name="RecBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="RecReverseBatchNbr" type="NVarChar(10)" nullable="true" />
+  <col name="EtdCollBankAccountID" type="Int" nullable="true" />
+  <index name="NMReceivableCheck_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="PK_NMCheck" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ReceivableCheckID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

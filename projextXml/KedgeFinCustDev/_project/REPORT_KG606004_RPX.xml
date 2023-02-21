@@ -1,0 +1,1206 @@
+﻿<Report Name="kg606004.rpx">
+    <Report version="20200826" Name="report1">
+        <CommonSettings>
+            <ViewPdf>True</ViewPdf>
+        </CommonSettings>
+        <Filters>
+            <FilterExp>
+                <Condition>GreaterOrEqual</Condition>
+                <DataField>EPExpenseClaim.RefNbr</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@RefNbr_S</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>@RefNbr_S</DataField>
+            </FilterExp>
+            <FilterExp>
+                <Condition>LessOrEqual</Condition>
+                <DataField>EPExpenseClaim.RefNbr</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@RefNbr_E</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>@RefNbr_E</DataField>
+            </FilterExp>
+            <FilterExp>
+                <Condition>GreaterOrEqual</Condition>
+                <DataField>EPExpenseClaim.DocDate</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@DocDate_S</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>@DocDate_S</DataField>
+            </FilterExp>
+            <FilterExp>
+                <Condition>LessOrEqual</Condition>
+                <DataField>EPExpenseClaim.DocDate</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@DocDate_E</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>@DocDate_E</DataField>
+            </FilterExp>
+            <FilterExp>
+                <DataField>EPExpenseClaim.CreatedByID</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>@CreateBy</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <Condition>IsNull</Condition>
+                <DataField>@CreateBy</DataField>
+            </FilterExp>
+        </Filters>
+        <PageSettings>
+            <Landscape>True</Landscape>
+        </PageSettings>
+        <Parameters>
+            <ReportParameter>
+                <Name>RefNbr_S</Name>
+                <Nullable>True</Nullable>
+                <Prompt>參照號碼(起)</Prompt>
+                <ViewName>=[EPExpenseClaim.RefNbr]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>RefNbr_E</Name>
+                <Nullable>True</Nullable>
+                <Prompt>參照號碼(訖)</Prompt>
+                <ViewName>=[EPExpenseClaim.RefNbr]</ViewName>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <Name>DocDate_S</Name>
+                <Nullable>True</Nullable>
+                <Prompt>交易日期(起)</Prompt>
+                <Type>DateTime</Type>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <Name>DocDate_E</Name>
+                <Nullable>True</Nullable>
+                <Prompt>交易日期(迄)</Prompt>
+                <Type>DateTime</Type>
+            </ReportParameter>
+            <ReportParameter>
+                <DefaultValue>=Report.GetDefExt('AccessInfo.UserName')</DefaultValue>
+                <Name>CreateBy</Name>
+                <Nullable>True</Nullable>
+                <Prompt>經辦人</Prompt>
+                <ViewName>=[EPExpenseClaim.CreatedByID]</ViewName>
+            </ReportParameter>
+        </Parameters>
+        <Relations>
+            <ReportRelation>
+                <ChildName>KGExpenseVoucher</ChildName>
+                <JoinType>Inner</JoinType>
+                <Links>
+                    <RelationRow>
+                        <ChildField>EPRefNbr</ChildField>
+                        <ParentField>RefNbr</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>EPExpenseClaim</ParentName>
+            </ReportRelation>
+        </Relations>
+        <SchemaUrl>https://clouderp.kedge.com.tw/KedgeTest/</SchemaUrl>
+        <Tables>
+            <ReportTable Name="EPExpenseClaim">
+                <Fields>
+                    <ReportField Name="Approved">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ApproveDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Day">
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Month">
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="ApprovedByID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="ApprovedByID_description">
+                    </ReportField>
+                    <ReportField Name="ApprovedByID_Owner_displayName">
+                    </ReportField>
+                    <ReportField Name="ApproverID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="ApproverID_description">
+                    </ReportField>
+                    <ReportField Name="ApproverID_Owner_displayName">
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                    </ReportField>
+                    <ReportField Name="BranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="BranchID_description">
+                    </ReportField>
+                    <ReportField Name="BranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CuryDocBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryID">
+                    </ReportField>
+                    <ReportField Name="CuryInfoID">
+                        <DataType>Int64</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryLineTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRate">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryTaxRoundDiff">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryTaxTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryVatExemptTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryVatTaxableTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryViewState">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="CustomerID">
+                    </ReportField>
+                    <ReportField Name="CustomerID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="CustomerID_Customer_acctName">
+                    </ReportField>
+                    <ReportField Name="CustomerID_description">
+                    </ReportField>
+                    <ReportField Name="CustomerID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID_description">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID_Location_descr">
+                    </ReportField>
+                    <ReportField Name="CustomerLocationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="DepartmentID">
+                    </ReportField>
+                    <ReportField Name="DepartmentID_description">
+                    </ReportField>
+                    <ReportField Name="DepartmentID_EPDepartment_description">
+                    </ReportField>
+                    <ReportField Name="DocBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DocDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DocDate_Day">
+                    </ReportField>
+                    <ReportField Name="DocDate_Hour">
+                    </ReportField>
+                    <ReportField Name="DocDate_Month">
+                    </ReportField>
+                    <ReportField Name="DocDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="DocDesc">
+                    </ReportField>
+                    <ReportField Name="EmployeeID">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_CREmployee_acctName">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_description">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_Segment1">
+                    </ReportField>
+                    <ReportField Name="EntityType">
+                    </ReportField>
+                    <ReportField Name="FinPeriodID">
+                    </ReportField>
+                    <ReportField Name="HasUseTax">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="HasWithHoldTax">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Hold">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="IsCCP">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsCCR">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsNMP">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsNMR">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsTT">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LineTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="LocationID">
+                    </ReportField>
+                    <ReportField Name="LocationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="OwnerID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="RefNbr">
+                    </ReportField>
+                    <ReportField Name="Rejected">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Released">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Selected">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="TaxCalcMode">
+                    </ReportField>
+                    <ReportField Name="TaxRoundDiff">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TaxTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TaxZoneID">
+                    </ReportField>
+                    <ReportField Name="TaxZoneID_description">
+                    </ReportField>
+                    <ReportField Name="TaxZoneID_TaxZone_descr">
+                    </ReportField>
+                    <ReportField Name="TranPeriodID">
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                    <ReportField Name="UsrAmtCCP">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrAmtCCR">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrAmtNMP">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrAmtNMR">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrAmtTT">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrApprovalStatus">
+                    </ReportField>
+                    <ReportField Name="UsrBankTxnAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrBankTxnAmtForCal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrDocType">
+                    </ReportField>
+                    <ReportField Name="UsrFinancialYear">
+                    </ReportField>
+                    <ReportField Name="UsrGnhi2Amt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrHliAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrIsRejectByAcct">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrIsTmpPayment">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrKGFlowUID">
+                    </ReportField>
+                    <ReportField Name="UsrLbiAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrLbpAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrLineCntr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrReturnUrl">
+                    </ReportField>
+                    <ReportField Name="UsrSkipFlowFlag">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrStageCode">
+                    </ReportField>
+                    <ReportField Name="UsrTargetType">
+                    </ReportField>
+                    <ReportField Name="UsrVendorID">
+                    </ReportField>
+                    <ReportField Name="UsrVendorID_BAccount2_acctName">
+                    </ReportField>
+                    <ReportField Name="UsrVendorID_description">
+                    </ReportField>
+                    <ReportField Name="UsrVendorLocationID">
+                    </ReportField>
+                    <ReportField Name="UsrWhtAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="VatExemptTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="VatTaxableTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="WorkgroupID">
+                    </ReportField>
+                </Fields>
+                <FullName>PX.Objects.EP.EPExpenseClaim</FullName>
+            </ReportTable>
+            <ReportTable Name="KGExpenseVoucher">
+                <Fields>
+                    <ReportField Name="AccountID">
+                    </ReportField>
+                    <ReportField Name="AccountID_Account_description">
+                    </ReportField>
+                    <ReportField Name="AccountID_description">
+                    </ReportField>
+                    <ReportField Name="ApprovalLevelID">
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                    </ReportField>
+                    <ReportField Name="BranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="BranchID_description">
+                    </ReportField>
+                    <ReportField Name="BranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CreditAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DebitAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="EPRefNbr">
+                    </ReportField>
+                    <ReportField Name="IsSendFlow">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LineNbr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="ProjectID">
+                    </ReportField>
+                    <ReportField Name="ProjectID_description">
+                    </ReportField>
+                    <ReportField Name="ProjectID_PMProject_description">
+                    </ReportField>
+                    <ReportField Name="ProjectID_Segment1">
+                    </ReportField>
+                    <ReportField Name="SubID">
+                    </ReportField>
+                    <ReportField Name="SubID_description">
+                    </ReportField>
+                    <ReportField Name="SubID_Segment1">
+                    </ReportField>
+                    <ReportField Name="SubID_Segment2">
+                    </ReportField>
+                    <ReportField Name="SubID_Sub_description">
+                    </ReportField>
+                    <ReportField Name="TranDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="TranDate_Day">
+                    </ReportField>
+                    <ReportField Name="TranDate_Hour">
+                    </ReportField>
+                    <ReportField Name="TranDate_Month">
+                    </ReportField>
+                    <ReportField Name="TranDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="TranDesc">
+                    </ReportField>
+                    <ReportField Name="Tstamp">
+                    </ReportField>
+                    <ReportField Name="VoucherID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                </Fields>
+                <FullName>EP.DAC.KGExpenseVoucher</FullName>
+            </ReportTable>
+        </Tables>
+        <Version>20200826</Version>
+        <Sections>
+            <PageHeader Name="pageHeaderSection1">
+                <Height>1.69312cm</Height>
+                <Items>
+                    <TextBox Name="textBox1">
+                        <Location>440px, 16px</Location>
+                        <Size>184px, 32px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <StyleName>Heading 2</StyleName>
+                        <Value>傳票明細(預覽)</Value>
+                    </TextBox>
+                    <TextBox Name="textBox64">
+                        <Location>912px, 24px</Location>
+                        <Size>112px, 16px</Size>
+                        <StyleName>Report Params</StyleName>
+                        <Value>=Now()</Value>
+                    </TextBox>
+                    <TextBox Name="textBox65">
+                        <Location>912px, 40px</Location>
+                        <Size>112px, 16px</Size>
+                        <StyleName>Report Params</StyleName>
+                        <Value>=Report.GetDefUI('RowAccessInfo.DisplayName')</Value>
+                    </TextBox>
+                    <TextBox Name="textBox66">
+                        <Location>864px, 40px</Location>
+                        <Size>40px, 0.42328cm</Size>
+                        <StyleName>Heading 1</StyleName>
+                        <Value>User</Value>
+                    </TextBox>
+                    <TextBox Name="textBox67">
+                        <Location>864px, 24px</Location>
+                        <Size>40px, 0.42328cm</Size>
+                        <StyleName>Heading 1</StyleName>
+                        <Value>Date:</Value>
+                    </TextBox>
+                    <TextBox Name="textBox68">
+                        <Location>912px, 8px</Location>
+                        <ProcessOrder>Always</ProcessOrder>
+                        <Size>112px, 0.42328cm</Size>
+                        <StyleName>Report Params</StyleName>
+                        <Value>=[PageOf]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox69">
+                        <Location>864px, 8px</Location>
+                        <Size>40px, 0.42328cm</Size>
+                        <StyleName>Heading 1</StyleName>
+                        <Value>Page:</Value>
+                    </TextBox>
+                </Items>
+            </PageHeader>
+            <Detail Name="detailSection1">
+                <Height>0.63492cm</Height>
+                <Items>
+                    <TextBox Name="textBox24">
+                        <CanGrow>True</CanGrow>
+                        <Location>560px, 0px</Location>
+                        <Size>208px, 0.42328cm</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                            </Font>
+                        </Style>
+                        <StyleName>Heading 1</StyleName>
+                        <Value>=[KGExpenseVoucher.TranDesc]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox25">
+                        <Location>488px, 0px</Location>
+                        <Size>72px, 0.42328cm</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <StyleName>Heading 1</StyleName>
+                        <Value>='-'</Value>
+                    </TextBox>
+                    <TextBox Name="textBox26">
+                        <Format>#,0</Format>
+                        <Location>328px, 0px</Location>
+                        <Size>80px, 0.42328cm</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <StyleName>Heading 1</StyleName>
+                        <Value>=[KGExpenseVoucher.DebitAmt]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox27">
+                        <CanGrow>True</CanGrow>
+                        <Location>240px, 0px</Location>
+                        <Size>88px, 0.42328cm</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                            </Font>
+                        </Style>
+                        <StyleName>Heading 1</StyleName>
+                        <Value>=[KGExpenseVoucher.SubID_description]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox28">
+                        <CanGrow>True</CanGrow>
+                        <Location>80px, 0px</Location>
+                        <Size>160px, 0.42328cm</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                            </Font>
+                        </Style>
+                        <StyleName>Heading 1</StyleName>
+                        <Value>=[KGExpenseVoucher.AccountID_description]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox29">
+                        <Location>8px, 0px</Location>
+                        <Size>72px, 0.42328cm</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                            </Font>
+                        </Style>
+                        <StyleName>Heading 1</StyleName>
+                        <Value>=[KGExpenseVoucher.AccountID]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox34">
+                        <Format>#,0</Format>
+                        <Location>408px, 0px</Location>
+                        <Size>80px, 0.42328cm</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                            </Font>
+                            <TextAlign>Right</TextAlign>
+                        </Style>
+                        <StyleName>Heading 1</StyleName>
+                        <Value>=[KGExpenseVoucher.CreditAmt]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox38">
+                        <Location>768px, 0px</Location>
+                        <Size>56px, 0.42328cm</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                            </Font>
+                        </Style>
+                        <StyleName>Heading 1</StyleName>
+                        <Value>=[KGExpenseVoucher.ProjectID]</Value>
+                    </TextBox>
+                    <TextBox Name="textBox39">
+                        <CanGrow>True</CanGrow>
+                        <Location>824px, 0px</Location>
+                        <Size>192px, 0.42328cm</Size>
+                        <Style>
+                            <Font>
+                                <Name>Microsoft YaHei UI</Name>
+                            </Font>
+                        </Style>
+                        <StyleName>Heading 1</StyleName>
+                        <Value>=[EPExpenseClaim.UsrVendorID_BAccount2_acctName]</Value>
+                    </TextBox>
+                </Items>
+            </Detail>
+        </Sections>
+        <Items />
+        <Groups>
+            <Group Name="RefNbr">
+                <Grouping>
+                    <GroupExp>
+                        <DataField>=[EPExpenseClaim.RefNbr]</DataField>
+                    </GroupExp>
+                </Grouping>
+                <Headers>
+                    <Header Name="groupHeaderSection1">
+                        <Height>1.90476cm</Height>
+                        <PageBreak>Before</PageBreak>
+                        <PrintEmpty>False</PrintEmpty>
+                        <PrintForEmptyGroup>True</PrintForEmptyGroup>
+                        <PrintOnEveryPage>True</PrintOnEveryPage>
+                        <Items>
+                            <TextBox Name="textBox10">
+                                <Location>24px, 24px</Location>
+                                <Size>2cm, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>交易日期:</Value>
+                            </TextBox>
+                            <TextBox Name="textBox11">
+                                <Location>104px, 0px</Location>
+                                <Size>230px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>=[EPExpenseClaim.RefNbr]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox12">
+                                <Location>440px, 24px</Location>
+                                <Size>230px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>=[EPExpenseClaim.FinPeriodID]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox13">
+                                <Location>440px, 0px</Location>
+                                <Size>230px, 0.42328cm</Size>
+                                <StyleName>Heading 1</StyleName>
+                            </TextBox>
+                            <TextBox Name="textBox14">
+                                <CanGrow>True</CanGrow>
+                                <Location>104px, 48px</Location>
+                                <Size>600px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>=[EPExpenseClaim.DocDesc]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox15">
+                                <Location>24px, 0px</Location>
+                                <Size>2cm, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>參照號碼:</Value>
+                            </TextBox>
+                            <TextBox Name="textBox2">
+                                <Format>#,0</Format>
+                                <Location>776px, 24px</Location>
+                                <Size>230px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>=Sum([KGExpenseVoucher.CreditAmt])</Value>
+                            </TextBox>
+                            <TextBox Name="textBox3">
+                                <Format>#,0</Format>
+                                <Location>776px, 0px</Location>
+                                <Size>230px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>=Sum([KGExpenseVoucher.DebitAmt])</Value>
+                            </TextBox>
+                            <TextBox Name="textBox4">
+                                <Location>24px, 48px</Location>
+                                <Size>2cm, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>描述:</Value>
+                            </TextBox>
+                            <TextBox Name="textBox5">
+                                <Location>360px, 0px</Location>
+                                <Size>2cm, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>批次號碼:</Value>
+                            </TextBox>
+                            <TextBox Name="textBox6">
+                                <Location>360px, 24px</Location>
+                                <Size>2cm, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>過帳期間:</Value>
+                            </TextBox>
+                            <TextBox Name="textBox7">
+                                <Location>696px, 0px</Location>
+                                <Size>2cm, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>借方總金額:</Value>
+                            </TextBox>
+                            <TextBox Name="textBox8">
+                                <Location>696px, 24px</Location>
+                                <Size>2cm, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>貸方總金額:</Value>
+                            </TextBox>
+                            <TextBox Name="textBox9">
+                                <Location>104px, 24px</Location>
+                                <Size>230px, 0.42328cm</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>=[EPExpenseClaim.DocDate]</Value>
+                            </TextBox>
+                        </Items>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection1">
+                        <Height>1.48148cm</Height>
+                        <PrintAtBottom>True</PrintAtBottom>
+                        <PrintOnEveryPage>True</PrintOnEveryPage>
+                        <ResetPageNumber>True</ResetPageNumber>
+                        <Items>
+                            <Line Name="line1">
+                                <Location>80px, 40px</Location>
+                                <Size>120px, 8px</Size>
+                            </Line>
+                            <Line Name="line2">
+                                <Location>496px, 40px</Location>
+                                <Size>120px, 8px</Size>
+                            </Line>
+                            <Line Name="line3">
+                                <Location>880px, 40px</Location>
+                                <Size>120px, 8px</Size>
+                            </Line>
+                            <Line Name="line4">
+                                <Location>304px, 40px</Location>
+                                <Size>120px, 8px</Size>
+                            </Line>
+                            <Line Name="line5">
+                                <Location>688px, 40px</Location>
+                                <Size>120px, 8px</Size>
+                            </Line>
+                            <TextBox Name="textBox30">
+                                <Location>840px, 16px</Location>
+                                <Size>40px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Report Name</StyleName>
+                                <Value>製表:</Value>
+                            </TextBox>
+                            <TextBox Name="textBox31">
+                                <Location>456px, 16px</Location>
+                                <Size>42px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Report Name</StyleName>
+                                <Value>出納:</Value>
+                            </TextBox>
+                            <TextBox Name="textBox32">
+                                <Location>24px, 16px</Location>
+                                <Size>56px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Report Name</StyleName>
+                                <Value>負責人:</Value>
+                            </TextBox>
+                            <TextBox Name="textBox35">
+                                <Location>240px, 16px</Location>
+                                <Size>64px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Report Name</StyleName>
+                                <Value>副總經理:</Value>
+                            </TextBox>
+                            <TextBox Name="textBox36">
+                                <Location>648px, 16px</Location>
+                                <Size>42px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Report Name</StyleName>
+                                <Value>會計:</Value>
+                            </TextBox>
+                            <TextBox Name="textBox40">
+                                <Location>880px, 16px</Location>
+                                <ProcessOrder>Always</ProcessOrder>
+                                <Size>120px, 24px</Size>
+                                <Style>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Report Name</StyleName>
+                                <Value>=[EPExpenseClaim.CreatedByID_Creator_Username]</Value>
+                            </TextBox>
+                        </Items>
+                    </Footer>
+                </Footers>
+            </Group>
+            <Group Name="RefNbr2">
+                <Grouping>
+                    <GroupExp>
+                        <DataField>=[EPExpenseClaim.RefNbr]</DataField>
+                    </GroupExp>
+                </Grouping>
+                <Headers>
+                    <Header Name="groupHeaderSection2">
+                        <Height>0.63492cm</Height>
+                        <PrintOnEveryPage>True</PrintOnEveryPage>
+                        <Items>
+                            <TextBox Name="textBox16">
+                                <Location>328px, 0px</Location>
+                                <Size>80px, 0.42328cm</Size>
+                                <Style>
+                                    <BackColor>192, 192, 255</BackColor>
+                                    <BorderColor>
+                                        <Right>White</Right>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Right>Solid</Right>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Right>1px</Right>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>借方金額</Value>
+                            </TextBox>
+                            <TextBox Name="textBox17">
+                                <Location>488px, 0px</Location>
+                                <Size>72px, 0.42328cm</Size>
+                                <Style>
+                                    <BackColor>192, 192, 255</BackColor>
+                                    <BorderColor>
+                                        <Right>White</Right>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Right>Solid</Right>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Right>1px</Right>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>到期日</Value>
+                            </TextBox>
+                            <TextBox Name="textBox18">
+                                <Location>560px, 0px</Location>
+                                <Size>208px, 0.42328cm</Size>
+                                <Style>
+                                    <BackColor>192, 192, 255</BackColor>
+                                    <BorderColor>
+                                        <Right>White</Right>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Right>Solid</Right>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Right>1px</Right>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>摘要</Value>
+                            </TextBox>
+                            <TextBox Name="textBox19">
+                                <Location>768px, 0px</Location>
+                                <Size>56px, 0.42328cm</Size>
+                                <Style>
+                                    <BackColor>192, 192, 255</BackColor>
+                                    <BorderColor>
+                                        <Right>White</Right>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Right>Solid</Right>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Right>1px</Right>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>專案</Value>
+                            </TextBox>
+                            <TextBox Name="textBox20">
+                                <Location>824px, 0px</Location>
+                                <Size>192px, 0.42328cm</Size>
+                                <Style>
+                                    <BackColor>192, 192, 255</BackColor>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>對象</Value>
+                            </TextBox>
+                            <TextBox Name="textBox21">
+                                <Location>240px, 0px</Location>
+                                <Size>88px, 0.42328cm</Size>
+                                <Style>
+                                    <BackColor>192, 192, 255</BackColor>
+                                    <BorderColor>
+                                        <Right>White</Right>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Right>Solid</Right>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Right>1px</Right>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>成本歸屬部門</Value>
+                            </TextBox>
+                            <TextBox Name="textBox22">
+                                <Location>80px, 0px</Location>
+                                <Size>160px, 0.42328cm</Size>
+                                <Style>
+                                    <BackColor>192, 192, 255</BackColor>
+                                    <BorderColor>
+                                        <Right>White</Right>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Right>Solid</Right>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Right>1px</Right>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>科目名稱</Value>
+                            </TextBox>
+                            <TextBox Name="textBox23">
+                                <Location>8px, 0px</Location>
+                                <Size>72px, 0.42328cm</Size>
+                                <Style>
+                                    <BackColor>192, 192, 255</BackColor>
+                                    <BorderColor>
+                                        <Right>White</Right>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Right>Solid</Right>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Right>1px</Right>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>會計科目</Value>
+                            </TextBox>
+                            <TextBox Name="textBox33">
+                                <Location>408px, 0px</Location>
+                                <Size>80px, 0.42328cm</Size>
+                                <Style>
+                                    <BackColor>192, 192, 255</BackColor>
+                                    <BorderColor>
+                                        <Right>White</Right>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Right>Solid</Right>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Right>1px</Right>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Microsoft YaHei UI</Name>
+                                    </Font>
+                                </Style>
+                                <StyleName>Heading 1</StyleName>
+                                <Value>貸方金額</Value>
+                            </TextBox>
+                        </Items>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection2">
+                        <Height>0px</Height>
+                    </Footer>
+                </Footers>
+            </Group>
+        </Groups>
+    </Report>
+</Report>

@@ -1,0 +1,40 @@
+﻿<Sql TableName="KG605002" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KG605002">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="BatchID" type="NVarChar(200)" />
+  <col name="BatchSeq" type="Int" />
+  <col name="CostCodeCD" type="NVarChar(30)" nullable="true" />
+  <col name="CostCodeDesc" type="NVarChar(250)" nullable="true" />
+  <col name="InventoryCD" type="NVarChar(30)" nullable="true" />
+  <col name="InvetoryDesc" type="NVarChar(256)" nullable="true" />
+  <col name="AccountCD" type="NVarChar(10)" nullable="true" />
+  <col name="UOM" type="NVarChar(6)" nullable="true" />
+  <col name="UsrInvPrTypeName" type="NVarChar(60)" nullable="true" />
+  <col name="RevisedQty" type="Decimal(19,6)" nullable="true" />
+  <col name="CuryUnitRate" type="Decimal(19,6)" nullable="true" />
+  <col name="CuryRevisedAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="ProjectCode" type="NVarChar(30)" nullable="true" />
+  <col name="OrderNbr" type="NVarChar(15)" nullable="true" />
+  <col name="OrderDesc" type="NVarChar(60)" nullable="true" />
+  <col name="VendorName" type="NVarChar(60)" nullable="true" />
+  <col name="Balance" type="Decimal(19,4)" nullable="true" />
+  <col name="OrderQty" type="Decimal(25,6)" nullable="true" />
+  <col name="CuryUnitCost" type="Decimal(19,6)" nullable="true" />
+  <col name="CuryLineAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="BilledQty" type="Decimal(25,6)" nullable="true" />
+  <col name="CuryBilledAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="FinalQty" type="Decimal(25,6)" nullable="true" />
+  <col name="FinalAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="IsFinal" type="NChar(1)" nullable="true" />
+  <col name="RefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="TranDesc" type="NVarChar(256)" nullable="true" />
+  <col name="ProjectTaskCD" type="NVarChar(30)" nullable="true" />
+  <col name="ProjectTaskDesc" type="NVarChar(250)" nullable="true" />
+  <index name="PK_KG605002" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="BatchID" />
+    <col name="BatchSeq" />
+  </index>
+</table>]]></CDATA>
+</Sql>

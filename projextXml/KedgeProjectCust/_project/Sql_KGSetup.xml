@@ -1,0 +1,72 @@
+﻿<Sql TableName="KGSetup" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGSetup">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="SetupID" type="Int" />
+  <col name="KGDailyRenterNumbering" type="NVarChar(10)" nullable="true" default="Zero" />
+  <col name="KGDailyReportNumbering" type="NVarChar(10)" nullable="true" />
+  <col name="KGValuationNumbering" type="NVarChar(10)" nullable="true" />
+  <col name="KGSelfInspectionTempNumbering" type="NVarChar(10)" nullable="true" />
+  <col name="KGSelfInspectionNumbering" type="NVarChar(10)" nullable="true" />
+  <col name="KGMonthlyInspectionTempNumbering" type="NVarChar(10)" nullable="true" />
+  <col name="KGMonthlyInspectionNumbering" type="NVarChar(10)" nullable="true" />
+  <col name="KGSafetyHealthInspectionTempNumbering" type="NVarChar(10)" nullable="true" />
+  <col name="KGSafetyHealthInspectionNumbering" type="NVarChar(10)" nullable="true" />
+  <col name="KGManageFeeRate" type="Decimal(5,2)" nullable="true" />
+  <col name="KGManageFeeTaxRate" type="Decimal(5,2)" nullable="true" />
+  <col name="KGDailyRenterDateLimit" type="Int" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="KGAdditionInventoryID" type="Int" nullable="true" />
+  <col name="KGDeductionInventoryID" type="Int" nullable="true" />
+  <col name="KGDeductionTaxFreeInventoryID" type="Int" nullable="true" />
+  <col name="KGManageInventoryID" type="Int" nullable="true" />
+  <col name="KGRetainageReturnInventoryID" type="Int" nullable="true" />
+  <col name="KGRequestWSDL" type="NVarChar(255)" nullable="true" />
+  <col name="KGRQRequisitionWSDL" type="NVarChar(255)" nullable="true" />
+  <col name="KGPOOrderWSDL" type="NVarChar(255)" nullable="true" />
+  <col name="KGAPInvoiceWSDL" type="NVarChar(255)" nullable="true" />
+  <col name="KGPMChangeOrderWSDL" type="NVarChar(255)" nullable="true" />
+  <col name="KGFinWSDL" type="NVarChar(255)" nullable="true" />
+  <col name="KGBillStartDate" type="Int" nullable="true" />
+  <col name="KGBillEndDate" type="Int" nullable="true" />
+  <col name="KGEvaluationNumbering" type="NVarChar(10)" nullable="true" />
+  <col name="KGIndividualTaxInventoryID" type="Int" nullable="true" />
+  <col name="KGSupplementaryTaxInventoryID" type="Int" nullable="true" />
+  <col name="KGSafetyHealthInspectTicketNumbering" type="NVarChar(10)" nullable="true" />
+  <col name="KGMonthlyInspectTicketNumbering" type="NVarChar(10)" nullable="true" />
+  <col name="KGSupplPremiumRate" type="Decimal(5,2)" nullable="true" />
+  <col name="KGContractEvalNumbering" type="NVarChar(10)" nullable="true" />
+  <col name="KGDefEvaluationID" type="Int" nullable="true" />
+  <col name="KGDefEvaluationPct" type="Int" nullable="true" />
+  <col name="PaymentDayFrom" type="Int" nullable="true" />
+  <col name="PaymentDayTo" type="Int" nullable="true" />
+  <col name="PaymentDateMid" type="Int" nullable="true" />
+  <col name="PaymentDateEnd" type="Int" nullable="true" />
+  <col name="BillAdjustAmtLimit" type="Decimal(19,4)" nullable="true" />
+  <col name="UsrKGPrjManageInventoryID" type="Int" nullable="true" />
+  <col name="KGDefSecEvaluationPct" type="Int" nullable="true" />
+  <col name="UsrKGBatchDate" type="DateTime" nullable="true" />
+  <col name="UsrKGBatchSeq" type="Int" nullable="true" />
+  <col name="LaborInsInventoryID" type="Int" nullable="true" />
+  <col name="HealthInsInventoryID" type="Int" nullable="true" />
+  <col name="PensionInventoryID" type="Int" nullable="true" />
+  <col name="DefVendorCustID" type="Int" nullable="true" />
+  <col name="DefEmployeeCustID" type="Int" nullable="true" />
+  <col name="DiscountInventoryID" type="Int" nullable="true" />
+  <col name="KGFognWorkerInventoryID" type="Int" nullable="true" />
+  <col name="KGRePurchaseInventoryID" type="Int" nullable="true" />
+  <index name="KGSetup_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="PK_KGSetup" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

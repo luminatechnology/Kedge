@@ -1,0 +1,26 @@
+﻿<Sql TableName="KGComsInvoice" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGComsInvoice">
+  <col name="CompanyID" type="Int" nullable="true" default="Zero" />
+  <col name="BatchID" type="Int" nullable="true" />
+  <col name="InvoiceID" type="Int" identity="true" />
+  <col name="VoucherKey" type="NVarChar(11)" nullable="true" />
+  <col name="VoucherNo" type="NVarChar(11)" nullable="true" />
+  <col name="InvoiceNo" type="NVarChar(10)" nullable="true" />
+  <col name="InvoiceDate" type="DateTime" nullable="true" />
+  <col name="UniformYy" type="NVarChar(3)" nullable="true" />
+  <col name="UniformMm" type="NVarChar(2)" nullable="true" />
+  <col name="Amount" type="Decimal(10,0)" nullable="true" />
+  <col name="TaxCode" type="NVarChar(1)" nullable="true" />
+  <col name="TaxAmt" type="Decimal(10,0)" nullable="true" />
+  <col name="ClassCode" type="NVarChar(1)" nullable="true" />
+  <col name="CompanyName" type="NVarChar(3)" nullable="true" />
+  <col name="ItemNo" type="Decimal(3,0)" nullable="true" />
+  <col name="UniformNo" type="NVarChar(10)" nullable="true" />
+  <col name="IvoKind" type="NVarChar(1)" nullable="true" />
+  <col name="BelongYy" type="NVarChar(3)" nullable="true" />
+  <col name="BelongMm" type="NVarChar(2)" nullable="true" />
+  <col name="Project" type="NVarChar(4)" nullable="true" />
+  <col name="AccUID" type="NVarChar(22)" nullable="true" />
+  <col name="ErrorMsg" type="NVarChar(255)" nullable="true" />
+</table>]]></CDATA>
+</Sql>

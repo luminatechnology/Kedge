@@ -1,0 +1,14 @@
+﻿<Page path="~/pages/pm/pm306000.aspx" pageSource="tVjfc6JIEH5PVf4Hitu83aq5rbuHlKbOQMxapdEV8+OeUiNMdC4www6D0X24v327AREQXaKcTzg03V/3dPd8Pe2Lv7UxmVNtQPg8hIeObvyma0MSKCrxRY+5sPZfc7sSNHtCeiZVhLkNL1rWtW6oxO2ScvXEJA39jq5kSHXtkbjMIYpO6PeQBqqjvxI3gHVDOInm8fBL669Wq9Uggb9q2IF+fqbBr88XVDIVgACYfNlI6dqUKfzsgSt8cCLwunZxfX52ftYGZ2Kc07VPtUcmVUjcMVGLCh6gijaAuDIEV+CI1jc7ug3Plwg3Whq7xKZfhetQiS/9hWnpmgw5AccsKpeg5jqG3/ZXV+NnkyhiiVDaNFLmBKl0EEsDxIDN0J9pFK4n5iDWy1brAjwFH+6JhzF6boxm/1JbBY3xsGEIz2PKAzx9/j1kcp2EDH9jyTwi14+Mvnd0CHDk2Y2QgNhSazR0L5RFlR7FbSCIc0MXZMmEBCvCD13YK4ssqQMbBxuma9db3W2DuO6M2G8IgHAnyLzL+GwVxLTYB4Nwm7pgF6z4qdtxljQraoo9NxaQqjTYxCxWj6BPU55+lqRoEvrhNtyfJvQVwkf75qcB4296OZ7T7OHOjaXAza5Lv8qEyZAUdnjr0h4bURwTRR0d3JY0WOSXp0TOKWTyXDKnDqdvV5CrnLj/L7Z2c08St5uFisVu0My0g33d4Y/93aF3sDlgC0LHI02v8GenOWzBbLpHUsM/PjPu0NWVdokdMdc08Jsh9WZUbuvfIL5igiMMF/IKHjMd49aDJsj4/E4SH7To2WBNqedjRyjd3AFZi1BNQpcWcVuKSGUIN/T4ZtMGZEbdIEFqDeOYSeFa7Af48zzcl0EWnWMqQOt+K88GjAx1korpm6Ux7DHqQqpkhHYje5L5rm2LkKs7KUL/MIaiZM1AEhenIFYpFhvBXRh4nie1dbjxVERmiEDhoX8I1FbmJDyY40IeAtPnyFSEXB8OUk6s6k6ZUvimeOdFvbHlCcV6ckxhhxg1POJzJkvff+AYyBQlGtz+ffk2/WfH11wRWsUqLS3kcrP3IXacW4epxM9van0oslOhoP83IqlbTuBEgMVefCRUtND1sJAqGNkIHmln5FNezZtU8gRLlb3KCv/KXnluZBcuP5gaw1NyY0JtypZVcyQnfWRkoZAFs6tazEmfaLHyfhY/OGS33SwczAl52TCKqtTly37qcneQutwBr4q0xASrBtrylbL5AnRc/tnyV/DBG+NRjsbjTDznQBSsNbfHImAxnYmJbQ/mt5jpRBGFBglUEpn6TP6upYw9x2sGdAnJXLqT6Fr0Osek+op6gV4sK/woroCirl2dsVzuCB7BEEFfXkY4nMWNfqdwK6jZegjOQnijLBRySlcqJV8wrKSE+dBAc4z945HfSBgJFwj8mK8zbC7nX3aAOkZvkaGdgG3Dro5RkeMeBQJQPtdW0bphWMeiSiurJOhlA9wxNh5GJdPAB6JuhHHQjlExkmwetX0sn67L5tBlJtiZjle3aej1aIyDCwzRGNWIM6O1Xrg1YqwXWMrV6lNXL8Ac7alHZY7X1KvyY763m/tPzfZEvO+5dsgDys6dO1Pd3T5eUtZdyyHux5GwrZQp5JjZDrVo4+SKNDriWgSOfOATT0CExHuG5cUH9ZDxDBEqkL4h9G2t67ri/cHHK/X0Di1a6zrOPd75ZtdMGIUzcnl1v7rMTYZtIBU+gFbJPBD0zSC5rfrItRrGqoSV/gQ=">
+    <PXGridLevel DataMember="Items" ParentId="phG_grid_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <PXGridColumn DataField="BranchID" OriginalIndex="3" />
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrVendShortName" />
+                    <Prop Key="Width" Value="280" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="Type" OriginalIndex="2" />
+        </Children>
+    </PXGridLevel>
+</Page>

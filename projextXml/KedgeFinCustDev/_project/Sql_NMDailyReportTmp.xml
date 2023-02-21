@@ -1,0 +1,31 @@
+﻿<Sql TableName="NMDailyReportTmp" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="NMDailyReportTmp">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="Seq" type="Int" />
+  <col name="BranchID" type="Int" />
+  <col name="SettlementID" type="Int" />
+  <col name="SettledType" type="Char(1)" />
+  <col name="CashAccountID" type="Int" nullable="true" />
+  <col name="BankShortName" type="NVarChar(30)" nullable="true" />
+  <col name="BankCode" type="NChar(7)" nullable="true" />
+  <col name="BankAccount" type="NVarChar(50)" nullable="true" />
+  <col name="AccountTypeDesc" type="NVarChar(60)" nullable="true" />
+  <col name="NMSettlementDate" type="DateTime" nullable="true" />
+  <col name="AccountID" type="Int" nullable="true" />
+  <col name="SubID" type="Int" nullable="true" />
+  <col name="BegBalance" type="Decimal(19,4)" nullable="true" />
+  <col name="CuryDebitAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="CuryDebitCnt" type="Int" nullable="true" />
+  <col name="CuryCreditAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="CuryCreditCnt" type="Int" nullable="true" />
+  <col name="RestrictedAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="CashAccountAlias" type="NVarChar(40)" nullable="true" />
+  <index name="PK_NMDailyReportTmp" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="Seq" />
+    <col name="BranchID" />
+    <col name="SettlementID" />
+    <col name="SettledType" />
+  </index>
+</table>]]></CDATA>
+</Sql>

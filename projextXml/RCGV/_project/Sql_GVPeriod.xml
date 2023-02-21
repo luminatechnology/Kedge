@@ -1,0 +1,23 @@
+﻿<Sql TableName="GVPeriod" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVPeriod">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="GvPeriodID" type="Int" identity="true" />
+  <col name="RegistrationCD" type="NVarChar(9)" />
+  <col name="PeriodYear" type="Int" />
+  <col name="PeriodMonth" type="Int" />
+  <col name="InActive" type="Bit" />
+  <col name="OutActive" type="Bit" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_GVPeriod" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="GvPeriodID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

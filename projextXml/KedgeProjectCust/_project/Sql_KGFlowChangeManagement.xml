@@ -1,0 +1,39 @@
+﻿<Sql TableName="KGFlowChangeManagement" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowChangeManagement">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="BcaID" type="Int" identity="true" />
+  <col name="BcaUID" type="NVarChar(40)" />
+  <col name="ApprovalID" type="Int" nullable="true" />
+  <col name="DeptName" type="NVarChar(60)" nullable="true" />
+  <col name="ProjectName" type="NVarChar(60)" nullable="true" />
+  <col name="ProjectCode" type="NVarChar(30)" nullable="true" />
+  <col name="ApplicationUser" type="NVarChar(60)" nullable="true" />
+  <col name="ApplicationDate" type="DateTime" nullable="true" />
+  <col name="Num" type="Int" nullable="true" />
+  <col name="ChangTitle" type="NVarChar(256)" nullable="true" />
+  <col name="EffectReason" type="NVarChar(256)" nullable="true" />
+  <col name="Cmemo" type="NVarChar(MAX)" nullable="true" />
+  <col name="StateUID" type="NVarChar(5)" nullable="true" />
+  <col name="Message" type="NVarChar(200)" nullable="true" />
+  <col name="CostControlUser" type="NVarChar(20)" nullable="true" />
+  <col name="AccountUser" type="NVarChar(20)" nullable="true" />
+  <col name="InitialProfitMargins" type="Decimal(18,4)" nullable="true" />
+  <col name="CurrentProfitMargins" type="Decimal(18,4)" nullable="true" />
+  <col name="ForecastProfitMargins" type="Decimal(18,4)" nullable="true" />
+  <col name="QualityImprovement" type="Bit" nullable="true" />
+  <col name="ClassID" type="NVarChar(15)" nullable="true" />
+  <col name="OrderChangeRefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowChangeManagement" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="BcaID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

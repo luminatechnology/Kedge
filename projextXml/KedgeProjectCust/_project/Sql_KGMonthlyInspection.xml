@@ -1,0 +1,36 @@
+﻿<Sql TableName="KGMonthlyInspection" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGMonthlyInspection">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="MonthlyInspectionID" type="Int" identity="true" />
+  <col name="MonthlyInspectionCD" type="NVarChar(50)" />
+  <col name="ProjectID" type="Int" />
+  <col name="TemplateHeaderID" type="Int" />
+  <col name="CheckDate" type="DateTime" />
+  <col name="Remark" type="NVarChar(MAX)" nullable="true" />
+  <col name="OverallRating" type="NChar(1)" nullable="true" />
+  <col name="FinalScore" type="Decimal(5,2)" nullable="true" />
+  <col name="Evaluation" type="NVarChar(MAX)" nullable="true" />
+  <col name="EvaluationDesc" type="NVarChar(240)" nullable="true" />
+  <col name="Status" type="NChar(1)" />
+  <col name="SystemManager" type="Int" nullable="true" />
+  <col name="SiteManager" type="Int" nullable="true" />
+  <col name="EquipmentSupervisor" type="Int" nullable="true" />
+  <col name="SafeHealthSupervisor" type="Int" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="Hold" type="Bit" nullable="true" />
+  <col name="CheckYear" type="Int" />
+  <col name="CheckMonth" type="Int" />
+  <col name="ConstructionStage" type="NVarChar(2)" nullable="true" />
+  <index name="PK_KGMonthlyInspection" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="MonthlyInspectionID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

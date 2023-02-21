@@ -1,0 +1,26 @@
+﻿<Sql TableName="KGFlowSubAccPay" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowSubAccPay">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="SapID" type="Int" identity="true" />
+  <col name="SapUID" type="NVarChar(40)" />
+  <col name="AccUID" type="NVarChar(40)" />
+  <col name="CostName" type="NVarChar(50)" nullable="true" />
+  <col name="PayName" type="NVarChar(200)" nullable="true" />
+  <col name="PayAmt" type="Decimal(18,0)" nullable="true" />
+  <col name="Title" type="NVarChar(60)" nullable="true" />
+  <col name="CashDate" type="DateTime" nullable="true" />
+  <col name="AccMemo" type="NVarChar(MAX)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGFlowSubAccPay" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="SapID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

@@ -1,0 +1,17 @@
+﻿<Table TableName="APRegister">
+    <Column TableName="APRegister" ColumnName="UsrIsConfirm" ColumnType="bool" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrConfirmBy" ColumnType="guid" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrConfirmDate" ColumnType="date" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrAccConfirmNbr" ColumnType="string" AllowNull="True" MaxLength="14" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrGnhi2Amt" ColumnType="decimal" AllowNull="True" MaxLength="18" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrLbpAmt" ColumnType="decimal" AllowNull="True" MaxLength="18" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrWhtAmt" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrLbiAmt" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrHliAmt" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="18" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrIsWriteOff" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrIsRejectByAcct" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrIsTmpPayment" ColumnType="bool" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrTmpPaymentTotal" ColumnType="decimal" AllowNull="True" MaxLength="19" DecimalPrecision="4" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrTmpPaymentReleased" ColumnType="decimal" AllowNull="True" MaxLength="19" DecimalPrecision="4" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrTmpPaymentUnReleased" ColumnType="decimal" AllowNull="True" MaxLength="19" DecimalPrecision="4" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+</Table>

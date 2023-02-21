@@ -1,0 +1,21 @@
+﻿<Sql TableName="GVMediaDeclarationTemp" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVMediaDeclarationTemp">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="DeclareYear" type="Int" />
+  <col name="Period" type="Int" />
+  <col name="RegistrationCD" type="NVarChar(9)" />
+  <col name="DeclareBatchNbr" type="NVarChar(20)" />
+  <col name="CreatedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByScreenID" type="Char(8)" nullable="true" />
+  <col name="CreatedDateTime" type="DateTime" nullable="true" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="LastModifiedByScreenID" type="Char(8)" nullable="true" />
+  <col name="LastModifiedDateTime" type="DateTime" nullable="true" />
+  <index name="PK_GVMediaDeclarationTemp" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="DeclareYear" />
+    <col name="Period" />
+    <col name="RegistrationCD" />
+  </index>
+</table>]]></CDATA>
+</Sql>

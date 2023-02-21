@@ -1,0 +1,32 @@
+﻿<Sql TableName="KG505002" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KG505002">
+  <col name="BatchID" type="NVarChar(50)" />
+  <col name="BatchSeq" type="Int" />
+  <col name="Type" type="NChar(1)" nullable="true" />
+  <col name="InnerOuterCase" type="NVarChar(4)" nullable="true" />
+  <col name="ContractCD" type="NVarChar(30)" nullable="true" />
+  <col name="ContractDesc" type="NVarChar(60)" nullable="true" />
+  <col name="VendorName" type="NVarChar(60)" nullable="true" />
+  <col name="CumIncomeLast" type="Decimal(19,4)" nullable="true" />
+  <col name="CumIncomeThis" type="Decimal(19,4)" nullable="true" />
+  <col name="RecIncomeLast" type="Decimal(19,4)" nullable="true" />
+  <col name="RecIncomeThis" type="Decimal(19,4)" nullable="true" />
+  <col name="CumCostLast" type="Decimal(19,4)" nullable="true" />
+  <col name="CumCostThis" type="Decimal(19,4)" nullable="true" />
+  <col name="RecCostLast" type="Decimal(19,4)" nullable="true" />
+  <col name="RecCostThis" type="Decimal(19,4)" nullable="true" />
+  <col name="CumProfitLast" type="Decimal(19,4)" nullable="true" />
+  <col name="CumProfitThis" type="Decimal(19,4)" nullable="true" />
+  <col name="RecProfitLast" type="Decimal(19,4)" nullable="true" />
+  <col name="RecProfitThis" type="Decimal(19,4)" nullable="true" />
+  <col name="IncomeAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="ProjectProgrees" type="Decimal(18,2)" nullable="true" />
+  <col name="ProfitRate" type="Decimal(18,2)" nullable="true" />
+  <col name="EstTotalInputCost" type="Decimal(19,4)" nullable="true" />
+  <col name="Profit" type="Decimal(19,4)" nullable="true" />
+  <index name="PK_KG505002" clustered="true" primary="true" unique="true">
+    <col name="BatchID" />
+    <col name="BatchSeq" />
+  </index>
+</table>]]></CDATA>
+</Sql>

@@ -1,0 +1,104 @@
+﻿<Sql TableName="CreateAPARTopNV" SqlScriptPriority="2" CustomScript="#CDATA">
+    <CDATA name="CustomScript"><![CDATA[CREATE OR ALTER VIEW dbo.APARTopNV AS
+SELECT
+    'AR' Type,
+    Branch.BranchID,
+    GVArGuiInvoice.CompanyID,
+    GVArGuiInvoice.CustUniformNumber,
+    GVArGuiInvoice.GuiInvoiceNbr,
+    GVArGuiInvoice.CustName,
+    GVArGuiInvoice.InvoiceDate AS InvDate,
+    GVArGuiInvoiceDetail.SalesAmt,
+    0 AS CmAmt
+FROM
+    GVArGuiInvoiceDetail
+    INNER JOIN GVArGuiInvoice ON GVArGuiInvoiceDetail.CompanyID = GVArGuiInvoice.CompanyID
+    AND GVArGuiInvoiceDetail.GuiInvoiceID = GVArGuiInvoice.GuiInvoiceID
+    INNER JOIN GVRegistration ON GVRegistration.CompanyID = GVArGuiInvoice.CompanyID
+    AND GVRegistration.RegistrationCD = GVArGuiInvoice.RegistrationCD
+    INNER JOIN GVRegistrationBranch ON GVRegistrationBranch.CompanyID = GVRegistration.CompanyID
+    AND GVRegistrationBranch.RegistrationID = GVRegistration.RegistrationID
+    INNER JOIN Branch ON Branch.CompanyID = GVRegistrationBranch.CompanyID
+    AND Branch.BAccountID = GVRegistrationBranch.BAccountID
+WHERE
+    GVArGuiInvoice.Status != '2'
+    AND GVArGuiInvoice.GuiInvoiceNbr IS NOT NULL
+UNION
+SELECT
+    'AR' Type,
+    Branch.BranchID,
+    GVArGuiCmInvoiceLine.CompanyID,
+    GVArGuiCmInvoice.CustUniformNumber,
+    GVArGuiCmInvoiceLine.ArGuiInvoiceNbr,
+    GVArGuiCmInvoice.CustName,
+    Batch.DateEntered AS InvDate,
+    0 AS SalesAmt,
+    GVArGuiCmInvoiceLine.SalesAmt AS CmAmt
+FROM
+    GVArGuiCmInvoiceLine
+    INNER JOIN GVArGuiCmInvoice ON GVArGuiCmInvoiceLine.CompanyID = GVArGuiCmInvoice.CompanyID
+    AND GVArGuiCmInvoiceLine.GuiCmInvoiceID = GVArGuiCmInvoice.GuiCmInvoiceID
+    INNER JOIN GVRegistration ON GVRegistration.CompanyID = GVArGuiCmInvoice.CompanyID
+    AND GVRegistration.RegistrationCD = GVArGuiCmInvoice.RegistrationCD
+    INNER JOIN GVRegistrationBranch ON GVRegistrationBranch.CompanyID = GVRegistration.CompanyID
+    AND GVRegistrationBranch.RegistrationID = GVRegistration.RegistrationID
+    INNER JOIN Branch ON Branch.CompanyID = GVRegistrationBranch.CompanyID
+    AND Branch.BAccountID = GVRegistrationBranch.BAccountID
+    LEFT JOIN Batch ON Batch.CompanyID = GVArGuiCmInvoice.CompanyID
+    AND Batch.BatchNbr = GVArGuiCmInvoice.BatchNbr
+WHERE
+    GVArGuiCmInvoice.Status != '2'
+UNION
+SELECT
+    'AP' Type,
+    Branch.BranchID,
+    GVApGuiInvoiceDetail.CompanyID,
+    GVApGuiInvoice.VendorUniformNumber,
+    GVApGuiInvoice.GuiInvoiceNbr,
+    GVApGuiInvoice.VendorName,
+    ISNULL (
+        APRegister.DocDate,
+        GVApGuiInvoice.CreatedDateTime
+    ) AS InvDate,
+    GVApGuiInvoiceDetail.SalesAmt,
+    0 AS CmAmt
+FROM
+    GVApGuiInvoiceDetail
+    INNER JOIN GVApGuiInvoice ON GVApGuiInvoiceDetail.CompanyID = GVApGuiInvoice.CompanyID
+    AND GVApGuiInvoiceDetail.GuiInvoiceID = GVApGuiInvoice.GuiInvoiceID
+    INNER JOIN GVRegistration ON GVRegistration.CompanyID = GVApGuiInvoice.CompanyID
+    AND GVRegistration.RegistrationCD = GVApGuiInvoice.RegistrationCD
+    INNER JOIN GVRegistrationBranch ON GVRegistrationBranch.CompanyID = GVRegistration.CompanyID
+    AND GVRegistrationBranch.RegistrationID = GVRegistration.RegistrationID
+    INNER JOIN Branch ON Branch.CompanyID = GVRegistrationBranch.CompanyID
+    AND Branch.BAccountID = GVRegistrationBranch.BAccountID
+    LEFT JOIN APRegister ON GVApGuiInvoiceDetail.CompanyID = APRegister.CompanyID
+    AND GVApGuiInvoiceDetail.APRefNbr = APRegister.RefNbr
+WHERE
+    GVApGuiInvoice.Status != '2'
+UNION
+SELECT
+    'AP' Type,
+    Branch.BranchID,
+    GVApGuiCmInvoiceLine.CompanyID,
+    GVApGuiCmInvoice.VendorUniformNumber,
+    GVApGuiCmInvoice.GuiCmInvoiceNbr,
+    GVApGuiCmInvoice.VendorName,
+    Batch.DateEntered AS InvDate,
+    0 AS SalesAmt,
+    GVApGuiCmInvoiceLine.SalesAmt AS CmAmt
+FROM
+    GVApGuiCmInvoiceLine
+    INNER JOIN GVApGuiCmInvoice ON GVApGuiCmInvoiceLine.CompanyID = GVApGuiCmInvoice.CompanyID
+    AND GVApGuiCmInvoiceLine.GuiCmInvoiceID = GVApGuiCmInvoice.GuiCmInvoiceID
+    INNER JOIN GVRegistration ON GVRegistration.CompanyID = GVApGuiCmInvoice.CompanyID
+    AND GVRegistration.RegistrationCD = GVApGuiCmInvoice.RegistrationCD
+    INNER JOIN GVRegistrationBranch ON GVRegistrationBranch.CompanyID = GVRegistration.CompanyID
+    AND GVRegistrationBranch.RegistrationID = GVRegistration.RegistrationID
+    INNER JOIN Branch ON Branch.CompanyID = GVRegistrationBranch.CompanyID
+    AND Branch.BAccountID = GVRegistrationBranch.BAccountID
+    LEFT JOIN Batch ON Batch.CompanyID = GVApGuiCmInvoice.CompanyID
+    AND Batch.UsrAccConfirmNbr = GVApGuiCmInvoice.AccConfirmNbr
+WHERE
+    GVApGuiCmInvoice.Status != '2';]]></CDATA>
+</Sql>

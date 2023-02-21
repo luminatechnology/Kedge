@@ -1,0 +1,11 @@
+﻿<Fields ScreenID="SC301000">
+    <Field IsActive="True" DisplayName="工料描述" FieldName="INVENTORYID_INVENTORYITEM_DESCR" ObjectName="PX.OBJECTS.CN.SUBCONTRACTS.SC.GRAPHS.SUBCONTRACTENTRY_EXTENSION+PMCOSTBUDGETEXT" />
+    <Field IsActive="True" FieldName="ACCOUNTGROUPID" HideCondition="True" ObjectName="PX.OBJECTS.PM.PMCOSTBUDGET" />
+    <Field IsActive="True" DisplayName="成本任務" FieldName="PROJECTTASKID" ObjectName="PX.OBJECTS.PM.PMCOSTBUDGET" />
+    <Field IsActive="True" DisplayName="專案任務描述" FieldName="PROJECTTASKID_DESCRIPTION" ObjectName="PX.OBJECTS.PM.PMCOSTBUDGET" />
+    <Field IsActive="True" DisplayName="工料編號" FieldName="INVENTORYID" ObjectName="PX.OBJECTS.PO.POLINE" />
+    <Field IsActive="True" DisplayName="專案描述" FieldName="PROJECTID_DESCRIPTION" ObjectName="PX.OBJECTS.PO.POLINE" />
+    <Field IsActive="True" DisplayName="成本任務描述" FieldName="TASKID_DESCRIPTION" ObjectName="PX.OBJECTS.PO.POLINE" />
+    <Field IsActive="True" DisplayName="零星合約總計" FieldName="CURYORDERTOTAL" ObjectName="PX.OBJECTS.PO.POORDER" />
+    <Field IsActive="True" DisplayName="零星合約" FieldName="ORDERNBR" ObjectName="PX.OBJECTS.PO.POORDER" />
+</Fields>

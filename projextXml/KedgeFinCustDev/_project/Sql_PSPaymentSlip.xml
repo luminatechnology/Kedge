@@ -1,0 +1,44 @@
+﻿<Sql TableName="PSPaymentSlip" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="PSPaymentSlip">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="RefNbr" type="NVarChar(15)" />
+  <col name="BranchID" type="Int" />
+  <col name="EmployeeID" type="Int" nullable="true" />
+  <col name="DepartmentID" type="NVarChar(10)" />
+  <col name="LocationID" type="Int" nullable="true" />
+  <col name="DocDate" type="SmallDateTime" />
+  <col name="ApproveDate" type="SmallDateTime" nullable="true" />
+  <col name="DocDesc" type="NVarChar(256)" nullable="true" />
+  <col name="Hold" type="Bit" />
+  <col name="Status" type="Char(1)" />
+  <col name="DocBal" type="Decimal(19,4)" />
+  <col name="FinPeriodID" type="Char(6)" nullable="true" />
+  <col name="TranPeriodID" type="Char(6)" nullable="true" />
+  <col name="TargetType" type="Char(1)" nullable="true" />
+  <col name="CustomerID" type="Int" nullable="true" />
+  <col name="CustomerLocationID" type="Int" nullable="true" />
+  <col name="VendorID" type="Int" nullable="true" />
+  <col name="VendorLocationID" type="Int" nullable="true" />
+  <col name="FinancialYear" type="NVarChar(4)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="NoteID" type="UniqueIdentifier" />
+  <col name="ContractID" type="Int" nullable="true" />
+  <col name="VoidedBy" type="UniqueIdentifier" nullable="true" />
+  <col name="VoidedDate" type="DateTime" nullable="true" />
+  <col name="DocType" type="NVarChar(3)" nullable="true" />
+  <index name="PK_PSPaymentSlip" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="RefNbr" />
+  </index>
+  <index name="PSPaymentSlip_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

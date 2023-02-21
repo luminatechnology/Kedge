@@ -1,0 +1,42 @@
+﻿<Sql TableName="PSUploadPaymentSlipTemp" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="PSUploadPaymentSlipTemp">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="TempSeq" type="Int" identity="true" />
+  <col name="DocType" type="NVarChar(25)" nullable="true" />
+  <col name="RefNbr" type="NVarChar(25)" nullable="true" />
+  <col name="DocDate" type="DateTime" nullable="true" />
+  <col name="TargetType" type="Char(1)" nullable="true" />
+  <col name="PayerID" type="Int" nullable="true" />
+  <col name="PayerLocationID" type="Int" nullable="true" />
+  <col name="EmployeeID" type="Int" nullable="true" />
+  <col name="ContractID" type="Int" nullable="true" />
+  <col name="DocDesc" type="NVarChar(255)" nullable="true" />
+  <col name="LineDate" type="DateTime" nullable="true" />
+  <col name="LinePayNbr" type="NVarChar(25)" nullable="true" />
+  <col name="LinePayMehtod" type="NVarChar(20)" nullable="true" />
+  <col name="LineInvID" type="Int" nullable="true" />
+  <col name="LineDesc" type="NVarChar(255)" nullable="true" />
+  <col name="LineQty" type="Decimal(25,6)" nullable="true" />
+  <col name="LineCost" type="Decimal(19,6)" nullable="true" />
+  <col name="LineIssues" type="NVarChar(255)" nullable="true" />
+  <col name="IssueBankCode" type="NVarChar(7)" nullable="true" />
+  <col name="IssueBankAccount" type="NVarChar(15)" nullable="true" />
+  <col name="PaymentCategory" type="NVarChar(3)" nullable="true" />
+  <col name="BankAccountID" type="Int" nullable="true" />
+  <col name="ActualDueDate" type="DateTime" nullable="true" />
+  <col name="CheckDueDate" type="DateTime" nullable="true" />
+  <col name="EtdDepositDate" type="DateTime" nullable="true" />
+  <col name="ProcessDate" type="DateTime" nullable="true" />
+  <col name="Error" type="NVarChar(255)" nullable="true" />
+  <col name="GuarType" type="Char(1)" nullable="true" />
+  <col name="GuarClass" type="Char(2)" nullable="true" />
+  <col name="PONbr" type="NVarChar(15)" nullable="true" />
+  <col name="POOrderType" type="Char(2)" nullable="true" />
+  <col name="IssueDate" type="DateTime" nullable="true" />
+  <col name="AuthDate" type="DateTime" nullable="true" />
+  <index name="PK_PSUploadPaymentSlipTemp" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="TempSeq" />
+  </index>
+</table>]]></CDATA>
+</Sql>

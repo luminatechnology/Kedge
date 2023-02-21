@@ -1,0 +1,27 @@
+﻿<Sql TableName="RCFeaturesSet" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="RCFeaturesSet">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="Status" type="Int" />
+  <col name="ValidUntill" type="SmallDateTime" nullable="true" />
+  <col name="ValidationCode" type="NVarChar(500)" nullable="true" />
+  <col name="IsTestEnv" type="Bit" />
+  <col name="GovUniformInvoice" type="Bit" />
+  <col name="GuiPreference" type="Bit" />
+  <col name="ApInvoice" type="Bit" />
+  <col name="ArInvoice" type="Bit" />
+  <col name="DeclareGovInvoice" type="Bit" />
+  <col name="BankProIntegration" type="Bit" />
+  <col name="WithholdingTaxes" type="Bit" />
+  <col name="NotesManagement" type="Bit" />
+  <col name="NotesPreference" type="Bit" />
+  <col name="NotesReceivable" type="Bit" />
+  <col name="NotesPayable" type="Bit" />
+  <col name="LedgerSettlement" type="Bit" />
+  <col name="Check" type="Bit" />
+  <col name="PaymentSlip" type="Bit" nullable="true" />
+  <col name="ExpenseClaim" type="Bit" nullable="true" />
+  <col name="CertificateManagement" type="Bit" nullable="true" />
+  <col name="CCPayableCheck" type="Bit" nullable="true" />
+  <col name="CCReceivableChecck" type="Bit" nullable="true" />
+</table>]]></CDATA>
+</Sql>

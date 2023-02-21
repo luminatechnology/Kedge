@@ -1,0 +1,5 @@
+﻿<Table TableName="POLine">
+    <Column TableName="POLine" ColumnName="UsrAccountGroupID" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="POLine" ColumnName="UsrSegPricingFlag" ColumnType="bool" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="POLine" ColumnName="UsrVendorPriceID" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

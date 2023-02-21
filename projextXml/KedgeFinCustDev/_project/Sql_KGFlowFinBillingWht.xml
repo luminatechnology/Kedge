@@ -1,0 +1,30 @@
+﻿<Sql TableName="KGFlowFinBillingWht" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGFlowFinBillingWht">
+  <col name="CompanyID" type="Int" nullable="true" default="Zero" />
+  <col name="BranchID" type="Int" nullable="true" />
+  <col name="HeaderID" type="Int" nullable="true" />
+  <col name="WhtID" type="Int" nullable="true" />
+  <col name="PersonalID" type="NVarChar(10)" nullable="true" />
+  <col name="PayeeName" type="NVarChar(30)" nullable="true" />
+  <col name="EntryYy" type="NVarChar(3)" nullable="true" />
+  <col name="EntryMm" type="NVarChar(2)" nullable="true" />
+  <col name="WHTFmtCode" type="Char(2)" nullable="true" />
+  <col name="DuTypeCode" type="NVarChar(8)" nullable="true" />
+  <col name="Tax2Acct" type="Int" nullable="true" />
+  <col name="WHTAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="GNHI2Amt" type="Decimal(19,4)" nullable="true" />
+  <col name="HouseTaxIdType" type="NVarChar(1)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByScreenID" type="Char(8)" nullable="true" />
+  <col name="CreatedDateTime" type="DateTime" nullable="true" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="LastModifiedByScreenID" type="Char(8)" nullable="true" />
+  <col name="LastModifiedDateTime" type="DateTime" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="KGFlowFinBillingWht_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

@@ -1,0 +1,5 @@
+﻿<Automation screen="PS301010">
+    <Fields ScreenID="PS301010">
+        <Field IsActive="True" DisplayName="TargetType" FieldName="CVTYPE" ObjectName="PS.DAC.PSPAYMENTSLIP" />
+    </Fields>
+</Automation>

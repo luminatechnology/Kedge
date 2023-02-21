@@ -1,0 +1,58 @@
+﻿<Sql TableName="GVArGuiInvoice" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVArGuiInvoice">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="GuiInvoiceID" type="Int" identity="true" />
+  <col name="GuiInvoiceNbr" type="NVarChar(40)" nullable="true" />
+  <col name="RegistrationCD" type="NVarChar(9)" />
+  <col name="InvoiceDate" type="DateTime" />
+  <col name="CustomerID" type="Int" nullable="true" />
+  <col name="CustName" type="NVarChar(60)" nullable="true" />
+  <col name="CustUniformNumber" type="NVarChar(8)" nullable="true" />
+  <col name="CustAddress" type="NVarChar(240)" nullable="true" />
+  <col name="InvoiceType" type="NVarChar(1)" />
+  <col name="Remark" type="NVarChar(240)" nullable="true" />
+  <col name="GuiType" type="NVarChar(2)" />
+  <col name="DeclareYear" type="Int" />
+  <col name="DeclareMonth" type="Int" />
+  <col name="GuiBookID" type="Int" nullable="true" />
+  <col name="EgvType" type="NVarChar(2)" nullable="true" />
+  <col name="VoidDate" type="DateTime" nullable="true" />
+  <col name="VoidBy" type="UniqueIdentifier" nullable="true" />
+  <col name="VoidReason" type="NVarChar(240)" nullable="true" />
+  <col name="TaxCode" type="NVarChar(1)" />
+  <col name="SalesAmt" type="Decimal(19,4)" />
+  <col name="TaxAmt" type="Decimal(19,4)" />
+  <col name="TotalAmt" type="Decimal(19,4)" />
+  <col name="RandonNumber" type="NVarChar(4)" nullable="true" />
+  <col name="QrcodeStr1" type="NVarChar(MAX)" nullable="true" />
+  <col name="QrcodeStr2" type="NVarChar(MAX)" nullable="true" />
+  <col name="DonateRemark" type="Bit" nullable="true" />
+  <col name="Status" type="NVarChar(1)" />
+  <col name="TurnkeySendDate" type="DateTime" nullable="true" />
+  <col name="PrintCount" type="Int" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="DeclarePeriod" type="NVarChar(1)" />
+  <col name="GuiWordCD" type="NVarChar(2)" nullable="true" />
+  <col name="GuiBookCD" type="NVarChar(240)" nullable="true" />
+  <col name="GuiInvoiceCD" type="NVarChar(25)" nullable="true" />
+  <col name="DeclareBatchNbr" type="NVarChar(20)" nullable="true" />
+  <col name="IsHistorical" type="Bit" nullable="true" />
+  <col name="DeclaredByID" type="UniqueIdentifier" nullable="true" />
+  <col name="DeclaredDateTime" type="DateTime" nullable="true" />
+  <index name="GVArGuiInvoice_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="PK_GVArGuiInvoice" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="GuiInvoiceID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

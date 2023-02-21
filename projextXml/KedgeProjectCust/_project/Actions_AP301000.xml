@@ -1,0 +1,18 @@
+﻿<Actions ScreenID="AP301000">
+    <Action IsActive="True" ActionName="AddAddition" ActionType="G" WindowMode="S">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="AddDeduction" ActionType="G" WindowMode="S">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="addKGVoucher" ActionType="G" Before="WebServIntegration" MenuFolderType="19" WindowMode="S">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+    <Action IsActive="True" ActionName="ReturnRetainage" ActionType="G" WindowMode="S">
+        <StateActionFields />
+        <StateActionParams />
+    </Action>
+</Actions>

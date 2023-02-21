@@ -1,0 +1,9 @@
+﻿<Automation screen="KG304000">
+    <Fields ScreenID="KG304000">
+        <Field IsActive="True" DisplayName="建立日期" FieldName="CREATEDDATETIME" ObjectName="KEDGE.DAC.KGMONTHLYINSPECTION" />
+        <Field IsActive="True" DisplayName="設備承辦人" FieldName="EQUIPMENTSUPERVISOR" ObjectName="KEDGE.DAC.KGMONTHLYINSPECTION" />
+        <Field IsActive="True" DisplayName="安全衛生承辦人" FieldName="SAFEHEALTHSUPERVISOR" ObjectName="KEDGE.DAC.KGMONTHLYINSPECTION" />
+        <Field IsActive="True" DisplayName="工地主管" FieldName="SITEMANAGER" ObjectName="KEDGE.DAC.KGMONTHLYINSPECTION" />
+        <Field IsActive="True" DisplayName="體系主管" FieldName="SYSTEMMANAGER" ObjectName="KEDGE.DAC.KGMONTHLYINSPECTION" />
+    </Fields>
+</Automation>

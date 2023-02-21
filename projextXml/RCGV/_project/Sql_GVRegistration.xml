@@ -1,0 +1,38 @@
+﻿<Sql TableName="GVRegistration" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVRegistration">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="RegistrationID" type="Int" identity="true" />
+  <col name="RegistrationCD" type="NVarChar(9)" />
+  <col name="SiteNameChinese" type="NVarChar(240)" />
+  <col name="SiteNameEnglish" type="NVarChar(240)" nullable="true" />
+  <col name="GovUniformNumber" type="NVarChar(240)" />
+  <col name="TaxPayer" type="NVarChar(30)" />
+  <col name="TaxCityCode" type="NVarChar(10)" />
+  <col name="SiteAddress" type="NVarChar(240)" />
+  <col name="SiteTelephone" type="NVarChar(20)" />
+  <col name="TaxAuthority" type="NVarChar(50)" />
+  <col name="DeclarationMethod" type="NVarChar(1)" />
+  <col name="DeclarationPayCode" type="NVarChar(1)" />
+  <col name="ParentRegistrationCD" type="NVarChar(9)" nullable="true" />
+  <col name="QrCodeSeedString" type="NVarChar(240)" />
+  <col name="isActive" type="Bit" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="SpecialTaxType" type="NVarChar(1)" nullable="true" />
+  <col name="SiteFax" type="NVarChar(20)" nullable="true" />
+  <index name="GVRegistration_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="PK_GVRegistration" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="RegistrationID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

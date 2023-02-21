@@ -1,0 +1,27 @@
+﻿<Sql TableName="KGSafetyHealthInspectTicketL" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGSafetyHealthInspectTicketL">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="SafetyHealthInspectTicketLineID" type="Int" identity="true" />
+  <col name="SafetyHealthInspectTicketID" type="Int" />
+  <col name="SafetyHealthInspectionID" type="Int" />
+  <col name="SafetyHealthInspectionLineID" type="Int" />
+  <col name="TemplateLineID" type="Int" />
+  <col name="CategoryCD" type="NVarChar(50)" />
+  <col name="Remark" type="NVarChar(MAX)" nullable="true" />
+  <col name="LastRemark" type="NVarChar(MAX)" nullable="true" />
+  <col name="ImageUrl" type="NVarChar(255)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="ImprovementPlan" type="NVarChar(MAX)" nullable="true" />
+  <index name="PK_KGSafetyHealthInspectTicketL" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="SafetyHealthInspectTicketLineID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

@@ -1,0 +1,16 @@
+﻿<Sql TableName="UpdateTWNWHTTran_PK" CustomScript="#CDATA">
+    <CDATA name="CustomScript"><![CDATA[With UpdateData As
+(
+	SELECT CompanyID, WHTTranID, RefNbr, ROW_NUMBER() OVER(PARTITION BY RefNbr ORDER BY RefNbr ASC) RN FROM TWNWHTTran WHERE CompanyID = 2 AND RefNbr IS NOT NULL
+)
+UPDATE TWNWHTTran SET LineNbr = RN
+FROM TWNWHTTran
+INNER JOIN UpdateData ON TWNWHTTran.CompanyID = UpdateData.CompanyID AND TWNWHTTran.WHTTranID = UpdateData.WHTTranID
+WHERE TWNWHTTran.CompanyID = 2
+GO
+
+UPDATE TWNWHTTran SET DocType = APRegister.DocType FROM TWNWHTTran
+INNER JOIN APRegister ON APRegister.CompanyID = TWNWHTTran.CompanyID AND APRegister.RefNbr = TWNWHTTran.RefNbr
+WHERE TWNWHTTran.CompanyID = 2
+GO]]></CDATA>
+</Sql>

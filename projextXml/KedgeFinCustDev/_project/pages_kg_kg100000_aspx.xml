@@ -1,0 +1,14 @@
+﻿<Page path="~/pages/kg/kg100000.aspx" ControlId="1" pageSource="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">
+    <PXFormView ID="CstFormView67" ParentId="phF_CstPXTab66_Items#0_CstFormView67" TypeFullName="PX.Web.UI.PXFormView">
+        <Children Key="Template">
+            <AddItem>
+                <PXSelector TypeFullName="PX.Web.UI.PXSelector">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="CstPXSelector1" />
+                    <Prop Key="DataField" Value="UsrKGPrjManageInventoryID" />
+                </PXSelector>
+            </AddItem>
+            <PXSelector DataField="KGAdditionInventoryID" OriginalIndex="15" />
+        </Children>
+    </PXFormView>
+</Page>

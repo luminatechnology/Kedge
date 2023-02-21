@@ -1,0 +1,24 @@
+﻿<Sql TableName="KGComsVoucherItem" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGComsVoucherItem">
+  <col name="CompanyID" type="Int" nullable="true" default="Zero" />
+  <col name="BatchID" type="Int" nullable="true" />
+  <col name="ItemID" type="Int" identity="true" />
+  <col name="CompanyName" type="NVarChar(3)" nullable="true" />
+  <col name="VoucherKey" type="NVarChar(11)" nullable="true" />
+  <col name="VoucherNo" type="NVarChar(11)" nullable="true" />
+  <col name="ItemNo" type="Decimal(3,0)" nullable="true" />
+  <col name="AccountNo" type="NVarChar(8)" nullable="true" />
+  <col name="Project" type="NVarChar(4)" nullable="true" />
+  <col name="Digest" type="NVarChar(200)" nullable="true" />
+  <col name="CD" type="NVarChar(1)" nullable="true" />
+  <col name="Amount" type="Decimal(10,0)" nullable="true" />
+  <col name="Operator" type="NVarChar(12)" nullable="true" />
+  <col name="Org" type="NVarChar(4)" nullable="true" />
+  <col name="UniformNo" type="NVarChar(40)" nullable="true" />
+  <col name="DateDue" type="DateTime" nullable="true" />
+  <col name="AccUid" type="NVarChar(22)" nullable="true" />
+  <col name="NameAbbr" type="NVarChar(255)" nullable="true" />
+  <col name="NameTW" type="NVarChar(255)" nullable="true" />
+  <col name="ErrorMsg" type="NVarChar(255)" nullable="true" />
+</table>]]></CDATA>
+</Sql>

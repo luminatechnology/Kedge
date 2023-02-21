@@ -1,0 +1,22 @@
+﻿<Sql TableName="KGVendorEvaluation" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGVendorEvaluation">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="EvaluationID" type="Int" identity="true" />
+  <col name="EvaluationCD" type="NVarChar(40)" />
+  <col name="EvaluationName" type="NVarChar(240)" />
+  <col name="Status" type="NChar(1)" />
+  <col name="Hold" type="Bit" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGVendorEvaluation" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="EvaluationID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

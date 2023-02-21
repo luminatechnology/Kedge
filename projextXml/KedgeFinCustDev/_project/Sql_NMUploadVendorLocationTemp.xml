@@ -1,0 +1,26 @@
+﻿<Sql TableName="NMUploadVendorLocationTemp" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="NMUploadVendorLocationTemp">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="TempSeq" type="Int" identity="true" />
+  <col name="VendorID" type="Int" />
+  <col name="VendorLocationCD" type="NVarChar(255)" />
+  <col name="VendorLocationName" type="NVarChar(255)" nullable="true" />
+  <col name="PaymentSameAsDefault" type="Bit" nullable="true" />
+  <col name="PaymentMethod" type="NVarChar(50)" nullable="true" />
+  <col name="CashAccount" type="Int" nullable="true" />
+  <col name="TaxRegistrationID" type="NVarChar(255)" nullable="true" />
+  <col name="BankID" type="NVarChar(255)" nullable="true" />
+  <col name="BankName" type="NVarChar(255)" nullable="true" />
+  <col name="BankBranchID" type="NVarChar(255)" nullable="true" />
+  <col name="BankBranchName" type="NVarChar(255)" nullable="true" />
+  <col name="BankAccount" type="NVarChar(255)" nullable="true" />
+  <col name="BankAccountName" type="NVarChar(255)" nullable="true" />
+  <col name="Category" type="NVarChar(255)" nullable="true" />
+  <col name="CategoryMappingID" type="NVarChar(255)" nullable="true" />
+  <col name="Error" type="NVarChar(255)" nullable="true" />
+  <index name="PK_NMUploadVendorLocationTemp" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="TempSeq" />
+  </index>
+</table>]]></CDATA>
+</Sql>

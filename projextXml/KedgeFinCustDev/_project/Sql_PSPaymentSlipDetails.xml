@@ -1,0 +1,60 @@
+﻿<Sql TableName="PSPaymentSlipDetails" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="PSPaymentSlipDetails">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="PaymentSlipDetailID" type="Int" identity="true" />
+  <col name="BranchID" type="Int" />
+  <col name="RefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="PaymentRefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="InventoryID" type="Int" nullable="true" />
+  <col name="UOM" type="NVarChar(6)" nullable="true" />
+  <col name="Qty" type="Decimal(25,6)" nullable="true" />
+  <col name="UnitCost" type="Decimal(19,6)" nullable="true" />
+  <col name="TranAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="TranDesc" type="NVarChar(256)" nullable="true" />
+  <col name="CustomerID" type="Int" nullable="true" />
+  <col name="CustomerLocationID" type="Int" nullable="true" />
+  <col name="VendorID" type="Int" nullable="true" />
+  <col name="VendorLocationID" type="Int" nullable="true" />
+  <col name="ContractID" type="Int" nullable="true" />
+  <col name="EmployeeID" type="Int" nullable="true" />
+  <col name="PaymentMethodID" type="NVarChar(10)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="NoteID" type="UniqueIdentifier" />
+  <col name="SlipDate" type="DateTime" nullable="true" />
+  <col name="BankAccountID" type="Int" nullable="true" />
+  <col name="ActualDueDate" type="DateTime" nullable="true" />
+  <col name="CheckDueDate" type="DateTime" nullable="true" />
+  <col name="EtdDepositDate" type="DateTime" nullable="true" />
+  <col name="CheckIssuer" type="NVarChar(255)" nullable="true" />
+  <col name="ProcessDate" type="DateTime" nullable="true" />
+  <col name="OriBankCode" type="NVarChar(7)" nullable="true" />
+  <col name="OriBankAccount" type="NVarChar(15)" nullable="true" />
+  <col name="PaymentCategory" type="NVarChar(3)" nullable="true" />
+  <col name="ArPaymentRefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="GuarReceviableCD" type="NVarChar(15)" nullable="true" />
+  <col name="IssueDate" type="DateTime" nullable="true" />
+  <col name="AuthDate" type="DateTime" nullable="true" />
+  <col name="GuarType" type="Char(1)" nullable="true" />
+  <col name="GuarClass" type="Char(2)" nullable="true" />
+  <col name="PONbr" type="NVarChar(15)" nullable="true" />
+  <col name="POOrderType" type="Char(2)" nullable="true" />
+  <col name="IsVoid" type="Bit" nullable="true" />
+  <col name="DueDate" type="DateTime" nullable="true" />
+  <col name="GuarPayableCD" type="NVarChar(15)" nullable="true" />
+  <col name="CCPostageAmt" type="Decimal(18,6)" nullable="true" />
+  <index name="PK_PSPaymentSlipDetails" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="PaymentSlipDetailID" />
+  </index>
+  <index name="PSPaymentSlipDetails_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

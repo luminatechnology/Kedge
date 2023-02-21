@@ -1,0 +1,25 @@
+﻿<Sql TableName="KGRequisitionDoc" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="KGRequisitionDoc">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="RequisitionDocID" type="Int" identity="true" />
+  <col name="ReqNbr" type="NVarChar(30)" nullable="true" />
+  <col name="RequisitionClass" type="NVarChar(1)" nullable="true" />
+  <col name="DefRetainagePct" type="Decimal(9,6)" nullable="true" />
+  <col name="PaymentCalculateMethod" type="NChar(1)" nullable="true" />
+  <col name="PerformanceGuaranteePct" type="Decimal(9,6)" nullable="true" />
+  <col name="WarrantyYear" type="Decimal(5,2)" nullable="true" />
+  <col name="Remark" type="NVarChar(MAX)" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="SmallDateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="SmallDateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_KGRequisitionDoc" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="RequisitionDocID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

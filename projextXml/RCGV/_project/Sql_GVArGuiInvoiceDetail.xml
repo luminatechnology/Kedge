@@ -1,0 +1,28 @@
+﻿<Sql TableName="GVArGuiInvoiceDetail" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="GVArGuiInvoiceDetail">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="GuiInvoiceID" type="Int" />
+  <col name="GuiInvoiceDetailID" type="Int" identity="true" />
+  <col name="ARRefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="ItemDesc" type="NVarChar(240)" />
+  <col name="Qty" type="Decimal(25,6)" />
+  <col name="UOM" type="NVarChar(6)" nullable="true" />
+  <col name="UnitPrice" type="Decimal(19,6)" />
+  <col name="SalesAmt" type="Decimal(19,6)" />
+  <col name="TaxAmt" type="Decimal(19,6)" />
+  <col name="Remark" type="NVarChar(240)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="ARDocType" type="Char(3)" nullable="true" />
+  <index name="GVArGuiInvoiceDetail_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

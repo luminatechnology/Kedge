@@ -1,0 +1,19 @@
+﻿<Sql TableName="CCReceivableCheckPostponeLog" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="CCReceivableCheckPostponeLog">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="GuarReceivableID" type="Int" />
+  <col name="PostponeSeq" type="Int" />
+  <col name="PostponeDate" type="DateTime" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByScreenID" type="Char(8)" nullable="true" />
+  <col name="CreatedDateTime" type="DateTime" nullable="true" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="LastModifiedByScreenID" type="Char(8)" nullable="true" />
+  <col name="LastModifiedDateTime" type="DateTime" nullable="true" />
+  <index name="PK_CCReceivableCheckPostponeLog" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="GuarReceivableID" />
+    <col name="PostponeSeq" />
+  </index>
+</table>]]></CDATA>
+</Sql>

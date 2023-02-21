@@ -1,0 +1,18 @@
+﻿<Sql TableName="APARTopNTemp" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="APARTopNTemp">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="BatchNbr" type="NVarChar(14)" />
+  <col name="Seq" type="Int" />
+  <col name="UniformNumber" type="NVarChar(8)" nullable="true" />
+  <col name="Name" type="NVarChar(40)" nullable="true" />
+  <col name="Amount" type="Decimal(18,2)" nullable="true" />
+  <col name="BuildTotalAmt" type="Decimal(18,2)" nullable="true" />
+  <col name="Type" type="NVarChar(2)" nullable="true" />
+  <col name="CreatedDateTime" type="DateTime" nullable="true" />
+  <index name="PK_APARTopNTemp" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="BatchNbr" />
+    <col name="Seq" />
+  </index>
+</table>]]></CDATA>
+</Sql>

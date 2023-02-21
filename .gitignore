@@ -1,0 +1,14 @@
+﻿KedgeAgentFlowWS/.vs
+*.lnk
+KedgeFinCustDev/.vs
+KedgeProjectCust/.vs
+RCGV/.vs
+KedgeProjectCust/KedgeProjectCust/bin
+KedgeProjectCust/KedgeProjectCust/obj
+KedgeFinCustDev/KedgeFinCustDev/bin
+KedgeFinCustDev/KedgeFinCustDev/obj
+RCGV/RCGV/.vs
+RCGV/RCGV/bin
+RCGV/RCGV/obj
+KedgeAgentFlowWS/KedgeAgentFlowWS/bin
+KedgeAgentFlowWS/KedgeAgentFlowWS/obj

@@ -245,6 +245,7 @@ namespace PX.Objects.PM
         {
             int seq = 1;
             char pad = '0';
+            
             foreach (PMChangeOrderCostBudget pmChangeOrderCostBudget in Base.CostBudget.Select())
             {
                 //20201120 add by Alton(11805) unbound欄位會抓不到值的問題 
@@ -266,8 +267,6 @@ namespace PX.Objects.PM
                                             Where<Segment.dimensionID, Equal<Required<Segment.dimensionID>>>,
                                             OrderBy<Asc<Segment.segmentID>>>.Select(Base, "COSTCODE");
 
-
-
                 kgFlowBudChgApplyDetail.ItemNo = DoSplit(costCodeSeq, costCode.CostCodeCD);
                 kgFlowBudChgApplyDetail.PrintNo = (seq++.ToString()).PadLeft(8, pad);
                 if (inventoryItem != null)
@@ -277,37 +276,31 @@ namespace PX.Objects.PM
                     kgFlowBudChgApplyDetail.PccesCode = inventoryItem.InventoryCD;
                 }
                 kgFlowBudChgApplyDetail.ItemUnit = pmChangeOrderCostBudget.UOM;
+
                 PMCostBudget pmCostBudget = getPMCostBudget(pmChangeOrderCostBudget.CostCodeID, pmChangeOrderCostBudget.ProjectTaskID,
                                         pmChangeOrderCostBudget.ProjectID, pmChangeOrderCostBudget.InventoryID, pmChangeOrderCostBudget.AccountGroupID);
+                
+                bool isSpecialUOM = UOM_式.Equals(kgFlowBudChgApplyDetail.ItemUnit);
+
                 if (pmCostBudget != null)
                 {
-
-                    kgFlowBudChgApplyDetail.ItemCost = pmCostBudget.CuryUnitRate;
-                    kgFlowBudChgApplyDetail.ItemQty = pmCostBudget.RevisedQty;
-                    kgFlowBudChgApplyDetail.ItemAmt = pmCostBudget.RevisedAmount;
+                    //add 20200210 當資料為NULL 塞0
+                    kgFlowBudChgApplyDetail.ItemCost = (isSpecialUOM == true ? pmCostBudget.CuryRevisedAmount : pmCostBudget.CuryUnitRate) ?? 0m;
+                    kgFlowBudChgApplyDetail.ItemQty  = pmCostBudget.RevisedQty ?? 0m;
+                    kgFlowBudChgApplyDetail.ItemAmt  = pmCostBudget.RevisedAmount ?? 0m;
                 }
                 else
                 {
                     kgFlowBudChgApplyDetail.ItemNo = "新增";
                 }
-                //add 20200210 當資料為NULL 塞0
-                kgFlowBudChgApplyDetail.ItemCost = kgFlowBudChgApplyDetail.ItemCost ?? 0;
-                kgFlowBudChgApplyDetail.ItemQty = kgFlowBudChgApplyDetail.ItemQty ?? 0;
-                kgFlowBudChgApplyDetail.ItemAmt = kgFlowBudChgApplyDetail.ItemAmt ?? 0;
-                //20200616 louis 如果是一式項, 變更後的金額即為變更後的單價
-                if (UOM_式.Equals(kgFlowBudChgApplyDetail.ItemUnit))
-                {
-                    kgFlowBudChgApplyDetail.ChgCost = pmChangeOrderCostBudget.RevisedAmount;
-                }
-                else
-                {
-                    kgFlowBudChgApplyDetail.ChgCost = pmChangeOrderCostBudget.Rate;
-                }
 
-                kgFlowBudChgApplyDetail.ChgQty = pmChangeOrderCostBudget.RevisedQty;
-                kgFlowBudChgApplyDetail.ChgAmt = pmChangeOrderCostBudget.RevisedAmount;
+                //20200616 louis 如果是一式項, 變更後的金額即為變更後的單價
+                kgFlowBudChgApplyDetail.ChgCost = (isSpecialUOM == true) ? pmChangeOrderCostBudget.RevisedAmount : pmChangeOrderCostBudget.Rate;
+                kgFlowBudChgApplyDetail.ChgQty  = pmChangeOrderCostBudget.RevisedQty;
+                kgFlowBudChgApplyDetail.ChgAmt  = pmChangeOrderCostBudget.RevisedAmount;
 
                 PMChangeOrderBudgetExt pmChangeOrderBudgetExt = PXCache<PMChangeOrderBudget>.GetExtension<PMChangeOrderBudgetExt>(pmChangeOrderCostBudget);
+
                 kgFlowBudChgApplyDetail.ReasonKindCode = pmChangeOrderBudgetExt.UsrChangeReason;
                 kgFlowBudChgApplyDetail.BelongKindCode = pmChangeOrderBudgetExt.UsrBelongKind;
                 //20200305 add by alton manits:11540 itemName 改寫入 PMChangeOrderBudget.UsrInventoryDesc

@@ -154,11 +154,9 @@ namespace KedgeProjectCust
                             {
                                 POOrder order = POOrder.PK.Find(this, registerExt.UsrPOOrderType, registerExt.UsrPONbr);
 
-                                invoiceEntry.Document.Cache.SetValueExt<APInvoice.docDesc>(invoice, order.OrderDesc);
+                                invoiceEntry.Document.Cache.SetValueExt<APInvoice.docDesc>(invoice, $"(已轉換歷史保留款) {order.OrderDesc}");
                                 invoiceEntry.Document.Cache.SetValueExt<APRegisterExt.usrIsRetainageDoc>(invoice, true);
                                 invoiceEntry.Document.Update(invoice);
-
-                                
                             }
                         }
                         ///<remarks>產生退保留款計價單, 請同時產生一筆KGBillpayment, PricingType='A', PaymentMethod='A', PaymentPeriod =0, PaymentPct=100</remarks>

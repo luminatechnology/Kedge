@@ -6,14 +6,19 @@ using PX.Objects.AP;
 using PX.Objects.CR;
 using PX.Objects.CS.DAC;
 using PX.Objects.EP;
+using GL = PX.Objects.GL;
 using PX.Objects.EP.AgentFlow.DAC;
 using System;
 using static EP.Util.EPStringList;
 using static PX.Data.PXAccess;
+using PX.Data.BQL.Fluent;
+using System.Linq;
+using PX.Data.BQL;
+using System.Collections.Generic;
 
 namespace KedgeFinCustDev.EP.AgentFlow
 {
-    public class ExpenseClaimEntryForAgentFlow : PXGraphExtension<ExpenseClaimEntryForWHT,ExpenseClaimEntry_Extension2, ExpenseClaimEntry>
+    public class ExpenseClaimEntryForAgentFlow : PXGraphExtension<ExpenseClaimEntryForWHT, ExpenseClaimEntry_Extension2, ExpenseClaimEntry>
     {
         #region Select Method
         public PXSelect<KGFlowFinBillingAH, Where<KGFlowFinBillingAH.afmNo, Equal<Current<EPExpenseClaim.refNbr>>>> FlowBillingAHs;
@@ -39,7 +44,13 @@ namespace KedgeFinCustDev.EP.AgentFlow
             {
                 if (UpCount == 0)
                 {
-                    if (masterExt.UsrDocType == EPStringList.EPDocType.STD && masterExt.UsrSkipFlowFlag != true)
+                    if ((
+                        masterExt.UsrDocType == EPStringList.EPDocType.STD//一般請款
+                        || masterExt.UsrDocType == EPStringList.EPDocType.GUR//應付保證票
+                        || masterExt.UsrDocType == EPStringList.EPDocType.RGU//退回應收保證票
+                        || masterExt.UsrDocType == EPStringList.EPDocType.BTN//金融交易
+                        )
+                        && masterExt.UsrSkipFlowFlag != true)
                     {
                         checkanddeleteKGFlow();
                         createKGFlow();
@@ -104,7 +115,7 @@ namespace KedgeFinCustDev.EP.AgentFlow
             billingAH.CompanyName = companyBA?.OrganizationName;
             billingAH.BgtYear = (Convert.ToInt32(claimExt.UsrFinancialYear) - 1911).ToString();
             billingAH.AfmNo = claim.RefNbr;
-            if(claimExt.UsrVendorID != null)
+            if (claimExt.UsrVendorID != null)
             {
                 PX.Objects.CR.BAccount vendorBA = GetBAccount(claimExt.UsrVendorID);
                 billingAH.VendorType = "V";
@@ -144,7 +155,8 @@ namespace KedgeFinCustDev.EP.AgentFlow
             foreach (EPExpenseClaimDetails details in Base.ExpenseClaimDetails.Select())
             {
                 EPExpenseClaimDetailsExt detailsExt = PXCache<EPExpenseClaimDetails>.GetExtension<EPExpenseClaimDetailsExt>(details);
-                if ("B".Equals(detailsExt.UsrValuationType)) {
+                if ("B".Equals(detailsExt.UsrValuationType))
+                {
                     LineNbr++;
                     KGFlowFinBillingL billingL = (KGFlowFinBillingL)FlowBillingLs.Cache.CreateInstance();
                     Branch branch = GetBranch(details.BranchID);
@@ -189,6 +201,13 @@ namespace KedgeFinCustDev.EP.AgentFlow
                     billingL.AfmDate = details.ExpenseDate;
                     billingL.ApprovalLevelID = detailsExt.UsrApprovalLevelID;
 
+                    #region 預算金額 & 累計執行數
+                    //預算金額
+                    decimal budget = GetBudgetByFinYear(details.BranchID, claimExt.UsrFinancialYear, details.ExpenseAccountID, details.ExpenseSubID);
+                    var usedSum = GetUsed(details.BranchID, claimExt.UsrFinancialYear, details.ExpenseAccountID, details.ExpenseSubID);
+                    decimal used = (usedSum?.CreditAmt ?? 0m) - (usedSum?.DebitAmt ?? 0m);
+                    #endregion
+
                     FlowBillingLs.Insert(billingL);
                 }
             }
@@ -210,7 +229,8 @@ namespace KedgeFinCustDev.EP.AgentFlow
                 billingInv.InvoiceNo = inv.GuiInvoiceNbr;
                 billingInv.InvoiceDate = inv.InvoiceDate;
                 billingInv.TaxCode = inv.TaxCode;
-                switch (inv.GuiType) {
+                switch (inv.GuiType)
+                {
                     case "21":
                         billingInv.IvoKind = "1";
                         break;
@@ -226,7 +246,7 @@ namespace KedgeFinCustDev.EP.AgentFlow
                     case "27":
                         billingInv.IvoKind = "3";
                         break;
-                    default :
+                    default:
                         billingInv.IvoKind = "0";
                         break;
                 }
@@ -254,7 +274,7 @@ namespace KedgeFinCustDev.EP.AgentFlow
                 billingNote.BranchID = claim.BranchID;
                 billingNote.BillingNoteID = billPayment.BillPaymentID;
                 //billingNote.BillType = "";//BillPayment沒有相關欄位
-                if(claimExt.UsrVendorID !=null)
+                if (claimExt.UsrVendorID != null)
                 {
                     PX.Objects.CR.BAccount vendorBA = GetBAccount(claimExt.UsrVendorID);
                     billingNote.VendorType = "V";
@@ -290,9 +310,9 @@ namespace KedgeFinCustDev.EP.AgentFlow
                 billingWht.WhtID = whtTrans.WHTTranID;
                 billingWht.PersonalID = whtTrans.PersonalID;
                 billingWht.PayeeName = whtTrans.PayeeName;
-                
+
                 billingWht.EntryYy = (whtTrans.PaymentDate.Value.Year - 1911).ToString();
-                billingWht.EntryMm = int.Parse(whtTrans.PaymentDate.Value.Month.ToString()).ToString("00"); 
+                billingWht.EntryMm = int.Parse(whtTrans.PaymentDate.Value.Month.ToString()).ToString("00");
                 billingWht.Whtfmtcode = whtTrans.WHTFmtCode;
                 billingWht.DuTypeCode = whtTrans.DuTypeCode;
                 billingWht.Tax2Acct = 0;
@@ -338,7 +358,7 @@ namespace KedgeFinCustDev.EP.AgentFlow
         private string getVoucherType(string UsrVoucherType)
         {
             string VoucherType = "";
-            switch(UsrVoucherType)
+            switch (UsrVoucherType)
             {
                 case EPStringList.EPVoucherType.A:
                     VoucherType = "N";
@@ -355,7 +375,7 @@ namespace KedgeFinCustDev.EP.AgentFlow
         #endregion
 
         #region Select Method
-        private  Branch GetBranch(int? BranchID)
+        private Branch GetBranch(int? BranchID)
         {
             return PXSelect<Branch,
                 Where<Branch.branchID, Equal<Required<Branch.branchID>>>>
@@ -418,6 +438,55 @@ namespace KedgeFinCustDev.EP.AgentFlow
             return PXSelect<KGFlowFinBillingAH,
                 Where<KGFlowFinBillingAH.afmNo, Equal<Required<EPExpenseClaim.refNbr>>>>
                 .Select(Base, RefNbr);
+        }
+
+        /// <summary>
+        /// 取得年度預算
+        /// </summary>
+        /// <param name="branchID"></param>
+        /// <param name="finYear"></param>
+        /// <param name="accountID"></param>
+        /// <param name="subID"></param>
+        /// <returns></returns>
+        public decimal GetBudgetByFinYear(int? branchID, string finYear, int? accountID, int? subID)
+        {
+            GL.Ledger budgetLedger = GL.Ledger.UK.Find(Base, "BUDGET");
+            return SelectFrom<GL.GLBudgetLine>
+                .Where<GL.GLBudgetLine.released.IsEqual<True>
+                .And<GL.GLBudgetLine.branchID.IsEqual<@P.AsInt>
+                .And<GL.GLBudgetLine.ledgerID.IsEqual<@P.AsInt>
+                .And<GL.GLBudgetLine.finYear.IsEqual<@P.AsString>
+                .And<GL.GLBudgetLine.accountID.IsEqual<@P.AsInt>
+                .And<GL.GLBudgetLine.subID.IsEqual<@P.AsInt>>>>>>>
+                .AggregateTo<Sum<GL.GLBudgetLine.amount>>
+                .View.Select(Base, branchID, budgetLedger?.LedgerID, finYear, accountID, subID)
+                .RowCast<GL.GLBudgetLine>()?.First()?.Amount ?? 0m;
+        }
+
+        /// <summary>
+        /// 取得累計使用
+        /// </summary>
+        /// <param name="branchID"></param>
+        /// <param name="finYear"></param>
+        /// <param name="accountID"></param>
+        /// <param name="subID"></param>
+        /// <returns></returns>
+        public GL.GLTran GetUsed(int? branchID, string finYear, int? accountID, int? subID)
+        {
+            GL.Ledger budgetLedger = GL.Ledger.UK.Find(Base, "ACTUAL");
+            return SelectFrom<GL.GLTran>
+                 .InnerJoin<GL.Batch>
+                    .On<GL.GLTran.batchNbr.IsEqual<GL.Batch.batchNbr>>
+                 .Where<GL.Batch.branchID.IsEqual<@P.AsInt>
+                 .And<GL.GLTran.ledgerID.IsEqual<@P.AsInt>
+                 .And<GL.Batch.finPeriodID.IsLike<@P.AsString>
+                 .And<GL.GLTran.accountID.IsEqual<@P.AsInt>
+                 .And<GL.GLTran.subID.IsEqual<@P.AsInt>>>>>>
+                 .AggregateTo<
+                     Sum<GL.GLTran.creditAmt>,
+                     Sum<GL.GLTran.debitAmt>>
+                 .View.Select(Base, branchID, budgetLedger?.LedgerID, $"{finYear}%", accountID, subID)
+                 .RowCast<GL.GLTran>()?.First();
         }
         #endregion
     }

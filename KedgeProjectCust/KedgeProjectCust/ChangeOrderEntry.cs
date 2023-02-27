@@ -45,6 +45,7 @@ namespace PX.Objects.PM
         public const string  UOM_式 = "式";
         public const string  CannotGreaterThanRemain_Budget = "變更預算不可低於剩餘可發包預算";
         public const string  CannotGreaterThanRemain_Commitment = "變更已承諾不可超過剩餘可計價";
+        public const string  CannotGreaterThanRemain_Request = "剩餘可發包預算{0}不足";
         public const string  BudgetExceeded = "變更預算/已承諾超過限制";
         public const decimal OneNth = 1m/10000; // m => decimal
 
@@ -979,11 +980,7 @@ namespace PX.Objects.PM
                 {
                     e.Cache.SetValue<PMChangeOrderLine.qty>(row, (row.LineType == ChangeOrderLineType.NewLine || string.IsNullOrEmpty(row.POOrderNbr)) ?
                                                                  1m :
-                                                                 IsCostBudgetHasOrigBudgetQty(row.ProjectID,
-                                                                                              row.TaskID,
-                                                                                              Account.PK.Find(Base, (int)e.NewValue)?.AccountGroupID,
-                                                                                              row.CostCodeID,
-                                                                                              row.InventoryID) ? 0m : 1m);
+                                                                 getPOLine(row.POOrderNbr, row.POOrderType, row.POLineNbr).OrderQty > 0m ? 0m : 1m);
                 }
             }
         }
@@ -1011,7 +1008,7 @@ namespace PX.Objects.PM
 
             if (row != null && e.NewValue != null && row.UOM != UOM_式)
             {
-                CheckOneNthDifference<PMChangeOrderLine.amount>(e.Cache, row.UnitCost.Value, (decimal)e.NewValue);
+                CheckOneNthDifference<PMChangeOrderLine.amount>(e.Cache, row.UnitCost.Value, (row.Qty * row.UnitCost).Value, (decimal)e.NewValue);
             }
 
             // Since the cache is not updated with the latest value before validation, the value has to be specified.
@@ -1182,7 +1179,7 @@ namespace PX.Objects.PM
             if (row != null && e.NewValue != null && row.UOM != UOM_式)
             {
                 ///<remarks>成本預算非一式項變更預算輸入複價，要檢核變更後的複價不能超過變更數量*單價的萬分之一</remarks>
-                CheckOneNthDifference<PMChangeOrderCostBudget.amount>(e.Cache, row.Rate.Value, (decimal)e.NewValue);
+                CheckOneNthDifference<PMChangeOrderCostBudget.amount>(e.Cache, row.Rate.Value, (row.Qty * row.Rate).Value, (decimal)e.NewValue);
             }
 
             // Since the cache is not updated with the latest value before validation, the value has to be specified.
@@ -1511,7 +1508,9 @@ namespace PX.Objects.PM
 
                 if (Math.Abs(sourceQty.Value) > Math.Abs(qty) && !isSpecialUOM && ((fromChangeOrder == true & sourceQty < 0m) || (fromChangeOrder == false & sourceQty > 0m)))
                 {
-                    cache.RaiseExceptionHandling<T1>(row, sourceQty, new PXSetPropertyException($"{CannotGreaterThanRemain_Budget}數量 [{qty}]。"));
+                    string error = string.Format("{0}數量 [{1}]。", fromChangeOrder == true ? CannotGreaterThanRemain_Budget : string.Format(CannotGreaterThanRemain_Request, "數量"), qty);
+
+                    cache.RaiseExceptionHandling<T1>(row, sourceQty, new PXSetPropertyException(error));
                     cache.ForceExceptionHandling = true;
                 }
                 if (Math.Abs(sourceAmt.Value) > Math.Abs(amount) && isSpecialUOM && ((fromChangeOrder == true & sourceAmt < 0m) || (fromChangeOrder == false & sourceAmt > 0m)))
@@ -1574,9 +1573,9 @@ namespace PX.Objects.PM
         /// 成本預算非一式項變更預算輸入複價，要檢核變更後的複價不能超過變更數量*單價的萬分之一
         /// 已承諾非一式項變更訂單項目輸入複價，要檢核不能超過數量*單價的萬分之一
         /// </summary>
-        public virtual void CheckOneNthDifference<T>(PXCache cache, decimal amount, decimal newValue) where T : PX.Data.IBqlField
+        public virtual void CheckOneNthDifference<T>(PXCache cache, decimal unitPrice, decimal amount, decimal newValue) where T : PX.Data.IBqlField
         {
-            decimal calcAmt = Math.Round(amount * OneNth, 0, MidpointRounding.AwayFromZero);
+            decimal calcAmt = Math.Round(unitPrice * OneNth, 0, MidpointRounding.AwayFromZero);
             decimal minAmt = amount - calcAmt;
             decimal maxAmt = amount + calcAmt;
 

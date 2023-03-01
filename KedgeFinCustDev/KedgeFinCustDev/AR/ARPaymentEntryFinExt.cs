@@ -19,13 +19,13 @@ using KG.Util;
 using PX.Objects.GL;
 /**
 * ====2021-08-23:12201====Alton
-* §ï¬°¤@±iAR·|¹ïÀ³¨ì¦h±iNM
-* ¹L±b®É¦ê¦^PSPaymentSlipDetail¨ú±o²¼¾Ú¸¹½X
+* æ”¹ç‚ºä¸€å¼µARæœƒå°æ‡‰åˆ°å¤šå¼µNM
+* éå¸³æ™‚ä¸²å›PSPaymentSlipDetailå–å¾—ç¥¨æ“šè™Ÿç¢¼
 * ====2021-08-23 : 12206 ====Alton
-* 	½Ğ¨ó§U±N ARAdjust.AdjdRefNbr LOV ½Ğ¦hÅã¥Ü¥XARInvoiceªº¡G
-* 	-ProjectID¤Î¸ÓProjectIDªº´y­z
+* 	è«‹å”åŠ©å°‡ ARAdjust.AdjdRefNbr LOV è«‹å¤šé¡¯ç¤ºå‡ºARInvoiceçš„ï¼š
+* 	-ProjectIDåŠè©²ProjectIDçš„æè¿°
 * 	-CustomerID_Description
-* ----±j¨î´À´«----
+* ----å¼·åˆ¶æ›¿æ›----
 * 
 * **/
 namespace PX.Objects.EP
@@ -45,14 +45,14 @@ namespace PX.Objects.EP
         public IEnumerable VoidCheck(PXAdapter adapter, VoidCheckDelegate baseMethod)
         {
             ARPayment payment = Base.Document.Current;
-            //2022-11-07 12368 alton ÀË¬d¸ÓARpayment¨Ï§_¦³Ãö³sªºPSPaymentSlip
+            //2022-11-07 12368 alton æª¢æŸ¥è©²ARpaymentä½¿å¦æœ‰é—œé€£çš„PSPaymentSlip
             CheckVoidCheck(payment);
             NMReceivableCheck arCheck = GetNMReceivableCheck(payment.RefNbr);
-            //·íNMÀ³¦¬²¼¾Ú¬° ¤w°U¦¬ or ¤w§I²{ «h¤£¥i§@¼o
+            //ç•¶NMæ‡‰æ”¶ç¥¨æ“šç‚º å·²è¨—æ”¶ or å·²å…Œç¾ å‰‡ä¸å¯ä½œå»¢
             if (arCheck != null && (arCheck.Status == NMStringList.NMARCheckStatus.COLLECTION || arCheck.Status == NMStringList.NMARCheckStatus.CASH))
             {
                 bool isCash = arCheck.Status == NMStringList.NMARCheckStatus.CASH;
-                String msg = "NMÀ³¦¬²¼¾Ú " + (isCash ? "[¤w§I²{]" : "[¤w°U¦¬]") + " ¤£¥i§@¼o";
+                String msg = "NMæ‡‰æ”¶ç¥¨æ“š " + (isCash ? "[å·²å…Œç¾]" : "[å·²è¨—æ”¶]") + " ä¸å¯ä½œå»¢";
                 throw new PXException(msg);
             }
             return baseMethod(adapter);
@@ -100,22 +100,22 @@ namespace PX.Objects.EP
                 foreach (ARPayment deleteItem in Base.Document.Cache.Deleted)
                 {
                     if (deleteItem.DocType != ARDocType.Payment) continue;
-                    //Stage1.¨ú±oPSPaymentSlipDetails ¨Ã¨ú±oPSPaymentSlip
+                    //Stage1.å–å¾—PSPaymentSlipDetails ä¸¦å–å¾—PSPaymentSlip
                     PSPaymentSlipDetails detail = GetPSPaymentSlipDetails(deleteItem.RefNbr);
                     if (detail == null) continue;
                     PSPaymentSlip header = GetPSPaymentSlip(detail.RefNbr);
-                    //Stage2.§ó·s¹ïÀ³ªºPSPymentSlipDetsils¡A§âÃö³s®³±¼¨Ã¥BIsVoid = True
+                    //Stage2.æ›´æ–°å°æ‡‰çš„PSPymentSlipDetsilsï¼ŒæŠŠé—œé€£æ‹¿æ‰ä¸¦ä¸”IsVoid = True
                     PXUpdate<
                         Set<PSPaymentSlipDetails.arPaymentRefNbr, Null,
                         Set<PSPaymentSlipDetails.isVoid, True>>,
                         PSPaymentSlipDetails,
                         Where<PSPaymentSlipDetails.arPaymentRefNbr, Equal<Required<PSPaymentSlipDetails.arPaymentRefNbr>>>>
                         .Update(Base, detail.ArPaymentRefNbr);
-                    //Stage3.§PÂ_PSPaymentSlip©³¤UªºPSPaymentSlipDetials¬O§_ÁÙ¦s¦b¥¼§@¼o³æ
+                    //Stage3.åˆ¤æ–·PSPaymentSlipåº•ä¸‹çš„PSPaymentSlipDetialsæ˜¯å¦é‚„å­˜åœ¨æœªä½œå»¢å–®
                     int count = CountPSPaymentSlipDetailsByIsNotVoid(header.RefNbr);
                     if (count == 0)
                     {
-                        //Stage4.¤£¦s¦bÃöÁp«h§@¼oPSPaymentSlip
+                        //Stage4.ä¸å­˜åœ¨é—œè¯å‰‡ä½œå»¢PSPaymentSlip
                         PXUpdate<
                             Set<PSPaymentSlip.status, PSStringList.PSStatus.voided,
                             Set<PSPaymentSlip.voidedBy, Required<PSPaymentSlip.voidedBy>,
@@ -204,12 +204,12 @@ namespace PX.Objects.EP
         }
 
         /// <summary>
-        /// À³¦¬²¼¾Ú¹L±bª©¥»
+        /// æ‡‰æ”¶ç¥¨æ“šéå¸³ç‰ˆæœ¬
         /// </summary>
         /// <param name="adapter"></param>
         public void OverrideRelease(PXAdapter adapter)
         {
-            //Stage1. ­ì¼t¥ı¹L±b¡A¥B²£¥Í¶Ç²¼
+            //Stage1. åŸå» å…ˆéå¸³ï¼Œä¸”ç”¢ç”Ÿå‚³ç¥¨
             using (PXTransactionScope ts = new PXTransactionScope())
             {
                 List<ARRegister> list = BaseRelease(adapter);
@@ -220,19 +220,19 @@ namespace PX.Objects.EP
                     if (arp == null) continue;
                     bool isVoid = arp.DocType == ARDocType.VoidPayment;
                     NMReceivableCheck item;
-                    //·í¥I´Ú¤è¦¡¬° CHECK ²¼¾Ú ©Î ²¼¾Ú¤½¥q®ÉÃB¥~³B²z
+                    //ç•¶ä»˜æ¬¾æ–¹å¼ç‚º CHECK ç¥¨æ“š æˆ– ç¥¨æ“šå…¬å¸æ™‚é¡å¤–è™•ç†
                     if (arp.PaymentMethodID == "CHECK")
                     {
                         if (isVoid)
                         {
-                            //Stage2. ·í¥I´Ú¤è¦¡¬°²¼¾Ú¥Bª¬ºA¬°§@¼o®É¨ú±oNMÀ³¦¬²¼¾Ú
+                            //Stage2. ç•¶ä»˜æ¬¾æ–¹å¼ç‚ºç¥¨æ“šä¸”ç‹€æ…‹ç‚ºä½œå»¢æ™‚å–å¾—NMæ‡‰æ”¶ç¥¨æ“š
                             item = GetNMReceivableCheck(arp.RefNbr);
                             if (item != null) {
-                                //Stage3. ¹ï­ì¼t¶Ç²¼¨R±b-¨R¾PÃş§O¡G¦¬²¼ °h¦^/¹ı²¼
+                                //Stage3. å°åŸå» å‚³ç¥¨æ²–å¸³-æ²–éŠ·é¡åˆ¥ï¼šæ”¶ç¥¨ é€€å›/å¾¹ç¥¨
                                 item.RecReverseBatchNbr = NMVoucherUtil.CreateARVoucher(NMStringList.NMARVoucher.RECREVERSE,
                                                                                         item,
                                                                                         GLStageCode.NMRVoidRB);
-                                //Stage4. ¦pªGNMÀ³¦¬²¼¾Ú¬O¤w¦¬²¼¡A«h§ó§ïª¬ºA¬°¤wºM²¼
+                                //Stage4. å¦‚æœNMæ‡‰æ”¶ç¥¨æ“šæ˜¯å·²æ”¶ç¥¨ï¼Œå‰‡æ›´æ”¹ç‹€æ…‹ç‚ºå·²æ’¤ç¥¨
                                 if (item.Status == NMStringList.NMARCheckStatus.RECEIVE)
                                 {
                                     item.Status = NMStringList.NMARCheckStatus.WITHDRAW;
@@ -253,12 +253,12 @@ namespace PX.Objects.EP
                         else
                         {
 
-                            //¨ú±oPSPaymentSlipDetail
+                            //å–å¾—PSPaymentSlipDetail
                             foreach (PSPaymentSlipDetails psd in GetPSPaymentDetail(arp.RefNbr, arp.PaymentMethodID, arp.CashAccountID))
                             {
-                                //Stage2. ·í¥I´Ú¤è¦¡¬°²¼¾Ú®É²£¥ÍNMÀ³¦¬²¼¾Ú
+                                //Stage2. ç•¶ä»˜æ¬¾æ–¹å¼ç‚ºç¥¨æ“šæ™‚ç”¢ç”ŸNMæ‡‰æ”¶ç¥¨æ“š
                                 item = CreateNMArCheck(arp, psd.PaymentRefNbr, psd.TranAmt, psd.TranDesc);
-                                //Stage3. ¹ï­ì¼t¶Ç²¼¨R±b-¨R¾PÃş§O¡G¦¬²¼
+                                //Stage3. å°åŸå» å‚³ç¥¨æ²–å¸³-æ²–éŠ·é¡åˆ¥ï¼šæ”¶ç¥¨
                                 item.RecBatchNbr = NMVoucherUtil.CreateARVoucher(NMStringList.NMARVoucher.RECEIVE, item,
                                                                                GLStageCode.NMRReceiveR2);
                                 PXUpdate<
@@ -300,13 +300,13 @@ namespace PX.Objects.EP
                     }
                     if (isVoid)
                     {
-                        //Stage1. ±N¹ïÀ³ªºPSPaymentSlipDetails ªº IsVoidÀ£¦¨True
+                        //Stage1. å°‡å°æ‡‰çš„PSPaymentSlipDetails çš„ IsVoidå£“æˆTrue
                         PXUpdate<
                             Set<PSPaymentSlipDetails.isVoid, True>,
                             PSPaymentSlipDetails,
                             Where<PSPaymentSlipDetails.arPaymentRefNbr, Equal<Required<PSPaymentSlipDetails.arPaymentRefNbr>>>
                             >.Update(Base, arp.RefNbr);
-                        //Stage2. PSPaymentSlipDetails¹ïÀ³ªºPSPaymentSlip©³¤Uªº©ú²ÓisVoid¬Ò¬°true®É¡AªíÀYª¬ºA¸òµÛ§@¼o
+                        //Stage2. PSPaymentSlipDetailså°æ‡‰çš„PSPaymentSlipåº•ä¸‹çš„æ˜ç´°isVoidçš†ç‚ºtrueæ™‚ï¼Œè¡¨é ­ç‹€æ…‹è·Ÿè‘—ä½œå»¢
                         PSPaymentSlipDetails psd = GetPSPaymentSlipDetails(arp.RefNbr);
                         if (psd != null)
                         {
@@ -330,7 +330,7 @@ namespace PX.Objects.EP
             }
         }
         /// <summary>
-        /// ­ì¼tAPPaymentEntry Release
+        /// åŸå» APPaymentEntry Release
         /// </summary>
         /// <param name="adapter"></param>
         /// <returns></returns>
@@ -351,14 +351,14 @@ namespace PX.Objects.EP
                 throw new PXException(Messages.Document_Status_Invalid);
             }
             Base.Save.Press();
-            //§ï¬°¦b¥~­±³B²z
+            //æ”¹ç‚ºåœ¨å¤–é¢è™•ç†
             //PXLongOperation.StartOperation(this, delegate () { ARDocumentRelease.ReleaseDoc(list, false); });
             ARDocumentRelease.ReleaseDoc(list, false);
             return list;
         }
 
         /// <summary>
-        /// ²£¥ÍNMÀ³¥I²¼¾Ú
+        /// ç”¢ç”ŸNMæ‡‰ä»˜ç¥¨æ“š
         /// </summary>
         /// <param name="data"></param>
         public NMReceivableCheck CreateNMArCheck(ARPayment data, string checkNbr, decimal? amount, string desc)
@@ -390,19 +390,19 @@ namespace PX.Objects.EP
             item = entry.Checks.Update(item);
             if ("V".Equals(ps.TargetType))
             {
-                //2023-01-10 ­×¥¿customer³QProjectÂĞ»\
+                //2023-01-10 ä¿®æ­£customerè¢«Projectè¦†è“‹
                 entry.Checks.Cache.SetValueExt<NMReceivableCheck.customerID>(item, ps.VendorID);
                 entry.Checks.Cache.SetValueExt<NMReceivableCheck.customerLocationID>(item, ps.VendorLocationID);
             }
             else if ("C".Equals(ps.TargetType))
             {
-                //2023-01-10 ­×¥¿customer³QProjectÂĞ»\
+                //2023-01-10 ä¿®æ­£customerè¢«Projectè¦†è“‹
                 entry.Checks.Cache.SetValueExt<NMReceivableCheck.customerID>(item, ps.CustomerID);
                 entry.Checks.Cache.SetValueExt<NMReceivableCheck.customerLocationID>(item, ps.CustomerLocationID);
             }
             else if ("E".Equals(ps.TargetType))
             {
-                //2023-01-10 ­×¥¿customer³QProjectÂĞ»\
+                //2023-01-10 ä¿®æ­£customerè¢«Projectè¦†è“‹
                 entry.Checks.Cache.SetValueExt<NMReceivableCheck.customerID>(item, ps.EmployeeID);
                 entry.Checks.Cache.SetValueExt<NMReceivableCheck.customerLocationID>(item, ps.LocationID);
             }
@@ -424,7 +424,7 @@ namespace PX.Objects.EP
             {
                 var ps = GetPSPaymentSlipDetails(payment.RefNbr);
                 if (ps != null && ps.PaymentMethodID == "CHECK") {
-                    throw new PXException("¦³ÃöÁpÀ³¦¬²¼¾Ú, »İ³z³z¹LÀ³¦¬²¼¾Ú²§°Ê§@·~¶i¦æºM°h²¼!");
+                    throw new PXException("æœ‰é—œè¯æ‡‰æ”¶ç¥¨æ“š, éœ€é€é€éæ‡‰æ”¶ç¥¨æ“šç•°å‹•ä½œæ¥­é€²è¡Œæ’¤é€€ç¥¨!");
                 }
             }
         }
@@ -460,7 +460,7 @@ namespace PX.Objects.EP
             if (task == null)
             {
                 var prject = PMProject.PK.Find(Base, data.ProjectID);
-                throw new PXException($"{0} ½Ğ³]©w¹w³]±M®×¥ô°È", prject.ContractCD);
+                throw new PXException($"{0} è«‹è¨­å®šé è¨­å°ˆæ¡ˆä»»å‹™", prject.ContractCD);
             }
             PXUpdate<
                Set<GLTran.projectID, Required<GLTran.projectID>,
@@ -587,12 +587,14 @@ namespace PX.Objects.EP
                 DescriptionField = typeof(BAccount2.acctName),
                 SubstituteKey = typeof(BAccount2.acctCD)
                 )]
-            [PXFormula(typeof(
-                Switch<
-                    Case<Where<targetType, Equal<PSTargetType.employee>>, employeeID>,
-                    createEmpID
-                    >
-                ))]
+            //20230301 Alton å› ä¸€èˆ¬ç¹³æ¬¾ ä¸å†æœƒæœ‰ç¹³æ¬¾å°è±¡é¡å‹é¸æ“‡ï¼Œå› æ­¤å›ºå®šæŠ“CustomerID
+            //[PXFormula(typeof(
+            //    Switch<
+            //        Case<Where<targetType, Equal<PSTargetType.employee>>, employeeID>,
+            //        createEmpID
+            //        >
+            //    ))]
+            [PXFormula(typeof(customerID))]
             public virtual int? PayerID { get; set; }
             public abstract class payerID : PX.Data.BQL.BqlInt.Field<payerID> { }
             #endregion
@@ -601,6 +603,13 @@ namespace PX.Objects.EP
             [PXDBString(BqlField = typeof(PSPaymentSlip.targetType))]
             public virtual string TargetType { get; set; }
             public abstract class targetType : PX.Data.BQL.BqlString.Field<targetType> { }
+            #endregion
+
+            #region CustomerID
+            [PXDBInt(BqlField = typeof(PSPaymentSlip.customerID))]
+            [PXUIField(DisplayName = "Payer", IsReadOnly = true)]
+            public virtual int? CustomerID { get; set; }
+            public abstract class customerID : PX.Data.BQL.BqlInt.Field<customerID> { }
             #endregion
 
             #region EmployeeID

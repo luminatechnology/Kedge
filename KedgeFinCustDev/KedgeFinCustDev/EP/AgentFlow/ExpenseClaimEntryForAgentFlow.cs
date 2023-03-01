@@ -202,10 +202,18 @@ namespace KedgeFinCustDev.EP.AgentFlow
                     billingL.ApprovalLevelID = detailsExt.UsrApprovalLevelID;
 
                     #region 預算金額 & 累計執行數
-                    //預算金額
-                    decimal budget = GetBudgetByFinYear(details.BranchID, claimExt.UsrFinancialYear, details.ExpenseAccountID, details.ExpenseSubID);
-                    var usedSum = GetUsed(details.BranchID, claimExt.UsrFinancialYear, details.ExpenseAccountID, details.ExpenseSubID);
-                    decimal used = (usedSum?.CreditAmt ?? 0m) - (usedSum?.DebitAmt ?? 0m);
+                    if (claimExt.UsrDocType == EPStringList.EPDocType.GUR//應付保證票
+                    || claimExt.UsrDocType == EPStringList.EPDocType.RGU//退回應收保證票
+                    || claimExt.UsrDocType == EPStringList.EPDocType.BTN//金融交易
+                      )
+                    {
+                        //預算金額
+                        decimal budget = GetBudgetByFinYear(details.BranchID, claimExt.UsrFinancialYear, details.ExpenseAccountID, details.ExpenseSubID);
+                        var usedSum = GetUsed(details.BranchID, claimExt.UsrFinancialYear, details.ExpenseAccountID, details.ExpenseSubID);
+                        decimal used = (usedSum?.CreditAmt ?? 0m) - (usedSum?.DebitAmt ?? 0m);
+                        billingL.BudgetAmount = budget;//預算金額
+                        billingL.UseAmount = used;//累計執行數
+                    }
                     #endregion
 
                     FlowBillingLs.Insert(billingL);

@@ -172,6 +172,20 @@ namespace PX.Objects.EP.AgentFlow.DAC
         public abstract class approvalLevelID : PX.Data.BQL.BqlInt.Field<approvalLevelID> { }
         #endregion
 
+        #region BudgetAmount
+        [PXDBDecimal()]
+        [PXUIField(DisplayName = "Budget Amount")]
+        public virtual Decimal? BudgetAmount { get; set; }
+        public abstract class budgetAmount : PX.Data.BQL.BqlDecimal.Field<budgetAmount> { }
+        #endregion
+
+        #region UseAmount
+        [PXDBDecimal()]
+        [PXUIField(DisplayName = "Use Amount")]
+        public virtual Decimal? UseAmount { get; set; }
+        public abstract class useAmount : PX.Data.BQL.BqlDecimal.Field<useAmount> { }
+        #endregion
+
         #region CreatedByID
         [PXDBCreatedByID()]
         public virtual Guid? CreatedByID { get; set; }

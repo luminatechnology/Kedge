@@ -2,6 +2,8 @@ using System;
 using PX.Data;
 using PX.Data.BQL.Fluent;
 using PX.Objects.AP;
+using PX.Objects.CT;
+using PX.Objects.GL;
 using PX.Objects.PM;
 using PX.Objects.PO;
 
@@ -82,5 +84,14 @@ namespace Kedge.DAC
         public virtual decimal? RetainageRemaining { get; set; }
         public abstract class retainageRemaining : PX.Data.BQL.BqlDecimal.Field<retainageRemaining> { }
         #endregion  
+
+        #region ProjBranchID
+        [PXInt()]
+        [PXUIField(DisplayName = "Proj. Branch", Enabled = false)]
+        [PXSelector(typeof(SelectFrom<Branch>.SearchFor<Branch.branchID>), SubstituteKey = typeof(Branch.branchCD))]
+        [PXDBScalar(typeof(SelectFrom<Contract>.Where<Contract.contractID.IsEqual<projectID>>.SearchFor<Contract.defaultBranchID>))]
+        public virtual int? ProjBranchID { get; set; }
+        public abstract class projBranchID : PX.Data.BQL.BqlInt.Field<projBranchID> { }
+        #endregion
     }
 }

@@ -16,6 +16,7 @@
 					<px:PXGridColumn DataField="OrderDate"></px:PXGridColumn>
 					<px:PXGridColumn DataField="OrderType"></px:PXGridColumn>
 					<px:PXGridColumn DataField="OrderNbr"></px:PXGridColumn>
+					<px:PXGridColumn DataField="ProjBranchID"></px:PXGridColumn>
 					<px:PXGridColumn DataField="ContractCD"></px:PXGridColumn>
 					<px:PXGridColumn DataField="RetainageTotal"></px:PXGridColumn>
 					<px:PXGridColumn DataField="RetainageReleased"></px:PXGridColumn>

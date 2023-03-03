@@ -148,7 +148,7 @@ namespace PX.Objects.AP
             if (doc.RetainageApply == true && doc.GetExtension<APRegisterExt>().UsrRetainageHistType == RetHistType.Original && 
                 doc.CuryRetainageReleased > 0m && doc. CuryRetainageUnreleasedAmt > 0m)
             {
-                doc.CuryRetainageReleased      = doc.RetainageReleased = doc.CuryRetainageTotal;
+                doc.CuryRetainageReleased      = doc.RetainageReleased      = doc.CuryRetainageTotal;
                 doc.CuryRetainageUnreleasedAmt = doc.RetainageUnreleasedAmt = 0m;
 
                 Base.APDocument.Update(doc);

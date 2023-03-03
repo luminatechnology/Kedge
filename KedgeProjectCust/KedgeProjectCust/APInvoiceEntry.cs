@@ -3442,11 +3442,11 @@ namespace PX.Objects.AP
         #endregion
 
         #region CacheAttached
+        [APActiveProjectAttibute]
         [ProjectDefault(PersistingCheck = PXPersistingCheck.Nothing)]
         [PXRestrictor(typeof(Where<PMProject.isCancelled, Equal<False>>), PX.Objects.PM.Messages.CancelledContract, typeof(PMProject.contractCD))]
         [PXRestrictor(typeof(Where<PMProject.visibleInPO, Equal<True>, Or<PMProject.nonProject, Equal<True>>>), PX.Objects.PM.Messages.ProjectInvisibleInModule, typeof(PMProject.contractCD))]
         [PXRestrictor(typeof(Where<PMProject.defaultBranchID, Equal<Current<AccessInfo.branchID>>, Or<PMProject.defaultBranchID, IsNull>>), "Branch Not Found.", typeof(PMProject.contractCD))]
-        [APActiveProjectAttibute]
         //20200130 
         //[ProjectBaseExt]
         protected void APInvoice_ProjectID_CacheAttached(PXCache sender) { }
@@ -3479,6 +3479,8 @@ namespace PX.Objects.AP
                 {
                     throw new PXException("Error: Updating record raised at least one error. Please review the errors.");
                 }
+
+                PopupReminderDialog(master);
 
                 using (PXTransactionScope ts = new PXTransactionScope())
                 {
@@ -4901,6 +4903,7 @@ namespace PX.Objects.AP
         public virtual void ReverseInvoiceProc(APRegister doc, ReverseInvoiceProcDelegate baseMethod)
         {
             APInvoice master = Base.Document.Current;
+
             baseMethod(doc);
             releaseAddAndDeduc(master);
             //2020/09/11 Althea Add 一併刪除APInvoice與GVAPGuiInvoice關聯
@@ -4998,15 +5001,18 @@ namespace PX.Objects.AP
 
                 downCount++;
             }
-
         }
         #endregion
+
         #endregion
 
         #region 刪除
         protected virtual void APInvoice_RowDeleted(PXCache sender, PXRowDeletedEventArgs e)
         {
             APInvoice master = (APInvoice)e.Row;
+
+            PopupReminderDialog(master);
+
             releaseAddAndDeducForDel(master);
             //2020/09/26 Mantis: 0011704
             //deleteAP(master);
@@ -5521,6 +5527,17 @@ namespace PX.Objects.AP
             
             return Math.Round((decimal)(totalRetAmt.Value ?? 1m) * (invoice.GetExtension<APRegisterExt>().UsrRetainagePct ?? 0m) / 100m, 0, MidpointRounding.AwayFromZero);
         }
+
+        /// <summary>
+        /// This method is only for historical retainage conversion and manully adjust incorrect values.
+        /// </summary>
+        public virtual void PopupReminderDialog(APInvoice invoice)
+        {
+            if (invoice.RetainageApply == true && invoice.GetExtension<APRegisterExt>().UsrRetainageHistType == RetHistType.Original)
+            {
+                Base.Document.Ask(CR.Messages.Notifications, Message.NotifyKedgeIT, MessageButtons.OK, MessageIcon.Warning);
+            }
+        }
         #endregion
 
         //#region 期數
@@ -5583,7 +5600,7 @@ namespace PX.Objects.AP
             public const string RetainageAmtCannotGreaterInvAmt = "保留款金額不能超過計價總金額。";
             public const string CannotReverseBillWithRefundRet = "已有保留款退回計價單, 不能進行反轉。";
             public const string ExtCostCannotGtrRetUnreleased = "單價不能超過保留款剩餘金額 {0}。";
-
+            public const string NotifyKedgeIT = "此計價單已做過歷史保留款轉換，此計價單異動後請與IT聯繫處理。";
         }
         #endregion
 

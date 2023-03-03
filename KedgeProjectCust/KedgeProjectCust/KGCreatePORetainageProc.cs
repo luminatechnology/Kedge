@@ -96,7 +96,8 @@ namespace Kedge
 
                         graph.Document.Update(invoice);
 
-                        PMCostBudget costBudget = SelectFrom<PMCostBudget>.Where<PMCostBudget.projectID.IsEqual<@P.AsInt>>.View.SelectSingleBound(graph, null, lists[i].ProjectID);
+                        PMCostBudget costBudget = SelectFrom<PMCostBudget>.Where<PMCostBudget.projectID.IsEqual<@P.AsInt>
+                                                                                 .And<PMCostBudget.type.IsEqual<PX.Objects.GL.AccountType.expense>>>.View.SelectSingleBound(graph, null, lists[i].ProjectID);
 
                         Dictionary<string, POOrderAPDoc> dic = new Dictionary<string, POOrderAPDoc>();
 
@@ -167,6 +168,8 @@ namespace Kedge
                         graph.Document.Update(invoice);
 
                         graph.Save.Press();
+
+                        graph.Clear();
 
                         ///<remarks> 
                         /// Since this bill invoice is just a historical data, there is no need to release and generate journal voucher, 

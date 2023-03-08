@@ -590,12 +590,10 @@ namespace Kedge
             foreach (PXResult<KGBillSummary, APInvoice, APRegister> result in GetCumKGBillSummary(sum, master, masterExt))
             {
                 KGBillSummary cumSum = (KGBillSummary)result;
-                APRegister apRegister = (APRegister)result;
+                APRegister    apRegister = (APRegister)result;
                 APRegisterExt apRegisterExt = PXCache<APRegister>.GetExtension<APRegisterExt>(apRegister);
 
-                if (apRegisterExt.UsrRetainageHistType == RetHistType.Original) { continue; }
-
-                //借方調整(反轉) 負 ，其他為 正
+                // 借方調整(反轉) 負 ，其他為 正
                 if (apRegister.DocType == APDocType.DebitAdj && apRegisterExt.UsrIsDeductionDoc != true)
                 {
                     //累積估驗金額
@@ -608,10 +606,14 @@ namespace Kedge
                     sumAdditionCumAmt -= cumSum.AdditionAmt;
                     //累積扣款
                     sumDeductionWithTaxCumAmt -= cumSum.DeductionWithTaxAmt ?? 0;
-                    //累積保留款
-                    sumRetentionWithTaxCumAmt -= (cumSum.RetentionWithTaxAmt ?? 0);
-                    //累積保留款退回
-                    sumRetentionReturnWithTaxCumAmt -= (cumSum.RetentionReturnWithTaxAmt ?? 0);
+
+                    if (APRegister.PK.Find(Base, apRegister.OrigDocType, apRegister.OrigRefNbr)?.GetExtension<APRegisterExt>()?.UsrRetainageHistType != RetHistType.Original)
+                    {
+                        //累積保留款
+                        sumRetentionWithTaxCumAmt -= (cumSum.RetentionWithTaxAmt ?? 0);
+                        //累積保留款退回
+                        sumRetentionReturnWithTaxCumAmt -= (cumSum.RetentionReturnWithTaxAmt ?? 0);
+                    }
                 }
                 else
                 {
@@ -625,20 +627,27 @@ namespace Kedge
                     sumAdditionCumAmt += cumSum.AdditionAmt;
                     //累積扣款
                     sumDeductionWithTaxCumAmt += cumSum.DeductionWithTaxAmt ?? 0;
-                    //累積保留款
-                    sumRetentionWithTaxCumAmt += (cumSum.RetentionWithTaxAmt ?? 0);
-                    //累積保留款退回
-                    sumRetentionReturnWithTaxCumAmt += (cumSum.RetentionReturnWithTaxAmt ?? 0);
+
+                    if (apRegisterExt.UsrRetainageHistType != RetHistType.Original)
+                    {
+                        //累積保留款
+                        sumRetentionWithTaxCumAmt += (cumSum.RetentionWithTaxAmt ?? 0);
+                        //累積保留款退回
+                        sumRetentionReturnWithTaxCumAmt += (cumSum.RetentionReturnWithTaxAmt ?? 0);
+                    }
                 }
             }
             #endregion
 
             PXCache cache = Base2.SummaryAmtFilters.Cache;
-            sum.PoCumulativeAmt = sumPoCumulativeAmt;
-            sum.PrepaymentCumAmt = sumPrepaymentCumAmt;
-            sum.PrepaymentDuctCumAmt = sumPrepaymentDuctCumAmt;
-            sum.AdditionCumAmt = sumAdditionCumAmt;
-            sum.DeductionWithTaxCumAmt = sumDeductionWithTaxCumAmt;
+            if (masterExt.UsrRetainageHistType != RetHistType.History)
+            {
+                sum.PoCumulativeAmt = sumPoCumulativeAmt;
+                sum.PrepaymentCumAmt = sumPrepaymentCumAmt;
+                sum.PrepaymentDuctCumAmt = sumPrepaymentDuctCumAmt;
+                sum.AdditionCumAmt = sumAdditionCumAmt;
+                sum.DeductionWithTaxCumAmt = sumDeductionWithTaxCumAmt;
+            }
             sum.RetentionWithTaxCumAmt = sumRetentionWithTaxCumAmt;
             sum.RetentionReturnWithTaxCumAmt = sumRetentionReturnWithTaxCumAmt;
             sum = Base2.SummaryAmtFilters.Update(sum);

@@ -19,7 +19,7 @@ ISNULL((SELECT SUM(CuryRetainageTotal) FROM APRegister a1
 		AND a1.UsrPOOrderType = p.OrderType 
 		AND a1.UsrPONbr = p.OrderNbr 
 		AND a1.RetainageApply = 1 
-		AND NOT EXISTS (SELECT * FROM ARRegister adj WHERE adj.CompanyID = a1.CompanyID 
+		AND NOT EXISTS (SELECT * FROM APRegister adj WHERE adj.CompanyID = a1.CompanyID 
 													 AND adj.DeletedDatabaseRecord = 0
 													 AND adj.OrigDocType = a1.DocType 
 													 AND adj.OrigRefNbr = a1.RefNbr)

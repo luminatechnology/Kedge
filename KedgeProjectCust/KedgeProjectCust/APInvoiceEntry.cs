@@ -3119,12 +3119,14 @@ namespace PX.Objects.AP
         protected void APInvoice_CuryDocBal_FieldUpdated(PXCache sender, PXFieldUpdatedEventArgs e)
         {
             APInvoice row = e.Row as APInvoice;
+            var rowExt = row.GetExtension<APRegisterExt>();
 
-            if (row != null && row.CuryDocBal > 0m
-                && row.GetExtension<APRegisterExt>().UsrRetainagePct != null
-                && row.GetExtension<APRegisterExt>().UsrRetainagePct > 0m)
+            if (row != null && 
+                row.CuryDocBal > 0m &&
+                rowExt.UsrRetainagePct != null &&
+                rowExt.UsrRetainagePct > 0m)
             {
-                Base.Document.Cache.SetValueExt<APRegisterExt.usrRetainageAmt>(row, CalcRetainageAmt(sender, row));
+                Base.Document.Cache.SetValueExt<APRegisterExt.usrRetainageAmt>(row, (rowExt.UsrRetainageAmt ?? 0m) > 0m && !string.IsNullOrEmpty(row.OrigRefNbr) ? rowExt.UsrRetainageAmt : CalcRetainageAmt(sender, row));
             }
         }
 
@@ -3713,6 +3715,8 @@ namespace PX.Objects.AP
         {
             bool check = true;
             APInvoice master = Base.Document.Current;
+            APRegisterExt aPRegExt = PXCache<APRegister>.GetExtension<APRegisterExt>(master);
+
             //modify by louis for bill without project
             if ("PO301000".Equals(master.CreatedByScreenID) || "SC301000".Equals(master.CreatedByScreenID))
             {
@@ -3825,7 +3829,6 @@ namespace PX.Objects.AP
                     }
                     //-----------Check Segment Pricing End----------------------
                     //-----------Check AP GUI INVOICE END-----------------------
-                    APRegisterExt aPRegExt = PXCache<APRegister>.GetExtension<APRegisterExt>(master);
 
                     // YJ's request
                     if (aPRegExt.UsrPOOrderType == POOrderType.RegularOrder)
@@ -3865,7 +3868,8 @@ namespace PX.Objects.AP
             }
 
             ///<remarks> To avoid overcomplicated calculation logic, we do not allow users to reverse invoice with refund reservations.</remarks>
-            if (APInvoice.PK.Find(Base, master.OrigDocType, master.OrigRefNbr)?.GetExtension<APRegisterExt>().UsrRetainageReleased > 0 && master.DocType == APDocType.DebitAdj)
+            if (master.DocType == APDocType.DebitAdj &&
+                (APInvoice.PK.Find(Base, master.OrigDocType, master.OrigRefNbr)?.GetExtension<APRegisterExt>().UsrRetainageReleased > 0 || aPRegExt.UsrIsRetainageDoc == true) )
             {
                 throw new PXException(Message.CannotReverseBillWithRefundRet);
             }

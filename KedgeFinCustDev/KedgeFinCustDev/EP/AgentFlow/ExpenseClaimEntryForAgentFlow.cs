@@ -213,6 +213,7 @@ namespace KedgeFinCustDev.EP.AgentFlow
                         decimal used = (usedSum?.CreditAmt ?? 0m) - (usedSum?.DebitAmt ?? 0m);
                         billingL.BudgetAmount = budget;//預算金額
                         billingL.UseAmount = used;//累計執行數
+                        billingL.BudgetPer = budget > 0m ? Decimal.Round(100 * used / budget, 2, MidpointRounding.AwayFromZero) : 0m;
                     }
                     #endregion
 

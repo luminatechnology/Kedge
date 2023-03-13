@@ -175,6 +175,7 @@ namespace PX.Objects.EP.AgentFlow.DAC
         #region BudgetAmount
         [PXDBDecimal()]
         [PXUIField(DisplayName = "Budget Amount")]
+        [PXDefault(TypeCode.Decimal, "0.0", PersistingCheck = PXPersistingCheck.Nothing)]
         public virtual Decimal? BudgetAmount { get; set; }
         public abstract class budgetAmount : PX.Data.BQL.BqlDecimal.Field<budgetAmount> { }
         #endregion
@@ -182,8 +183,17 @@ namespace PX.Objects.EP.AgentFlow.DAC
         #region UseAmount
         [PXDBDecimal()]
         [PXUIField(DisplayName = "Use Amount")]
+        [PXDefault(TypeCode.Decimal, "0.0", PersistingCheck = PXPersistingCheck.Nothing)]
         public virtual Decimal? UseAmount { get; set; }
         public abstract class useAmount : PX.Data.BQL.BqlDecimal.Field<useAmount> { }
+        #endregion
+
+        #region BudgetPer
+        [PXDBDecimal()]
+        [PXUIField(DisplayName = "Budget Per")]
+        [PXDefault(TypeCode.Decimal, "0.0", PersistingCheck = PXPersistingCheck.Nothing)]
+        public virtual Decimal? BudgetPer { get; set; }
+        public abstract class budgetPer : PX.Data.BQL.BqlDecimal.Field<budgetPer> { }
         #endregion
 
         #region CreatedByID

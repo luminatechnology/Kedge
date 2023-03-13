@@ -26,6 +26,7 @@
   <col name="ApprovalLevelID" type="Int" nullable="true" />
   <col name="BudgetAmount" type="Decimal(19,4)" nullable="true" />
   <col name="UseAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="BudgetPer" type="Decimal(19,2)" nullable="true" />
   <col name="CreatedByID" type="UniqueIdentifier" />
   <col name="CreatedByScreenID" type="Char(8)" />
   <col name="CreatedDateTime" type="SmallDateTime" />

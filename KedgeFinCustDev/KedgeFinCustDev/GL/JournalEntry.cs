@@ -1,6 +1,8 @@
 using PX.Data;
 using PX.Objects.AP;
+using PX.Objects.AR;
 using RC.Util;
+using System;
 
 namespace PX.Objects.GL
 {
@@ -13,13 +15,25 @@ namespace PX.Objects.GL
         protected virtual void viewAP()
         {
             GLTran row = Base.GLTranModuleBatNbr.Current;
-            APRegister register = PXSelect<APRegister,
-                Where<APRegister.refNbr, Equal<Required<APRegister.refNbr>>>>
-                .Select(Base, row.RefNbr);
-            APInvoiceEntry graph = PXGraph.CreateInstance<APInvoiceEntry>();
-            graph.Document.Current = graph.Document.Search<APInvoice.refNbr>(register.RefNbr, new object[] { register.DocType });
-            if (graph.Document.Current == null) return;
-            new HyperLinkUtil<APInvoiceEntry>(graph.Document.Current, true);
+            var refNbr = row.RefNbr;
+            Guid? noteID = null;
+            if (refNbr.StartsWith("AP") || refNbr.StartsWith("PA"))
+            {
+                APRegister register = PXSelect<APRegister,
+                    Where<APRegister.refNbr, Equal<Required<APRegister.refNbr>>>>
+                    .Select(Base, refNbr);
+                noteID = register?.NoteID;
+            }
+            else if (refNbr.StartsWith("AR"))
+            {
+                ARRegister register = PXSelect<ARRegister,
+                    Where<ARRegister.refNbr, Equal<Required<ARRegister.refNbr>>>>
+                    .Select(Base, refNbr);
+                noteID = register?.NoteID;
+            }
+            if (noteID == null) return;
+            EntityHelper helper = new EntityHelper(Base);
+            helper.NavigateToRow(noteID.Value, PXRedirectHelper.WindowMode.NewWindow);
         }
         #endregion
 
